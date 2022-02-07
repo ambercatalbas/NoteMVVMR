@@ -1,0 +1,65 @@
+PODS:
+  - Alamofire (5.5.0)
+  - IQKeyboardManagerSwift (6.5.9)
+  - KeychainSwift (19.0.0)
+  - Kingfisher (6.3.1)
+  - MobilliumBuilders (1.4.0)
+  - MobilliumDateFormatter (1.2.0)
+  - MobilliumUserDefaults (2.0.0)
+  - QuickLayout (3.0.0)
+  - SwiftEntryKit (1.2.7):
+    - QuickLayout (= 3.0.0)
+  - SwiftLint (0.46.2)
+  - TinyConstraints (4.0.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.4)
+  - IQKeyboardManagerSwift (~> 6.5)
+  - KeychainSwift (~> 19.0)
+  - Kingfisher (from `https://github.com/onevcat/Kingfisher.git`, branch `version6-xcode13`)
+  - MobilliumBuilders (~> 1.4)
+  - MobilliumDateFormatter (~> 1.2)
+  - MobilliumUserDefaults (~> 2.0)
+  - SwiftEntryKit (~> 1.2)
+  - SwiftLint (~> 0.44)
+  - TinyConstraints (~> 4.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - IQKeyboardManagerSwift
+    - KeychainSwift
+    - MobilliumBuilders
+    - MobilliumDateFormatter
+    - MobilliumUserDefaults
+    - QuickLayout
+    - SwiftEntryKit
+    - SwiftLint
+    - TinyConstraints
+
+EXTERNAL SOURCES:
+  Kingfisher:
+    :branch: version6-xcode13
+    :git: https://github.com/onevcat/Kingfisher.git
+
+CHECKOUT OPTIONS:
+  Kingfisher:
+    :commit: 5ecd8df18f1750efaa57d1b9623090156da01ef3
+    :git: https://github.com/onevcat/Kingfisher.git
+
+SPEC CHECKSUMS:
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
+  KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
+  Kingfisher: 8b783c3d7be73a99b2172a743a5bc0a4dd331d79
+  MobilliumBuilders: 9990948aea3e132044431289dda869f524fcadac
+  MobilliumDateFormatter: 398a47e62aeeda24385c362c61c213550b07f047
+  MobilliumUserDefaults: 002aa4bb663127d2dcc0814c17430c918a1e1445
+  QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
+  SwiftEntryKit: 537c92699d6034efb1ef9c32b11e0b37c97aa589
+  SwiftLint: 6bc52a21f0fd44cab9aa2dc8e534fb9f5e3ec507
+  TinyConstraints: 7b7ccc0c485bb3bb47082138ff28bc33cd49897f
+
+PODFILE CHECKSUM: 9ac7f2ec6a64df06938526f8c672e4053f52cd06
+
+COCOAPODS: 1.11.0

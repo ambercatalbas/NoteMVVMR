@@ -1,0 +1,11 @@
+${PODS_ROOT}/Target Support Files/Pods-NoteMVVMR-NoteMVVMRUITests/Pods-NoteMVVMR-NoteMVVMRUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework
+${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework
+${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
+${BUILT_PRODUCTS_DIR}/MobilliumBuilders/MobilliumBuilders.framework
+${BUILT_PRODUCTS_DIR}/MobilliumDateFormatter/MobilliumDateFormatter.framework
+${BUILT_PRODUCTS_DIR}/MobilliumUserDefaults/MobilliumUserDefaults.framework
+${BUILT_PRODUCTS_DIR}/QuickLayout/QuickLayout.framework
+${BUILT_PRODUCTS_DIR}/SwiftEntryKit/SwiftEntryKit.framework
+${BUILT_PRODUCTS_DIR}/TinyConstraints/TinyConstraints.framework

@@ -1,0 +1,6 @@
+framework module Pods_NoteMVVMRTests {
+  umbrella header "Pods-NoteMVVMRTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
