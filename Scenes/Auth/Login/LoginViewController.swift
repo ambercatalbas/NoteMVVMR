@@ -8,6 +8,7 @@
 import UIKit
 import MobilliumBuilders
 import TinyConstraints
+import KeychainSwift
 
 final class LoginViewController: BaseViewController<LoginViewModel> {
   
@@ -28,11 +29,13 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
     .backgroundColor(.appHeather)
     .borderStyle(.roundedRect)
     .placeholder("name@mail.com")
+    .text("ambercatalbas@gmail.com")
     .build()
   private let passwordTextField = UITextFieldBuilder()
     .backgroundColor(.appHeather)
     .borderStyle(.roundedRect)
     .placeholder("Password...")
+    .text("123456")
     .build()
   
   private let buttonStackView = UIStackViewBuilder()
@@ -63,6 +66,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
     .backgroundColor(.cyan)
     .cornerRadius(12)
     .build()
+  let keychain = KeychainSwift()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -128,10 +132,8 @@ extension LoginViewController {
   @objc
   private func loginButtonTapped() {
     guard let email = emailTextField.text,
-          let password = passwordTextField.text else {
-
-        return
-    }
+          let password = passwordTextField.text else { return }
+    
     let validation = Validation()
     guard validation.isValidPassword(password) else { return }
 

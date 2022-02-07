@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import DataProvider
 
 protocol BaseViewModelDataSource: AnyObject {}
 
@@ -32,10 +33,12 @@ class BaseViewModel<R: Router>: BaseViewModelProtocol {
     var showWarningToast: StringClosure?
     
     let router: R
-    
-    init(router: R) {
-        self.router = router
-    }
+    let dataProvider: DataProviderProtocol
+  
+  init(router: R, dataProvider: DataProviderProtocol = apiDataProvider) {
+      self.router = router
+      self.dataProvider = dataProvider
+  }
     
     #if DEBUG
     deinit {

@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import KeychainSwift
 
 protocol LoginViewDataSource {
   
@@ -21,6 +22,7 @@ protocol LoginViewProtocol: LoginViewDataSource, LoginViewEventSource {
 }
 
 final class LoginViewModel: BaseViewModel<LoginRouter>, LoginViewProtocol {
+  let keychain = KeychainSwift()
   func showRegisterOnWindow() {
     router.pushRegister()
     
@@ -31,15 +33,18 @@ final class LoginViewModel: BaseViewModel<LoginRouter>, LoginViewProtocol {
   }
   
   func sendLoginRequest(email: String, password: String) {
-
-    let credential = URLCredential(user: email, password: password, persistence: .forSession)
-
-    AF.request("https://httpbin.org/basic-auth/\(email)/\(password)")
-      .authenticate(with: credential)
-        .responseJSON { response in
-            debugPrint(response)
-        }
+    
+    dataProvider.request(for: LoginRequest(email: email, password: password)) { [weak self] result in
+      guard let self = self else { return }
+      switch result {
+      case .success(let response):
+        self.keychain.set(response.data?.accessToken ?? "", forKey: Keychain.token)
+        self.router.pushHome()
+      case .failure(let error):
+        self.showWarningToast?("\(error.localizedDescription) \(L10n.Error.checkInformations)")
+      }
+    }
     
   }
-   
+  
 }
