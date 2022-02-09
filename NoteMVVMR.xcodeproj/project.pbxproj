@@ -70,6 +70,10 @@
 		4E969A8D27B1C79A00C4CF8E /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A7627B1C79A00C4CF8E /* Closures.swift */; };
 		4E969A9127B1C7AB00C4CF8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A8F27B1C7AB00C4CF8E /* AppDelegate.swift */; };
 		4E969A9227B1C7AB00C4CF8E /* AppDelegate+IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A9027B1C7AB00C4CF8E /* AppDelegate+IQKeyboardManager.swift */; };
+		4E969A9727B25D1F00C4CF8E /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A9427B25D1F00C4CF8E /* DetailRouter.swift */; };
+		4E969A9827B25D1F00C4CF8E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A9527B25D1F00C4CF8E /* DetailViewController.swift */; };
+		4E969A9927B25D1F00C4CF8E /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A9627B25D1F00C4CF8E /* DetailViewModel.swift */; };
+		4E969A9B27B25D3000C4CF8E /* DetailRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A9A27B25D3000C4CF8E /* DetailRoute.swift */; };
 		4EAEE99927B083A9001D4A86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EAEE99827B083A9001D4A86 /* Assets.xcassets */; };
 		4EAEE99C27B083A9001D4A86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EAEE99A27B083A9001D4A86 /* LaunchScreen.storyboard */; };
 		4EAEE9A727B083A9001D4A86 /* NoteMVVMRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAEE9A627B083A9001D4A86 /* NoteMVVMRTests.swift */; };
@@ -183,6 +187,10 @@
 		4E969A7627B1C79A00C4CF8E /* Closures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Closures.swift; sourceTree = "<group>"; };
 		4E969A8F27B1C7AB00C4CF8E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E969A9027B1C7AB00C4CF8E /* AppDelegate+IQKeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+IQKeyboardManager.swift"; sourceTree = "<group>"; };
+		4E969A9427B25D1F00C4CF8E /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		4E969A9527B25D1F00C4CF8E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		4E969A9627B25D1F00C4CF8E /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		4E969A9A27B25D3000C4CF8E /* DetailRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRoute.swift; sourceTree = "<group>"; };
 		4EAEE98C27B083A7001D4A86 /* NoteMVVMR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteMVVMR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EAEE99827B083A9001D4A86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4EAEE99B27B083A9001D4A86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -242,6 +250,7 @@
 		4E9699CA27B1BFF400C4CF8E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				4E969A9327B25D0000C4CF8E /* Detail */,
 				4E9699CB27B1BFF400C4CF8E /* Home */,
 				4E9699D227B1BFF400C4CF8E /* Auth */,
 				4E9699E227B1BFF400C4CF8E /* Main */,
@@ -253,12 +262,12 @@
 		4E9699CB27B1BFF400C4CF8E /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				4E9699CC27B1BFF400C4CF8E /* HomeRoute.swift */,
 				4E9699CD27B1BFF400C4CF8E /* HomeViewModel.swift */,
 				4E9699CE27B1BFF400C4CF8E /* HomeCell.swift */,
 				4E9699CF27B1BFF400C4CF8E /* HomeCellModel.swift */,
 				4E9699D027B1BFF400C4CF8E /* HomeViewController.swift */,
 				4E9699D127B1BFF400C4CF8E /* HomeRouter.swift */,
+				4E9699CC27B1BFF400C4CF8E /* HomeRoute.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -505,6 +514,17 @@
 				4E969A9027B1C7AB00C4CF8E /* AppDelegate+IQKeyboardManager.swift */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		4E969A9327B25D0000C4CF8E /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				4E969A9527B25D1F00C4CF8E /* DetailViewController.swift */,
+				4E969A9627B25D1F00C4CF8E /* DetailViewModel.swift */,
+				4E969A9A27B25D3000C4CF8E /* DetailRoute.swift */,
+				4E969A9427B25D1F00C4CF8E /* DetailRouter.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		4EAEE98327B083A7001D4A86 = {
@@ -851,6 +871,7 @@
 				4E969A5527B1C76200C4CF8E /* Transition.swift in Sources */,
 				4E9699FD27B1BFF400C4CF8E /* BaseViewController.swift in Sources */,
 				4E9699EB27B1BFF400C4CF8E /* HomeCell.swift in Sources */,
+				4E969A9827B25D1F00C4CF8E /* DetailViewController.swift in Sources */,
 				4E9699FB27B1BFF400C4CF8E /* MainTabBarController.swift in Sources */,
 				4E9699F627B1BFF400C4CF8E /* PasswordResetRouter.swift in Sources */,
 				4E969A0827B1C01800C4CF8E /* ButtonFactory.swift in Sources */,
@@ -871,6 +892,7 @@
 				4E969A8427B1C79A00C4CF8E /* Assets.swift in Sources */,
 				4E9699F927B1BFF400C4CF8E /* LoginRoute.swift in Sources */,
 				4E9699F027B1BFF400C4CF8E /* RegisterRoute.swift in Sources */,
+				4E969A9B27B25D3000C4CF8E /* DetailRoute.swift in Sources */,
 				4E9699EC27B1BFF400C4CF8E /* HomeCellModel.swift in Sources */,
 				4E9699FF27B1BFF400C4CF8E /* MainNavigationController.swift in Sources */,
 				4E969A9227B1C7AB00C4CF8E /* AppDelegate+IQKeyboardManager.swift in Sources */,
@@ -879,6 +901,7 @@
 				4E9699EA27B1BFF400C4CF8E /* HomeViewModel.swift in Sources */,
 				4E9699F527B1BFF400C4CF8E /* PasswordResetViewController.swift in Sources */,
 				4E9699E927B1BFF400C4CF8E /* HomeRoute.swift in Sources */,
+				4E969A9727B25D1F00C4CF8E /* DetailRouter.swift in Sources */,
 				4E969A8B27B1C79A00C4CF8E /* DateFormats.swift in Sources */,
 				4E9699FC27B1BFF400C4CF8E /* MainTabBarRoute.swift in Sources */,
 				4E969A7827B1C79A00C4CF8E /* AlertUtility.swift in Sources */,
@@ -893,6 +916,7 @@
 				4E9699F827B1BFF400C4CF8E /* LoginViewController.swift in Sources */,
 				4E969A5427B1C76200C4CF8E /* PlaceOnWindowTransition.swift in Sources */,
 				4E9699FA27B1BFF400C4CF8E /* LoginRouter.swift in Sources */,
+				4E969A9927B25D1F00C4CF8E /* DetailViewModel.swift in Sources */,
 				4E9699EF27B1BFF400C4CF8E /* RegisterRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

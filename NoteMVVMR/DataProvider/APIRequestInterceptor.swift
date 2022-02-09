@@ -18,7 +18,8 @@ public class APIRequestInterceptor: RequestInterceptor {
         let accessToken = KeychainSwift().get(Keychain.token)
         
         if let accessToken = accessToken {
-            urlRequest.headers.add(name: "X-Fodamy-Token", value: accessToken)
+          urlRequest.headers.add(.authorization(bearerToken: accessToken))
+            
         }
 
         completion(.success(urlRequest))

@@ -10,6 +10,7 @@ import Foundation
 protocol HomeViewDataSource {
     func numberOfItemsAt(section: Int) -> Int
     func cellItemAt(indexPath: IndexPath) -> HomeCellProtocol
+    func didSelectRow(indexPath: IndexPath)
 }
 
 protocol HomeViewEventSource {}
@@ -17,10 +18,13 @@ protocol HomeViewEventSource {}
 protocol HomeViewProtocol: HomeViewDataSource, HomeViewEventSource {}
 
 final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
+  func didSelectRow(indexPath: IndexPath) {
+    router.pushDetail()
+  }
+  
     
     func numberOfItemsAt(section: Int) -> Int {
-        return 5
-//      return cellItems.count
+     return cellItems.count
 
     }
     
@@ -28,5 +32,5 @@ final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
         return cellItems[indexPath.row]
     }
     
-    private let cellItems: [HomeCellProtocol] = []
+    private let cellItems: [HomeCellProtocol] = [HomeCellModel(titleText: "Not", descriptionText: "ne notu not mu not ne gezer la bazdarda"), HomeCellModel(titleText: "Not", descriptionText: "ne notu not mu not ne gezer la bazdarda"), HomeCellModel(titleText: "Not", descriptionText: "ne notu not mu not ne gezer la bazdarda"), HomeCellModel(titleText: "Not", descriptionText: "ne notu not mu not ne gezer la bazdarda"), HomeCellModel(titleText: "Not", descriptionText: "ne notu not mu not ne gezer la bazdarda ne notu not mu not ne gezer la bazdarda")]
 }
