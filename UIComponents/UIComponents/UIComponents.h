@@ -2,14 +2,10 @@
 //  UIComponents.h
 //  UIComponents
 //
-//  Created by AMBER ÇATALBAŞ on 8.02.2022.
+//  Created by AMBER ÇATALBAŞ on 10.02.2022.
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-#import <MobilliumBuilders/MobilliumBuilders-Swift.h>
-
-
 
 //! Project version number for UIComponents.
 FOUNDATION_EXPORT double UIComponentsVersionNumber;

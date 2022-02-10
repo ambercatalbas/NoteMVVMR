@@ -2,7 +2,7 @@
 //  UIComponentsTests.swift
 //  UIComponentsTests
 //
-//  Created by AMBER ÇATALBAŞ on 8.02.2022.
+//  Created by AMBER ÇATALBAŞ on 10.02.2022.
 //
 
 import XCTest
