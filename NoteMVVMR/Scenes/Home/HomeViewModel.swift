@@ -21,12 +21,19 @@ protocol HomeViewEventSource {
 
 protocol HomeViewProtocol: HomeViewDataSource, HomeViewEventSource {
     func didSelectRow(indexPath: IndexPath)
+    func editRow()
+    func deleteNote(noteID: Int)
     func fetchNotesListing()
 }
 
 final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
     var didSuccessFetchRecipes: VoidClosure?
+    var cellItems: [HomeCellProtocol] = [HomeCellModel(title: "", description: "", noteID: 0)]
+    private var items: [Note] = []
     
+    func editRow() {
+        router.pushDetail()
+    }
     func didSelectRow(indexPath: IndexPath) {
         router.pushDetail()
     }
@@ -39,23 +46,31 @@ final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
         return item
     }
     
-    var cellItems: [HomeCellProtocol] = [HomeCellModel(title: "", description: "")]
-    private var items: [Note] = []
+ 
 }
 // MARK: - Network
 extension HomeViewModel {
     func fetchNotesListing() {
-        
         dataProvider.request(for: GetMyNotesRequest()) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
             case .success(let response):
-                
                 let cellItems = response.data.data.map({ HomeCellModel(note: $0) })
                 self.cellItems.append(contentsOf: cellItems)
-                self.didSuccessFetchRecipes?()
+//                self.didSuccessFetchRecipes?()
             case .failure(let error):
                 print("failure")
+            }
+        }
+    }
+    func deleteNote(noteID: Int) {
+        dataProvider.request(for: DeleteNoteRequest(noteID: noteID)) { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .success(let response):
+                print("delete noteeee\(noteID)")
+            case .failure(let error):
+                print("errorrrrrrr")
             }
         }
     }

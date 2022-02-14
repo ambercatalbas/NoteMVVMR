@@ -48,13 +48,12 @@ public class HomeCell: UITableViewCell, ReusableView {
     }
     
 }
-// MARK: - Set ViewModel
+
 extension HomeCell {
     public func set(viewModel: HomeCellProtocol) {
         self.viewModel = viewModel
         titleLabel.text = viewModel.titleText
         descriptionLabel.text = viewModel.descriptionText
-        print("set(viewmodel\(self.viewModel?.titleText)")
     }
 }
 extension HomeCell {

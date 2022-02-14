@@ -8,8 +8,9 @@
 import Foundation
 
 public protocol HomeCellDataSource: AnyObject {
-  var titleText: String { get }
-  var descriptionText: String { get }
+    var titleText: String { get }
+    var descriptionText: String { get }
+    var noteID: Int { get }
     
 }
 
@@ -22,13 +23,16 @@ public protocol HomeCellProtocol: HomeCellDataSource, HomeCellEventSource {
 }
 
 public final class HomeCellModel: HomeCellProtocol {
- 
-  public var titleText: String
-  public var descriptionText: String
-  
-    public init(title: String, description: String) {
+    
+    public var titleText: String
+    public var descriptionText: String
+    public var noteID: Int
+    
+    
+    public init(title: String, description: String, noteID: Int) {
         self.titleText = title
         self.descriptionText = description
+        self.noteID = noteID
         
-  }
+    }
 }

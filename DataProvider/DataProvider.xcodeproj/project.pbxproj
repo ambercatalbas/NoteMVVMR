@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E43108027BA63AA002EF700 /* DeleteNoteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43107F27BA63AA002EF700 /* DeleteNoteRequest.swift */; };
+		4E43108227BA64CD002EF700 /* DeleteNoteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43108127BA64CD002EF700 /* DeleteNoteResponse.swift */; };
 		4E96994927B13B1200C4CF8E /* DecodableResponseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E96993F27B13B1100C4CF8E /* DecodableResponseRequest.swift */; };
 		4E96994A27B13B1200C4CF8E /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E96994027B13B1100C4CF8E /* Typealias.swift */; };
 		4E96994B27B13B1200C4CF8E /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E96994127B13B1100C4CF8E /* RequestProtocol.swift */; };
@@ -45,6 +47,8 @@
 /* Begin PBXFileReference section */
 		0419550DDB6CAEDAADAF0E1C /* Pods-DataProvider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProvider.release.xcconfig"; path = "Target Support Files/Pods-DataProvider/Pods-DataProvider.release.xcconfig"; sourceTree = "<group>"; };
 		1F95B78ACD3B615DBACEBDCC /* Pods-DataProviderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProviderTests.release.xcconfig"; path = "Target Support Files/Pods-DataProviderTests/Pods-DataProviderTests.release.xcconfig"; sourceTree = "<group>"; };
+		4E43107F27BA63AA002EF700 /* DeleteNoteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNoteRequest.swift; sourceTree = "<group>"; };
+		4E43108127BA64CD002EF700 /* DeleteNoteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNoteResponse.swift; sourceTree = "<group>"; };
 		4E96993F27B13B1100C4CF8E /* DecodableResponseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodableResponseRequest.swift; sourceTree = "<group>"; };
 		4E96994027B13B1100C4CF8E /* Typealias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
 		4E96994127B13B1100C4CF8E /* RequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
@@ -192,6 +196,7 @@
 				4E969A9C27B39E9000C4CF8E /* Note.swift */,
 				4E969AA127B3DAEB00C4CF8E /* CreateNoteResponse.swift */,
 				4E969AA327B4337700C4CF8E /* GetNotes.swift */,
+				4E43108127BA64CD002EF700 /* DeleteNoteResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 			children = (
 				4E969A9E27B3D22200C4CF8E /* CreateNoteRequest.swift */,
 				4EE2D5EF27B5060000E48E60 /* GetMyNotesRequest.swift */,
+				4E43107F27BA63AA002EF700 /* DeleteNoteRequest.swift */,
 			);
 			path = Note;
 			sourceTree = "<group>";
@@ -404,7 +410,9 @@
 				4E96995127B13B1200C4CF8E /* APIDecodableResponseRequest.swift in Sources */,
 				4E969AA427B4337700C4CF8E /* GetNotes.swift in Sources */,
 				4E96994E27B13B1200C4CF8E /* DataProviderProtocol.swift in Sources */,
+				4E43108227BA64CD002EF700 /* DeleteNoteResponse.swift in Sources */,
 				4E969A9D27B39E9000C4CF8E /* Note.swift in Sources */,
+				4E43108027BA63AA002EF700 /* DeleteNoteRequest.swift in Sources */,
 				4E96995027B13B1200C4CF8E /* APIRequestAdapter.swift in Sources */,
 				4EAEEAD927B08774001D4A86 /* DataProvider.docc in Sources */,
 				4E969AA227B3DAEB00C4CF8E /* CreateNoteResponse.swift in Sources */,

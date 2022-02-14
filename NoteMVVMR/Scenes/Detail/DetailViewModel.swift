@@ -29,18 +29,4 @@ final class DetailViewModel: BaseViewModel<DetailRouter>, DetailViewProtocol {
         }
     }
     
-    func createNoteAF(title: String, description: String, token: String) {
-        let headers: HTTPHeaders = [
-            "Authorization": "\(token)"
-        ]
-        let parameters = ["title": title, "note": description]
-        
-        AF.request("https://notelistmvvmm.herokuapp.com/api/notes",
-                   method: .post,
-                   parameters: parameters,
-                   headers: headers).responseDecodable(of: CreateNoteResponse.self) { response in
-            debugPrint(response)
-        }
-        
-    }
 }

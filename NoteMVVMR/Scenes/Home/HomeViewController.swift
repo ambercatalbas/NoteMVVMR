@@ -7,6 +7,7 @@
 
 import UIKit
 import KeychainSwift
+import DataProvider
 
 final class HomeViewController: BaseViewController<HomeViewModel> {
     private let tableView: UITableView = {
@@ -79,4 +80,39 @@ extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.didSelectRow(indexPath: indexPath)
     }
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        //*********** DELETE (.destructive = red color) ***********
+               let deleteAction = UIContextualAction(style: .destructive, title: "Delete") {
+                   (action, sourceView, completionHandler) in
+                   let noteID = self.viewModel.cellItems[indexPath.row].noteID
+                   self.viewModel.deleteNote(noteID: noteID)
+                   tableView.reloadData()
+                   completionHandler(true)
+               } 
+               
+               
+               // *********** EDIT ***********
+               let editAction = UIContextualAction(style: .normal, title: "Edit") {
+                   (action, sourceView, completionHandler) in
+                   // 1. Segue to Edit view MUST PASS INDEX PATH as Sender to the prepareSegue function
+                   self.viewModel.editRow()
+                   completionHandler(true)
+                   
+               }
+               
+               editAction.backgroundColor = UIColor(red: 255/255.0, green: 128.0/255.0, blue: 0.0, alpha: 1.0)
+               // end action Edit
+           
+               // SWIPE TO LEFT CONFIGURATION
+               let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, editAction])
+               // Delete should not delete automatically
+               swipeConfiguration.performsFirstActionWithFullSwipe = false
+               
+               return swipeConfiguration
+    }
+    
+    fileprivate func swipeDeleteAction(note: Note, indexPath: IndexPath) {
+        
+    }
+         
 }
