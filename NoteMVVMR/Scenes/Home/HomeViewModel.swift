@@ -20,7 +20,7 @@ protocol HomeViewEventSource {
 }
 
 protocol HomeViewProtocol: HomeViewDataSource, HomeViewEventSource {
-    func didSelectRow(indexPath: IndexPath)
+    func didSelectRow(titleText: String, descriptionText: String, noteId: Int)
     func editRow(titleText: String, descriptionText: String, noteId: Int)
     func deleteNote(noteID: Int)
     func fetchNotesListing()
@@ -35,9 +35,8 @@ final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
         router.pushEdit(titleText: titleText, descriptionText: descriptionText, noteId: noteId)
         self.didSuccessFetchRecipes?()
     }
-    func didSelectRow(indexPath: IndexPath) {
-        
-        router.pushDetail()
+    func didSelectRow(titleText: String, descriptionText: String, noteId: Int) {
+        router.pushDetail(titleText: titleText, descriptionText: descriptionText, noteId: noteId)
     }
     func numberOfItemsAt(section: Int) -> Int {
         return cellItems.count

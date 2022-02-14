@@ -90,7 +90,10 @@ extension HomeViewController: UITableViewDataSource {
 }
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.didSelectRow(indexPath: indexPath)
+        let title = self.viewModel.cellItems[indexPath.row].titleText
+        let description = self.viewModel.cellItems[indexPath.row].descriptionText
+        let noteID = self.viewModel.cellItems[indexPath.row].noteID
+        viewModel.didSelectRow(titleText: title, descriptionText: description, noteId: noteID)
     }
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         //*********** DELETE (.destructive = red color) ***********

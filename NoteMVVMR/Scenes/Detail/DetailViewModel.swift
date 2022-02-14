@@ -37,7 +37,7 @@ final class DetailViewModel: BaseViewModel<DetailRouter>, DetailViewProtocol {
                 NotificationCenter.default.post(name: .reloadDataNotification, object: nil)
                 self.router.close()
             case .failure(let error):
-                print("error")
+                print("errorupdate")
             }
         }
     }
