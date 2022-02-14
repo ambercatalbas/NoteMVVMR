@@ -24,10 +24,22 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         viewModel.fetchNotesListing()
         subscribeViewModelEvents()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let notificationCenter: NotificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(reloadData), name: .reloadDataNotification, object: nil)
+    }
+    @objc
+    private func reloadData() {
+        viewModel.fetchNotesListing()
+        view.backgroundColor = .red
+        subscribeViewModelEvents()
+    }
     private func subscribeViewModelEvents() {
         viewModel.didSuccessFetchRecipes = { [weak self] in
             guard let self = self else { return }
+            
             self.tableView.reloadData()
         }
     }
@@ -82,37 +94,40 @@ extension HomeViewController: UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         //*********** DELETE (.destructive = red color) ***********
-               let deleteAction = UIContextualAction(style: .destructive, title: "Delete") {
-                   (action, sourceView, completionHandler) in
-                   let noteID = self.viewModel.cellItems[indexPath.row].noteID
-                   self.viewModel.deleteNote(noteID: noteID)
-                   tableView.reloadData()
-                   completionHandler(true)
-               } 
-               
-               
-               // *********** EDIT ***********
-               let editAction = UIContextualAction(style: .normal, title: "Edit") {
-                   (action, sourceView, completionHandler) in
-                   // 1. Segue to Edit view MUST PASS INDEX PATH as Sender to the prepareSegue function
-                   self.viewModel.editRow()
-                   completionHandler(true)
-                   
-               }
-               
-               editAction.backgroundColor = UIColor(red: 255/255.0, green: 128.0/255.0, blue: 0.0, alpha: 1.0)
-               // end action Edit
-           
-               // SWIPE TO LEFT CONFIGURATION
-               let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, editAction])
-               // Delete should not delete automatically
-               swipeConfiguration.performsFirstActionWithFullSwipe = false
-               
-               return swipeConfiguration
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") {
+            (action, sourceView, completionHandler) in
+            let noteID = self.viewModel.cellItems[indexPath.row].noteID
+            self.viewModel.deleteNote(noteID: noteID)
+            tableView.reloadData()
+            completionHandler(true)
+        }
+        
+        
+        // *********** EDIT ***********
+        let editAction = UIContextualAction(style: .normal, title: "Edit") {
+            (action, sourceView, completionHandler) in
+            // 1. Segue to Edit view MUST PASS INDEX PATH as Sender to the prepareSegue function
+            let title = self.viewModel.cellItems[indexPath.row].titleText
+            let description = self.viewModel.cellItems[indexPath.row].descriptionText
+            let noteID = self.viewModel.cellItems[indexPath.row].noteID
+            self.viewModel.editRow(titleText: title, descriptionText: description, noteId: noteID)
+            completionHandler(true)
+            
+        }
+        
+        editAction.backgroundColor = UIColor(red: 255/255.0, green: 128.0/255.0, blue: 0.0, alpha: 1.0)
+        // end action Edit
+        
+        // SWIPE TO LEFT CONFIGURATION
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, editAction])
+        // Delete should not delete automatically
+        swipeConfiguration.performsFirstActionWithFullSwipe = false
+        
+        return swipeConfiguration
     }
     
     fileprivate func swipeDeleteAction(note: Note, indexPath: IndexPath) {
         
     }
-         
+    
 }

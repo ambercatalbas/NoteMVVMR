@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4E43108027BA63AA002EF700 /* DeleteNoteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43107F27BA63AA002EF700 /* DeleteNoteRequest.swift */; };
 		4E43108227BA64CD002EF700 /* DeleteNoteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43108127BA64CD002EF700 /* DeleteNoteResponse.swift */; };
+		4E43108427BA8813002EF700 /* UpdateNoteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43108327BA8813002EF700 /* UpdateNoteRequest.swift */; };
 		4E96994927B13B1200C4CF8E /* DecodableResponseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E96993F27B13B1100C4CF8E /* DecodableResponseRequest.swift */; };
 		4E96994A27B13B1200C4CF8E /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E96994027B13B1100C4CF8E /* Typealias.swift */; };
 		4E96994B27B13B1200C4CF8E /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E96994127B13B1100C4CF8E /* RequestProtocol.swift */; };
@@ -49,6 +50,7 @@
 		1F95B78ACD3B615DBACEBDCC /* Pods-DataProviderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProviderTests.release.xcconfig"; path = "Target Support Files/Pods-DataProviderTests/Pods-DataProviderTests.release.xcconfig"; sourceTree = "<group>"; };
 		4E43107F27BA63AA002EF700 /* DeleteNoteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNoteRequest.swift; sourceTree = "<group>"; };
 		4E43108127BA64CD002EF700 /* DeleteNoteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNoteResponse.swift; sourceTree = "<group>"; };
+		4E43108327BA8813002EF700 /* UpdateNoteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNoteRequest.swift; sourceTree = "<group>"; };
 		4E96993F27B13B1100C4CF8E /* DecodableResponseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodableResponseRequest.swift; sourceTree = "<group>"; };
 		4E96994027B13B1100C4CF8E /* Typealias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
 		4E96994127B13B1100C4CF8E /* RequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				4E969A9E27B3D22200C4CF8E /* CreateNoteRequest.swift */,
 				4EE2D5EF27B5060000E48E60 /* GetMyNotesRequest.swift */,
 				4E43107F27BA63AA002EF700 /* DeleteNoteRequest.swift */,
+				4E43108327BA8813002EF700 /* UpdateNoteRequest.swift */,
 			);
 			path = Note;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EE2D5F027B5060000E48E60 /* GetMyNotesRequest.swift in Sources */,
+				4E43108427BA8813002EF700 /* UpdateNoteRequest.swift in Sources */,
 				4E96994927B13B1200C4CF8E /* DecodableResponseRequest.swift in Sources */,
 				4E96996227B164C400C4CF8E /* LoginRequest.swift in Sources */,
 				4E96994D27B13B1200C4CF8E /* RequestEncoding.swift in Sources */,

@@ -17,14 +17,12 @@ class MainNavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureContents()
+//        configureContents()
     }
     
     private func configureContents() {
-//        let backImage = UIImage.icBack
-//            .resize(to: .init(width: 11, height: 18))
-//            .withRenderingMode(.alwaysTemplate)
-//            .withAlignmentRectInsets(.init(top: 0, left: 0, bottom: -2, right: 0))
+        let backImage = UIImage.icBack
+     
         let titleTextAttributes = AttributedStringDictionaryBuilder()
             .font(.font(.nunitoExtraBold, size: .medium))
             .foregroundColor(.appWhite)
@@ -39,16 +37,16 @@ class MainNavigationController: UINavigationController {
                                                                 .build(),
                                                             for: .normal)
 
-//        navigationBar.backIndicatorImage = backImage
-//        navigationBar.backIndicatorTransitionMaskImage = backImage
-        
+        navigationBar.backIndicatorImage = backImage
+        navigationBar.backIndicatorTransitionMaskImage = backImage
+
         if #available(iOS 13.0, *) {
             let appearance = UINavigationBarAppearance()
             appearance.configureWithOpaqueBackground()
             appearance.shadowColor = .clear
             appearance.backgroundColor = .navigationBarGreen
             appearance.titleTextAttributes = titleTextAttributes
-//            appearance.setBackIndicatorImage(backImage, transitionMaskImage: backImage)
+            appearance.setBackIndicatorImage(backImage, transitionMaskImage: backImage)
             navigationBar.standardAppearance = appearance
             navigationBar.scrollEdgeAppearance = appearance
             navigationBar.compactAppearance = appearance

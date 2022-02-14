@@ -21,7 +21,7 @@ protocol HomeViewEventSource {
 
 protocol HomeViewProtocol: HomeViewDataSource, HomeViewEventSource {
     func didSelectRow(indexPath: IndexPath)
-    func editRow()
+    func editRow(titleText: String, descriptionText: String, noteId: Int)
     func deleteNote(noteID: Int)
     func fetchNotesListing()
 }
@@ -31,10 +31,12 @@ final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
     var cellItems: [HomeCellProtocol] = [HomeCellModel(title: "", description: "", noteID: 0)]
     private var items: [Note] = []
     
-    func editRow() {
-        router.pushDetail()
+    func editRow(titleText: String, descriptionText: String, noteId: Int) {
+        router.pushEdit(titleText: titleText, descriptionText: descriptionText, noteId: noteId)
+        self.didSuccessFetchRecipes?()
     }
     func didSelectRow(indexPath: IndexPath) {
+        
         router.pushDetail()
     }
     func numberOfItemsAt(section: Int) -> Int {
@@ -46,7 +48,6 @@ final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
         return item
     }
     
- 
 }
 // MARK: - Network
 extension HomeViewModel {
@@ -55,9 +56,10 @@ extension HomeViewModel {
             guard let self = self else { return }
             switch result {
             case .success(let response):
+                self.cellItems.removeAll(keepingCapacity: false)
                 let cellItems = response.data.data.map({ HomeCellModel(note: $0) })
                 self.cellItems.append(contentsOf: cellItems)
-//                self.didSuccessFetchRecipes?()
+                self.didSuccessFetchRecipes?()
             case .failure(let error):
                 print("failure")
             }
@@ -68,7 +70,8 @@ extension HomeViewModel {
             guard let self = self else { return }
             switch result {
             case .success(let response):
-                print("delete noteeee\(noteID)")
+                self.fetchNotesListing()
+                self.didSuccessFetchRecipes?()
             case .failure(let error):
                 print("errorrrrrrr")
             }

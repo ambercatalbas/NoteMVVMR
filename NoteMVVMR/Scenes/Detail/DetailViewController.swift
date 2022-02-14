@@ -17,7 +17,7 @@ final class DetailViewController: BaseViewController<DetailViewModel> {
         .alignment(.fill)
         .distribution(.fill)
         .build()
-    private let titleText = UITextFieldBuilder()
+    private let titleTextField = UITextFieldBuilder()
         .font(.font(.nunitoBold, size: .xLarge))
         .text("note")
         .textAlignment(.left)
@@ -51,7 +51,7 @@ extension DetailViewController {
     
     private func addContainerView() {
         view.addSubview(textStackView)
-        textStackView.addArrangedSubview(titleText)
+        textStackView.addArrangedSubview(titleTextField)
         textStackView.addArrangedSubview(descriptionText)
         textStackView.topToSuperview().constant = 80
         textStackView.leadingToSuperview().constant = 20
@@ -70,6 +70,10 @@ extension DetailViewController {
 }
 // MARK: - Configure
 extension DetailViewController {
+    public func set(titleText: String, descriptionText: String, noteId: Int) {
+        self.titleTextField.text = titleText
+        self.descriptionText.text = descriptionText
+    }
     private func configureContents() {
         view.backgroundColor = .white
         
@@ -80,10 +84,8 @@ extension DetailViewController {
 extension DetailViewController {
     @objc
     func saveButtonTapped() {
-        let title = titleText.text ?? ""
+        let title = titleTextField.text ?? ""
         let description = descriptionText.text ?? ""
-        
         viewModel.createNote(title: title, description: description)
-        //    viewModel.createNoteAF(title: title, description: description, token: token)
     }
 }

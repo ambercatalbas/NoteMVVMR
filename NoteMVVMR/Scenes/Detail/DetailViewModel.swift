@@ -22,11 +22,23 @@ final class DetailViewModel: BaseViewModel<DetailRouter>, DetailViewProtocol {
             guard let self = self else { return }
             switch result {
             case .success(let response):
+                NotificationCenter.default.post(name: .reloadDataNotification, object: nil)
                 self.router.close()
             case .failure(let error):
                 self.showWarningToast?("\(error.localizedDescription) \(L10n.Error.checkInformations)")
             }
         }
     }
-    
+    func updateNote(title: String, description: String, noteID: Int) {
+     dataProvider.request(for: UpdateNoteRequest(title: title, description: description, noteID: noteID)) { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .success(let response):
+                NotificationCenter.default.post(name: .reloadDataNotification, object: nil)
+                self.router.close()
+            case .failure(let error):
+                print("error")
+            }
+        }
+    }
 }
