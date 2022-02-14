@@ -5,16 +5,16 @@
 //  Created by AMBER ÇATALBAŞ on 9.02.2022.
 //
 
-// MARK: - GetNotesResponse
-struct GetNotesResponse: Codable {
-    let code: String?
-    let data: Data?
-    let message: String?
+// MARK: - GetNotes
+public struct GetNotes: Codable {
+ public let code: String?
+ public let data: Notes
+ public let message: String?
 }
 
-// MARK: - DataClass
-struct Notes: Codable {
-    let currentPage: Int?
-    let notes: [Note]?
+// MARK: - Notes
+public struct Notes: Codable {
+ public let currentPage: Int?
+ public let data: [Note]
 }
 

@@ -27,6 +27,7 @@
 		4EAEEAE427B08774001D4A86 /* DataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAEEAE327B08774001D4A86 /* DataProviderTests.swift */; };
 		4EAEEAE527B08774001D4A86 /* DataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EAEEAD727B08774001D4A86 /* DataProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4EAEEAFA27B08840001D4A86 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAEEAF627B08840001D4A86 /* Auth.swift */; };
+		4EE2D5F027B5060000E48E60 /* GetMyNotesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE2D5EF27B5060000E48E60 /* GetMyNotesRequest.swift */; };
 		95707074FE63681C13308AE5 /* Pods_DataProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 739542E6AF084DAF366316AC /* Pods_DataProvider.framework */; };
 		DA3065CF72450955770DD5AD /* Pods_DataProviderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67EBBCB28EAF9229BDE6951F /* Pods_DataProviderTests.framework */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,7 @@
 		4EAEEADE27B08774001D4A86 /* DataProviderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataProviderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EAEEAE327B08774001D4A86 /* DataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderTests.swift; sourceTree = "<group>"; };
 		4EAEEAF627B08840001D4A86 /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		4EE2D5EF27B5060000E48E60 /* GetMyNotesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMyNotesRequest.swift; sourceTree = "<group>"; };
 		5A10D9B986E32E2B891D63EA /* Pods-DataProvider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProvider.debug.xcconfig"; path = "Target Support Files/Pods-DataProvider/Pods-DataProvider.debug.xcconfig"; sourceTree = "<group>"; };
 		67EBBCB28EAF9229BDE6951F /* Pods_DataProviderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DataProviderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		739542E6AF084DAF366316AC /* Pods_DataProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DataProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,8 +129,8 @@
 		4E96995E27B1443B00C4CF8E /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				4EE2D5EE27B505C800E48E60 /* Note */,
 				4E969AA027B3D22C00C4CF8E /* Auth */,
-				4E969A9E27B3D22200C4CF8E /* CreateNoteRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -192,6 +194,15 @@
 				4E969AA327B4337700C4CF8E /* GetNotes.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4EE2D5EE27B505C800E48E60 /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				4E969A9E27B3D22200C4CF8E /* CreateNoteRequest.swift */,
+				4EE2D5EF27B5060000E48E60 /* GetMyNotesRequest.swift */,
+			);
+			path = Note;
 			sourceTree = "<group>";
 		};
 		E495B26F6273FD3DF8633239 /* Pods */ = {
@@ -382,6 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EE2D5F027B5060000E48E60 /* GetMyNotesRequest.swift in Sources */,
 				4E96994927B13B1200C4CF8E /* DecodableResponseRequest.swift in Sources */,
 				4E96996227B164C400C4CF8E /* LoginRequest.swift in Sources */,
 				4E96994D27B13B1200C4CF8E /* RequestEncoding.swift in Sources */,

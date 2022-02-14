@@ -9,7 +9,6 @@ import UIKit
 import TinyConstraints
 import MobilliumBuilders
 
-
 class MainNavigationController: UINavigationController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

@@ -6,5 +6,5 @@
 //
 
 final class PasswordResetRouter: Router, PasswordResetRouter.Rotues {
-  typealias Rotues = LoginRoute
+    typealias Rotues = LoginRoute
 }

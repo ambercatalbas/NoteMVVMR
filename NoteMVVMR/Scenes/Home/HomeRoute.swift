@@ -15,11 +15,11 @@ extension HomeRoute where Self: RouterProtocol {
         let router = HomeRouter()
         let viewModel = HomeViewModel(router: router)
         let viewController = HomeViewController(viewModel: viewModel)
-        
-        let transition = PushTransition()
+        let navController = MainNavigationController(rootViewController: viewController)
+        let transition = PlaceOnWindowTransition()
         router.viewController = viewController
         router.openTransition = transition
         
-        open(viewController, transition: transition)
+        open(navController, transition: transition)
     }
 }

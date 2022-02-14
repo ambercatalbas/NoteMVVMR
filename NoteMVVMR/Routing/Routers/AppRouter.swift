@@ -9,17 +9,22 @@
 import Foundation
 import UIKit
 import MobilliumUserDefaults
+import KeychainSwift
 
 final class AppRouter: Router, AppRouter.Routes {
     
-    typealias Routes = LoginRoute
+    typealias Routes = LoginRoute & HomeRoute
     
     static let shared = AppRouter()
     
     func startApp() {
+     let keychain = KeychainSwift()
+     let token = keychain.get(Keychain.token)
+     if token != nil {
+      pushHome()
+     } else {
       pushLogin()
-      
-      print("push")
+     }
     }
     
     private func topViewController() -> UIViewController? {

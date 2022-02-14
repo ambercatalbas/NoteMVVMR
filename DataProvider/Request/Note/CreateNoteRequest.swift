@@ -10,7 +10,7 @@ public struct CreateNoteRequest: APIDecodableResponseRequest {
 
   public typealias ResponseType = CreateNoteResponse
   
-  public var path: String = "notes?="
+  public var path: String = "notes"
   public var method: RequestMethod = .post
   public var parameters: RequestParameters = [:]
   public var headers: RequestHeaders = [:]

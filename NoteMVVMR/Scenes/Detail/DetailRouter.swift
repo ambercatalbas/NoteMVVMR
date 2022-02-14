@@ -6,5 +6,5 @@
 //
 
 final class DetailRouter: Router, DetailRouter.Routes {
-  typealias Routes = HomeRoute
+    typealias Routes = HomeRoute
 }

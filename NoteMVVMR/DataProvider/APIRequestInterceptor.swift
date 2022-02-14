@@ -26,7 +26,6 @@ public class APIRequestInterceptor: RequestInterceptor {
     }
 }
 
-
 public struct Keychain {
   public static var token = "token"
 }

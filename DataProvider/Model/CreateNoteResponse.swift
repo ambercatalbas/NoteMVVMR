@@ -11,4 +11,3 @@ public struct CreateNoteResponse: Codable {
     let data: Note?
     let message: String?
 }
-
