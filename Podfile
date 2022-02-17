@@ -58,6 +58,24 @@ target 'DataProvider' do
   
 end
 
+target 'UIComponents' do
+  
+  project 'UIComponents/UIComponents.xcodeproj'
+  
+  # Pods for UIComponents
+  
+  # Helper
+  pod "TinyConstraints", '~> 4.0'
+  pod 'SwiftGen', '~> 6.5'
+  pod 'MobilliumBuilders', '~> 1.4'
+  pod 'SwiftEntryKit', '~> 1.2'
+  
+  target 'UIComponentsTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+  
+end
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
