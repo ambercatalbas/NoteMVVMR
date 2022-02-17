@@ -8,9 +8,9 @@
 import Foundation
 
 public protocol HomeCellDataSource: AnyObject {
-    var titleText: String { get }
-    var descriptionText: String { get }
-    var noteID: Int { get }
+    var titleText: String { get set }
+    var descriptionText: String { get set }
+    var noteID: Int { get set }
     
 }
 

@@ -24,6 +24,13 @@ public enum FontFamily {
     public static let semiBold = FontConvertible(name: "Nunito-SemiBold", family: "Nunito", path: "Nunito-SemiBold.ttf")
     public static let all: [FontConvertible] = [bold, extraBold, semiBold]
   }
+    public enum JosefinSans {
+      public static let normal = FontConvertible(name: "JosefinSans-VariableFont_wght", family: "JosefinSans", path: "JosefinSans-VariableFont_wght.ttf")
+      public static let italic = FontConvertible(name: "JosefinSans-Italic-VariableFont_wght", family: "JosefinSans", path: "JosefinSans-Italic-VariableFont_wght.ttf")
+        public static let regular = FontConvertible(name: "JosefinSans-Regular", family: "JosefinSans", path: "JosefinSans-Regular.ttf")
+        
+      public static let all: [FontConvertible] = [normal, italic]
+    }
   public static let allCustomFonts: [FontConvertible] = [Nunito.all].flatMap { $0 }
   public static func registerAllCustomFonts() {
     allCustomFonts.forEach { $0.register() }

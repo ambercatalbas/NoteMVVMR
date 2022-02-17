@@ -3,7 +3,7 @@
 
 import UIKit
 
-// swiftlint:disable identifier_name line_length nesting type_body_length type_name
+
 public extension UIColor {
 
   static var appPrimaryBackground: UIColor {
@@ -53,7 +53,16 @@ public extension UIColor {
   static var navigationBarGreen: UIColor {
       return Asset.Colors.navigationBarGreen.color
   }
-  
+    static var appBlueBerry: UIColor {
+        return Asset.Colors.appBlueBerry.color
+    }
+    static var appGreen: UIColor {
+        return Asset.Colors.appGreen.color
+    }
+    static var appTextFieldBorderColor: UIColor {
+        return Asset.Colors.appTextFieldBorderColor.color
+    }
+    
 }
-// swiftlint:enable identifier_name line_length nesting type_body_length type_name
+
 

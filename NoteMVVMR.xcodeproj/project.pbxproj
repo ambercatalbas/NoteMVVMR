@@ -11,6 +11,10 @@
 		49F7EE627D9580CC1D5B7689 /* Pods_NoteMVVMR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0921FF9F1CB9BBD6EAE65330 /* Pods_NoteMVVMR.framework */; };
 		4E43107C27B991E3002EF700 /* HomeCellModel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43107B27B991E3002EF700 /* HomeCellModel+Extension.swift */; };
 		4E43108627BAD77C002EF700 /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43108527BAD77C002EF700 /* Notification+Extension.swift */; };
+		4E43108D27BDB22E002EF700 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43108A27BDB22E002EF700 /* ProfileRouter.swift */; };
+		4E43108E27BDB22E002EF700 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43108B27BDB22E002EF700 /* ProfileViewController.swift */; };
+		4E43108F27BDB22E002EF700 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43108C27BDB22E002EF700 /* ProfileViewModel.swift */; };
+		4E43109127BDB241002EF700 /* ProfileRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43109027BDB241002EF700 /* ProfileRoute.swift */; };
 		4E96995627B13DD100C4CF8E /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E96995327B13DD100C4CF8E /* DataProvider.swift */; };
 		4E96995727B13DD100C4CF8E /* APILogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E96995427B13DD100C4CF8E /* APILogger.swift */; };
 		4E96995827B13DD100C4CF8E /* APIRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E96995527B13DD100C4CF8E /* APIRequestInterceptor.swift */; };
@@ -108,6 +112,10 @@
 		270A18B1E4A62E9F5562E2E6 /* Pods-NoteMVVMR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteMVVMR.release.xcconfig"; path = "Target Support Files/Pods-NoteMVVMR/Pods-NoteMVVMR.release.xcconfig"; sourceTree = "<group>"; };
 		4E43107B27B991E3002EF700 /* HomeCellModel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeCellModel+Extension.swift"; sourceTree = "<group>"; };
 		4E43108527BAD77C002EF700 /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
+		4E43108A27BDB22E002EF700 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
+		4E43108B27BDB22E002EF700 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		4E43108C27BDB22E002EF700 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		4E43109027BDB241002EF700 /* ProfileRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRoute.swift; sourceTree = "<group>"; };
 		4E96995327B13DD100C4CF8E /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		4E96995427B13DD100C4CF8E /* APILogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APILogger.swift; sourceTree = "<group>"; };
 		4E96995527B13DD100C4CF8E /* APIRequestInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestInterceptor.swift; sourceTree = "<group>"; };
@@ -202,6 +210,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E43108927BDB20C002EF700 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				4E43108A27BDB22E002EF700 /* ProfileRouter.swift */,
+				4E43108B27BDB22E002EF700 /* ProfileViewController.swift */,
+				4E43108C27BDB22E002EF700 /* ProfileViewModel.swift */,
+				4E43109027BDB241002EF700 /* ProfileRoute.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		4E96995227B13DD100C4CF8E /* DataProvider */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +234,7 @@
 		4E9699CA27B1BFF400C4CF8E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				4E43108927BDB20C002EF700 /* Profile */,
 				4E969A9327B25D0000C4CF8E /* Detail */,
 				4E9699CB27B1BFF400C4CF8E /* Home */,
 				4E9699D227B1BFF400C4CF8E /* Auth */,
@@ -760,6 +780,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E43108D27BDB22E002EF700 /* ProfileRouter.swift in Sources */,
 				4E9699F127B1BFF400C4CF8E /* RegisterViewController.swift in Sources */,
 				4E9699ED27B1BFF400C4CF8E /* HomeViewController.swift in Sources */,
 				4E969A5727B1C76200C4CF8E /* UnfollowAlertViewRoute.swift in Sources */,
@@ -773,6 +794,7 @@
 				4E9699FE27B1BFF400C4CF8E /* BaseViewModel.swift in Sources */,
 				4E9699F427B1BFF400C4CF8E /* PasswordResetRoute.swift in Sources */,
 				4E969A5027B1C76200C4CF8E /* AppRouter.swift in Sources */,
+				4E43108F27BDB22E002EF700 /* ProfileViewModel.swift in Sources */,
 				4E969A9127B1C7AB00C4CF8E /* AppDelegate.swift in Sources */,
 				4E969A0727B1C01800C4CF8E /* Validation.swift in Sources */,
 				4E9699F727B1BFF400C4CF8E /* LoginViewModel.swift in Sources */,
@@ -791,9 +813,11 @@
 				4E9699F327B1BFF400C4CF8E /* PasswordResetViewModel.swift in Sources */,
 				4E9699F527B1BFF400C4CF8E /* PasswordResetViewController.swift in Sources */,
 				4E9699E927B1BFF400C4CF8E /* HomeRoute.swift in Sources */,
+				4E43108E27BDB22E002EF700 /* ProfileViewController.swift in Sources */,
 				4E969A9727B25D1F00C4CF8E /* DetailRouter.swift in Sources */,
 				4E969A8B27B1C79A00C4CF8E /* DateFormats.swift in Sources */,
 				4EE2D60A27B55BC800E48E60 /* HomeViewModel.swift in Sources */,
+				4E43109127BDB241002EF700 /* ProfileRoute.swift in Sources */,
 				4E969A7827B1C79A00C4CF8E /* AlertUtility.swift in Sources */,
 				4E969A7727B1C79A00C4CF8E /* Extensions+UITextfield.swift in Sources */,
 				4E969A5627B1C76200C4CF8E /* PushTransition.swift in Sources */,

@@ -23,10 +23,20 @@ protocol HomeViewProtocol: HomeViewDataSource, HomeViewEventSource {
     func didSelectRow(titleText: String, descriptionText: String, noteId: Int)
     func editRow(titleText: String, descriptionText: String, noteId: Int)
     func deleteNote(noteID: Int)
+    func addNote()
+    func pushProfile()
     func fetchNotesListing()
 }
 
 final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
+    func pushProfile() {
+        router.pushProfile()
+    }
+    
+    func addNote() {
+        router.pushAdd()
+    }
+    
     var didSuccessFetchRecipes: VoidClosure?
     var cellItems: [HomeCellProtocol] = [HomeCellModel(title: "", description: "", noteID: 0)]
     private var items: [Note] = []

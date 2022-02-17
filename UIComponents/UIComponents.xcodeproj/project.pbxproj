@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E43109327BDB6DC002EF700 /* EmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43109227BDB6DC002EF700 /* EmailTextField.swift */; };
+		4E43109727BE363D002EF700 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43109627BE363D002EF700 /* LoginView.swift */; };
+		4E43109B27BE420D002EF700 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43109A27BE420D002EF700 /* PasswordTextField.swift */; };
+		4E43109D27BE46F6002EF700 /* UserNameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43109C27BE46F6002EF700 /* UserNameTextField.swift */; };
+		4E4310A027BE4830002EF700 /* JosefinSans-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E43109E27BE4830002EF700 /* JosefinSans-Italic-VariableFont_wght.ttf */; };
+		4E4310A127BE4830002EF700 /* JosefinSans-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E43109F27BE4830002EF700 /* JosefinSans-VariableFont_wght.ttf */; };
+		4E4310A327BE5876002EF700 /* JosefinSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E4310A227BE5876002EF700 /* JosefinSans-Regular.ttf */; };
 		4EE2D5AE27B4F56E00E48E60 /* UIComponents.docc in Sources */ = {isa = PBXBuildFile; fileRef = 4EE2D5AD27B4F56E00E48E60 /* UIComponents.docc */; };
 		4EE2D5B427B4F56E00E48E60 /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EE2D5A927B4F56E00E48E60 /* UIComponents.framework */; };
 		4EE2D5B927B4F56E00E48E60 /* UIComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE2D5B827B4F56E00E48E60 /* UIComponentsTests.swift */; };
@@ -66,6 +73,13 @@
 
 /* Begin PBXFileReference section */
 		147ECA822FF1F8FAE3BEACE7 /* Pods-UIComponents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponents.debug.xcconfig"; path = "Target Support Files/Pods-UIComponents/Pods-UIComponents.debug.xcconfig"; sourceTree = "<group>"; };
+		4E43109227BDB6DC002EF700 /* EmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextField.swift; sourceTree = "<group>"; };
+		4E43109627BE363D002EF700 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		4E43109A27BE420D002EF700 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
+		4E43109C27BE46F6002EF700 /* UserNameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameTextField.swift; sourceTree = "<group>"; };
+		4E43109E27BE4830002EF700 /* JosefinSans-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		4E43109F27BE4830002EF700 /* JosefinSans-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		4E4310A227BE5876002EF700 /* JosefinSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Regular.ttf"; sourceTree = "<group>"; };
 		4EE2D5A927B4F56E00E48E60 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EE2D5AC27B4F56E00E48E60 /* UIComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIComponents.h; sourceTree = "<group>"; };
 		4EE2D5AD27B4F56E00E48E60 /* UIComponents.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = UIComponents.docc; sourceTree = "<group>"; };
@@ -125,6 +139,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E43109427BDB81A002EF700 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				4E43109227BDB6DC002EF700 /* EmailTextField.swift */,
+				4E43109A27BE420D002EF700 /* PasswordTextField.swift */,
+				4E43109C27BE46F6002EF700 /* UserNameTextField.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		4E43109527BDB92F002EF700 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				4E43109627BE363D002EF700 /* LoginView.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
 		4EE2D59F27B4F56E00E48E60 = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +180,8 @@
 		4EE2D5AB27B4F56E00E48E60 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				4E43109527BDB92F002EF700 /* UIView */,
+				4E43109427BDB81A002EF700 /* TextField */,
 				4EE2D5FC27B555BD00E48E60 /* Cell */,
 				4EE2D5F727B51F5800E48E60 /* Protokols */,
 				4EE2D5F427B51E9800E48E60 /* Extension */,
@@ -192,6 +226,9 @@
 		4EE2D5CB27B4F5CD00E48E60 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				4E4310A227BE5876002EF700 /* JosefinSans-Regular.ttf */,
+				4E43109E27BE4830002EF700 /* JosefinSans-Italic-VariableFont_wght.ttf */,
+				4E43109F27BE4830002EF700 /* JosefinSans-VariableFont_wght.ttf */,
 				4EE2D5CC27B4F5CD00E48E60 /* UIFont+Extensions.swift */,
 				4EE2D5CD27B4F5CD00E48E60 /* Nunito-ExtraBold.ttf */,
 				4EE2D5CE27B4F5CD00E48E60 /* Nunito-SemiBold.ttf */,
@@ -360,7 +397,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EE2D5E627B4F5CD00E48E60 /* Colors.xcassets in Resources */,
+				4E4310A027BE4830002EF700 /* JosefinSans-Italic-VariableFont_wght.ttf in Resources */,
 				4EE2D5E127B4F5CD00E48E60 /* Nunito-SemiBold.ttf in Resources */,
+				4E4310A127BE4830002EF700 /* JosefinSans-VariableFont_wght.ttf in Resources */,
 				4EE2D5DE27B4F5CD00E48E60 /* Placeholder.strings in Resources */,
 				4EE2D5DB27B4F5CD00E48E60 /* General.strings in Resources */,
 				4EE2D5EA27B4F5CD00E48E60 /* Images.xcassets in Resources */,
@@ -368,6 +407,7 @@
 				4EE2D5DA27B4F5CD00E48E60 /* Componenets.strings in Resources */,
 				4EE2D5E027B4F5CD00E48E60 /* Nunito-ExtraBold.ttf in Resources */,
 				4EE2D5D927B4F5CD00E48E60 /* Modules.strings in Resources */,
+				4E4310A327BE5876002EF700 /* JosefinSans-Regular.ttf in Resources */,
 				4EE2D5E227B4F5CD00E48E60 /* Nunito-Bold.ttf in Resources */,
 				4EE2D5DD27B4F5CD00E48E60 /* Error.strings in Resources */,
 			);
@@ -435,7 +475,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EE2D60027B555F600E48E60 /* HomeCellModel.swift in Sources */,
+				4E43109D27BE46F6002EF700 /* UserNameTextField.swift in Sources */,
 				4EE2D5E327B4F5CD00E48E60 /* Fonts.swift in Sources */,
+				4E43109327BDB6DC002EF700 /* EmailTextField.swift in Sources */,
+				4E43109727BE363D002EF700 /* LoginView.swift in Sources */,
 				4EE2D5F927B51F7C00E48E60 /* ReusableView.swift in Sources */,
 				4EE2D5E927B4F5CD00E48E60 /* UIColor+Colors.swift in Sources */,
 				4EE2D5E727B4F5CD00E48E60 /* UIImage+Images.swift in Sources */,
@@ -446,6 +489,7 @@
 				4EE2D5E427B4F5CD00E48E60 /* Assets.swift in Sources */,
 				4EE2D5F627B51EC600E48E60 /* Extension+UITableView.swift in Sources */,
 				4EE2D5FF27B555F600E48E60 /* HomeCell.swift in Sources */,
+				4E43109B27BE420D002EF700 /* PasswordTextField.swift in Sources */,
 				4EE2D5AE27B4F56E00E48E60 /* UIComponents.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

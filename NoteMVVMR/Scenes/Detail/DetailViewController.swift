@@ -44,6 +44,7 @@ final class DetailViewController: BaseViewController<DetailViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubViews()
+
     }
     
 }

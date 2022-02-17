@@ -35,6 +35,9 @@ public enum Asset {
         public static let appPurple = ColorAsset(name: "appPurple")
         public static let appBackgrounlightGreen = ColorAsset(name: "appBackgrounlightGreen")
         public static let navigationBarGreen = ColorAsset(name: "navigationBarGreen")
+        public static let appBlueBerry = ColorAsset(name: "appBlueBerry")
+        public static let appGreen = ColorAsset(name: "appGreen")
+        public static let appTextFieldBorderColor = ColorAsset(name: "appTextFieldBorderColor")
         
     }
     public enum Icons {

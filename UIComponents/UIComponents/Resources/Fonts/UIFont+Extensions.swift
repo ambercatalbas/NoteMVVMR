@@ -14,6 +14,9 @@ public extension UIFont {
         case nunitoSemiBold
         case nunitoBold
         case nunitoExtraBold
+        case josefinSans
+        case josefinSansItalic
+        case josefinSansRegular
     }
     
     enum FontSize {
@@ -60,6 +63,13 @@ public extension UIFont {
             font = FontFamily.Nunito.bold.font(size: size.rawValue)
         case .nunitoExtraBold:
             font = FontFamily.Nunito.extraBold.font(size: size.rawValue)
+        case .josefinSans:
+            font = FontFamily.JosefinSans.normal.font(size: size.rawValue)
+        case .josefinSansItalic:
+            font = FontFamily.JosefinSans.italic.font(size: size.rawValue)
+        case .josefinSansRegular:
+            font = FontFamily.JosefinSans.regular.font(size: size.rawValue)
+
         }
         return font
     }
