@@ -37,7 +37,6 @@
 		4E9699FE27B1BFF400C4CF8E /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9699E727B1BFF400C4CF8E /* BaseViewModel.swift */; };
 		4E9699FF27B1BFF400C4CF8E /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9699E827B1BFF400C4CF8E /* MainNavigationController.swift */; };
 		4E969A0727B1C01800C4CF8E /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A0127B1C01800C4CF8E /* Validation.swift */; };
-		4E969A0827B1C01800C4CF8E /* ButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A0527B1C01800C4CF8E /* ButtonFactory.swift */; };
 		4E969A5027B1C76200C4CF8E /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A4327B1C76200C4CF8E /* AppRouter.swift */; };
 		4E969A5127B1C76200C4CF8E /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A4527B1C76200C4CF8E /* Animator.swift */; };
 		4E969A5227B1C76200C4CF8E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A4627B1C76200C4CF8E /* Router.swift */; };
@@ -138,7 +137,6 @@
 		4E9699E727B1BFF400C4CF8E /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		4E9699E827B1BFF400C4CF8E /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		4E969A0127B1C01800C4CF8E /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
-		4E969A0527B1C01800C4CF8E /* ButtonFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonFactory.swift; sourceTree = "<group>"; };
 		4E969A4027B1C66600C4CF8E /* NoteMVVMR-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NoteMVVMR-Bridging-Header.h"; sourceTree = "<group>"; };
 		4E969A4327B1C76200C4CF8E /* AppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		4E969A4527B1C76200C4CF8E /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
@@ -257,9 +255,9 @@
 		4E9699D227B1BFF400C4CF8E /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				4E9699DD27B1BFF400C4CF8E /* Login */,
 				4E9699D327B1BFF400C4CF8E /* Register */,
 				4E9699D827B1BFF400C4CF8E /* PasswordReset */,
-				4E9699DD27B1BFF400C4CF8E /* Login */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -327,7 +325,6 @@
 		4E969A0427B1C01800C4CF8E /* Factory */ = {
 			isa = PBXGroup;
 			children = (
-				4E969A0527B1C01800C4CF8E /* ButtonFactory.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -790,7 +787,6 @@
 				4E9699FD27B1BFF400C4CF8E /* BaseViewController.swift in Sources */,
 				4E969A9827B25D1F00C4CF8E /* DetailViewController.swift in Sources */,
 				4E9699F627B1BFF400C4CF8E /* PasswordResetRouter.swift in Sources */,
-				4E969A0827B1C01800C4CF8E /* ButtonFactory.swift in Sources */,
 				4E9699FE27B1BFF400C4CF8E /* BaseViewModel.swift in Sources */,
 				4E9699F427B1BFF400C4CF8E /* PasswordResetRoute.swift in Sources */,
 				4E969A5027B1C76200C4CF8E /* AppRouter.swift in Sources */,

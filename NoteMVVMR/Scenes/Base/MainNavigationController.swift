@@ -12,7 +12,7 @@ import MobilliumBuilders
 class MainNavigationController: UINavigationController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        return .darkContent
     }
     
     override func viewDidLoad() {
@@ -21,10 +21,8 @@ class MainNavigationController: UINavigationController {
     }
     
     private func configureContents() {
-        let backImage = UIImage.icBack
-     
         let titleTextAttributes = AttributedStringDictionaryBuilder()
-            .font(.font(.nunitoExtraBold, size: .medium))
+            .font(.font(.josefinSansSemibold, size: .medium))
             .foregroundColor(.appWhite)
             .build()
         navigationBar.barTintColor = .appRed
@@ -32,21 +30,16 @@ class MainNavigationController: UINavigationController {
         navigationBar.tintColor = .appWhite
         navigationBar.titleTextAttributes = titleTextAttributes
         UIBarButtonItem.appearance().setTitleTextAttributes(AttributedStringDictionaryBuilder()
-                                                                .font(.font(.nunitoSemiBold, size: .large))
+                                                                .font(.font(.josefinSansSemibold, size: .large))
                                                                 .foregroundColor(.appWhite)
                                                                 .build(),
                                                             for: .normal)
-
-        navigationBar.backIndicatorImage = backImage
-        navigationBar.backIndicatorTransitionMaskImage = backImage
-
         if #available(iOS 13.0, *) {
             let appearance = UINavigationBarAppearance()
             appearance.configureWithOpaqueBackground()
             appearance.shadowColor = .clear
             appearance.backgroundColor = .navigationBarGreen
             appearance.titleTextAttributes = titleTextAttributes
-            appearance.setBackIndicatorImage(backImage, transitionMaskImage: backImage)
             navigationBar.standardAppearance = appearance
             navigationBar.scrollEdgeAppearance = appearance
             navigationBar.compactAppearance = appearance

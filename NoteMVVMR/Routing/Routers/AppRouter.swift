@@ -23,7 +23,7 @@ final class AppRouter: Router, AppRouter.Routes {
      if token != nil {
       pushHome()
      } else {
-      pushLogin()
+      modalLogin()
      }
     }
     

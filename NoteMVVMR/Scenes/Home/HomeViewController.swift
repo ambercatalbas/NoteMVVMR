@@ -23,6 +23,9 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         .cornerRadius(4)
         .build()
     private let searchController = UISearchController(searchResultsController: nil)
+    private let profileImage = UIImageViewBuilder()
+        .cornerRadius(20)
+        .build()
     let keychain = KeychainSwift()
     private let refreshControl = UIRefreshControl()
     var filteredItems: [HomeCellProtocol] = []
@@ -41,7 +44,8 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         subscribeViewModelEvents()
         addSearchController()
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: .hamburgerIcon, style: .done, target: self, action: #selector(reloadData))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: .icUser, style: .done, target: self, action: #selector(profileButtonTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "profil"),
+                                                            style: .done, target: self, action: #selector(profileButtonTapped))
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

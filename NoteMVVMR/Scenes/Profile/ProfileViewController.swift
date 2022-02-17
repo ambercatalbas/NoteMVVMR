@@ -16,9 +16,9 @@ final class ProfileViewController: BaseViewController<ProfileViewModel> {
     private let saveButton = UIButtonBuilder()
         .title("Save")
         .build()
-    private let factoryButton = ButtonFactory.createPrimaryBorderedButton(style: .medium)
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationItem.title = "PROFİLE"
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: .hamburgerIcon, style: .done, target: self, action: #selector(saveButtonTapped))
         makeButton()

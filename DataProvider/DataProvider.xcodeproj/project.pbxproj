@@ -10,6 +10,7 @@
 		4E43108027BA63AA002EF700 /* DeleteNoteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43107F27BA63AA002EF700 /* DeleteNoteRequest.swift */; };
 		4E43108227BA64CD002EF700 /* DeleteNoteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43108127BA64CD002EF700 /* DeleteNoteResponse.swift */; };
 		4E43108427BA8813002EF700 /* UpdateNoteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43108327BA8813002EF700 /* UpdateNoteRequest.swift */; };
+		4E4310E027BEF406002EF700 /* PasswordResetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4310DF27BEF406002EF700 /* PasswordResetRequest.swift */; };
 		4E96994927B13B1200C4CF8E /* DecodableResponseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E96993F27B13B1100C4CF8E /* DecodableResponseRequest.swift */; };
 		4E96994A27B13B1200C4CF8E /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E96994027B13B1100C4CF8E /* Typealias.swift */; };
 		4E96994B27B13B1200C4CF8E /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E96994127B13B1100C4CF8E /* RequestProtocol.swift */; };
@@ -51,6 +52,7 @@
 		4E43107F27BA63AA002EF700 /* DeleteNoteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNoteRequest.swift; sourceTree = "<group>"; };
 		4E43108127BA64CD002EF700 /* DeleteNoteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNoteResponse.swift; sourceTree = "<group>"; };
 		4E43108327BA8813002EF700 /* UpdateNoteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNoteRequest.swift; sourceTree = "<group>"; };
+		4E4310DF27BEF406002EF700 /* PasswordResetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetRequest.swift; sourceTree = "<group>"; };
 		4E96993F27B13B1100C4CF8E /* DecodableResponseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodableResponseRequest.swift; sourceTree = "<group>"; };
 		4E96994027B13B1100C4CF8E /* Typealias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
 		4E96994127B13B1100C4CF8E /* RequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			children = (
 				4E96995F27B1445900C4CF8E /* RegisterRequest.swift */,
 				4E96996127B164C400C4CF8E /* LoginRequest.swift */,
+				4E4310DF27BEF406002EF700 /* PasswordResetRequest.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				4E969AA227B3DAEB00C4CF8E /* CreateNoteResponse.swift in Sources */,
 				4E96994C27B13B1200C4CF8E /* RequestMethod.swift in Sources */,
 				4E96994B27B13B1200C4CF8E /* RequestProtocol.swift in Sources */,
+				4E4310E027BEF406002EF700 /* PasswordResetRequest.swift in Sources */,
 				4E969A9F27B3D22200C4CF8E /* CreateNoteRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

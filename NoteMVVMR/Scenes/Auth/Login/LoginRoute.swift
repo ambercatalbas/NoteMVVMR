@@ -23,4 +23,15 @@ extension LoginRoute where Self: RouterProtocol {
         
         open(navController, transition: transition)
     }
+    func modalLogin() {
+        let router = LoginRouter()
+        let viewModel = LoginViewModel(router: router)
+        let viewController = LoginViewController(viewModel: viewModel)
+        
+        let transition = PlaceOnWindowTransition()
+        router.viewController = viewController
+        router.openTransition = transition
+        
+        open(viewController, transition: transition)
+    }
 }

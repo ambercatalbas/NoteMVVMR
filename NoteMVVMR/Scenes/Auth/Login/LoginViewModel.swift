@@ -18,18 +18,18 @@ protocol LoginViewEventSource {}
 protocol LoginViewProtocol: LoginViewDataSource, LoginViewEventSource {
     func showRegisterOnWindow()
     func sendLoginRequest(email: String, password: String)
-    func pushPasswordResetScene()
+    func showPasswordResetScene()
 }
 
 final class LoginViewModel: BaseViewModel<LoginRouter>, LoginViewProtocol {
     let keychain = KeychainSwift()
     
     func showRegisterOnWindow() {
-        router.pushRegister()
+        router.modalRegister()
     }
     
-    func pushPasswordResetScene() {
-        router.pushPasswordReset()
+    func showPasswordResetScene() {
+        router.modalPasswordReset()
     }
     
     func sendLoginRequest(email: String, password: String) {

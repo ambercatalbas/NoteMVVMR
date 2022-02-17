@@ -3,7 +3,7 @@
 
 import UIKit
 
-
+// swiftlint:disable identifier_name line_length nesting type_body_length type_name
 public extension UIColor {
 
   static var appPrimaryBackground: UIColor {
@@ -14,12 +14,32 @@ public extension UIColor {
       return Asset.Colors.appSecondaryBackground.color
   }
 
+  static var appBackgrounlightGreen: UIColor {
+      return Asset.Colors.appBackgrounlightGreen.color
+  }
+
+  static var appBeige: UIColor {
+      return Asset.Colors.appBeige.color
+  }
+
+  static var appBlueBerry: UIColor {
+      return Asset.Colors.appBlueBerry.color
+  }
+
   static var appCinder: UIColor {
       return Asset.Colors.appCinder.color
   }
 
+  static var appGreen: UIColor {
+      return Asset.Colors.appGreen.color
+  }
+
   static var appHeather: UIColor {
       return Asset.Colors.appHeather.color
+  }
+
+  static var appPurple: UIColor {
+      return Asset.Colors.appPurple.color
   }
 
   static var appRaven: UIColor {
@@ -28,6 +48,10 @@ public extension UIColor {
 
   static var appRed: UIColor {
       return Asset.Colors.appRed.color
+  }
+
+  static var appTextFieldBorderColor: UIColor {
+      return Asset.Colors.appTextFieldBorderColor.color
   }
 
   static var appWhite: UIColor {
@@ -41,28 +65,10 @@ public extension UIColor {
   static var appZircon: UIColor {
       return Asset.Colors.appZircon.color
   }
-  static var appBeige: UIColor {
-      return Asset.Colors.appBeige.color
-  }
-  static var appPurple: UIColor {
-      return Asset.Colors.appPurple.color
-  }
-  static var appBackgrounlightGreen: UIColor {
-      return Asset.Colors.appBackgrounlightGreen.color
-  }
+
   static var navigationBarGreen: UIColor {
       return Asset.Colors.navigationBarGreen.color
   }
-    static var appBlueBerry: UIColor {
-        return Asset.Colors.appBlueBerry.color
-    }
-    static var appGreen: UIColor {
-        return Asset.Colors.appGreen.color
-    }
-    static var appTextFieldBorderColor: UIColor {
-        return Asset.Colors.appTextFieldBorderColor.color
-    }
-    
 }
-
+// swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
