@@ -20,33 +20,33 @@ protocol HomeViewEventSource {
 }
 
 protocol HomeViewProtocol: HomeViewDataSource, HomeViewEventSource {
-    func didSelectRow(titleText: String, descriptionText: String, noteId: Int)
-    func editRow(titleText: String, descriptionText: String, noteId: Int)
+    func didSelectRow(titleText: String, descriptionText: String, noteId: Int, type: DetailVCShowType)
+    func editRow(titleText: String, descriptionText: String, noteId: Int, type: DetailVCShowType)
     func deleteNote(noteID: Int)
-    func addNote()
-    func pushProfile()
+    func addNote(titleText: String, descriptionText: String, noteId: Int, type: DetailVCShowType)
+    func showProfileScreen()
     func fetchNotesListing()
 }
 
 final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
-    func pushProfile() {
+    func showProfileScreen() {
         router.pushProfile()
     }
     
-    func addNote() {
-        router.pushAdd()
+    func addNote(titleText: String, descriptionText: String, noteId: Int, type: DetailVCShowType) {
+        router.pushAdd(titleText: titleText, descriptionText: descriptionText, noteId: noteId, type: type)
     }
     
     var didSuccessFetchRecipes: VoidClosure?
     var cellItems: [HomeCellProtocol] = [HomeCellModel(title: "", description: "", noteID: 0)]
     private var items: [Note] = []
     
-    func editRow(titleText: String, descriptionText: String, noteId: Int) {
-        router.pushEdit(titleText: titleText, descriptionText: descriptionText, noteId: noteId)
+    func editRow(titleText: String, descriptionText: String, noteId: Int, type: DetailVCShowType) {
+        router.pushEdit(titleText: titleText, descriptionText: descriptionText, noteId: noteId, type: type)
         self.didSuccessFetchRecipes?()
     }
-    func didSelectRow(titleText: String, descriptionText: String, noteId: Int) {
-        router.pushDetail(titleText: titleText, descriptionText: descriptionText, noteId: noteId)
+    func didSelectRow(titleText: String, descriptionText: String, noteId: Int, type: DetailVCShowType) {
+        router.pushDetail(titleText: titleText, descriptionText: descriptionText, noteId: noteId, type: type)
     }
     func numberOfItemsAt(section: Int) -> Int {
         return cellItems.count

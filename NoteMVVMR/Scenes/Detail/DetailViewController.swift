@@ -8,43 +8,42 @@
 import UIKit
 import MobilliumBuilders
 import KeychainSwift
+import SwiftUI
+import Accelerate
+
+public enum DetailVCShowType {
+case add
+case update
+case showNote
+ }
 
 final class DetailViewController: BaseViewController<DetailViewModel> {
     
-    private let textStackView = UIStackViewBuilder()
-        .spacing(0)
-        .axis(.vertical)
-        .alignment(.fill)
-        .distribution(.fill)
-        .build()
     private let titleTextField = UITextFieldBuilder()
-        .font(.font(.josefinSansSemibold, size: .large))
-        .text("note")
-        .textAlignment(.left)
+        .font(.font(.josefinSansSemibold, size: .custom(size: 22)))
         .textColor(.appCinder)
-        .build()
-    private let descriptionText = UITextViewBuilder()
-        .font(.font(.josefinSansSemibold, size: .large))
-        .text("noteDescription")
+        .placeholder("Note title..")
         .textAlignment(.left)
         .build()
-    private let saveButton = UIButtonBuilder()
-        .title("SAVE")
-        .cornerRadius(12)
-        .backgroundColor(.systemTeal)
+    private let descriptionTextView = UITextViewBuilder()
+        .font(.font(.josefinSansRegular, size: .custom(size: 16)))
+        .textColor(.appRaven)
+        .textAlignment(.left)
         .build()
-    private let updateButton = UIButtonBuilder()
-        .title("UPDATE")
-        .cornerRadius(12)
-        .backgroundColor(.systemTeal)
-        .build()
+    private let saveButton = LoginButton(title: "Save Note")
     let keychain = KeychainSwift()
     var noteID: Int = 0
+    var titleText: String = "Note title"
+    var descriptionText: String = "Descrition..."
+    var navigationTitle: String = "Details"
+    var type: DetailVCShowType = .add
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubViews()
-
+        descriptionTextView.text = descriptionText
+        navigationItem.title = navigationTitle
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: .backArrow, style: .plain, target: self, action: #selector(backButtonTapped))
     }
     
 }
@@ -52,46 +51,84 @@ final class DetailViewController: BaseViewController<DetailViewModel> {
 extension DetailViewController {
     
     private func addSubViews() {
-        addContainerView()
-        addUpdateButton()
-        addSaveButton()
-   
+        descriptionTextView.delegate = self
+        switch type {
+        case .showNote:
+            makeTitleTextField()
+            makeDescriptionTextView()
+            descriptionTextView.isEditable = false
+            titleTextField.isEnabled = false
+        case .add:
+            makeTitleTextField()
+            makeDescriptionTextView()
+            addSaveButton()
+            saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
+            descriptionTextView.textColor = .lightGray
+        case .update:
+            makeTitleTextField()
+            makeDescriptionTextView()
+            addSaveButton()
+            saveButton.addTarget(self, action: #selector(updateButtonTapped), for: .touchUpInside)
+        }
     }
     
-    private func addContainerView() {
-        view.addSubview(textStackView)
-        textStackView.addArrangedSubview(titleTextField)
-        textStackView.addArrangedSubview(descriptionText)
-        textStackView.topToSuperview().constant = 80
-        textStackView.leadingToSuperview().constant = 20
-        textStackView.trailingToSuperview().constant = -20
+    private func makeTitleTextField() {
+        view.addSubview(titleTextField)
+        titleTextField.topToSuperview().constant = 120
+        titleTextField.leadingToSuperview().constant = 20
+        titleTextField.trailingToSuperview().constant = -20
+        titleTextField.height(23)
         
     }
-    private func addUpdateButton() {
-        view.addSubview(updateButton)
-        updateButton.topToBottom(of: textStackView).constant = 10
-        updateButton.leadingToSuperview().constant = 50
-        updateButton.trailingToSuperview().constant = -50
-        updateButton.height(50)
-        updateButton.addTarget(self, action: #selector(updateButtonTapped), for: .touchUpInside)
+    private func makeDescriptionTextView() {
+        view.addSubview(descriptionTextView)
+        descriptionTextView.topToBottom(of: titleTextField).constant = 19
+        descriptionTextView.leadingToSuperview().constant = 20
+        descriptionTextView.trailingToSuperview().constant = -20
+        descriptionTextView.bottomToSuperview()
     }
+    
     private func addSaveButton() {
         view.addSubview(saveButton)
-        saveButton.topToBottom(of: updateButton).constant = 10
-        saveButton.leadingToSuperview().constant = 50
-        saveButton.trailingToSuperview().constant = -50
+        saveButton.leadingToSuperview().constant = 117
+        saveButton.trailingToSuperview().constant = -117
         saveButton.bottomToSuperview().constant = -34
         saveButton.height(40)
-        saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
+    
     }
-
+    
 }
+extension DetailViewController: UITextViewDelegate {
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if  textView.textColor == .lightGray {
+            textView.text = ""
+            textView.textColor = .appRaven
+        } else {
+            descriptionText = textView.text
+        }
+        
+        func textViewDidEndEditing(_ textView: UITextView) {
+            if textView.text.isEmpty {
+                textView.text = "descriptionText"
+                textView.textColor = UIColor.lightGray
+//                descriptionText = ""
+            }
+        }
+        
+        func textViewDidChange(_ textView: UITextView) {
+            descriptionText = textView.text
+        }
+    }
+}
+
 // MARK: - Configure
 extension DetailViewController {
-    public func set(titleText: String, descriptionText: String, noteId: Int) {
+    public func set(titleText: String, descriptionText: String, noteId: Int, type: DetailVCShowType) {
         self.titleTextField.text = titleText
-        self.descriptionText.text = descriptionText
+        self.descriptionText = descriptionText
         self.noteID = noteId
+        self.type = type
     }
     private func configureContents() {
         view.backgroundColor = .white
@@ -102,15 +139,21 @@ extension DetailViewController {
 // MARK: - Actions
 extension DetailViewController {
     @objc
+    func backButtonTapped() {
+        viewModel.showHomeScreen()
+    }
+    @objc
     func saveButtonTapped() {
         let title = titleTextField.text ?? ""
-        let description = descriptionText.text ?? ""
+        let description = descriptionTextView.text ?? ""
         viewModel.createNote(title: title, description: description)
     }
     @objc
     func updateButtonTapped() {
         let title = titleTextField.text ?? ""
-        let description = descriptionText.text ?? ""
+        let description = descriptionTextView.text ?? ""
         viewModel.updateNote(title: title, description: description, noteID: noteID)
     }
 }
+
+

@@ -15,6 +15,7 @@ public extension UIFont {
         case josefinSansRegular
         case josefinSansItalic
         case josefinSansSemibold
+        case josefinSansBold
         
     }
     
@@ -53,6 +54,8 @@ public extension UIFont {
             font = FontFamily.JosefinSans.italic.font(size: size.rawValue)
         case .josefinSansSemibold:
             font = FontFamily.JosefinSans.semiBold.font(size: size.rawValue)
+        case .josefinSansBold:
+            font = FontFamily.JosefinSans.bold.font(size: size.rawValue)
         }
         return font
     }

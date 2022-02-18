@@ -12,7 +12,7 @@ public class LoginButton: UIButton {
    public required init(title: String) {
         super.init(frame: .zero)
         setTitle(title, for: .normal)
-        titleLabel?.font = .font(.josefinSansSemibold, size: .medium)
+       titleLabel?.font = .font(.josefinSansSemibold, size: .custom(size: 15))
         setTitleColor(.white, for: .normal)
         layer.cornerRadius = 4
         backgroundColor = .appBlueBerry

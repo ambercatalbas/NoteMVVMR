@@ -7,6 +7,7 @@
 
 protocol HomeRoute {
     func pushHome()
+    func modalHome()
 }
 
 extension HomeRoute where Self: RouterProtocol {

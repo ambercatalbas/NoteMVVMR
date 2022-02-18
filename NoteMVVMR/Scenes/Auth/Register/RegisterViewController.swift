@@ -10,8 +10,8 @@ import UIKit
 import UIComponents
 
 final class RegisterViewController: BaseViewController<RegisterViewModel> {
-    private let titleLabel = TitleLabel(withInsets: 0, 0, 0, 0, text: "Sign Up")
-    private let subTitleLabel = SubTitleLabel(withInsets: 0, 0, 0, 0, text: "Login or sign up to continue using our app.")
+    private let titleLabel = TitleLabel(text: "Sign Up")
+    private let subTitleLabel = SubTitleLabel(text: "Login or sign up to continue using our app.")
     private let textFieldtackView = UIStackViewBuilder()
         .axis(.vertical)
         .spacing(14)
@@ -21,7 +21,7 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
     private let usernameTextField = UserNameTextField()
     private let emailTextField = EmailTextField()
     private let passwordTextField = PasswordTextField()
-    private let forgotPasswordLabelButton = ForgotPasswordButton(title: "Forgot Password?")
+    private let forgotPasswordLabelButton = LabelButton(title: "Forgot Password?")
     private let registerButton = LoginButton(title: "Sign Up")
     private let registerLabelButton = RegisterButton(blackText: "Already have an account?", blueberryText: "Sign in now")
     
@@ -54,13 +54,16 @@ extension RegisterViewController {
     private func makeTextFieldtackView() {
         view.addSubview(textFieldtackView)
         textFieldtackView.topToBottom(of: subTitleLabel).constant = 42
-        textFieldtackView.width(325)
-        textFieldtackView.height(169)
+        textFieldtackView.leftToSuperview().constant = 25
+        textFieldtackView.rightToSuperview().constant = -25
         textFieldtackView.centerXToSuperview()
         textFieldtackView.addArrangedSubview(usernameTextField)
         textFieldtackView.addArrangedSubview(emailTextField)
         textFieldtackView.addArrangedSubview(passwordTextField)
-        
+        usernameTextField.height(47)
+        emailTextField.height(47)
+        passwordTextField.height(47)
+
     }
     private func makeForgotPasswordLabelButton() {
         view.addSubview(forgotPasswordLabelButton)
@@ -73,7 +76,8 @@ extension RegisterViewController {
         view.addSubview(registerButton)
         registerButton.topToBottom(of: forgotPasswordLabelButton).constant = 27
         registerButton.height(60)
-        registerButton.width(325)
+        registerButton.leftToSuperview().constant = 25
+        registerButton.rightToSuperview().constant = -25
         registerButton.centerXToSuperview()
         registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
     }

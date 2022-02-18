@@ -30,10 +30,10 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     private let refreshControl = UIRefreshControl()
     var filteredItems: [HomeCellProtocol] = []
     var isSearchBarEmpty: Bool {
-      return searchController.searchBar.text?.isEmpty ?? true
+        return searchController.searchBar.text?.isEmpty ?? true
     }
     var isFiltering: Bool {
-      return searchController.isActive && !isSearchBarEmpty
+        return searchController.isActive && !isSearchBarEmpty
     }
     
     override func viewDidLoad() {
@@ -44,7 +44,7 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         subscribeViewModelEvents()
         addSearchController()
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: .hamburgerIcon, style: .done, target: self, action: #selector(reloadData))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "profil"),
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: .addIcon,
                                                             style: .done, target: self, action: #selector(profileButtonTapped))
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -53,7 +53,7 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         let notificationCenter: NotificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(reloadData), name: .reloadDataNotification, object: nil)
     }
-
+    
     @objc
     private func reloadData() {
         viewModel.fetchNotesListing()
@@ -64,7 +64,6 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Notes"
-        navigationItem.title = "Notes"
         navigationItem.searchController = searchController
         definesPresentationContext = true
     }
@@ -96,7 +95,6 @@ extension HomeViewController {
         addButton.centerXToSuperview()
         addButton.height(42)
         addButton.width(140)
-        
     }
 }
 // MARK: - Configure
@@ -114,11 +112,11 @@ extension HomeViewController {
     
     @objc
     private func addButtonTapped() {
-        viewModel.addNote()
+        viewModel.addNote(titleText: "", descriptionText: "Description...", noteId: 0, type: .add)
     }
     @objc
     private func profileButtonTapped() {
-        viewModel.pushProfile()
+        viewModel.showProfileScreen()
     }
     @objc
     private func pullToRefreshValueChanged() {
@@ -129,10 +127,10 @@ extension HomeViewController {
 
 // MARK: - UITableViewDataSource
 extension HomeViewController: UITableViewDataSource {
-  
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering {
-          return filteredItems.count
+            return filteredItems.count
         }
         return viewModel.numberOfItemsAt(section: section)
     }
@@ -159,13 +157,13 @@ extension HomeViewController: UITableViewDelegate {
             let title = filteredItems[indexPath.row].titleText
             let description = filteredItems[indexPath.row].descriptionText
             let noteID = filteredItems[indexPath.row].noteID
-            viewModel.didSelectRow(titleText: title, descriptionText: description, noteId: noteID)
+            viewModel.didSelectRow(titleText: title, descriptionText: description, noteId: noteID, type: .showNote)
         } else {
             cellItem = viewModel.cellItemAt(indexPath: indexPath)
             let title = self.viewModel.cellItems[indexPath.row].titleText
             let description = self.viewModel.cellItems[indexPath.row].descriptionText
             let noteID = self.viewModel.cellItems[indexPath.row].noteID
-            viewModel.didSelectRow(titleText: title, descriptionText: description, noteId: noteID)
+            viewModel.didSelectRow(titleText: title, descriptionText: description, noteId: noteID, type: .showNote)
         }
     }
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -194,7 +192,7 @@ extension HomeViewController: UITableViewDelegate {
         let title = self.viewModel.cellItems[indexPath.row].titleText
         let description = self.viewModel.cellItems[indexPath.row].descriptionText
         let noteID = self.viewModel.cellItems[indexPath.row].noteID
-        self.viewModel.editRow(titleText: title, descriptionText: description, noteId: noteID)
+        self.viewModel.editRow(titleText: title, descriptionText: description, noteId: noteID, type: .update)
     }
     func filterContentForSearchText(_ searchText: String ) {
         filteredItems = viewModel.cellItems.filter { (item: HomeCellProtocol) -> Bool in

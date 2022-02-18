@@ -29,7 +29,7 @@
 		4E4310D527BEB90C002EF700 /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4310D427BEB90C002EF700 /* TitleLabel.swift */; };
 		4E4310D827BEBCFB002EF700 /* SubTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4310D727BEBCFB002EF700 /* SubTitleLabel.swift */; };
 		4E4310DA27BEBF54002EF700 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4310D927BEBF54002EF700 /* LoginButton.swift */; };
-		4E4310DC27BECCC7002EF700 /* ForgotPasswordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4310DB27BECCC7002EF700 /* ForgotPasswordButton.swift */; };
+		4E4310DC27BECCC7002EF700 /* LabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4310DB27BECCC7002EF700 /* LabelButton.swift */; };
 		4E4310DE27BED180002EF700 /* RegisterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4310DD27BED180002EF700 /* RegisterButton.swift */; };
 		4EE2D5AE27B4F56E00E48E60 /* UIComponents.docc in Sources */ = {isa = PBXBuildFile; fileRef = 4EE2D5AD27B4F56E00E48E60 /* UIComponents.docc */; };
 		4EE2D5B427B4F56E00E48E60 /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EE2D5A927B4F56E00E48E60 /* UIComponents.framework */; };
@@ -112,7 +112,7 @@
 		4E4310D427BEB90C002EF700 /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
 		4E4310D727BEBCFB002EF700 /* SubTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTitleLabel.swift; sourceTree = "<group>"; };
 		4E4310D927BEBF54002EF700 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
-		4E4310DB27BECCC7002EF700 /* ForgotPasswordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordButton.swift; sourceTree = "<group>"; };
+		4E4310DB27BECCC7002EF700 /* LabelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelButton.swift; sourceTree = "<group>"; };
 		4E4310DD27BED180002EF700 /* RegisterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterButton.swift; sourceTree = "<group>"; };
 		4EE2D5A927B4F56E00E48E60 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EE2D5AC27B4F56E00E48E60 /* UIComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIComponents.h; sourceTree = "<group>"; };
@@ -195,7 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				4E4310D927BEBF54002EF700 /* LoginButton.swift */,
-				4E4310DB27BECCC7002EF700 /* ForgotPasswordButton.swift */,
+				4E4310DB27BECCC7002EF700 /* LabelButton.swift */,
 				4E4310DD27BED180002EF700 /* RegisterButton.swift */,
 			);
 			path = UIButton;
@@ -583,7 +583,7 @@
 				4EE2D5E927B4F5CD00E48E60 /* UIColor+Colors.swift in Sources */,
 				4EE2D5E727B4F5CD00E48E60 /* UIImage+Images.swift in Sources */,
 				4EE2D5DC27B4F5CD00E48E60 /* StringConstants.swift in Sources */,
-				4E4310DC27BECCC7002EF700 /* ForgotPasswordButton.swift in Sources */,
+				4E4310DC27BECCC7002EF700 /* LabelButton.swift in Sources */,
 				4EE2D5FB27B5546D00E48E60 /* HomeCellModel+Extension.swift in Sources */,
 				4EE2D5E527B4F5CD00E48E60 /* UIImage+Icons.swift in Sources */,
 				4EE2D5DF27B4F5CD00E48E60 /* UIFont+Extensions.swift in Sources */,

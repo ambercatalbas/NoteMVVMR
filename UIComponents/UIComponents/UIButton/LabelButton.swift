@@ -7,13 +7,13 @@
 
 import Foundation
 
-public class ForgotPasswordButton: UIButton {
+public class LabelButton: UIButton {
     
-    public required init(title: String) {
+    public required init(title: String, titleColor: UIColor = .appCinder, font: UIFont = .font(.josefinSansRegular, size: .custom(size: 13))) {
         super.init(frame: .zero)
         setTitle(title, for: .normal)
-        titleLabel?.font = .font(.josefinSansRegular, size: .small)
-        setTitleColor(.appCinder, for: .normal)
+        titleLabel?.font = font
+        setTitleColor(titleColor, for: .normal)
         backgroundColor = .white
         titleLabel?.textAlignment = .right
     }

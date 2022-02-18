@@ -12,8 +12,8 @@ import KeychainSwift
 import SwiftUI
 
 final class LoginViewController: BaseViewController<LoginViewModel> {
-    private let titleLabel = TitleLabel(withInsets: 0, 0, 0, 0, text: "Login")
-    private let subTitleLabel = SubTitleLabel(withInsets: 0, 0, 0, 0, text: "Login or sign up to continue using our app.")
+    private let titleLabel = TitleLabel(text: "Login")
+    private let subTitleLabel = SubTitleLabel(text: "Login or sign up to continue using our app.")
     private let textFieldtackView = UIStackViewBuilder()
         .axis(.vertical)
         .spacing(14)
@@ -22,7 +22,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         .build()
     private let emailTextField = EmailTextField()
     private let passwordTextField = PasswordTextField()
-    private let forgotPasswordLabelButton = ForgotPasswordButton(title: "Forgot Password?")
+    private let forgotPasswordLabelButton = LabelButton(title: "Forgot Password?")
     private let loginButton = LoginButton(title: "Login")
     private let registerLabelButton = RegisterButton(blackText: "New user?", blueberryText: "Sign up now")
     
@@ -57,11 +57,13 @@ extension LoginViewController {
     private func makeTextFieldtackView() {
         view.addSubview(textFieldtackView)
         textFieldtackView.topToBottom(of: subTitleLabel).constant = 42
-        textFieldtackView.width(325)
-        textFieldtackView.height(108)
+        textFieldtackView.leftToSuperview().constant = 25
+        textFieldtackView.rightToSuperview().constant = -25
         textFieldtackView.centerXToSuperview()
         textFieldtackView.addArrangedSubview(emailTextField)
         textFieldtackView.addArrangedSubview(passwordTextField)
+        emailTextField.height(47)
+        passwordTextField.height(47)
     }
     private func makeForgotPasswordButton() {
         view.addSubview(forgotPasswordLabelButton)
@@ -74,7 +76,8 @@ extension LoginViewController {
         view.addSubview(loginButton)
         loginButton.topToBottom(of: forgotPasswordLabelButton).constant = 27
         loginButton.height(60)
-        loginButton.width(325)
+        loginButton.leftToSuperview().constant = 25
+        loginButton.rightToSuperview().constant = -25
         loginButton.centerXToSuperview()
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }

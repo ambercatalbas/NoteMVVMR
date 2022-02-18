@@ -14,7 +14,7 @@ public class SubTitleLabel: UILabel {
     var leftInset: CGFloat
     var rightInset: CGFloat
     
-    public init(withInsets top: CGFloat, _ bottom: CGFloat, _ left: CGFloat, _ right: CGFloat, text: String) {
+    public init(withInsets top: CGFloat = 0, _ bottom: CGFloat = 0, _ left: CGFloat = 0, _ right: CGFloat = 0, text: String) {
         self.topInset = top
         self.bottomInset = bottom
         self.leftInset = left
