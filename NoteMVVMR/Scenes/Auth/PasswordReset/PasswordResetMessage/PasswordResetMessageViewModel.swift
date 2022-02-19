@@ -11,8 +11,15 @@ protocol PasswordResetMessageViewDataSource {}
 
 protocol PasswordResetMessageViewEventSource {}
 
-protocol PasswordResetMessageViewProtocol: PasswordResetMessageViewDataSource, PasswordResetMessageViewEventSource {}
+protocol PasswordResetMessageViewProtocol: PasswordResetMessageViewDataSource, PasswordResetMessageViewEventSource {
+    func showLoginScreen()
+}
 
 final class PasswordResetMessageViewModel: BaseViewModel<PasswordResetMessageRouter>, PasswordResetMessageViewProtocol {
+  
+    func showLoginScreen() {
+        router.modalLogin()
+    }
+    
     
 }

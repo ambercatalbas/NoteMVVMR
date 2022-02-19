@@ -12,14 +12,14 @@ protocol ProfileViewDataSource {}
 protocol ProfileViewEventSource {}
 
 protocol ProfileViewProtocol: ProfileViewDataSource, ProfileViewEventSource {
-    func modalHome()
+    func showHomeScreen()
     func updateUser()
     func pushChangePasswordScene()
     func signOut()
 }
 
 final class ProfileViewModel: BaseViewModel<ProfileRouter>, ProfileViewProtocol {
-    func modalHome() {
+    func showHomeScreen() {
         router.close()
     }
     

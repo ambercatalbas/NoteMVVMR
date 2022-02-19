@@ -106,6 +106,6 @@ extension LoginViewController {
     
     @objc
     private func forgotPasswordButtonTapped() {
-        viewModel.showPasswordResetScene()
+        viewModel.showPasswordResetScene(isBackScrenLogin: true)
     }
 }

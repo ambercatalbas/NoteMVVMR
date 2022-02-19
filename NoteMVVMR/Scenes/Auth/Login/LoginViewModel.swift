@@ -18,7 +18,7 @@ protocol LoginViewEventSource {}
 protocol LoginViewProtocol: LoginViewDataSource, LoginViewEventSource {
     func showRegisterOnWindow()
     func sendLoginRequest(email: String, password: String)
-    func showPasswordResetScene()
+    func showPasswordResetScene(isBackScrenLogin: Bool)
 }
 
 final class LoginViewModel: BaseViewModel<LoginRouter>, LoginViewProtocol {
@@ -28,8 +28,8 @@ final class LoginViewModel: BaseViewModel<LoginRouter>, LoginViewProtocol {
         router.modalRegister()
     }
     
-    func showPasswordResetScene() {
-        router.modalPasswordReset()
+    func showPasswordResetScene(isBackScrenLogin: Bool) {
+        router.modalPasswordReset(isBackScrenLogin: isBackScrenLogin)
     }
     
     func sendLoginRequest(email: String, password: String) {

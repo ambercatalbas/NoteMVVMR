@@ -18,16 +18,15 @@ protocol RegisterViewEventSource {}
 protocol RegisterViewProtocol: RegisterViewDataSource, RegisterViewEventSource {
     func showLoginScreen()
     func sendRegisterRequest(username: String, email: String, password: String)
-    func showForgotPasswordScreen()
+    func showForgotPasswordScreen(isBackScrenLogin: Bool)
 }
 
 final class RegisterViewModel: BaseViewModel<RegisterRouter>, RegisterViewProtocol {
-    func showForgotPasswordScreen() {
-        router.modalPasswordReset()
-    }
-  
     let keychain = KeychainSwift()
-    
+
+    func showForgotPasswordScreen(isBackScrenLogin: Bool) {
+        router.modalPasswordReset(isBackScrenLogin: isBackScrenLogin)
+    }
     func showLoginScreen() {
         router.modalLogin()
     }

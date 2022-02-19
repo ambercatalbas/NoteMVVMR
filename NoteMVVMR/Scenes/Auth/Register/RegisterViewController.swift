@@ -108,7 +108,7 @@ extension RegisterViewController {
     }
     @objc
     private func forgotPasswordButtonTapped() {
-        viewModel.showForgotPasswordScreen()
+        viewModel.showForgotPasswordScreen(isBackScrenLogin: false)
     }
     @objc
     private func registerLabelButtonTapped() {

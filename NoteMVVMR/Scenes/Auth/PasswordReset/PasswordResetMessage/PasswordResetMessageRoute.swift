@@ -6,16 +6,16 @@
 //
 
 protocol PasswordResetMessageRoute {
-    func presentPasswordResetMessage()
+    func presentPasswordResetMessage(email: String)
 }
 
 extension PasswordResetMessageRoute where Self: RouterProtocol {
     
-    func presentPasswordResetMessage() {
+    func presentPasswordResetMessage(email: String) {
         let router = PasswordResetMessageRouter()
         let viewModel = PasswordResetMessageViewModel(router: router)
         let viewController = PasswordResetMessageViewController(viewModel: viewModel)
-        
+        viewController.email = email
         let transition = ModalTransition()
         router.viewController = viewController
         router.openTransition = transition

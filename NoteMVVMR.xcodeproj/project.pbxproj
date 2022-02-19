@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		29F50A8966CB526693017127 /* Pods_NoteMVVMRTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9209839F23B5FDB724A63122 /* Pods_NoteMVVMRTests.framework */; };
+		4E33051B27C194C000E8F43A /* PasswordResetMessageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E33051827C194C000E8F43A /* PasswordResetMessageRouter.swift */; };
+		4E33051C27C194C000E8F43A /* PasswordResetMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E33051927C194C000E8F43A /* PasswordResetMessageViewController.swift */; };
+		4E33051D27C194C000E8F43A /* PasswordResetMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E33051A27C194C000E8F43A /* PasswordResetMessageViewModel.swift */; };
+		4E33051F27C1962E00E8F43A /* PasswordResetMessageRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E33051E27C1962E00E8F43A /* PasswordResetMessageRoute.swift */; };
 		4E43107C27B991E3002EF700 /* HomeCellModel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43107B27B991E3002EF700 /* HomeCellModel+Extension.swift */; };
 		4E43108627BAD77C002EF700 /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43108527BAD77C002EF700 /* Notification+Extension.swift */; };
 		4E43108D27BDB22E002EF700 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43108A27BDB22E002EF700 /* ProfileRouter.swift */; };
@@ -109,6 +113,10 @@
 
 /* Begin PBXFileReference section */
 		221FD75068C88A7A2135DDDB /* Pods-NoteMVVMRTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteMVVMRTests.release.xcconfig"; path = "Target Support Files/Pods-NoteMVVMRTests/Pods-NoteMVVMRTests.release.xcconfig"; sourceTree = "<group>"; };
+		4E33051827C194C000E8F43A /* PasswordResetMessageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetMessageRouter.swift; sourceTree = "<group>"; };
+		4E33051927C194C000E8F43A /* PasswordResetMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetMessageViewController.swift; sourceTree = "<group>"; };
+		4E33051A27C194C000E8F43A /* PasswordResetMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetMessageViewModel.swift; sourceTree = "<group>"; };
+		4E33051E27C1962E00E8F43A /* PasswordResetMessageRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetMessageRoute.swift; sourceTree = "<group>"; };
 		4E43107B27B991E3002EF700 /* HomeCellModel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeCellModel+Extension.swift"; sourceTree = "<group>"; };
 		4E43108527BAD77C002EF700 /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
 		4E43108A27BDB22E002EF700 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
@@ -216,6 +224,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E33051727C1940200E8F43A /* PasswordResetMessage */ = {
+			isa = PBXGroup;
+			children = (
+				4E33051827C194C000E8F43A /* PasswordResetMessageRouter.swift */,
+				4E33051927C194C000E8F43A /* PasswordResetMessageViewController.swift */,
+				4E33051A27C194C000E8F43A /* PasswordResetMessageViewModel.swift */,
+				4E33051E27C1962E00E8F43A /* PasswordResetMessageRoute.swift */,
+			);
+			path = PasswordResetMessage;
+			sourceTree = "<group>";
+		};
 		4E43108927BDB20C002EF700 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +308,7 @@
 				4E9699DA27B1BFF400C4CF8E /* PasswordResetRoute.swift */,
 				4E9699DB27B1BFF400C4CF8E /* PasswordResetViewController.swift */,
 				4E9699DC27B1BFF400C4CF8E /* PasswordResetRouter.swift */,
+				4E33051727C1940200E8F43A /* PasswordResetMessage */,
 			);
 			path = PasswordReset;
 			sourceTree = "<group>";
@@ -801,6 +821,7 @@
 				4E9699F127B1BFF400C4CF8E /* RegisterViewController.swift in Sources */,
 				4E9699ED27B1BFF400C4CF8E /* HomeViewController.swift in Sources */,
 				4E969A5727B1C76200C4CF8E /* UnfollowAlertViewRoute.swift in Sources */,
+				4E33051D27C194C000E8F43A /* PasswordResetMessageViewModel.swift in Sources */,
 				4E96995727B13DD100C4CF8E /* APILogger.swift in Sources */,
 				4E96995827B13DD100C4CF8E /* APIRequestInterceptor.swift in Sources */,
 				4E969A5527B1C76200C4CF8E /* Transition.swift in Sources */,
@@ -814,9 +835,11 @@
 				4E969A9127B1C7AB00C4CF8E /* AppDelegate.swift in Sources */,
 				4E969A0727B1C01800C4CF8E /* Validation.swift in Sources */,
 				4E9699F727B1BFF400C4CF8E /* LoginViewModel.swift in Sources */,
+				4E33051B27C194C000E8F43A /* PasswordResetMessageRouter.swift in Sources */,
 				4E969A5127B1C76200C4CF8E /* Animator.swift in Sources */,
 				4E43108627BAD77C002EF700 /* Notification+Extension.swift in Sources */,
 				4E9699EE27B1BFF400C4CF8E /* HomeRouter.swift in Sources */,
+				4E33051C27C194C000E8F43A /* PasswordResetMessageViewController.swift in Sources */,
 				4E969A5827B1C76200C4CF8E /* ShareSheetRoute.swift in Sources */,
 				4E969A5227B1C76200C4CF8E /* Router.swift in Sources */,
 				4E43107C27B991E3002EF700 /* HomeCellModel+Extension.swift in Sources */,
@@ -826,6 +849,7 @@
 				4E9699F027B1BFF400C4CF8E /* RegisterRoute.swift in Sources */,
 				4E969A9B27B25D3000C4CF8E /* DetailRoute.swift in Sources */,
 				4E9699FF27B1BFF400C4CF8E /* MainNavigationController.swift in Sources */,
+				4E33051F27C1962E00E8F43A /* PasswordResetMessageRoute.swift in Sources */,
 				4E969A9227B1C7AB00C4CF8E /* AppDelegate+IQKeyboardManager.swift in Sources */,
 				4E9699F327B1BFF400C4CF8E /* PasswordResetViewModel.swift in Sources */,
 				4EFE0BA327C021A100623C92 /* ChangePasswordViewModel.swift in Sources */,

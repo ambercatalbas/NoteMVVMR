@@ -91,6 +91,6 @@ final class ProfileViewController: BaseViewController<ProfileViewModel> {
     }
     @objc
     private func hamburgerButtonButtonTapped() {
-        viewModel.modalHome()
+        viewModel.showHomeScreen()
     }
 }

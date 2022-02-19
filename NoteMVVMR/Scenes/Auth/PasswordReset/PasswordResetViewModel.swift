@@ -12,14 +12,23 @@ protocol PasswordResetViewDataSource {}
 protocol PasswordResetViewEventSource {}
 
 protocol PasswordResetViewProtocol: PasswordResetViewDataSource, PasswordResetViewEventSource {
-    func showLogin()
+    func showLoginScreen()
+    func showRegisterScreen()
+    func showResetPasswordMessageScreen(email: String)
     func sendResetRequest(email: String)
 }
 
 final class PasswordResetViewModel: BaseViewModel<PasswordResetRouter>, PasswordResetViewProtocol {
-
-    func showLogin() {
-        router.modalLogin()
+    func showResetPasswordMessageScreen(email: String) {
+        router.presentPasswordResetMessage(email: email)
+    }
+    
+    func showRegisterScreen() {
+        router.modalRegister()
+    }
+        
+    func showLoginScreen() {
+        router.close()
     }
    
 }
@@ -31,11 +40,11 @@ extension PasswordResetViewModel {
             switch result {
             case .success(let response):
                 print("sccs \(response.message)")
+                self.showResetPasswordMessageScreen(email: email)
             case .failure(let error):
                 print("error reset password")
             }
         }
-        router.modalLogin()
     }
     
 }

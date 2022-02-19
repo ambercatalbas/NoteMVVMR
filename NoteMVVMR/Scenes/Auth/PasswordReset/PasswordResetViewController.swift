@@ -16,12 +16,14 @@ final class PasswordResetViewController: BaseViewController<PasswordResetViewMod
     private let subTitleLabel = SubTitleLabel(text: "Confirm your email and we’ll send the instructions.")
     private let emailTextField = EmailTextField()
     private let resetPasswordButton = LoginButton(title: "Reset Password")
-    private let loginButton = LoginButton(title: "Login")
-  
+    private let backButton = UIButtonBuilder()
+        .tintColor(.appCinder)
+        .image(.backArrow)
+        .build()
+    var isBackScrenLogin = true
     override func viewDidLoad() {
         super.viewDidLoad()
         drawDesign()
-        loginButton.isHidden = true
     }
     
     private func drawDesign() {
@@ -29,11 +31,21 @@ final class PasswordResetViewController: BaseViewController<PasswordResetViewMod
         makeSubTitleLabel()
         makeEmailTextField()
         makeRessetPasswordButton()
-        makeLoginButton()
+        makeBackButton()
     }
 }
 
 extension PasswordResetViewController {
+    private func makeBackButton() {
+        view.addSubview(backButton)
+        backButton.topToSuperview().constant = 56
+        backButton.leftToSuperview().constant = 20
+        if isBackScrenLogin {
+            backButton.addTarget(self, action: #selector(showLoginScreen), for: .touchUpInside)
+        } else {
+            backButton.addTarget(self, action: #selector(showRegisterScreen), for: .touchUpInside)
+        }
+    }
     
     private func maketitleLabel() {
         view.addSubview(titleLabel)
@@ -48,8 +60,6 @@ extension PasswordResetViewController {
         subTitleLabel.centerXToSuperview()
         subTitleLabel.leftToSuperview().constant = 25
         subTitleLabel.rightToSuperview().constant = -25
-
-        
     }
     private func makeEmailTextField() {
         view.addSubview(emailTextField)
@@ -68,32 +78,21 @@ extension PasswordResetViewController {
         resetPasswordButton.centerXToSuperview()
         resetPasswordButton.addTarget(self, action: #selector(resetPasswordButtonTapped), for: .touchUpInside)
     }
-    private func makeLoginButton() {
-        view.addSubview(loginButton)
-        loginButton.height(60)
-        loginButton.topToBottom(of: subTitleLabel).constant = 35
-        loginButton.leftToSuperview().constant = 25
-        loginButton.rightToSuperview().constant = -25
-        loginButton.centerXToSuperview()
-        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
-    }
-    
+
 }
 
 extension PasswordResetViewController {
     @objc
     private func resetPasswordButtonTapped() {
-//        viewModel.sendResetRequest(email: emailTextField.text ?? "")
-        resetPasswordButton.isHidden = true
-        emailTextField.isHidden = true
-        loginButton.isHidden = false
-        titleLabel.text = "Password Reset Confirmation"
-        subTitleLabel.text = "An email has been sent to alican.kangotan@mobillium.com with further instructions."
-        subTitleLabel.textColor = .appGreen
+        viewModel.sendResetRequest(email: emailTextField.text ?? "")
     }
     @objc
-    private func loginButtonTapped() {
-        viewModel.showLogin()
+    private func showLoginScreen() {
+        viewModel.showLoginScreen()
+    }
+    @objc
+    private func showRegisterScreen() {
+        viewModel.showRegisterScreen()
     }
     
 }
