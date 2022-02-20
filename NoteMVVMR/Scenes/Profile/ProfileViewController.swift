@@ -31,6 +31,19 @@ final class ProfileViewController: BaseViewController<ProfileViewModel> {
                                                            action: #selector(hamburgerButtonButtonTapped))
         
         drawDesign()
+        getUser()
+        subscribeViewModelEvents()
+    }
+    private func subscribeViewModelEvents() {
+        viewModel.didSuccessFetchUser = { [weak self] in
+            guard let self = self else { return }
+            self.userNameTextField.text = self.viewModel.getUser().fullName
+            self.emailTextField.text = self.viewModel.getUser().email
+            
+        }
+    }
+    private func getUser() {
+        self.viewModel.getUserRequest() 
     }
     private func drawDesign() {
         makeUserNameTextField()
@@ -79,7 +92,7 @@ final class ProfileViewController: BaseViewController<ProfileViewModel> {
     }
     @objc
     private func saveButtonTapped() {
-        viewModel.updateUser()
+        viewModel.updateUser(userName: userNameTextField.text ?? "", email: emailTextField.text ?? "")
     }
     @objc
     private func changePasswordButtonTapped() {

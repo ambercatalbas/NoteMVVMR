@@ -63,7 +63,7 @@ extension RegisterViewController {
         usernameTextField.height(47)
         emailTextField.height(47)
         passwordTextField.height(47)
-
+        
     }
     private func makeForgotPasswordLabelButton() {
         view.addSubview(forgotPasswordLabelButton)

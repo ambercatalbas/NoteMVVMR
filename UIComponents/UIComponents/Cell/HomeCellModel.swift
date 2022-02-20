@@ -28,7 +28,6 @@ public final class HomeCellModel: HomeCellProtocol {
     public var descriptionText: String
     public var noteID: Int
     
-    
     public init(title: String, description: String, noteID: Int) {
         self.titleText = title
         self.descriptionText = description

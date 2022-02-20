@@ -17,7 +17,7 @@ class MainNavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.navigationBar.shadowImage = .add
         navigationBar.tintColor = .appCinder
         navigationBar.titleTextAttributes
         let titleTextAttributes = AttributedStringDictionaryBuilder()
@@ -25,7 +25,7 @@ class MainNavigationController: UINavigationController {
             .foregroundColor(.appCinder)
             .build()
         navigationBar.titleTextAttributes = titleTextAttributes
-
+        
     }
     
     #if DEBUG
