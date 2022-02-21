@@ -10,15 +10,15 @@ import UIKit
 public class UserNameTextField: UITextField {
     
     let insets: UIEdgeInsets
-   public init(insets: UIEdgeInsets = UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 12)) {
+    public init(insets: UIEdgeInsets = UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 12)) {
         self.insets = insets
         super.init(frame: .zero)
         layer.cornerRadius = 4
         layer.borderWidth = 1
         layer.borderColor = UIColor.appTextFieldBorderColor.cgColor
         returnKeyType = .done
-       placeholder = "Full Name"
-        font = FontFamily.JosefinSans.regular.font(size: 13)
+        placeholder = "Full Name"
+        font = .font(.josefinSansRegular, size: .custom(size: 13))
     }
     // swiftlint:disable fatal_error unavailable_function
     required init?(coder: NSCoder) {
@@ -32,5 +32,5 @@ public class UserNameTextField: UITextField {
     public override func editingRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: insets)
     }
-
+    
 }

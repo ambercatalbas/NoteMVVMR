@@ -112,7 +112,6 @@ extension DetailViewController: UITextViewDelegate {
             if textView.text.isEmpty {
                 textView.text = "descriptionText"
                 textView.textColor = UIColor.lightGray
-//                descriptionText = ""
             }
         }
         

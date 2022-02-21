@@ -16,6 +16,7 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         let tableView = UITableView()
         return tableView
     }()
+    private let topView = TopView()
     private let addButton = UIButtonBuilder()
         .title("   ADD NOTE")
         .tintColor(.white)
@@ -23,9 +24,6 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         .cornerRadius(4)
         .build()
     private let searchController = UISearchController(searchResultsController: nil)
-    private let profileImage = UIImageViewBuilder()
-        .cornerRadius(20)
-        .build()
     let keychain = KeychainSwift()
     private let refreshControl = UIRefreshControl()
     var filteredItems: [HomeCellProtocol] = []
@@ -38,26 +36,25 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSubViews()
+        
         configureContents()
         viewModel.fetchNotesListing()
         subscribeViewModelEvents()
-        addSearchController()
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: .hamburgerIcon, style: .done, target: self, action: #selector(reloadData))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: .addIcon,
-                                                            style: .done, target: self, action: #selector(profileButtonTapped))
+//        addSearchController()
+        
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         let notificationCenter: NotificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(reloadData), name: .reloadDataNotification, object: nil)
+
     }
     
     @objc
     private func reloadData() {
         viewModel.fetchNotesListing()
-        view.backgroundColor = .red
         subscribeViewModelEvents()
     }
     private func addSearchController() {
@@ -76,15 +73,24 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     }
 }
 
-// MARK: - UILayout
+// MARK: - Configure
 extension HomeViewController {
-    private func addSubViews() {
+    private func configureContents() {
+        view.backgroundColor = .white
         makeTableView()
         makeAddNoteButton()
+        makeTopView()
     }
     private func makeTableView() {
         view.addSubview(tableView)
-        tableView.edgesToSuperview()
+        tableView.topToSuperview().constant = 100
+        tableView.leadingToSuperview()
+        tableView.trailingToSuperview()
+        tableView.bottomToSuperview()
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(HomeCell.self, forCellReuseIdentifier: HomeCell.defaultReuseIdentifier)
+        tableView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(pullToRefreshValueChanged), for: .valueChanged)
     }
     private func makeAddNoteButton() {
@@ -96,15 +102,13 @@ extension HomeViewController {
         addButton.height(42)
         addButton.width(140)
     }
-}
-// MARK: - Configure
-extension HomeViewController {
-    private func configureContents() {
-        view.backgroundColor = .white
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(HomeCell.self, forCellReuseIdentifier: HomeCell.defaultReuseIdentifier)
-        tableView.refreshControl = refreshControl
+    private func makeTopView() {
+        view.addSubview(topView)
+        topView.backgroundColor = .white
+        topView.topToSuperview().constant = 44
+        topView.leadingToSuperview()
+        topView.trailingToSuperview()
+        topView.height(66)
     }
 }
 // MARK: - Actions

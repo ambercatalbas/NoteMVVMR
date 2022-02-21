@@ -50,7 +50,6 @@
 		4E969A5727B1C76200C4CF8E /* UnfollowAlertViewRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A4D27B1C76200C4CF8E /* UnfollowAlertViewRoute.swift */; };
 		4E969A5827B1C76200C4CF8E /* ShareSheetRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A4E27B1C76200C4CF8E /* ShareSheetRoute.swift */; };
 		4E969A5927B1C76200C4CF8E /* CommentEditDeleteAlertViewRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A4F27B1C76200C4CF8E /* CommentEditDeleteAlertViewRoute.swift */; };
-		4E969A7727B1C79A00C4CF8E /* Extensions+UITextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A5B27B1C79A00C4CF8E /* Extensions+UITextfield.swift */; };
 		4E969A7827B1C79A00C4CF8E /* AlertUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A5C27B1C79A00C4CF8E /* AlertUtility.swift */; };
 		4E969A8B27B1C79A00C4CF8E /* DateFormats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A7427B1C79A00C4CF8E /* DateFormats.swift */; };
 		4E969A8C27B1C79A00C4CF8E /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A7527B1C79A00C4CF8E /* ScreenSize.swift */; };
@@ -156,7 +155,6 @@
 		4E969A4D27B1C76200C4CF8E /* UnfollowAlertViewRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnfollowAlertViewRoute.swift; sourceTree = "<group>"; };
 		4E969A4E27B1C76200C4CF8E /* ShareSheetRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareSheetRoute.swift; sourceTree = "<group>"; };
 		4E969A4F27B1C76200C4CF8E /* CommentEditDeleteAlertViewRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentEditDeleteAlertViewRoute.swift; sourceTree = "<group>"; };
-		4E969A5B27B1C79A00C4CF8E /* Extensions+UITextfield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extensions+UITextfield.swift"; sourceTree = "<group>"; };
 		4E969A5C27B1C79A00C4CF8E /* AlertUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertUtility.swift; sourceTree = "<group>"; };
 		4E969A7427B1C79A00C4CF8E /* DateFormats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormats.swift; sourceTree = "<group>"; };
 		4E969A7527B1C79A00C4CF8E /* ScreenSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
@@ -426,7 +424,6 @@
 		4E969A5A27B1C79A00C4CF8E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				4E969A5B27B1C79A00C4CF8E /* Extensions+UITextfield.swift */,
 				4E969A5C27B1C79A00C4CF8E /* AlertUtility.swift */,
 				4E43108527BAD77C002EF700 /* Notification+Extension.swift */,
 			);
@@ -863,7 +860,6 @@
 				4E43109127BDB241002EF700 /* ProfileRoute.swift in Sources */,
 				4EFE0BA227C021A100623C92 /* ChangePasswordViewController.swift in Sources */,
 				4E969A7827B1C79A00C4CF8E /* AlertUtility.swift in Sources */,
-				4E969A7727B1C79A00C4CF8E /* Extensions+UITextfield.swift in Sources */,
 				4E969A5627B1C76200C4CF8E /* PushTransition.swift in Sources */,
 				4E969A8C27B1C79A00C4CF8E /* ScreenSize.swift in Sources */,
 				4E9699F227B1BFF400C4CF8E /* RegisterViewModel.swift in Sources */,

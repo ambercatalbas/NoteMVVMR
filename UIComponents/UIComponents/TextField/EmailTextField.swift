@@ -20,7 +20,7 @@ public class EmailTextField: UITextField {
         placeholder = "E-mail address"
         keyboardType = .emailAddress
         returnKeyType = .done
-        font = FontFamily.JosefinSans.regular.font(size: 13)
+        font = .font(.josefinSansRegular, size: .custom(size: 13))
     }
     // swiftlint:disable fatal_error unavailable_function
     required init?(coder: NSCoder) {

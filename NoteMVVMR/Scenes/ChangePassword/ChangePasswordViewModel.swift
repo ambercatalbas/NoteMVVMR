@@ -30,7 +30,7 @@ final class ChangePasswordViewModel: BaseViewModel<ChangePasswordRouter>, Change
     }
     
     func showHomeScreen() {
-        router.modalHome()
+        router.close()
     }
     
 }

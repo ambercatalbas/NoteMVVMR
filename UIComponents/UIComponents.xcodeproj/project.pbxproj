@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E00AC8627C2C070008F30A9 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E00AC8527C2C070008F30A9 /* TopView.swift */; };
+		4E00AC8827C2D0FA008F30A9 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E00AC8727C2D0FA008F30A9 /* ProfileImageView.swift */; };
+		4E00AC8A27C2EBA3008F30A9 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E00AC8927C2EBA3008F30A9 /* UITextField+Extensions.swift */; };
+		4E00AC8D27C2FD44008F30A9 /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E00AC8C27C2FD44008F30A9 /* Closures.swift */; };
 		4E43109327BDB6DC002EF700 /* EmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43109227BDB6DC002EF700 /* EmailTextField.swift */; };
-		4E43109727BE363D002EF700 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43109627BE363D002EF700 /* LoginView.swift */; };
 		4E43109B27BE420D002EF700 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43109A27BE420D002EF700 /* PasswordTextField.swift */; };
 		4E43109D27BE46F6002EF700 /* UserNameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43109C27BE46F6002EF700 /* UserNameTextField.swift */; };
 		4E4310A327BE5876002EF700 /* JosefinSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E4310A227BE5876002EF700 /* JosefinSans-Regular.ttf */; };
@@ -90,8 +93,11 @@
 
 /* Begin PBXFileReference section */
 		147ECA822FF1F8FAE3BEACE7 /* Pods-UIComponents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponents.debug.xcconfig"; path = "Target Support Files/Pods-UIComponents/Pods-UIComponents.debug.xcconfig"; sourceTree = "<group>"; };
+		4E00AC8527C2C070008F30A9 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
+		4E00AC8727C2D0FA008F30A9 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
+		4E00AC8927C2EBA3008F30A9 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		4E00AC8C27C2FD44008F30A9 /* Closures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closures.swift; sourceTree = "<group>"; };
 		4E43109227BDB6DC002EF700 /* EmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextField.swift; sourceTree = "<group>"; };
-		4E43109627BE363D002EF700 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4E43109A27BE420D002EF700 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		4E43109C27BE46F6002EF700 /* UserNameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameTextField.swift; sourceTree = "<group>"; };
 		4E4310A227BE5876002EF700 /* JosefinSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Regular.ttf"; sourceTree = "<group>"; };
@@ -173,6 +179,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E00AC8B27C2FD26008F30A9 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				4E00AC8C27C2FD44008F30A9 /* Closures.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		4E43109427BDB81A002EF700 /* TextField */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,7 +200,8 @@
 		4E43109527BDB92F002EF700 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				4E43109627BE363D002EF700 /* LoginView.swift */,
+				4E00AC8527C2C070008F30A9 /* TopView.swift */,
+				4E00AC8727C2D0FA008F30A9 /* ProfileImageView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -234,6 +249,7 @@
 		4EE2D5AB27B4F56E00E48E60 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				4E00AC8B27C2FD26008F30A9 /* Constants */,
 				4E4310D627BEBCD4002EF700 /* UILabel */,
 				4E4310B327BE92D2002EF700 /* UIButton */,
 				4E43109527BDB92F002EF700 /* UIView */,
@@ -324,6 +340,7 @@
 			children = (
 				4EE2D5F527B51EC600E48E60 /* Extension+UITableView.swift */,
 				4EE2D5FA27B5546D00E48E60 /* HomeCellModel+Extension.swift */,
+				4E00AC8927C2EBA3008F30A9 /* UITextField+Extensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -578,16 +595,19 @@
 				4EE2D5E327B4F5CD00E48E60 /* Fonts.swift in Sources */,
 				4E43109327BDB6DC002EF700 /* EmailTextField.swift in Sources */,
 				4E4310DA27BEBF54002EF700 /* LoginButton.swift in Sources */,
-				4E43109727BE363D002EF700 /* LoginView.swift in Sources */,
 				4EE2D5F927B51F7C00E48E60 /* ReusableView.swift in Sources */,
+				4E00AC8D27C2FD44008F30A9 /* Closures.swift in Sources */,
 				4EE2D5E927B4F5CD00E48E60 /* UIColor+Colors.swift in Sources */,
 				4EE2D5E727B4F5CD00E48E60 /* UIImage+Images.swift in Sources */,
+				4E00AC8A27C2EBA3008F30A9 /* UITextField+Extensions.swift in Sources */,
 				4EE2D5DC27B4F5CD00E48E60 /* StringConstants.swift in Sources */,
+				4E00AC8627C2C070008F30A9 /* TopView.swift in Sources */,
 				4E4310DC27BECCC7002EF700 /* LabelButton.swift in Sources */,
 				4EE2D5FB27B5546D00E48E60 /* HomeCellModel+Extension.swift in Sources */,
 				4EE2D5E527B4F5CD00E48E60 /* UIImage+Icons.swift in Sources */,
 				4EE2D5DF27B4F5CD00E48E60 /* UIFont+Extensions.swift in Sources */,
 				4EE2D5E427B4F5CD00E48E60 /* Assets.swift in Sources */,
+				4E00AC8827C2D0FA008F30A9 /* ProfileImageView.swift in Sources */,
 				4EE2D5F627B51EC600E48E60 /* Extension+UITableView.swift in Sources */,
 				4E4310D527BEB90C002EF700 /* TitleLabel.swift in Sources */,
 				4EE2D5FF27B555F600E48E60 /* HomeCell.swift in Sources */,

@@ -41,7 +41,7 @@ extension RegisterViewModel {
             switch result {
             case .success(let response):
                 self.keychain.set(response.data?.accessToken ?? "", forKey: Keychain.token)
-                self.router.modalHome()
+                self.router.pushHome()
             case .failure(let error):
                 self.showWarningToast?("\(error.localizedDescription) \(L10n.Error.checkInformations)")
             }

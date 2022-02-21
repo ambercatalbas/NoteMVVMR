@@ -21,7 +21,7 @@ public class PasswordTextField: UITextField {
         keyboardType = .default
         returnKeyType = .done
         self.isSecureTextEntry = isSecureTextEntry
-        font = FontFamily.JosefinSans.regular.font(size: 13)
+        font = .font(.josefinSansRegular, size: .custom(size: 13))
     }
     // swiftlint:disable fatal_error unavailable_function
     required init?(coder: NSCoder) {

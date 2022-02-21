@@ -20,6 +20,7 @@ final class ProfileViewController: BaseViewController<ProfileViewModel> {
     private let signOutButton = LabelButton(title: "Sign Out",
                                             titleColor: .appRed,
                                             font: .font(.josefinSansSemibold, size: .custom(size: 14)))
+    private let navigationBar = UINavigationBar()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,8 @@ final class ProfileViewController: BaseViewController<ProfileViewModel> {
         drawDesign()
         getUser()
         subscribeViewModelEvents()
+        
+        
     }
     private func subscribeViewModelEvents() {
         viewModel.didSuccessFetchUser = { [weak self] in

@@ -38,6 +38,10 @@ public extension UIColor {
       return Asset.Colors.appHeather.color
   }
 
+  static var appLineViewColor: UIColor {
+      return Asset.Colors.appLineViewColor.color
+  }
+
   static var appPurple: UIColor {
       return Asset.Colors.appPurple.color
   }
