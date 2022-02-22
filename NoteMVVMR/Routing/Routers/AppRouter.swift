@@ -21,9 +21,9 @@ final class AppRouter: Router, AppRouter.Routes {
      let keychain = KeychainSwift()
      let token = keychain.get(Keychain.token)
      if token != nil {
-      modalHome()
+      pushHome()
      } else {
-      modalLogin()
+      placeOnWindowLogin()
      }
     }
     

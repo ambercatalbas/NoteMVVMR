@@ -20,11 +20,11 @@ final class ProfileViewController: BaseViewController<ProfileViewModel> {
     private let signOutButton = LabelButton(title: "Sign Out",
                                             titleColor: .appRed,
                                             font: .font(.josefinSansSemibold, size: .custom(size: 14)))
-    private let navigationBar = UINavigationBar()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.navigationBar.isHidden = false
         navigationItem.title = "PROFİLE"
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: .hamburgerIcon,
                                                            style: .done,
@@ -34,7 +34,6 @@ final class ProfileViewController: BaseViewController<ProfileViewModel> {
         drawDesign()
         getUser()
         subscribeViewModelEvents()
-        
         
     }
     private func subscribeViewModelEvents() {
@@ -108,5 +107,6 @@ final class ProfileViewController: BaseViewController<ProfileViewModel> {
     @objc
     private func hamburgerButtonButtonTapped() {
         viewModel.showHomeScreen()
+        navigationController?.navigationBar.isHidden = true
     }
 }

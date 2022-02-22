@@ -7,7 +7,7 @@
 
 protocol HomeRoute {
     func pushHome()
-    func modalHome()
+    func placeOnWindowHome()
 }
 
 extension HomeRoute where Self: RouterProtocol {
@@ -24,7 +24,7 @@ extension HomeRoute where Self: RouterProtocol {
         open(navController, transition: transition)
     }
     
-    func modalHome() {
+    func placeOnWindowHome() {
         let router = HomeRouter()
         let viewModel = HomeViewModel(router: router)
         let viewController = HomeViewController(viewModel: viewModel)

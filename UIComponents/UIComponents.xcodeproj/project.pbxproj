@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4E00AC8627C2C070008F30A9 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E00AC8527C2C070008F30A9 /* TopView.swift */; };
-		4E00AC8827C2D0FA008F30A9 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E00AC8727C2D0FA008F30A9 /* ProfileImageView.swift */; };
 		4E00AC8A27C2EBA3008F30A9 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E00AC8927C2EBA3008F30A9 /* UITextField+Extensions.swift */; };
 		4E00AC8D27C2FD44008F30A9 /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E00AC8C27C2FD44008F30A9 /* Closures.swift */; };
 		4E43109327BDB6DC002EF700 /* EmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43109227BDB6DC002EF700 /* EmailTextField.swift */; };
@@ -34,6 +32,9 @@
 		4E4310DA27BEBF54002EF700 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4310D927BEBF54002EF700 /* LoginButton.swift */; };
 		4E4310DC27BECCC7002EF700 /* LabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4310DB27BECCC7002EF700 /* LabelButton.swift */; };
 		4E4310DE27BED180002EF700 /* RegisterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4310DD27BED180002EF700 /* RegisterButton.swift */; };
+		4EC243A727C3B89E00307270 /* HomeScreenTopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC243A527C3B89E00307270 /* HomeScreenTopViewModel.swift */; };
+		4EC243A827C3B89E00307270 /* HomeScreenTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC243A627C3B89E00307270 /* HomeScreenTopView.swift */; };
+		4EE1DDE427C4CA7200EDF1AD /* VerticalAlignLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE1DDE327C4CA7200EDF1AD /* VerticalAlignLabel.swift */; };
 		4EE2D5AE27B4F56E00E48E60 /* UIComponents.docc in Sources */ = {isa = PBXBuildFile; fileRef = 4EE2D5AD27B4F56E00E48E60 /* UIComponents.docc */; };
 		4EE2D5B427B4F56E00E48E60 /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EE2D5A927B4F56E00E48E60 /* UIComponents.framework */; };
 		4EE2D5B927B4F56E00E48E60 /* UIComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE2D5B827B4F56E00E48E60 /* UIComponentsTests.swift */; };
@@ -93,8 +94,6 @@
 
 /* Begin PBXFileReference section */
 		147ECA822FF1F8FAE3BEACE7 /* Pods-UIComponents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponents.debug.xcconfig"; path = "Target Support Files/Pods-UIComponents/Pods-UIComponents.debug.xcconfig"; sourceTree = "<group>"; };
-		4E00AC8527C2C070008F30A9 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
-		4E00AC8727C2D0FA008F30A9 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		4E00AC8927C2EBA3008F30A9 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		4E00AC8C27C2FD44008F30A9 /* Closures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closures.swift; sourceTree = "<group>"; };
 		4E43109227BDB6DC002EF700 /* EmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextField.swift; sourceTree = "<group>"; };
@@ -120,6 +119,9 @@
 		4E4310D927BEBF54002EF700 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		4E4310DB27BECCC7002EF700 /* LabelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelButton.swift; sourceTree = "<group>"; };
 		4E4310DD27BED180002EF700 /* RegisterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterButton.swift; sourceTree = "<group>"; };
+		4EC243A527C3B89E00307270 /* HomeScreenTopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenTopViewModel.swift; sourceTree = "<group>"; };
+		4EC243A627C3B89E00307270 /* HomeScreenTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenTopView.swift; sourceTree = "<group>"; };
+		4EE1DDE327C4CA7200EDF1AD /* VerticalAlignLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalAlignLabel.swift; sourceTree = "<group>"; };
 		4EE2D5A927B4F56E00E48E60 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EE2D5AC27B4F56E00E48E60 /* UIComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIComponents.h; sourceTree = "<group>"; };
 		4EE2D5AD27B4F56E00E48E60 /* UIComponents.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = UIComponents.docc; sourceTree = "<group>"; };
@@ -200,8 +202,8 @@
 		4E43109527BDB92F002EF700 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				4E00AC8527C2C070008F30A9 /* TopView.swift */,
-				4E00AC8727C2D0FA008F30A9 /* ProfileImageView.swift */,
+				4EC243A527C3B89E00307270 /* HomeScreenTopViewModel.swift */,
+				4EC243A627C3B89E00307270 /* HomeScreenTopView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -223,6 +225,14 @@
 				4E4310D727BEBCFB002EF700 /* SubTitleLabel.swift */,
 			);
 			path = UILabel;
+			sourceTree = "<group>";
+		};
+		4EE1DDE227C4CA3800EDF1AD /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				4EE1DDE327C4CA7200EDF1AD /* VerticalAlignLabel.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		4EE2D59F27B4F56E00E48E60 = {
@@ -249,6 +259,7 @@
 		4EE2D5AB27B4F56E00E48E60 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				4EE1DDE227C4CA3800EDF1AD /* Helper */,
 				4E00AC8B27C2FD26008F30A9 /* Constants */,
 				4E4310D627BEBCD4002EF700 /* UILabel */,
 				4E4310B327BE92D2002EF700 /* UIButton */,
@@ -591,6 +602,9 @@
 			files = (
 				4EE2D60027B555F600E48E60 /* HomeCellModel.swift in Sources */,
 				4E4310D827BEBCFB002EF700 /* SubTitleLabel.swift in Sources */,
+				4EC243A727C3B89E00307270 /* HomeScreenTopViewModel.swift in Sources */,
+				4EC243A827C3B89E00307270 /* HomeScreenTopView.swift in Sources */,
+				4EE1DDE427C4CA7200EDF1AD /* VerticalAlignLabel.swift in Sources */,
 				4E43109D27BE46F6002EF700 /* UserNameTextField.swift in Sources */,
 				4EE2D5E327B4F5CD00E48E60 /* Fonts.swift in Sources */,
 				4E43109327BDB6DC002EF700 /* EmailTextField.swift in Sources */,
@@ -601,13 +615,11 @@
 				4EE2D5E727B4F5CD00E48E60 /* UIImage+Images.swift in Sources */,
 				4E00AC8A27C2EBA3008F30A9 /* UITextField+Extensions.swift in Sources */,
 				4EE2D5DC27B4F5CD00E48E60 /* StringConstants.swift in Sources */,
-				4E00AC8627C2C070008F30A9 /* TopView.swift in Sources */,
 				4E4310DC27BECCC7002EF700 /* LabelButton.swift in Sources */,
 				4EE2D5FB27B5546D00E48E60 /* HomeCellModel+Extension.swift in Sources */,
 				4EE2D5E527B4F5CD00E48E60 /* UIImage+Icons.swift in Sources */,
 				4EE2D5DF27B4F5CD00E48E60 /* UIFont+Extensions.swift in Sources */,
 				4EE2D5E427B4F5CD00E48E60 /* Assets.swift in Sources */,
-				4E00AC8827C2D0FA008F30A9 /* ProfileImageView.swift in Sources */,
 				4EE2D5F627B51EC600E48E60 /* Extension+UITableView.swift in Sources */,
 				4E4310D527BEB90C002EF700 /* TitleLabel.swift in Sources */,
 				4EE2D5FF27B555F600E48E60 /* HomeCell.swift in Sources */,

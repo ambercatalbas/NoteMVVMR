@@ -7,6 +7,7 @@
 
 protocol LoginRoute {
     func pushLogin()
+    func placeOnWindowLogin()
 }
 
 extension LoginRoute where Self: RouterProtocol {
@@ -23,7 +24,7 @@ extension LoginRoute where Self: RouterProtocol {
         
         open(navController, transition: transition)
     }
-    func modalLogin() {
+    func placeOnWindowLogin() {
         let router = LoginRouter()
         let viewModel = LoginViewModel(router: router)
         let viewController = LoginViewController(viewModel: viewModel)

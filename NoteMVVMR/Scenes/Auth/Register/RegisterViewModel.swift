@@ -28,7 +28,7 @@ final class RegisterViewModel: BaseViewModel<RegisterRouter>, RegisterViewProtoc
         router.modalPasswordReset(isBackScrenLogin: isBackScrenLogin)
     }
     func showLoginScreen() {
-        router.modalLogin()
+        router.placeOnWindowLogin()
     }
     
 }

@@ -18,7 +18,7 @@ protocol PasswordResetMessageViewProtocol: PasswordResetMessageViewDataSource, P
 final class PasswordResetMessageViewModel: BaseViewModel<PasswordResetMessageRouter>, PasswordResetMessageViewProtocol {
   
     func showLoginScreen() {
-        router.modalLogin()
+        router.placeOnWindowLogin()
     }
     
     

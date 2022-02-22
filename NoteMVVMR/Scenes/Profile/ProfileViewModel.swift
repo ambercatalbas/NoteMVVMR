@@ -41,7 +41,7 @@ final class ProfileViewModel: BaseViewModel<ProfileRouter>, ProfileViewProtocol 
     }
     func signOut() {
         keychain.clear()
-        router.modalLogin()
+        router.placeOnWindowLogin()
     }
     
 }

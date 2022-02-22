@@ -21,6 +21,7 @@ final class PasswordResetViewController: BaseViewController<PasswordResetViewMod
         .image(.backArrow)
         .build()
     var isBackScrenLogin = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         drawDesign()

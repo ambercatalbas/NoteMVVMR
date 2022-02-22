@@ -16,22 +16,22 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         let tableView = UITableView()
         return tableView
     }()
-    private let topView = TopView()
+    private let topView = HomeScreenTopView()
     private let addButton = UIButtonBuilder()
         .title("   ADD NOTE")
         .tintColor(.white)
         .image(.addIcon)
         .cornerRadius(4)
         .build()
-    private let searchController = UISearchController(searchResultsController: nil)
     let keychain = KeychainSwift()
     private let refreshControl = UIRefreshControl()
     var filteredItems: [HomeCellProtocol] = []
-    var isSearchBarEmpty: Bool {
-        return searchController.searchBar.text?.isEmpty ?? true
+    var searchText: String = ""
+    var isSearchTextEmpty: Bool {
+        return searchText.isEmpty ?? true
     }
     var isFiltering: Bool {
-        return searchController.isActive && !isSearchBarEmpty
+        return !isSearchTextEmpty
     }
     
     override func viewDidLoad() {
@@ -40,7 +40,10 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         configureContents()
         viewModel.fetchNotesListing()
         subscribeViewModelEvents()
-//        addSearchController()
+        navigationController?.navigationBar.isHidden = true
+        
+        setProfilButtonAction()
+        searchAction()
         
     }
     
@@ -57,17 +60,9 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         viewModel.fetchNotesListing()
         subscribeViewModelEvents()
     }
-    private func addSearchController() {
-        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Notes"
-        navigationItem.searchController = searchController
-        definesPresentationContext = true
-    }
     private func subscribeViewModelEvents() {
         viewModel.didSuccessFetchRecipes = { [weak self] in
             guard let self = self else { return }
-            
             self.tableView.reloadData()
         }
     }
@@ -77,13 +72,13 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
 extension HomeViewController {
     private func configureContents() {
         view.backgroundColor = .white
+        makeTopView()
         makeTableView()
         makeAddNoteButton()
-        makeTopView()
     }
     private func makeTableView() {
         view.addSubview(tableView)
-        tableView.topToSuperview().constant = 100
+        tableView.topToBottom(of: topView)
         tableView.leadingToSuperview()
         tableView.trailingToSuperview()
         tableView.bottomToSuperview()
@@ -113,6 +108,22 @@ extension HomeViewController {
 }
 // MARK: - Actions
 extension HomeViewController {
+    private func setProfilButtonAction() {
+        topView.profileButtonTapped = { [weak self] in
+            guard let self = self else { return }
+            self.profileButtonTapped()
+        }
+    }
+    private func searchAction() {
+        topView.searchTextFieldTapped = { [weak self] text in
+            guard let self = self else { return }
+            
+            self.filterContentForSearchText(text)
+            self.searchText = text
+            self.tableView.reloadData()
+        }
+
+    }
     
     @objc
     private func addButtonTapped() {
@@ -147,12 +158,13 @@ extension HomeViewController: UITableViewDataSource {
             cellItem = viewModel.cellItemAt(indexPath: indexPath)
         }
         cell.set(viewModel: cellItem)
+        cell.selectionStyle = .none
         return cell
     }
 }
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(76.5)
+        return CGFloat(99)
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cellItem: HomeCellProtocol
@@ -171,17 +183,19 @@ extension HomeViewController: UITableViewDelegate {
         }
     }
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") {
-            (action, sourceView, completionHandler) in
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (_, _, completionHandler) in
             self.swipeDeleteAction(indexPath: indexPath)
             completionHandler(true)
         }
-        let editAction = UIContextualAction(style: .normal, title: "Edit") {
-            (action, sourceView, completionHandler) in
+        deleteAction.image = .trashIcon
+        deleteAction.backgroundColor = .appRed
+        let editAction = UIContextualAction(style: .normal, title: "Edit") { (_, _, completionHandler) in
             self.swipeEditAction(indexPath: indexPath)
             completionHandler(true)
         }
-        editAction.backgroundColor = UIColor(red: 255/255.0, green: 128.0/255.0, blue: 0.0, alpha: 1.0)
+        editAction.backgroundColor = .appYellow
+        editAction.image = .editIcon
+        
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, editAction])
         swipeConfiguration.performsFirstActionWithFullSwipe = false
         return swipeConfiguration
@@ -203,14 +217,6 @@ extension HomeViewController: UITableViewDelegate {
             return item.titleText.lowercased().contains(searchText.lowercased())
         }
         tableView.reloadData()
-    }
-    
-}
-extension HomeViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        let searchBar = searchController.searchBar
-        filterContentForSearchText(searchBar.text!)
-        
     }
     
 }

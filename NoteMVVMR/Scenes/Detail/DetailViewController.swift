@@ -40,6 +40,7 @@ final class DetailViewController: BaseViewController<DetailViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = false
         addSubViews()
         descriptionTextView.text = descriptionText
         navigationItem.title = navigationTitle
@@ -139,6 +140,7 @@ extension DetailViewController {
 extension DetailViewController {
     @objc
     func backButtonTapped() {
+        navigationController?.navigationBar.isHidden = true
         viewModel.showHomeScreen()
     }
     @objc

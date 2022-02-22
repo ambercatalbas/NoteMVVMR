@@ -1,14 +1,13 @@
 //
-//  TopView.swift
+//  HomeScreenTopView.swift
 //  UIComponents
 //
-//  Created by AMBER ÇATALBAŞ on 20.02.2022.
+//  Created by AMBER ÇATALBAŞ on 21.02.2022.
 //
 
 import UIKit
 
-public class TopView: UIView {
-    
+public class HomeScreenTopView: UIView {
     private let hamburgerIconButton = UIButtonBuilder()
         .backgroundColor(.white)
         .tintColor(.appCinder)
@@ -49,6 +48,8 @@ public class TopView: UIView {
     public var profileButtonTapped: VoidClosure?
     public var cancelButtonTapped: VoidClosure?
     public var hamburgerButtonTapped: VoidClosure?
+    public var searchTextFieldTapped: StringClosure?
+    weak var viewModel: HomeScreenTopViewProtocol?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -66,7 +67,7 @@ public class TopView: UIView {
         makeProfileButton()
         makeLineView()
         //            makeCancelButton()
-
+        
     }
     
     private func makeHamburgerIconButton() {
@@ -84,9 +85,9 @@ public class TopView: UIView {
         searchTextField.trailingToSuperview().constant = -75
         searchTextField.height(40)
         searchTextField.bottomToSuperview().constant = -16
-        
         searchTextField.withImage(direction: .left, image: .searchIcon,
                                   colorSeparator: UIColor.white, colorBorder: .appRaven, backgroundColor: .white)
+        searchTextField.addTarget(self, action: #selector(textSearchChange(_:)), for: .editingChanged)
     }
     private func makeProfileButton() {
         addSubview(profileButton)
@@ -113,8 +114,18 @@ public class TopView: UIView {
     }
     
 }
+extension HomeScreenTopView {
+    
+    public func set(viewModel: HomeScreenTopViewProtocol) {
+        self.viewModel = viewModel
+        profileButton.setImage(viewModel.profileImage, for: .normal)
+        searchTextField.placeholder = viewModel.placeholderText
+    }
+
+}
+
 // MARK: - Actions
-extension TopView {
+extension HomeScreenTopView {
     
     @objc
     private func hamburgerButtonTapped(_ sender: Any?) {
@@ -127,5 +138,9 @@ extension TopView {
     @objc
     private func cancelButtonTapped(_ sender: Any?) {
         cancelButtonTapped?()
+    }
+    @objc
+    private func textSearchChange(_ sender: UITextField){
+        searchTextFieldTapped?(sender.text ?? "")
     }
 }

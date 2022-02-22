@@ -15,23 +15,13 @@ public class HomeCell: UITableViewCell, ReusableView {
     
     private let containerView = UIView()
     private let textStackView = UIStackViewBuilder()
-        .spacing(0)
+        .spacing(12)
         .axis(.vertical)
         .alignment(.fill)
-        .distribution(.fill)
+        .distribution(.fillEqually)
         .build()
-    private let titleLabel = UILabelBuilder()
-        .font(.font(.josefinSansSemibold, size: .small))
-        .textAlignment(.left)
-        .textColor(.appCinder)
-        .adjustsFontSizeToFitWidth(true)
-        .build()
-    private let descriptionLabel = UILabelBuilder()
-        .font(.font(.josefinSansRegular, size: .small))
-        .textAlignment(.left)
-        .numberOfLines(2)
-        .textColor(.appRaven)
-        .build()
+    private let titleLabel = VerticalAlignLabel()
+    private let descriptionLabel = VerticalAlignLabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -60,19 +50,36 @@ extension HomeCell {
     
     private func addSubViews() {
         contentView.backgroundColor = .appWhite
-        addContainerView()
+        makeContainerView()
+        makeTextStackView()
+        makeTitleLabel()
+        makeDescriptionLaabel()
+        
     }
-    
-    private func addContainerView() {
+    private func makeContainerView() {
         contentView.addSubview(containerView)
         containerView.edgesToSuperview()
-        
+    }
+    private func makeTextStackView() {
         containerView.addSubview(textStackView)
         textStackView.topToSuperview()
         textStackView.bottomToSuperview()
         textStackView.leadingToSuperview().constant = 20
         textStackView.trailingToSuperview().constant = -20
+    }
+    private func makeTitleLabel() {
         textStackView.addArrangedSubview(titleLabel)
+        titleLabel.verticalAlignment = .bottom
+        titleLabel.font = .font(.josefinSansSemibold, size: .custom(size: 13))
+        titleLabel.textAlignment = .left
+        titleLabel.textColor = .appCinder
+    }
+    private func makeDescriptionLaabel() {
         textStackView.addArrangedSubview(descriptionLabel)
+        descriptionLabel.verticalAlignment = .top
+        descriptionLabel.font = .font(.josefinSansRegular, size: .custom(size: 13))
+        descriptionLabel.textAlignment = .left
+        descriptionLabel.numberOfLines = 2
+        descriptionLabel.textColor = .appRaven
     }
 }
