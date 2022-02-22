@@ -6,19 +6,69 @@
 //
 
 import Foundation
+import KeychainSwift
 
-protocol ProfileViewDataSource {}
+protocol ProfileViewDataSource {
+    func getUser() -> User
+}
 
-protocol ProfileViewEventSource {}
+protocol ProfileViewEventSource {
+    var didSuccessFetchUser: VoidClosure? { get set }
+    
+}
 
 protocol ProfileViewProtocol: ProfileViewDataSource, ProfileViewEventSource {
-    func pushHome()
+    func showHomeScreen()
+    func updateUser(userName: String, email: String)
+    func getUserRequest()
+    func pushChangePasswordScene()
+    func signOut()
 }
 
 final class ProfileViewModel: BaseViewModel<ProfileRouter>, ProfileViewProtocol {
-    func pushHome() {
-        router.pushHome()
+    var user: User = User(id: 0, userName: "", email: "")
+    var didSuccessFetchUser: VoidClosure?
+    var keychain = KeychainSwift()
+    func getUser() -> User {
+        return user
     }
     
+    func showHomeScreen() {
+        router.close()
+    }
+    func pushChangePasswordScene() {
+        router.pushChangePassword()
+    }
+    func signOut() {
+        keychain.clear()
+        router.placeOnWindowLogin()
+    }
     
+}
+
+extension ProfileViewModel {
+    func updateUser(userName: String, email: String) {
+        dataProvider.request(for: UpdateUserRequest(userName: userName, email: email)) { [weak self] (result) in
+            guard self != nil else { return }
+            switch result {
+            case .success(let response):
+                print(response.message ?? "")
+                //                make alert or ...
+            case .failure(let error):
+                print("err update")
+            }
+        }
+    }
+    func getUserRequest() {
+        dataProvider.request(for: GetUserRequest()) { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .success(let response):
+                self.user = response.data ?? User(id: 0, userName: "", email: "")
+                self.didSuccessFetchUser?()
+            case .failure(let error):
+                print("err update")
+            }
+        }
+    }
 }

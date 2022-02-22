@@ -18,20 +18,30 @@ public typealias Font = FontConvertible.Font
 
 // swiftlint:disable identifier_name line_length type_body_length
 public enum FontFamily {
+  public enum JosefinSans {
+    public static let bold = FontConvertible(name: "JosefinSans-Bold", family: "Josefin Sans", path: "JosefinSans-Bold.ttf")
+    public static let boldItalic = FontConvertible(name: "JosefinSans-BoldItalic", family: "Josefin Sans", path: "JosefinSans-BoldItalic.ttf")
+    public static let extraLight = FontConvertible(name: "JosefinSans-ExtraLight", family: "Josefin Sans", path: "JosefinSans-ExtraLight.ttf")
+    public static let extraLightItalic = FontConvertible(name: "JosefinSans-ExtraLightItalic", family: "Josefin Sans", path: "JosefinSans-ExtraLightItalic.ttf")
+    public static let italic = FontConvertible(name: "JosefinSans-Italic", family: "Josefin Sans", path: "JosefinSans-Italic.ttf")
+    public static let light = FontConvertible(name: "JosefinSans-Light", family: "Josefin Sans", path: "JosefinSans-Light.ttf")
+    public static let lightItalic = FontConvertible(name: "JosefinSans-LightItalic", family: "Josefin Sans", path: "JosefinSans-LightItalic.ttf")
+    public static let medium = FontConvertible(name: "JosefinSans-Medium", family: "Josefin Sans", path: "JosefinSans-Medium.ttf")
+    public static let mediumItalic = FontConvertible(name: "JosefinSans-MediumItalic", family: "Josefin Sans", path: "JosefinSans-MediumItalic.ttf")
+    public static let regular = FontConvertible(name: "JosefinSans-Regular", family: "Josefin Sans", path: "JosefinSans-Regular.ttf")
+    public static let semiBold = FontConvertible(name: "JosefinSans-SemiBold", family: "Josefin Sans", path: "JosefinSans-SemiBold.ttf")
+    public static let semiBoldItalic = FontConvertible(name: "JosefinSans-SemiBoldItalic", family: "Josefin Sans", path: "JosefinSans-SemiBoldItalic.ttf")
+    public static let thin = FontConvertible(name: "JosefinSans-Thin", family: "Josefin Sans", path: "JosefinSans-Thin.ttf")
+    public static let thinItalic = FontConvertible(name: "JosefinSans-ThinItalic", family: "Josefin Sans", path: "JosefinSans-ThinItalic.ttf")
+    public static let all: [FontConvertible] = [bold, boldItalic, extraLight, extraLightItalic, italic, light, lightItalic, medium, mediumItalic, regular, semiBold, semiBoldItalic, thin, thinItalic]
+  }
   public enum Nunito {
     public static let bold = FontConvertible(name: "Nunito-Bold", family: "Nunito", path: "Nunito-Bold.ttf")
     public static let extraBold = FontConvertible(name: "Nunito-ExtraBold", family: "Nunito", path: "Nunito-ExtraBold.ttf")
     public static let semiBold = FontConvertible(name: "Nunito-SemiBold", family: "Nunito", path: "Nunito-SemiBold.ttf")
     public static let all: [FontConvertible] = [bold, extraBold, semiBold]
   }
-    public enum JosefinSans {
-      public static let normal = FontConvertible(name: "JosefinSans-VariableFont_wght", family: "JosefinSans", path: "JosefinSans-VariableFont_wght.ttf")
-      public static let italic = FontConvertible(name: "JosefinSans-Italic-VariableFont_wght", family: "JosefinSans", path: "JosefinSans-Italic-VariableFont_wght.ttf")
-        public static let regular = FontConvertible(name: "JosefinSans-Regular", family: "JosefinSans", path: "JosefinSans-Regular.ttf")
-        
-      public static let all: [FontConvertible] = [normal, italic]
-    }
-  public static let allCustomFonts: [FontConvertible] = [Nunito.all].flatMap { $0 }
+  public static let allCustomFonts: [FontConvertible] = [JosefinSans.all, Nunito.all].flatMap { $0 }
   public static func registerAllCustomFonts() {
     allCustomFonts.forEach { $0.register() }
   }

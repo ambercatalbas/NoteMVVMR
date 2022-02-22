@@ -9,122 +9,83 @@ import UIKit
 import MobilliumBuilders
 import TinyConstraints
 import KeychainSwift
+import SwiftUI
 
 final class LoginViewController: BaseViewController<LoginViewModel> {
-    private let titleLabel = UILabelBuilder()
-        .textColor(.appCinder)
-        .font(.font(.nunitoBold, size: .xxLarge))
-        .text("LoginViewController")
-        .build()
+    private let titleLabel = TitleLabel(text: "Login")
+    private let subTitleLabel = SubTitleLabel(text: "Login or sign up to continue using our app.")
     private let textFieldtackView = UIStackViewBuilder()
         .axis(.vertical)
-        .spacing(15)
+        .spacing(14)
         .alignment(.fill)
         .distribution(.fillEqually)
         .build()
-    private let emailTextField = UITextFieldBuilder()
-        .backgroundColor(.appHeather)
-        .borderStyle(.roundedRect)
-        .placeholder("name@mail.com")
-        .text("ambercatalbas@gmail.com")
-        .build()
-    private let passwordTextField = UITextFieldBuilder()
-        .backgroundColor(.appHeather)
-        .borderStyle(.roundedRect)
-        .placeholder("Password...")
-        .text("123456")
-        .build()
-    private let buttonStackView = UIStackViewBuilder()
-        .axis(.vertical)
-        .spacing(10)
-        .alignment(.fill)
-        .distribution(.fillEqually)
-        .build()
-    private let loginButton = UIButtonBuilder()
-        .titleColor(.appCinder)
-        .titleFont(.font(.nunitoBold, size: .xLarge))
-        .title("Login")
-        .backgroundColor(.appPurple)
-        .cornerRadius(12)
-        .build()
-    private let registerButton = UIButtonBuilder()
-        .titleColor(.appRaven)
-        .titleFont(.font(.nunitoBold, size: .xLarge))
-        .title("Register")
-        .backgroundColor(.appBeige)
-        .cornerRadius(12)
-        .build()
-    private let forgotPasswordButton = UIButtonBuilder()
-        .titleFont(.font(.nunitoSemiBold, size: .large))
-        .titleColor(.appRaven)
-        .title("Forgot Password")
-        .backgroundColor(.cyan)
-        .cornerRadius(12)
-        .build()
+    private let emailTextField = EmailTextField()
+    private let passwordTextField = PasswordTextField()
+    private let forgotPasswordLabelButton = LabelButton(title: "Forgot Password?")
+    private let loginButton = LoginButton(title: "Login")
+    private let registerLabelButton = RegisterButton(blackText: "New user?", blueberryText: "Sign up now")
+    
     let keychain = KeychainSwift()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .appBackgrounlightGreen
         drawDesign()
     }
+    
     private func drawDesign() {
-        view.addSubview(titleLabel)
-        view.addSubview(textFieldtackView)
-        view.addSubview(buttonStackView)
         maketitleLabel()
+        makeSubTitleLabel()
         makeTextFieldtackView()
-        makeEmailTextField()
-        makePasswordTextfield()
-        makeButtonStackView()
-        makeLoginButton()
-        makeRegisterButton()
         makeForgotPasswordButton()
+        makeLoginButton()
+        makeRegisterLabelButton()
     }
 }
 extension LoginViewController {
     private func maketitleLabel() {
-        titleLabel.edges(to: view, excluding: .bottom, insets: TinyEdgeInsets(top: 44, left: 20, bottom: 100, right: 20))
+        view.addSubview(titleLabel)
+        titleLabel.topToSuperview().constant = 103
+        titleLabel.centerXToSuperview()
+    }
+    private func makeSubTitleLabel() {
+        view.addSubview(subTitleLabel)
+        subTitleLabel.topToBottom(of: titleLabel).constant = 10
+        subTitleLabel.centerXToSuperview()
+        
     }
     private func makeTextFieldtackView() {
-        textFieldtackView.topToBottom(of: titleLabel).constant = 30
-        textFieldtackView.rightToSuperview().constant = -5
-        textFieldtackView.leftToSuperview().constant = 5
+        view.addSubview(textFieldtackView)
+        textFieldtackView.topToBottom(of: subTitleLabel).constant = 42
+        textFieldtackView.leftToSuperview().constant = 25
+        textFieldtackView.rightToSuperview().constant = -25
+        textFieldtackView.centerXToSuperview()
         textFieldtackView.addArrangedSubview(emailTextField)
         textFieldtackView.addArrangedSubview(passwordTextField)
-    }
-    private func makeEmailTextField() {
-        emailTextField.withImage(direction: .left,
-                                 image: .emailIcon,
-                                 colorSeparator: UIColor.black,
-                                 colorBorder: UIColor.clear,
-                                 backgroundColor: .appHeather)
-        emailTextField.height(50)
-    }
-    private func makePasswordTextfield() {
-        passwordTextField.withImage(direction: .left,
-                                    image: .passwordIcon,
-                                    colorSeparator: UIColor.black,
-                                    colorBorder: UIColor.clear,
-                                    backgroundColor: .appHeather)
-        passwordTextField.height(50)
-    }
-    private func makeButtonStackView() {
-        buttonStackView.topToBottom(of: textFieldtackView).constant = 30
-        buttonStackView.rightToSuperview().constant = -30
-        buttonStackView.leftToSuperview().constant = 30
-        buttonStackView.addArrangedSubview(loginButton)
-        buttonStackView.addArrangedSubview(registerButton)
-        buttonStackView.addArrangedSubview(forgotPasswordButton)
-    }
-    private func makeLoginButton() {
-        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
-    }
-    private func makeRegisterButton() {
-        registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
+        emailTextField.height(47)
+        passwordTextField.height(47)
     }
     private func makeForgotPasswordButton() {
-        forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordButtonTapped), for: .touchUpInside)
+        view.addSubview(forgotPasswordLabelButton)
+        forgotPasswordLabelButton.topToBottom(of: textFieldtackView).constant = 13
+        forgotPasswordLabelButton.right(to: textFieldtackView)
+        forgotPasswordLabelButton.addTarget(self, action: #selector(forgotPasswordButtonTapped), for: .touchUpInside)
+    }
+
+    private func makeLoginButton() {
+        view.addSubview(loginButton)
+        loginButton.topToBottom(of: forgotPasswordLabelButton).constant = 27
+        loginButton.height(60)
+        loginButton.leftToSuperview().constant = 25
+        loginButton.rightToSuperview().constant = -25
+        loginButton.centerXToSuperview()
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+    }
+    private func makeRegisterLabelButton() {
+        view.addSubview(registerLabelButton)
+        registerLabelButton.bottomToSuperview().constant = -34
+        registerLabelButton.centerXToSuperview()
+        registerLabelButton.addTarget(self, action: #selector(registerLabelButtonTapped), for: .touchUpInside)
     }
     
 }
@@ -139,12 +100,12 @@ extension LoginViewController {
         viewModel.sendLoginRequest(email: email, password: password)
     }
     @objc
-    private func registerButtonTapped() {
+    private func registerLabelButtonTapped() {
         viewModel.showRegisterOnWindow()
     }
     
     @objc
     private func forgotPasswordButtonTapped() {
-        viewModel.pushPasswordResetScene()
+        viewModel.showPasswordResetScene(isBackScrenLogin: true)
     }
 }

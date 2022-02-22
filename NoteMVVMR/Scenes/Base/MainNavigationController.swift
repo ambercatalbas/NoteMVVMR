@@ -12,47 +12,23 @@ import MobilliumBuilders
 class MainNavigationController: UINavigationController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        return .darkContent
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        configureContents()
-    }
-    
-    private func configureContents() {
-        let backImage = UIImage.icBack
-     
+        
+        self.navigationController?.navigationBar.shadowImage = .add
+        navigationBar.tintColor = .appCinder
+        navigationBar.titleTextAttributes
         let titleTextAttributes = AttributedStringDictionaryBuilder()
-            .font(.font(.nunitoExtraBold, size: .medium))
-            .foregroundColor(.appWhite)
+            .font(.font(.josefinSansBold, size: .custom(size: 12)))
+            .foregroundColor(.appCinder)
             .build()
-        navigationBar.barTintColor = .appRed
-        navigationBar.shadowImage = UIImage()
-        navigationBar.tintColor = .appWhite
         navigationBar.titleTextAttributes = titleTextAttributes
-        UIBarButtonItem.appearance().setTitleTextAttributes(AttributedStringDictionaryBuilder()
-                                                                .font(.font(.nunitoSemiBold, size: .large))
-                                                                .foregroundColor(.appWhite)
-                                                                .build(),
-                                                            for: .normal)
-
-        navigationBar.backIndicatorImage = backImage
-        navigationBar.backIndicatorTransitionMaskImage = backImage
-
-        if #available(iOS 13.0, *) {
-            let appearance = UINavigationBarAppearance()
-            appearance.configureWithOpaqueBackground()
-            appearance.shadowColor = .clear
-            appearance.backgroundColor = .navigationBarGreen
-            appearance.titleTextAttributes = titleTextAttributes
-            appearance.setBackIndicatorImage(backImage, transitionMaskImage: backImage)
-            navigationBar.standardAppearance = appearance
-            navigationBar.scrollEdgeAppearance = appearance
-            navigationBar.compactAppearance = appearance
-        }
-        navigationBar.backItem?.backBarButtonItem?.setTitlePositionAdjustment(.init(horizontal: 0, vertical: -13), for: .default)
+        
     }
+
     
     #if DEBUG
     deinit {

@@ -11,44 +11,33 @@ import UIKit
 public extension UIFont {
     
     enum FontWeight {
-        case nunitoSemiBold
-        case nunitoBold
-        case nunitoExtraBold
-        case josefinSans
-        case josefinSansItalic
+        case josefinSansMedium
         case josefinSansRegular
+        case josefinSansItalic
+        case josefinSansSemibold
+        case josefinSansBold
+        
     }
     
     enum FontSize {
-        /// 11
-        case xSmall
-        
-        /// 12
-        case small
         
         /// 13
-        case medium
-        
-        /// 14
-        case large
+        case small
         
         /// 15
-        case xLarge
+        case medium
         
-        /// 16
-        case xxLarge
+        /// 26
+        case large
         
         /// custom
         case custom(size: CGFloat)
         
         public var rawValue: CGFloat {
             switch self {
-            case .xSmall:           return 11
-            case .small:            return 12
-            case .medium:           return 13
-            case .large:            return 14
-            case .xLarge:           return 15
-            case .xxLarge:          return 16
+            case .small:            return 13
+            case .medium:           return 15
+            case .large:            return 26
             case .custom(let size): return size
             }
         }
@@ -57,19 +46,16 @@ public extension UIFont {
     static func font(_ weight: UIFont.FontWeight, size: FontSize) -> UIFont {
         let font: UIFont
         switch weight {
-        case .nunitoSemiBold:
-            font = FontFamily.Nunito.semiBold.font(size: size.rawValue)
-        case .nunitoBold:
-            font = FontFamily.Nunito.bold.font(size: size.rawValue)
-        case .nunitoExtraBold:
-            font = FontFamily.Nunito.extraBold.font(size: size.rawValue)
-        case .josefinSans:
-            font = FontFamily.JosefinSans.normal.font(size: size.rawValue)
-        case .josefinSansItalic:
-            font = FontFamily.JosefinSans.italic.font(size: size.rawValue)
+        case .josefinSansMedium:
+            font = FontFamily.JosefinSans.medium.font(size: size.rawValue)
         case .josefinSansRegular:
             font = FontFamily.JosefinSans.regular.font(size: size.rawValue)
-
+        case .josefinSansItalic:
+            font = FontFamily.JosefinSans.italic.font(size: size.rawValue)
+        case .josefinSansSemibold:
+            font = FontFamily.JosefinSans.semiBold.font(size: size.rawValue)
+        case .josefinSansBold:
+            font = FontFamily.JosefinSans.bold.font(size: size.rawValue)
         }
         return font
     }

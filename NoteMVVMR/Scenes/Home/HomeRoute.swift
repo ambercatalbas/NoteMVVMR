@@ -7,6 +7,7 @@
 
 protocol HomeRoute {
     func pushHome()
+    func placeOnWindowHome()
 }
 
 extension HomeRoute where Self: RouterProtocol {
@@ -21,5 +22,17 @@ extension HomeRoute where Self: RouterProtocol {
         router.openTransition = transition
         
         open(navController, transition: transition)
+    }
+    
+    func placeOnWindowHome() {
+        let router = HomeRouter()
+        let viewModel = HomeViewModel(router: router)
+        let viewController = HomeViewController(viewModel: viewModel)
+       
+        let transition = PlaceOnWindowTransition()
+        router.viewController = viewController
+        router.openTransition = transition
+        
+        open(viewController, transition: transition)
     }
 }

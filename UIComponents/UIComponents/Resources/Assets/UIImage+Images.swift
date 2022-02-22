@@ -29,6 +29,10 @@ public extension UIImage {
   static var imgWalkthrough4: UIImage {
       return Asset.Images.imgWalkthrough4.image
   }
+
+  static var profilPhoto: UIImage {
+      return Asset.Images.profilPhoto.image
+  }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

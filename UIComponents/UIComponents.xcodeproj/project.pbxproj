@@ -7,13 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E00AC8A27C2EBA3008F30A9 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E00AC8927C2EBA3008F30A9 /* UITextField+Extensions.swift */; };
+		4E00AC8D27C2FD44008F30A9 /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E00AC8C27C2FD44008F30A9 /* Closures.swift */; };
 		4E43109327BDB6DC002EF700 /* EmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43109227BDB6DC002EF700 /* EmailTextField.swift */; };
-		4E43109727BE363D002EF700 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43109627BE363D002EF700 /* LoginView.swift */; };
 		4E43109B27BE420D002EF700 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43109A27BE420D002EF700 /* PasswordTextField.swift */; };
 		4E43109D27BE46F6002EF700 /* UserNameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43109C27BE46F6002EF700 /* UserNameTextField.swift */; };
-		4E4310A027BE4830002EF700 /* JosefinSans-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E43109E27BE4830002EF700 /* JosefinSans-Italic-VariableFont_wght.ttf */; };
-		4E4310A127BE4830002EF700 /* JosefinSans-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E43109F27BE4830002EF700 /* JosefinSans-VariableFont_wght.ttf */; };
 		4E4310A327BE5876002EF700 /* JosefinSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E4310A227BE5876002EF700 /* JosefinSans-Regular.ttf */; };
+		4E4310B927BE9473002EF700 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 4E4310B827BE9473002EF700 /* swiftgen.yml */; };
+		4E4310C727BE986E002EF700 /* JosefinSans-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E4310BA27BE986D002EF700 /* JosefinSans-ExtraLightItalic.ttf */; };
+		4E4310C827BE986E002EF700 /* JosefinSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E4310BB27BE986D002EF700 /* JosefinSans-Light.ttf */; };
+		4E4310C927BE986E002EF700 /* JosefinSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E4310BC27BE986D002EF700 /* JosefinSans-Italic.ttf */; };
+		4E4310CA27BE986E002EF700 /* JosefinSans-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E4310BD27BE986D002EF700 /* JosefinSans-ExtraLight.ttf */; };
+		4E4310CB27BE986E002EF700 /* JosefinSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E4310BE27BE986E002EF700 /* JosefinSans-Bold.ttf */; };
+		4E4310CC27BE986E002EF700 /* JosefinSans-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E4310BF27BE986E002EF700 /* JosefinSans-ThinItalic.ttf */; };
+		4E4310CD27BE986E002EF700 /* JosefinSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E4310C027BE986E002EF700 /* JosefinSans-SemiBold.ttf */; };
+		4E4310CE27BE986E002EF700 /* JosefinSans-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E4310C127BE986E002EF700 /* JosefinSans-Thin.ttf */; };
+		4E4310CF27BE986E002EF700 /* JosefinSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E4310C227BE986E002EF700 /* JosefinSans-SemiBoldItalic.ttf */; };
+		4E4310D027BE986E002EF700 /* JosefinSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E4310C327BE986E002EF700 /* JosefinSans-Medium.ttf */; };
+		4E4310D127BE986E002EF700 /* JosefinSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E4310C427BE986E002EF700 /* JosefinSans-BoldItalic.ttf */; };
+		4E4310D227BE986E002EF700 /* JosefinSans-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E4310C527BE986E002EF700 /* JosefinSans-MediumItalic.ttf */; };
+		4E4310D327BE986E002EF700 /* JosefinSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E4310C627BE986E002EF700 /* JosefinSans-LightItalic.ttf */; };
+		4E4310D527BEB90C002EF700 /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4310D427BEB90C002EF700 /* TitleLabel.swift */; };
+		4E4310D827BEBCFB002EF700 /* SubTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4310D727BEBCFB002EF700 /* SubTitleLabel.swift */; };
+		4E4310DA27BEBF54002EF700 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4310D927BEBF54002EF700 /* LoginButton.swift */; };
+		4E4310DC27BECCC7002EF700 /* LabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4310DB27BECCC7002EF700 /* LabelButton.swift */; };
+		4E4310DE27BED180002EF700 /* RegisterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4310DD27BED180002EF700 /* RegisterButton.swift */; };
+		4EC243A727C3B89E00307270 /* HomeScreenTopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC243A527C3B89E00307270 /* HomeScreenTopViewModel.swift */; };
+		4EC243A827C3B89E00307270 /* HomeScreenTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC243A627C3B89E00307270 /* HomeScreenTopView.swift */; };
+		4EE1DDE427C4CA7200EDF1AD /* VerticalAlignLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE1DDE327C4CA7200EDF1AD /* VerticalAlignLabel.swift */; };
 		4EE2D5AE27B4F56E00E48E60 /* UIComponents.docc in Sources */ = {isa = PBXBuildFile; fileRef = 4EE2D5AD27B4F56E00E48E60 /* UIComponents.docc */; };
 		4EE2D5B427B4F56E00E48E60 /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EE2D5A927B4F56E00E48E60 /* UIComponents.framework */; };
 		4EE2D5B927B4F56E00E48E60 /* UIComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE2D5B827B4F56E00E48E60 /* UIComponentsTests.swift */; };
@@ -73,13 +94,34 @@
 
 /* Begin PBXFileReference section */
 		147ECA822FF1F8FAE3BEACE7 /* Pods-UIComponents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponents.debug.xcconfig"; path = "Target Support Files/Pods-UIComponents/Pods-UIComponents.debug.xcconfig"; sourceTree = "<group>"; };
+		4E00AC8927C2EBA3008F30A9 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		4E00AC8C27C2FD44008F30A9 /* Closures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closures.swift; sourceTree = "<group>"; };
 		4E43109227BDB6DC002EF700 /* EmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextField.swift; sourceTree = "<group>"; };
-		4E43109627BE363D002EF700 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4E43109A27BE420D002EF700 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		4E43109C27BE46F6002EF700 /* UserNameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameTextField.swift; sourceTree = "<group>"; };
-		4E43109E27BE4830002EF700 /* JosefinSans-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
-		4E43109F27BE4830002EF700 /* JosefinSans-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		4E4310A227BE5876002EF700 /* JosefinSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Regular.ttf"; sourceTree = "<group>"; };
+		4E4310B827BE9473002EF700 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
+		4E4310BA27BE986D002EF700 /* JosefinSans-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		4E4310BB27BE986D002EF700 /* JosefinSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Light.ttf"; sourceTree = "<group>"; };
+		4E4310BC27BE986D002EF700 /* JosefinSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Italic.ttf"; sourceTree = "<group>"; };
+		4E4310BD27BE986D002EF700 /* JosefinSans-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-ExtraLight.ttf"; sourceTree = "<group>"; };
+		4E4310BE27BE986E002EF700 /* JosefinSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Bold.ttf"; sourceTree = "<group>"; };
+		4E4310BF27BE986E002EF700 /* JosefinSans-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-ThinItalic.ttf"; sourceTree = "<group>"; };
+		4E4310C027BE986E002EF700 /* JosefinSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		4E4310C127BE986E002EF700 /* JosefinSans-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Thin.ttf"; sourceTree = "<group>"; };
+		4E4310C227BE986E002EF700 /* JosefinSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		4E4310C327BE986E002EF700 /* JosefinSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Medium.ttf"; sourceTree = "<group>"; };
+		4E4310C427BE986E002EF700 /* JosefinSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		4E4310C527BE986E002EF700 /* JosefinSans-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-MediumItalic.ttf"; sourceTree = "<group>"; };
+		4E4310C627BE986E002EF700 /* JosefinSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		4E4310D427BEB90C002EF700 /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
+		4E4310D727BEBCFB002EF700 /* SubTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTitleLabel.swift; sourceTree = "<group>"; };
+		4E4310D927BEBF54002EF700 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
+		4E4310DB27BECCC7002EF700 /* LabelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelButton.swift; sourceTree = "<group>"; };
+		4E4310DD27BED180002EF700 /* RegisterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterButton.swift; sourceTree = "<group>"; };
+		4EC243A527C3B89E00307270 /* HomeScreenTopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenTopViewModel.swift; sourceTree = "<group>"; };
+		4EC243A627C3B89E00307270 /* HomeScreenTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenTopView.swift; sourceTree = "<group>"; };
+		4EE1DDE327C4CA7200EDF1AD /* VerticalAlignLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalAlignLabel.swift; sourceTree = "<group>"; };
 		4EE2D5A927B4F56E00E48E60 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EE2D5AC27B4F56E00E48E60 /* UIComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIComponents.h; sourceTree = "<group>"; };
 		4EE2D5AD27B4F56E00E48E60 /* UIComponents.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = UIComponents.docc; sourceTree = "<group>"; };
@@ -139,6 +181,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E00AC8B27C2FD26008F30A9 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				4E00AC8C27C2FD44008F30A9 /* Closures.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		4E43109427BDB81A002EF700 /* TextField */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,14 +202,43 @@
 		4E43109527BDB92F002EF700 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				4E43109627BE363D002EF700 /* LoginView.swift */,
+				4EC243A527C3B89E00307270 /* HomeScreenTopViewModel.swift */,
+				4EC243A627C3B89E00307270 /* HomeScreenTopView.swift */,
 			);
 			path = UIView;
+			sourceTree = "<group>";
+		};
+		4E4310B327BE92D2002EF700 /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				4E4310D927BEBF54002EF700 /* LoginButton.swift */,
+				4E4310DB27BECCC7002EF700 /* LabelButton.swift */,
+				4E4310DD27BED180002EF700 /* RegisterButton.swift */,
+			);
+			path = UIButton;
+			sourceTree = "<group>";
+		};
+		4E4310D627BEBCD4002EF700 /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				4E4310D427BEB90C002EF700 /* TitleLabel.swift */,
+				4E4310D727BEBCFB002EF700 /* SubTitleLabel.swift */,
+			);
+			path = UILabel;
+			sourceTree = "<group>";
+		};
+		4EE1DDE227C4CA3800EDF1AD /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				4EE1DDE327C4CA7200EDF1AD /* VerticalAlignLabel.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		4EE2D59F27B4F56E00E48E60 = {
 			isa = PBXGroup;
 			children = (
+				4E4310B827BE9473002EF700 /* swiftgen.yml */,
 				4EE2D5AB27B4F56E00E48E60 /* UIComponents */,
 				4EE2D5B727B4F56E00E48E60 /* UIComponentsTests */,
 				4EE2D5AA27B4F56E00E48E60 /* Products */,
@@ -180,6 +259,10 @@
 		4EE2D5AB27B4F56E00E48E60 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				4EE1DDE227C4CA3800EDF1AD /* Helper */,
+				4E00AC8B27C2FD26008F30A9 /* Constants */,
+				4E4310D627BEBCD4002EF700 /* UILabel */,
+				4E4310B327BE92D2002EF700 /* UIButton */,
 				4E43109527BDB92F002EF700 /* UIView */,
 				4E43109427BDB81A002EF700 /* TextField */,
 				4EE2D5FC27B555BD00E48E60 /* Cell */,
@@ -226,9 +309,20 @@
 		4EE2D5CB27B4F5CD00E48E60 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				4E4310BE27BE986E002EF700 /* JosefinSans-Bold.ttf */,
+				4E4310C427BE986E002EF700 /* JosefinSans-BoldItalic.ttf */,
+				4E4310BD27BE986D002EF700 /* JosefinSans-ExtraLight.ttf */,
+				4E4310BA27BE986D002EF700 /* JosefinSans-ExtraLightItalic.ttf */,
+				4E4310BC27BE986D002EF700 /* JosefinSans-Italic.ttf */,
+				4E4310BB27BE986D002EF700 /* JosefinSans-Light.ttf */,
+				4E4310C627BE986E002EF700 /* JosefinSans-LightItalic.ttf */,
+				4E4310C327BE986E002EF700 /* JosefinSans-Medium.ttf */,
+				4E4310C527BE986E002EF700 /* JosefinSans-MediumItalic.ttf */,
+				4E4310C027BE986E002EF700 /* JosefinSans-SemiBold.ttf */,
+				4E4310C227BE986E002EF700 /* JosefinSans-SemiBoldItalic.ttf */,
+				4E4310C127BE986E002EF700 /* JosefinSans-Thin.ttf */,
+				4E4310BF27BE986E002EF700 /* JosefinSans-ThinItalic.ttf */,
 				4E4310A227BE5876002EF700 /* JosefinSans-Regular.ttf */,
-				4E43109E27BE4830002EF700 /* JosefinSans-Italic-VariableFont_wght.ttf */,
-				4E43109F27BE4830002EF700 /* JosefinSans-VariableFont_wght.ttf */,
 				4EE2D5CC27B4F5CD00E48E60 /* UIFont+Extensions.swift */,
 				4EE2D5CD27B4F5CD00E48E60 /* Nunito-ExtraBold.ttf */,
 				4EE2D5CE27B4F5CD00E48E60 /* Nunito-SemiBold.ttf */,
@@ -257,6 +351,7 @@
 			children = (
 				4EE2D5F527B51EC600E48E60 /* Extension+UITableView.swift */,
 				4EE2D5FA27B5546D00E48E60 /* HomeCellModel+Extension.swift */,
+				4E00AC8927C2EBA3008F30A9 /* UITextField+Extensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -320,6 +415,7 @@
 			buildConfigurationList = 4EE2D5BD27B4F56E00E48E60 /* Build configuration list for PBXNativeTarget "UIComponents" */;
 			buildPhases = (
 				2923BCF9A4A9943CBE1B285B /* [CP] Check Pods Manifest.lock */,
+				4E4310B727BE9444002EF700 /* Siftgen */,
 				4EE2D5A427B4F56E00E48E60 /* Headers */,
 				4EE2D5A527B4F56E00E48E60 /* Sources */,
 				4EE2D5A627B4F56E00E48E60 /* Frameworks */,
@@ -396,20 +492,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E4310CC27BE986E002EF700 /* JosefinSans-ThinItalic.ttf in Resources */,
+				4E4310C727BE986E002EF700 /* JosefinSans-ExtraLightItalic.ttf in Resources */,
 				4EE2D5E627B4F5CD00E48E60 /* Colors.xcassets in Resources */,
-				4E4310A027BE4830002EF700 /* JosefinSans-Italic-VariableFont_wght.ttf in Resources */,
+				4E4310CF27BE986E002EF700 /* JosefinSans-SemiBoldItalic.ttf in Resources */,
+				4E4310CD27BE986E002EF700 /* JosefinSans-SemiBold.ttf in Resources */,
 				4EE2D5E127B4F5CD00E48E60 /* Nunito-SemiBold.ttf in Resources */,
-				4E4310A127BE4830002EF700 /* JosefinSans-VariableFont_wght.ttf in Resources */,
+				4E4310C827BE986E002EF700 /* JosefinSans-Light.ttf in Resources */,
 				4EE2D5DE27B4F5CD00E48E60 /* Placeholder.strings in Resources */,
+				4E4310D027BE986E002EF700 /* JosefinSans-Medium.ttf in Resources */,
 				4EE2D5DB27B4F5CD00E48E60 /* General.strings in Resources */,
 				4EE2D5EA27B4F5CD00E48E60 /* Images.xcassets in Resources */,
 				4EE2D5E827B4F5CD00E48E60 /* Icons.xcassets in Resources */,
+				4E4310C927BE986E002EF700 /* JosefinSans-Italic.ttf in Resources */,
+				4E4310D327BE986E002EF700 /* JosefinSans-LightItalic.ttf in Resources */,
+				4E4310D127BE986E002EF700 /* JosefinSans-BoldItalic.ttf in Resources */,
+				4E4310CA27BE986E002EF700 /* JosefinSans-ExtraLight.ttf in Resources */,
 				4EE2D5DA27B4F5CD00E48E60 /* Componenets.strings in Resources */,
 				4EE2D5E027B4F5CD00E48E60 /* Nunito-ExtraBold.ttf in Resources */,
+				4E4310D227BE986E002EF700 /* JosefinSans-MediumItalic.ttf in Resources */,
 				4EE2D5D927B4F5CD00E48E60 /* Modules.strings in Resources */,
+				4E4310B927BE9473002EF700 /* swiftgen.yml in Resources */,
 				4E4310A327BE5876002EF700 /* JosefinSans-Regular.ttf in Resources */,
+				4E4310CE27BE986E002EF700 /* JosefinSans-Thin.ttf in Resources */,
 				4EE2D5E227B4F5CD00E48E60 /* Nunito-Bold.ttf in Resources */,
 				4EE2D5DD27B4F5CD00E48E60 /* Error.strings in Resources */,
+				4E4310CB27BE986E002EF700 /* JosefinSans-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +575,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		4E4310B727BE9444002EF700 /* Siftgen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Siftgen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\"\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -475,21 +601,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EE2D60027B555F600E48E60 /* HomeCellModel.swift in Sources */,
+				4E4310D827BEBCFB002EF700 /* SubTitleLabel.swift in Sources */,
+				4EC243A727C3B89E00307270 /* HomeScreenTopViewModel.swift in Sources */,
+				4EC243A827C3B89E00307270 /* HomeScreenTopView.swift in Sources */,
+				4EE1DDE427C4CA7200EDF1AD /* VerticalAlignLabel.swift in Sources */,
 				4E43109D27BE46F6002EF700 /* UserNameTextField.swift in Sources */,
 				4EE2D5E327B4F5CD00E48E60 /* Fonts.swift in Sources */,
 				4E43109327BDB6DC002EF700 /* EmailTextField.swift in Sources */,
-				4E43109727BE363D002EF700 /* LoginView.swift in Sources */,
+				4E4310DA27BEBF54002EF700 /* LoginButton.swift in Sources */,
 				4EE2D5F927B51F7C00E48E60 /* ReusableView.swift in Sources */,
+				4E00AC8D27C2FD44008F30A9 /* Closures.swift in Sources */,
 				4EE2D5E927B4F5CD00E48E60 /* UIColor+Colors.swift in Sources */,
 				4EE2D5E727B4F5CD00E48E60 /* UIImage+Images.swift in Sources */,
+				4E00AC8A27C2EBA3008F30A9 /* UITextField+Extensions.swift in Sources */,
 				4EE2D5DC27B4F5CD00E48E60 /* StringConstants.swift in Sources */,
+				4E4310DC27BECCC7002EF700 /* LabelButton.swift in Sources */,
 				4EE2D5FB27B5546D00E48E60 /* HomeCellModel+Extension.swift in Sources */,
 				4EE2D5E527B4F5CD00E48E60 /* UIImage+Icons.swift in Sources */,
 				4EE2D5DF27B4F5CD00E48E60 /* UIFont+Extensions.swift in Sources */,
 				4EE2D5E427B4F5CD00E48E60 /* Assets.swift in Sources */,
 				4EE2D5F627B51EC600E48E60 /* Extension+UITableView.swift in Sources */,
+				4E4310D527BEB90C002EF700 /* TitleLabel.swift in Sources */,
 				4EE2D5FF27B555F600E48E60 /* HomeCell.swift in Sources */,
 				4E43109B27BE420D002EF700 /* PasswordTextField.swift in Sources */,
+				4E4310DE27BED180002EF700 /* RegisterButton.swift in Sources */,
 				4EE2D5AE27B4F56E00E48E60 /* UIComponents.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

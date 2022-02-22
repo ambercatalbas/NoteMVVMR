@@ -22,4 +22,15 @@ extension RegisterRoute where Self: RouterProtocol {
         
         open(viewController, transition: transition)
     }
+    func modalRegister() {
+        let router = RegisterRouter()
+        let viewModel = RegisterViewModel(router: router)
+        let viewController = RegisterViewController(viewModel: viewModel)
+        
+        let transition = ModalTransition()
+        router.viewController = viewController
+        router.openTransition = transition
+        
+        open(viewController, transition: transition)
+    }
 }

@@ -7,6 +7,7 @@
 
 protocol ProfileRoute {
     func pushProfile()
+    func modalProfile()
 }
 
 extension ProfileRoute where Self: RouterProtocol {
@@ -17,6 +18,18 @@ extension ProfileRoute where Self: RouterProtocol {
         let viewController = ProfileViewController(viewModel: viewModel)
         
         let transition = PushTransition()
+        router.viewController = viewController
+        router.openTransition = transition
+        
+        open(viewController, transition: transition)
+    }
+    
+    func modalProfile() {
+        let router = ProfileRouter()
+        let viewModel = ProfileViewModel(router: router)
+        let viewController = ProfileViewController(viewModel: viewModel)
+        
+        let transition = ModalTransition()
         router.viewController = viewController
         router.openTransition = transition
         
