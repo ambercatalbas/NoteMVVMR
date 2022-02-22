@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E33052127C1A00800E8F43A /* UpdateUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E33052027C1A00800E8F43A /* UpdateUserRequest.swift */; };
+		4E33052327C1A09700E8F43A /* GetUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E33052227C1A09700E8F43A /* GetUserResponse.swift */; };
+		4E33052527C1A42800E8F43A /* GetUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E33052427C1A42800E8F43A /* GetUserRequest.swift */; };
+		4E33052727C1BB8F00E8F43A /* ChangePasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E33052627C1BB8F00E8F43A /* ChangePasswordRequest.swift */; };
+		4E43108027BA63AA002EF700 /* DeleteNoteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43107F27BA63AA002EF700 /* DeleteNoteRequest.swift */; };
+		4E43108227BA64CD002EF700 /* DeleteNoteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43108127BA64CD002EF700 /* DeleteNoteResponse.swift */; };
+		4E43108427BA8813002EF700 /* UpdateNoteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43108327BA8813002EF700 /* UpdateNoteRequest.swift */; };
+		4E4310E027BEF406002EF700 /* PasswordResetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4310DF27BEF406002EF700 /* PasswordResetRequest.swift */; };
 		4E96994927B13B1200C4CF8E /* DecodableResponseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E96993F27B13B1100C4CF8E /* DecodableResponseRequest.swift */; };
 		4E96994A27B13B1200C4CF8E /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E96994027B13B1100C4CF8E /* Typealias.swift */; };
 		4E96994B27B13B1200C4CF8E /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E96994127B13B1100C4CF8E /* RequestProtocol.swift */; };
@@ -18,11 +26,16 @@
 		4E96995127B13B1200C4CF8E /* APIDecodableResponseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E96994827B13B1100C4CF8E /* APIDecodableResponseRequest.swift */; };
 		4E96996027B1445900C4CF8E /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E96995F27B1445900C4CF8E /* RegisterRequest.swift */; };
 		4E96996227B164C400C4CF8E /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E96996127B164C400C4CF8E /* LoginRequest.swift */; };
+		4E969A9D27B39E9000C4CF8E /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A9C27B39E9000C4CF8E /* Note.swift */; };
+		4E969A9F27B3D22200C4CF8E /* CreateNoteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A9E27B3D22200C4CF8E /* CreateNoteRequest.swift */; };
+		4E969AA227B3DAEB00C4CF8E /* CreateNoteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969AA127B3DAEB00C4CF8E /* CreateNoteResponse.swift */; };
+		4E969AA427B4337700C4CF8E /* GetNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969AA327B4337700C4CF8E /* GetNotes.swift */; };
 		4EAEEAD927B08774001D4A86 /* DataProvider.docc in Sources */ = {isa = PBXBuildFile; fileRef = 4EAEEAD827B08774001D4A86 /* DataProvider.docc */; };
 		4EAEEADF27B08774001D4A86 /* DataProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EAEEAD427B08774001D4A86 /* DataProvider.framework */; };
 		4EAEEAE427B08774001D4A86 /* DataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAEEAE327B08774001D4A86 /* DataProviderTests.swift */; };
 		4EAEEAE527B08774001D4A86 /* DataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EAEEAD727B08774001D4A86 /* DataProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4EAEEAFA27B08840001D4A86 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAEEAF627B08840001D4A86 /* Auth.swift */; };
+		4EE2D5F027B5060000E48E60 /* GetMyNotesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE2D5EF27B5060000E48E60 /* GetMyNotesRequest.swift */; };
 		95707074FE63681C13308AE5 /* Pods_DataProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 739542E6AF084DAF366316AC /* Pods_DataProvider.framework */; };
 		DA3065CF72450955770DD5AD /* Pods_DataProviderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67EBBCB28EAF9229BDE6951F /* Pods_DataProviderTests.framework */; };
 /* End PBXBuildFile section */
@@ -40,6 +53,14 @@
 /* Begin PBXFileReference section */
 		0419550DDB6CAEDAADAF0E1C /* Pods-DataProvider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProvider.release.xcconfig"; path = "Target Support Files/Pods-DataProvider/Pods-DataProvider.release.xcconfig"; sourceTree = "<group>"; };
 		1F95B78ACD3B615DBACEBDCC /* Pods-DataProviderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProviderTests.release.xcconfig"; path = "Target Support Files/Pods-DataProviderTests/Pods-DataProviderTests.release.xcconfig"; sourceTree = "<group>"; };
+		4E33052027C1A00800E8F43A /* UpdateUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserRequest.swift; sourceTree = "<group>"; };
+		4E33052227C1A09700E8F43A /* GetUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserResponse.swift; sourceTree = "<group>"; };
+		4E33052427C1A42800E8F43A /* GetUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserRequest.swift; sourceTree = "<group>"; };
+		4E33052627C1BB8F00E8F43A /* ChangePasswordRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordRequest.swift; sourceTree = "<group>"; };
+		4E43107F27BA63AA002EF700 /* DeleteNoteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNoteRequest.swift; sourceTree = "<group>"; };
+		4E43108127BA64CD002EF700 /* DeleteNoteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNoteResponse.swift; sourceTree = "<group>"; };
+		4E43108327BA8813002EF700 /* UpdateNoteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNoteRequest.swift; sourceTree = "<group>"; };
+		4E4310DF27BEF406002EF700 /* PasswordResetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetRequest.swift; sourceTree = "<group>"; };
 		4E96993F27B13B1100C4CF8E /* DecodableResponseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodableResponseRequest.swift; sourceTree = "<group>"; };
 		4E96994027B13B1100C4CF8E /* Typealias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
 		4E96994127B13B1100C4CF8E /* RequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
@@ -51,12 +72,17 @@
 		4E96994827B13B1100C4CF8E /* APIDecodableResponseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIDecodableResponseRequest.swift; sourceTree = "<group>"; };
 		4E96995F27B1445900C4CF8E /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
 		4E96996127B164C400C4CF8E /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		4E969A9C27B39E9000C4CF8E /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		4E969A9E27B3D22200C4CF8E /* CreateNoteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteRequest.swift; sourceTree = "<group>"; };
+		4E969AA127B3DAEB00C4CF8E /* CreateNoteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteResponse.swift; sourceTree = "<group>"; };
+		4E969AA327B4337700C4CF8E /* GetNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNotes.swift; sourceTree = "<group>"; };
 		4EAEEAD427B08774001D4A86 /* DataProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EAEEAD727B08774001D4A86 /* DataProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataProvider.h; sourceTree = "<group>"; };
 		4EAEEAD827B08774001D4A86 /* DataProvider.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = DataProvider.docc; sourceTree = "<group>"; };
 		4EAEEADE27B08774001D4A86 /* DataProviderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataProviderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EAEEAE327B08774001D4A86 /* DataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderTests.swift; sourceTree = "<group>"; };
 		4EAEEAF627B08840001D4A86 /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		4EE2D5EF27B5060000E48E60 /* GetMyNotesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMyNotesRequest.swift; sourceTree = "<group>"; };
 		5A10D9B986E32E2B891D63EA /* Pods-DataProvider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProvider.debug.xcconfig"; path = "Target Support Files/Pods-DataProvider/Pods-DataProvider.debug.xcconfig"; sourceTree = "<group>"; };
 		67EBBCB28EAF9229BDE6951F /* Pods_DataProviderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DataProviderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		739542E6AF084DAF366316AC /* Pods_DataProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DataProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,10 +145,23 @@
 		4E96995E27B1443B00C4CF8E /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				4E96995F27B1445900C4CF8E /* RegisterRequest.swift */,
-				4E96996127B164C400C4CF8E /* LoginRequest.swift */,
+				4EE2D5EE27B505C800E48E60 /* Note */,
+				4E969AA027B3D22C00C4CF8E /* Auth */,
 			);
 			path = Request;
+			sourceTree = "<group>";
+		};
+		4E969AA027B3D22C00C4CF8E /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				4E96995F27B1445900C4CF8E /* RegisterRequest.swift */,
+				4E96996127B164C400C4CF8E /* LoginRequest.swift */,
+				4E4310DF27BEF406002EF700 /* PasswordResetRequest.swift */,
+				4E33052027C1A00800E8F43A /* UpdateUserRequest.swift */,
+				4E33052427C1A42800E8F43A /* GetUserRequest.swift */,
+				4E33052627C1BB8F00E8F43A /* ChangePasswordRequest.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		4EAEEACA27B08774001D4A86 = {
@@ -170,8 +209,24 @@
 			isa = PBXGroup;
 			children = (
 				4EAEEAF627B08840001D4A86 /* Auth.swift */,
+				4E969A9C27B39E9000C4CF8E /* Note.swift */,
+				4E969AA127B3DAEB00C4CF8E /* CreateNoteResponse.swift */,
+				4E969AA327B4337700C4CF8E /* GetNotes.swift */,
+				4E43108127BA64CD002EF700 /* DeleteNoteResponse.swift */,
+				4E33052227C1A09700E8F43A /* GetUserResponse.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4EE2D5EE27B505C800E48E60 /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				4E969A9E27B3D22200C4CF8E /* CreateNoteRequest.swift */,
+				4EE2D5EF27B5060000E48E60 /* GetMyNotesRequest.swift */,
+				4E43107F27BA63AA002EF700 /* DeleteNoteRequest.swift */,
+				4E43108327BA8813002EF700 /* UpdateNoteRequest.swift */,
+			);
+			path = Note;
 			sourceTree = "<group>";
 		};
 		E495B26F6273FD3DF8633239 /* Pods */ = {
@@ -362,19 +417,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EE2D5F027B5060000E48E60 /* GetMyNotesRequest.swift in Sources */,
+				4E43108427BA8813002EF700 /* UpdateNoteRequest.swift in Sources */,
 				4E96994927B13B1200C4CF8E /* DecodableResponseRequest.swift in Sources */,
 				4E96996227B164C400C4CF8E /* LoginRequest.swift in Sources */,
 				4E96994D27B13B1200C4CF8E /* RequestEncoding.swift in Sources */,
 				4E96996027B1445900C4CF8E /* RegisterRequest.swift in Sources */,
 				4E96994F27B13B1200C4CF8E /* APIDataProvider.swift in Sources */,
 				4EAEEAFA27B08840001D4A86 /* Auth.swift in Sources */,
+				4E33052727C1BB8F00E8F43A /* ChangePasswordRequest.swift in Sources */,
 				4E96994A27B13B1200C4CF8E /* Typealias.swift in Sources */,
 				4E96995127B13B1200C4CF8E /* APIDecodableResponseRequest.swift in Sources */,
+				4E969AA427B4337700C4CF8E /* GetNotes.swift in Sources */,
 				4E96994E27B13B1200C4CF8E /* DataProviderProtocol.swift in Sources */,
+				4E43108227BA64CD002EF700 /* DeleteNoteResponse.swift in Sources */,
+				4E969A9D27B39E9000C4CF8E /* Note.swift in Sources */,
+				4E43108027BA63AA002EF700 /* DeleteNoteRequest.swift in Sources */,
 				4E96995027B13B1200C4CF8E /* APIRequestAdapter.swift in Sources */,
 				4EAEEAD927B08774001D4A86 /* DataProvider.docc in Sources */,
+				4E969AA227B3DAEB00C4CF8E /* CreateNoteResponse.swift in Sources */,
 				4E96994C27B13B1200C4CF8E /* RequestMethod.swift in Sources */,
+				4E33052527C1A42800E8F43A /* GetUserRequest.swift in Sources */,
+				4E33052127C1A00800E8F43A /* UpdateUserRequest.swift in Sources */,
+				4E33052327C1A09700E8F43A /* GetUserResponse.swift in Sources */,
 				4E96994B27B13B1200C4CF8E /* RequestProtocol.swift in Sources */,
+				4E4310E027BEF406002EF700 /* PasswordResetRequest.swift in Sources */,
+				4E969A9F27B3D22200C4CF8E /* CreateNoteRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
