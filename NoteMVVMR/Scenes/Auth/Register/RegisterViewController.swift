@@ -38,7 +38,6 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
         makeRegisterButton()
         makeRegisterLabelButton()
     }
-    
 }
 extension RegisterViewController {
     private func maketitleLabel() {
@@ -96,14 +95,16 @@ extension RegisterViewController {
         view.endEditing(true)
         guard let userName = usernameTextField.text,
               let email = emailTextField.text,
-              let password = passwordTextField.text else {
-                  print("error")
-                  //            showWarningToast(message: L10n.Error.emptyFields)
-                  return
-              }
+              let password = passwordTextField.text,
+              usernameTextField.text?.isEmpty == false,
+              emailTextField.text?.isEmpty == false,
+              passwordTextField.text?.isEmpty == false else {
+                  ToastPresenter.showWarningToast(text: "Your full name/email address/password cannot be empty.", entryBackground: .appRed)
+                  return }
         let validation = Validation()
         guard validation.isValidEmail(email) else { return }
         guard validation.isValidPassword(password) else { return }
+        ToastPresenter.showWarningToast(text: "Success Sign Up", entryBackground: .appGreen)
         viewModel.sendRegisterRequest(username: userName, email: email, password: password)
     }
     @objc
