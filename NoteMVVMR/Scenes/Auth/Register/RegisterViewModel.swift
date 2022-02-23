@@ -43,7 +43,7 @@ extension RegisterViewModel {
                 self.keychain.set(response.data?.accessToken ?? "", forKey: Keychain.token)
                 self.router.pushHome()
             case .failure(let error):
-                self.showWarningToast?("\(error.localizedDescription) \(L10n.Error.checkInformations)")
+                self.showWarningToast?("\(error.localizedDescription)")
             }
         }
     }

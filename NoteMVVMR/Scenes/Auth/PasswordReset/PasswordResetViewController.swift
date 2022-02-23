@@ -85,6 +85,11 @@ extension PasswordResetViewController {
 extension PasswordResetViewController {
     @objc
     private func resetPasswordButtonTapped() {
+        guard let email = emailTextField.text else { return }
+        let validation = Validation()
+        guard validation.isValidEmail(email) else {
+            showWarningToast(message: L10n.PasswordResetViewController.incorrectEmailMessage, entryBackground: .appRed)
+            return }
         viewModel.sendResetRequest(email: emailTextField.text ?? "")
     }
     @objc

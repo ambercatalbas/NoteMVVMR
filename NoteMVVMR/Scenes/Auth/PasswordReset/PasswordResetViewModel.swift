@@ -35,6 +35,7 @@ final class PasswordResetViewModel: BaseViewModel<PasswordResetRouter>, Password
 // MARK: - Network
 extension PasswordResetViewModel {
     func sendResetRequest(email: String) {
+        
         dataProvider.request(for: PasswordResetRequest(email: email)) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
