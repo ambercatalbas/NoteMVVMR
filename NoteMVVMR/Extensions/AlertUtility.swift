@@ -14,7 +14,7 @@ final class AlertUtility {
   func present(title: String,
                message: String,
                buttonTitle: String = "OK",
-               handler: ((UIAlertAction) -> Void)? = nil,
+               handler: ((UIAlertAction) -> Void)?,
                delegate: UIViewController) {
     
     let alertController = UIAlertController(title: title,
@@ -26,17 +26,17 @@ final class AlertUtility {
   
   func multiButton(title: String,
                    message: String,
-                   buttonTitle: String = "OK",
-                   buttonTitle1: String = "CANCEL",
-                   handler: ((UIAlertAction) -> Void)? = nil,
-                   handler1: ((UIAlertAction) -> Void)? = nil,
+                   firstButtonTitle: String = "OK",
+                   secondButtonTitle1: String = "CANCEL",
+                   firstButtonHandler: ((UIAlertAction) -> Void)? = nil,
+                                      secondButtonHandler: ((UIAlertAction) -> Void)? = nil,
                    delegate: UIViewController) {
     
     let alertController = UIAlertController(title: title,
                                             message: message,
                                             preferredStyle: .alert)
-    alertController.addAction(UIAlertAction(title: buttonTitle, style: .default, handler: handler))
-    alertController.addAction(UIAlertAction(title: buttonTitle1, style: .default, handler: handler1))
+    alertController.addAction(UIAlertAction(title: firstButtonTitle, style: .default, handler: firstButtonHandler))
+    alertController.addAction(UIAlertAction(title: secondButtonTitle1, style: .default, handler:                    secondButtonHandler))
     delegate.present(alertController, animated: true, completion: nil)
   }
 }

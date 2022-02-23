@@ -55,7 +55,6 @@
 		4E969A8C27B1C79A00C4CF8E /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A7527B1C79A00C4CF8E /* ScreenSize.swift */; };
 		4E969A8D27B1C79A00C4CF8E /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A7627B1C79A00C4CF8E /* Closures.swift */; };
 		4E969A9127B1C7AB00C4CF8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A8F27B1C7AB00C4CF8E /* AppDelegate.swift */; };
-		4E969A9227B1C7AB00C4CF8E /* AppDelegate+IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A9027B1C7AB00C4CF8E /* AppDelegate+IQKeyboardManager.swift */; };
 		4E969A9727B25D1F00C4CF8E /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A9427B25D1F00C4CF8E /* DetailRouter.swift */; };
 		4E969A9827B25D1F00C4CF8E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A9527B25D1F00C4CF8E /* DetailViewController.swift */; };
 		4E969A9927B25D1F00C4CF8E /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A9627B25D1F00C4CF8E /* DetailViewModel.swift */; };
@@ -160,7 +159,6 @@
 		4E969A7527B1C79A00C4CF8E /* ScreenSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
 		4E969A7627B1C79A00C4CF8E /* Closures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Closures.swift; sourceTree = "<group>"; };
 		4E969A8F27B1C7AB00C4CF8E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4E969A9027B1C7AB00C4CF8E /* AppDelegate+IQKeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+IQKeyboardManager.swift"; sourceTree = "<group>"; };
 		4E969A9427B25D1F00C4CF8E /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
 		4E969A9527B25D1F00C4CF8E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		4E969A9627B25D1F00C4CF8E /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
@@ -444,7 +442,6 @@
 			isa = PBXGroup;
 			children = (
 				4E969A8F27B1C7AB00C4CF8E /* AppDelegate.swift */,
-				4E969A9027B1C7AB00C4CF8E /* AppDelegate+IQKeyboardManager.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -847,7 +844,6 @@
 				4E969A9B27B25D3000C4CF8E /* DetailRoute.swift in Sources */,
 				4E9699FF27B1BFF400C4CF8E /* MainNavigationController.swift in Sources */,
 				4E33051F27C1962E00E8F43A /* PasswordResetMessageRoute.swift in Sources */,
-				4E969A9227B1C7AB00C4CF8E /* AppDelegate+IQKeyboardManager.swift in Sources */,
 				4E9699F327B1BFF400C4CF8E /* PasswordResetViewModel.swift in Sources */,
 				4EFE0BA327C021A100623C92 /* ChangePasswordViewModel.swift in Sources */,
 				4E9699F527B1BFF400C4CF8E /* PasswordResetViewController.swift in Sources */,

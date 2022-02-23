@@ -13,7 +13,9 @@
 "LoginViewController.passwordPlaceholder" = "Password";
 "LoginViewController.forgotPassword" = "Forgot Password?";
 "LoginViewController.loginButton" = "Login";
-"LoginViewController.bottomText" = "New user? Sign up now";
+"LoginViewController.bottomBlackText" = "New user? ";
+"LoginViewController.bottomBluberryText" = "Sign up now";
+
 
 // MARK: - Register
 "RegisterViewController.title" = "Sign Up";
@@ -23,7 +25,8 @@
 "RegisterViewController.passwordPlaceholder" = "Password";
 "RegisterViewController.forgotPassword" = "Forgot Password?";
 "RegisterViewController.signUpButtonTitle" = "Sign Up";
-"RegisterViewController.bottomText" = "Already have an account? Sign in now";
+"RegisterViewController.bottomBlackText" = "Already have an account? ";
+"RegisterViewController.bottomBluberryText" = "Sign in now";
 
 // MARK: - Password Reset
 "PasswordResetViewController.title" = "Forgot Password?";
@@ -46,11 +49,12 @@
 "HomeViewController.alertSubTitle" = "Are you sure you want to delete this note.";
 "HomeViewController.alertCancelButtonTitle" = "Cancel";
 "HomeViewController.alertDeleteButtonTitle" = "Delete";
-"HomeViewController.addNoteButtonTitle" = "+ Add Note";
+"HomeViewController.addNoteButtonTitle" = " Add Note";
 
 // MARK: - Detail
-"DetailViewController.title" = "EDİT NOTE";
+"DetailViewController.editTitle" = "EDİT NOTE";
 "DetailViewController.detailsTitle" = "DETAİLS";
+"DetailViewController.addTitle" = "ADD NOTE";
 "DetailViewController.noteTitlePlaceholder" = "Note Title...";
 "DetailViewController.descriptionTitlePlaceholder" = "Description...";
 "DetailViewController.saveButtonTitle" = "Save";
@@ -61,10 +65,25 @@
 "ProfileViewController.changePasswordButtonTitle" = "Change Password";
 "ProfileViewController.signOutButtonTitle" = "Sign Out";
 
+
 // MARK: - CHANGE PASSWORD
 "ChangePasswordController.title" = "CHANGE PASSWORD";
 "ChangePasswordController.passwordPlaceholder" = "Password";
 "ChangePasswordController.newPasswordPlaceholder" = "New Password";
 "ChangePasswordController.retypeNewPasswordPlaceholder" = "Retype New Password";
-"ChangePasswordController.saveButtonTitle" = "Sign Out";
+"ChangePasswordController.saveButtonTitle" = "Save";
+
+// Mark: - Error Alert
+"Error.emptyFields" = "Please fill in the blanks.";
+"Error.checkInformations" = "Please check your information.";
+"Error.incorrectEmailFormat" = "Your email address not in mail format ";
+"Error.incorrectEmailFormata" = "Your email address should contain @.";
+"Error.invalidMatch" = "The email and password you entered did not match our records. Please try again.";
+"Error.passwordCharacter" = "Your password must consist of at least 6 characters.";
+
+// Mark: - Succes Alert
+"Success.succesChangePassword" = "Your password has been updated";
+"Success.succesSignUp" = "Success Sign Up.";
+"Success.succesUpdeteProfile" = "Your profile has been updated";
+
 

@@ -18,7 +18,7 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     }()
     private let topView = HomeScreenTopView()
     private let addButton = UIButtonBuilder()
-        .title("   ADD NOTE")
+        .title(Strings.HomeViewController.addNoteButtonTitle)
         .tintColor(.white)
         .image(.addIcon)
         .cornerRadius(4)
@@ -127,7 +127,7 @@ extension HomeViewController {
     
     @objc
     private func addButtonTapped() {
-        viewModel.addNote(titleText: "", descriptionText: "Description...", noteId: 0, type: .add)
+        viewModel.addNote(titleText: "", descriptionText: Strings.DetailViewController.descriptionTitlePlaceholder, noteId: 0, type: .add)
     }
     @objc
     private func profileButtonTapped() {
@@ -183,14 +183,21 @@ extension HomeViewController: UITableViewDelegate {
         }
     }
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (_, _, completionHandler) in
-            
-            self.swipeDeleteAction(indexPath: indexPath)
+        let deleteAction = UIContextualAction(style: .destructive, title:"") { (_, _, completionHandler) in
+            AlertUtility.shared.multiButton(title: Strings.HomeViewController.alertTitle,
+                                            message: Strings.HomeViewController.alertSubTitle,
+                                            firstButtonTitle: Strings.HomeViewController.alertCancelButtonTitle,
+                                            secondButtonTitle1: Strings.HomeViewController.alertDeleteButtonTitle,
+                                            firstButtonHandler: { _ in },
+                                            secondButtonHandler: { _ in
+                self.swipeDeleteAction(indexPath: indexPath)
+            }, delegate: self)
             completionHandler(true)
         }
         deleteAction.image = .trashIcon
         deleteAction.backgroundColor = .appRed
-        let editAction = UIContextualAction(style: .normal, title: "Edit") { (_, _, completionHandler) in
+        let editAction = UIContextualAction(style: .normal, title:"") { (_, _, completionHandler) in
+
             self.swipeEditAction(indexPath: indexPath)
             completionHandler(true)
         }
@@ -202,18 +209,18 @@ extension HomeViewController: UITableViewDelegate {
         return swipeConfiguration
     }
     
-    fileprivate func swipeDeleteAction(indexPath: IndexPath) {
+    private func swipeDeleteAction(indexPath: IndexPath) {
         let noteID = self.viewModel.cellItems[indexPath.row].noteID
         self.viewModel.deleteNote(noteID: noteID)
         tableView.reloadData()
     }
-    fileprivate func swipeEditAction(indexPath: IndexPath) {
+    private func swipeEditAction(indexPath: IndexPath) {
         let title = self.viewModel.cellItems[indexPath.row].titleText
         let description = self.viewModel.cellItems[indexPath.row].descriptionText
         let noteID = self.viewModel.cellItems[indexPath.row].noteID
         self.viewModel.editRow(titleText: title, descriptionText: description, noteId: noteID, type: .update)
     }
-    func filterContentForSearchText(_ searchText: String ) {
+    private func filterContentForSearchText(_ searchText: String ) {
         filteredItems = viewModel.cellItems.filter { (item: HomeCellProtocol) -> Bool in
             return item.titleText.lowercased().contains(searchText.lowercased())
         }

@@ -10,10 +10,11 @@ import MobilliumBuilders
 import TinyConstraints
 import KeychainSwift
 import SwiftUI
+import UIComponents
 
 final class LoginViewController: BaseViewController<LoginViewModel> {
-    private let titleLabel = TitleLabel(text: "Login")
-    private let subTitleLabel = SubTitleLabel(text: "Login or sign up to continue using our app.")
+    private let titleLabel = TitleLabel(text: Strings.LoginViewController.title)
+    private let subTitleLabel = SubTitleLabel(text: Strings.LoginViewController.subTitle)
     private let textFieldtackView = UIStackViewBuilder()
         .axis(.vertical)
         .spacing(14)
@@ -22,9 +23,9 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         .build()
     private let emailTextField = EmailTextField()
     private let passwordTextField = PasswordTextField()
-    private let forgotPasswordLabelButton = LabelButton(title: "Forgot Password?")
-    private let loginButton = LoginButton(title: "Login")
-    private let registerLabelButton = RegisterButton(blackText: "New user?", blueberryText: "Sign up now")
+    private let forgotPasswordLabelButton = LabelButton(title: Strings.LoginViewController.forgotPassword)
+    private let loginButton = LoginButton(title: Strings.LoginViewController.loginButton)
+    private let registerLabelButton = RegisterButton(blackText: Strings.LoginViewController.bottomBlackText, blueberryText: Strings.LoginViewController.bottomBluberryText)
     
     let keychain = KeychainSwift()
     
@@ -71,7 +72,7 @@ extension LoginViewController {
         forgotPasswordLabelButton.right(to: textFieldtackView)
         forgotPasswordLabelButton.addTarget(self, action: #selector(forgotPasswordButtonTapped), for: .touchUpInside)
     }
-
+    
     private func makeLoginButton() {
         view.addSubview(loginButton)
         loginButton.topToBottom(of: forgotPasswordLabelButton).constant = 27
@@ -93,7 +94,11 @@ extension LoginViewController {
     @objc
     private func loginButtonTapped() {
         guard let email = emailTextField.text,
-              let password = passwordTextField.text else { return }
+              let password = passwordTextField.text,
+              emailTextField.text?.isEmpty == false,
+              passwordTextField.text?.isEmpty == false else {
+                  ToastPresenter.showWarningToast(text: Strings.Error.emptyFields, entryBackground: .appRed)
+                  return }
         let validation = Validation()
         guard validation.isValidEmail(email) else { return }
         guard validation.isValidPassword(password) else { return }

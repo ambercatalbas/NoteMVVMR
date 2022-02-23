@@ -32,13 +32,13 @@
 		4E4310DA27BEBF54002EF700 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4310D927BEBF54002EF700 /* LoginButton.swift */; };
 		4E4310DC27BECCC7002EF700 /* LabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4310DB27BECCC7002EF700 /* LabelButton.swift */; };
 		4E4310DE27BED180002EF700 /* RegisterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4310DD27BED180002EF700 /* RegisterButton.swift */; };
+		4EBBAA5527C63DF6005FAA05 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4EBBAA5327C63DF5005FAA05 /* Localizable.strings */; };
+		4EBBAA5927C66427005FAA05 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBBAA5827C66427005FAA05 /* StringConstants.swift */; };
 		4EC243A727C3B89E00307270 /* HomeScreenTopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC243A527C3B89E00307270 /* HomeScreenTopViewModel.swift */; };
 		4EC243A827C3B89E00307270 /* HomeScreenTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC243A627C3B89E00307270 /* HomeScreenTopView.swift */; };
 		4EE1DDE427C4CA7200EDF1AD /* VerticalAlignLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE1DDE327C4CA7200EDF1AD /* VerticalAlignLabel.swift */; };
 		4EE1DDE727C5363800EDF1AD /* ToastsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE1DDE627C5363800EDF1AD /* ToastsPresenter.swift */; };
 		4EE1DDE927C536F100EDF1AD /* ToastWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE1DDE827C536F100EDF1AD /* ToastWarningView.swift */; };
-		4EE1DE1027C59ECC00EDF1AD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4EE1DE0B27C59ECC00EDF1AD /* Localizable.strings */; };
-		4EE1DE1327C59F5600EDF1AD /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE1DE1227C59F5600EDF1AD /* StringConstants.swift */; };
 		4EE2D5AE27B4F56E00E48E60 /* UIComponents.docc in Sources */ = {isa = PBXBuildFile; fileRef = 4EE2D5AD27B4F56E00E48E60 /* UIComponents.docc */; };
 		4EE2D5B427B4F56E00E48E60 /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EE2D5A927B4F56E00E48E60 /* UIComponents.framework */; };
 		4EE2D5B927B4F56E00E48E60 /* UIComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE2D5B827B4F56E00E48E60 /* UIComponentsTests.swift */; };
@@ -117,13 +117,13 @@
 		4E4310D927BEBF54002EF700 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		4E4310DB27BECCC7002EF700 /* LabelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelButton.swift; sourceTree = "<group>"; };
 		4E4310DD27BED180002EF700 /* RegisterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterButton.swift; sourceTree = "<group>"; };
+		4EBBAA5427C63DF5005FAA05 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
+		4EBBAA5827C66427005FAA05 /* StringConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
 		4EC243A527C3B89E00307270 /* HomeScreenTopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenTopViewModel.swift; sourceTree = "<group>"; };
 		4EC243A627C3B89E00307270 /* HomeScreenTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenTopView.swift; sourceTree = "<group>"; };
 		4EE1DDE327C4CA7200EDF1AD /* VerticalAlignLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalAlignLabel.swift; sourceTree = "<group>"; };
 		4EE1DDE627C5363800EDF1AD /* ToastsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastsPresenter.swift; sourceTree = "<group>"; };
 		4EE1DDE827C536F100EDF1AD /* ToastWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastWarningView.swift; sourceTree = "<group>"; };
-		4EE1DE0C27C59ECC00EDF1AD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
-		4EE1DE1227C59F5600EDF1AD /* StringConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
 		4EE2D5A927B4F56E00E48E60 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EE2D5AC27B4F56E00E48E60 /* UIComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIComponents.h; sourceTree = "<group>"; };
 		4EE2D5AD27B4F56E00E48E60 /* UIComponents.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = UIComponents.docc; sourceTree = "<group>"; };
@@ -223,6 +223,14 @@
 			path = UILabel;
 			sourceTree = "<group>";
 		};
+		4EBBAA5227C63DF5005FAA05 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				4EBBAA5327C63DF5005FAA05 /* Localizable.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
 		4EE1DDE227C4CA3800EDF1AD /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,8 +251,8 @@
 		4EE1DDEA27C592B800EDF1AD /* Strings */ = {
 			isa = PBXGroup;
 			children = (
-				4EE1DE1227C59F5600EDF1AD /* StringConstants.swift */,
-				4EE1DE0B27C59ECC00EDF1AD /* Localizable.strings */,
+				4EBBAA5827C66427005FAA05 /* StringConstants.swift */,
+				4EBBAA5227C63DF5005FAA05 /* en.lproj */,
 			);
 			path = Strings;
 			sourceTree = "<group>";
@@ -508,7 +516,7 @@
 				4E4310C927BE986E002EF700 /* JosefinSans-Italic.ttf in Resources */,
 				4E4310D327BE986E002EF700 /* JosefinSans-LightItalic.ttf in Resources */,
 				4E4310D127BE986E002EF700 /* JosefinSans-BoldItalic.ttf in Resources */,
-				4EE1DE1027C59ECC00EDF1AD /* Localizable.strings in Resources */,
+				4EBBAA5527C63DF6005FAA05 /* Localizable.strings in Resources */,
 				4E4310CA27BE986E002EF700 /* JosefinSans-ExtraLight.ttf in Resources */,
 				4EE2D5E027B4F5CD00E48E60 /* Nunito-ExtraBold.ttf in Resources */,
 				4E4310D227BE986E002EF700 /* JosefinSans-MediumItalic.ttf in Resources */,
@@ -623,7 +631,7 @@
 				4E4310D527BEB90C002EF700 /* TitleLabel.swift in Sources */,
 				4EE2D5FF27B555F600E48E60 /* HomeCell.swift in Sources */,
 				4EE1DDE727C5363800EDF1AD /* ToastsPresenter.swift in Sources */,
-				4EE1DE1327C59F5600EDF1AD /* StringConstants.swift in Sources */,
+				4EBBAA5927C66427005FAA05 /* StringConstants.swift in Sources */,
 				4E43109B27BE420D002EF700 /* PasswordTextField.swift in Sources */,
 				4E4310DE27BED180002EF700 /* RegisterButton.swift in Sources */,
 				4EE2D5AE27B4F56E00E48E60 /* UIComponents.docc in Sources */,
@@ -649,10 +657,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4EE1DE0B27C59ECC00EDF1AD /* Localizable.strings */ = {
+		4EBBAA5327C63DF5005FAA05 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4EE1DE0C27C59ECC00EDF1AD /* en */,
+				4EBBAA5427C63DF5005FAA05 /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

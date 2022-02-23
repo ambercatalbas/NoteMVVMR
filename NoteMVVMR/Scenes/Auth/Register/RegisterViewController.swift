@@ -10,8 +10,8 @@ import UIKit
 import UIComponents
 
 final class RegisterViewController: BaseViewController<RegisterViewModel> {
-    private let titleLabel = TitleLabel(text: "Sign Up")
-    private let subTitleLabel = SubTitleLabel(text: "Login or sign up to continue using our app.")
+    private let titleLabel = TitleLabel(text: Strings.RegisterViewController.title)
+    private let subTitleLabel = SubTitleLabel(text: Strings.RegisterViewController.subTitle)
     private let textFieldtackView = UIStackViewBuilder()
         .axis(.vertical)
         .spacing(14)
@@ -21,9 +21,9 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
     private let usernameTextField = UserNameTextField()
     private let emailTextField = EmailTextField()
     private let passwordTextField = PasswordTextField()
-    private let forgotPasswordLabelButton = LabelButton(title: "Forgot Password?")
-    private let registerButton = LoginButton(title: "Sign Up")
-    private let registerLabelButton = RegisterButton(blackText: "Already have an account?", blueberryText: "Sign in now")
+    private let forgotPasswordLabelButton = LabelButton(title: Strings.RegisterViewController.forgotPassword)
+    private let registerButton = LoginButton(title: Strings.RegisterViewController.signUpButtonTitle)
+    private let registerLabelButton = RegisterButton(blackText: Strings.RegisterViewController.bottomBlackText, blueberryText: Strings.RegisterViewController.bottomBluberryText)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,12 +99,11 @@ extension RegisterViewController {
               usernameTextField.text?.isEmpty == false,
               emailTextField.text?.isEmpty == false,
               passwordTextField.text?.isEmpty == false else {
-                  ToastPresenter.showWarningToast(text: "Your full name/email address/password cannot be empty.", entryBackground: .appRed)
+                  ToastPresenter.showWarningToast(text: Strings.Error.emptyFields, entryBackground: .appRed)
                   return }
         let validation = Validation()
         guard validation.isValidEmail(email) else { return }
         guard validation.isValidPassword(password) else { return }
-        ToastPresenter.showWarningToast(text: "Success Sign Up", entryBackground: .appGreen)
         viewModel.sendRegisterRequest(username: userName, email: email, password: password)
     }
     @objc

@@ -7,13 +7,14 @@ fonts:
         publicAccess: public
 
 strings:
-  inputs: UIComponents/Resources/Strings
+  inputs: UIComponents/Resources/Strings/en.lproj
   filter: .+\.strings$
   outputs:
     - templateName: structured-swift5
       output: UIComponents/Resources/Strings/StringConstants.swift
       params:
           publicAccess: public
+          enumName: Strings
 
 xcassets:
   - inputs:

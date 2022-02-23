@@ -11,12 +11,12 @@ final class ChangePasswordViewController: BaseViewController<ChangePasswordViewM
     private let passwordTextField = PasswordTextField()
     private let newPasswordTextField = PasswordTextField()
     private let retypeNewPasswordTextField = PasswordTextField()
-    private let saveButton = LoginButton(title: "Save")
+    private let saveButton = LoginButton(title: Strings.ChangePasswordController.saveButtonTitle)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "CHANGE PASSWORD"
+        title = Strings.ChangePasswordController.title
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: .hamburgerIcon,
                                                            style: .done,
                                                            target: self,
@@ -35,7 +35,7 @@ final class ChangePasswordViewController: BaseViewController<ChangePasswordViewM
         passwordTextField.leftToSuperview().constant = 25
         passwordTextField.rightToSuperview().constant = -25
         passwordTextField.height(47)
-        passwordTextField.placeholder = "Password"
+        passwordTextField.placeholder = Strings.ChangePasswordController.passwordPlaceholder
         
     }
     private func makeNewPasswordTextField() {
@@ -44,7 +44,7 @@ final class ChangePasswordViewController: BaseViewController<ChangePasswordViewM
         newPasswordTextField.leftToSuperview().constant = 25
         newPasswordTextField.rightToSuperview().constant = -25
         newPasswordTextField.height(47)
-        newPasswordTextField.placeholder = "New Password"
+        newPasswordTextField.placeholder = Strings.ChangePasswordController.newPasswordPlaceholder
     }
     private func makeRetypeNewPasswordTextField() {
         view.addSubview(retypeNewPasswordTextField)
@@ -52,7 +52,7 @@ final class ChangePasswordViewController: BaseViewController<ChangePasswordViewM
         retypeNewPasswordTextField.leftToSuperview().constant = 25
         retypeNewPasswordTextField.rightToSuperview().constant = -25
         retypeNewPasswordTextField.height(47)
-        retypeNewPasswordTextField.placeholder = "Retype New Password"
+        retypeNewPasswordTextField.placeholder = Strings.ChangePasswordController.retypeNewPasswordPlaceholder
     }
     private func makeSaveButton() {
         view.addSubview(saveButton)
@@ -65,9 +65,23 @@ final class ChangePasswordViewController: BaseViewController<ChangePasswordViewM
     }
     @objc
     private func saveButtonTapped() {
-        viewModel.changePassword(password: passwordTextField.text ?? "",
-                                 newPassword: newPasswordTextField.text ?? "",
-                                 retypeNewPassword: retypeNewPasswordTextField.text ?? "")
+        view.endEditing(true)
+        guard let password = passwordTextField.text,
+              let newPassword = newPasswordTextField.text,
+              let retypeNewPassword = retypeNewPasswordTextField.text,
+              passwordTextField.text?.isEmpty == false,
+              newPasswordTextField.text?.isEmpty == false,
+              retypeNewPasswordTextField.text?.isEmpty == false else {
+                  ToastPresenter.showWarningToast(text: Strings.Error.emptyFields, entryBackground: .appRed)
+                  return }
+        let validation = Validation()
+        guard validation.isValidPassword(password) else { return }
+        guard validation.isValidPassword(newPassword) else { return }
+        guard validation.isValidPassword(retypeNewPassword) else { return }
+
+        viewModel.changePassword(password: password,
+                                 newPassword: newPassword,
+                                 retypeNewPassword: retypeNewPassword)
     }
     @objc
     private func showHomeScreen() {

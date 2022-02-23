@@ -22,9 +22,9 @@ final class ChangePasswordViewModel: BaseViewModel<ChangePasswordRouter>, Change
             guard let self = self else { return }
             switch result {
             case .success(let response):
-                print(response.message)
+                ToastPresenter.showWarningToast(text: Strings.Success.succesChangePassword, entryBackground: .appGreen)
             case .failure(let error):
-                print(error)
+                ToastPresenter.showWarningToast(text: Strings.Error.checkInformations, entryBackground: .appRed)
             }
         }
     }
