@@ -31,7 +31,7 @@ final class DetailViewModel: BaseViewModel<DetailRouter>, DetailViewProtocol {
                 NotificationCenter.default.post(name: .reloadDataNotification, object: nil)
                 self.router.close()
             case .failure(let error):
-                self.showWarningToast?("\(error.localizedDescription) \(L10n.Error.checkInformations)")
+                self.showWarningToast?("\(error.localizedDescription)")
             }
         }
     }
