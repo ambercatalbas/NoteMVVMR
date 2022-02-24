@@ -32,8 +32,8 @@
 		4E4310DA27BEBF54002EF700 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4310D927BEBF54002EF700 /* LoginButton.swift */; };
 		4E4310DC27BECCC7002EF700 /* LabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4310DB27BECCC7002EF700 /* LabelButton.swift */; };
 		4E4310DE27BED180002EF700 /* RegisterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4310DD27BED180002EF700 /* RegisterButton.swift */; };
-		4EBBAA5527C63DF6005FAA05 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4EBBAA5327C63DF5005FAA05 /* Localizable.strings */; };
-		4EBBAA5927C66427005FAA05 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBBAA5827C66427005FAA05 /* StringConstants.swift */; };
+		4E8D6A2327C7702B00BDBD4B /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8D6A2227C7702B00BDBD4B /* StringConstants.swift */; };
+		4EBBAA6627C6E766005FAA05 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4EBBAA6427C6E766005FAA05 /* Localizable.strings */; };
 		4EC243A727C3B89E00307270 /* HomeScreenTopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC243A527C3B89E00307270 /* HomeScreenTopViewModel.swift */; };
 		4EC243A827C3B89E00307270 /* HomeScreenTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC243A627C3B89E00307270 /* HomeScreenTopView.swift */; };
 		4EE1DDE427C4CA7200EDF1AD /* VerticalAlignLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE1DDE327C4CA7200EDF1AD /* VerticalAlignLabel.swift */; };
@@ -117,8 +117,9 @@
 		4E4310D927BEBF54002EF700 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		4E4310DB27BECCC7002EF700 /* LabelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelButton.swift; sourceTree = "<group>"; };
 		4E4310DD27BED180002EF700 /* RegisterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterButton.swift; sourceTree = "<group>"; };
-		4EBBAA5427C63DF5005FAA05 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
-		4EBBAA5827C66427005FAA05 /* StringConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
+		4E8D6A2227C7702B00BDBD4B /* StringConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
+		4EBBAA6527C6E766005FAA05 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4EBBAA6727C6E785005FAA05 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4EC243A527C3B89E00307270 /* HomeScreenTopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenTopViewModel.swift; sourceTree = "<group>"; };
 		4EC243A627C3B89E00307270 /* HomeScreenTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenTopView.swift; sourceTree = "<group>"; };
 		4EE1DDE327C4CA7200EDF1AD /* VerticalAlignLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalAlignLabel.swift; sourceTree = "<group>"; };
@@ -223,14 +224,6 @@
 			path = UILabel;
 			sourceTree = "<group>";
 		};
-		4EBBAA5227C63DF5005FAA05 /* en.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				4EBBAA5327C63DF5005FAA05 /* Localizable.strings */,
-			);
-			path = en.lproj;
-			sourceTree = "<group>";
-		};
 		4EE1DDE227C4CA3800EDF1AD /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,8 +244,8 @@
 		4EE1DDEA27C592B800EDF1AD /* Strings */ = {
 			isa = PBXGroup;
 			children = (
-				4EBBAA5827C66427005FAA05 /* StringConstants.swift */,
-				4EBBAA5227C63DF5005FAA05 /* en.lproj */,
+				4E8D6A2227C7702B00BDBD4B /* StringConstants.swift */,
+				4EBBAA6427C6E766005FAA05 /* Localizable.strings */,
 			);
 			path = Strings;
 			sourceTree = "<group>";
@@ -504,6 +497,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E4310CC27BE986E002EF700 /* JosefinSans-ThinItalic.ttf in Resources */,
+				4EBBAA6627C6E766005FAA05 /* Localizable.strings in Resources */,
 				4E4310C727BE986E002EF700 /* JosefinSans-ExtraLightItalic.ttf in Resources */,
 				4EE2D5E627B4F5CD00E48E60 /* Colors.xcassets in Resources */,
 				4E4310CF27BE986E002EF700 /* JosefinSans-SemiBoldItalic.ttf in Resources */,
@@ -516,7 +510,6 @@
 				4E4310C927BE986E002EF700 /* JosefinSans-Italic.ttf in Resources */,
 				4E4310D327BE986E002EF700 /* JosefinSans-LightItalic.ttf in Resources */,
 				4E4310D127BE986E002EF700 /* JosefinSans-BoldItalic.ttf in Resources */,
-				4EBBAA5527C63DF6005FAA05 /* Localizable.strings in Resources */,
 				4E4310CA27BE986E002EF700 /* JosefinSans-ExtraLight.ttf in Resources */,
 				4EE2D5E027B4F5CD00E48E60 /* Nunito-ExtraBold.ttf in Resources */,
 				4E4310D227BE986E002EF700 /* JosefinSans-MediumItalic.ttf in Resources */,
@@ -631,7 +624,7 @@
 				4E4310D527BEB90C002EF700 /* TitleLabel.swift in Sources */,
 				4EE2D5FF27B555F600E48E60 /* HomeCell.swift in Sources */,
 				4EE1DDE727C5363800EDF1AD /* ToastsPresenter.swift in Sources */,
-				4EBBAA5927C66427005FAA05 /* StringConstants.swift in Sources */,
+				4E8D6A2327C7702B00BDBD4B /* StringConstants.swift in Sources */,
 				4E43109B27BE420D002EF700 /* PasswordTextField.swift in Sources */,
 				4E4310DE27BED180002EF700 /* RegisterButton.swift in Sources */,
 				4EE2D5AE27B4F56E00E48E60 /* UIComponents.docc in Sources */,
@@ -657,10 +650,11 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4EBBAA5327C63DF5005FAA05 /* Localizable.strings */ = {
+		4EBBAA6427C6E766005FAA05 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4EBBAA5427C63DF5005FAA05 /* en */,
+				4EBBAA6527C6E766005FAA05 /* en */,
+				4EBBAA6727C6E785005FAA05 /* tr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

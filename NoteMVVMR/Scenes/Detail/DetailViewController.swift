@@ -152,11 +152,13 @@ extension DetailViewController {
         let title = titleTextField.text ?? ""
         let description = descriptionTextView.text ?? ""
         viewModel.createNote(title: title, description: description)
+        navigationController?.navigationBar.isHidden = true
     }
     @objc
     func updateButtonTapped() {
         let title = titleTextField.text ?? ""
         let description = descriptionTextView.text ?? ""
         viewModel.updateNote(title: title, description: description, noteID: noteID)
+        navigationController?.navigationBar.isHidden = true
     }
 }

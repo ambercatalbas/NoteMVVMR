@@ -52,15 +52,15 @@
 "HomeViewController.addNoteButtonTitle" = " Add Note";
 
 // MARK: - Detail
-"DetailViewController.editTitle" = "EDİT NOTE";
-"DetailViewController.detailsTitle" = "DETAİLS";
+"DetailViewController.editTitle" = "EDIT NOTE";
+"DetailViewController.detailsTitle" = "DETAILS";
 "DetailViewController.addTitle" = "ADD NOTE";
 "DetailViewController.noteTitlePlaceholder" = "Note Title...";
 "DetailViewController.descriptionTitlePlaceholder" = "Description...";
 "DetailViewController.saveButtonTitle" = "Save";
 
 // MARK: - Profile
-"ProfileViewController.title" = "PROFİLE";
+"ProfileViewController.title" = "PROFILE";
 "ProfileViewController.saveButtonTitle" = "Save";
 "ProfileViewController.changePasswordButtonTitle" = "Change Password";
 "ProfileViewController.signOutButtonTitle" = "Sign Out";
@@ -85,5 +85,24 @@
 "Success.succesChangePassword" = "Your password has been updated";
 "Success.succesSignUp" = "Success Sign Up.";
 "Success.succesUpdeteProfile" = "Your profile has been updated";
+
+// Mark: - Placeholder
+"Placeholder.username" = "Full Name";
+"Placeholder.email" = "Email Address";
+"Placeholder.password" = "Password";
+"Placeholder.search" = "Search...";
+"Placeholder.noteTitle" = "Note Title...";
+"Placeholder.descriptionTitle" = "Description...";
+"Placeholder.newPassword" = "New Password";
+"Placeholder.retypeNewPassword" = "Retype New Password";
+
+// Mark: - General
+"General.login" = "Login";
+"General.cancel" = "Cancel";
+"General.delete" = "Delete";
+"General.save" = "Save";
+"General.signUp" = "Sign Up";
+"General.resetPassword" = "Reset Password";
+"General.addNote" = "  Add Note";
 
 

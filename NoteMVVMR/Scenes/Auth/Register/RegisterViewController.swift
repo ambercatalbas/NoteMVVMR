@@ -44,11 +44,15 @@ extension RegisterViewController {
         view.addSubview(titleLabel)
         titleLabel.topToSuperview().constant = 103
         titleLabel.centerXToSuperview()
+        titleLabel.leftToSuperview().constant = 25
+        titleLabel.rightToSuperview().constant = -25
     }
     private func makeSubTitleLabel() {
         view.addSubview(subTitleLabel)
         subTitleLabel.topToBottom(of: titleLabel).constant = 10
         subTitleLabel.centerXToSuperview()
+        subTitleLabel.leftToSuperview().constant = 25
+        subTitleLabel.rightToSuperview().constant = -25
     }
     private func makeTextFieldtackView() {
         view.addSubview(textFieldtackView)

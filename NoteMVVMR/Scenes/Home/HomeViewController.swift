@@ -18,7 +18,7 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     }()
     private let topView = HomeScreenTopView()
     private let addButton = UIButtonBuilder()
-        .title(Strings.HomeViewController.addNoteButtonTitle)
+        .title(Strings.General.addNote)
         .tintColor(.white)
         .image(.addIcon)
         .cornerRadius(4)

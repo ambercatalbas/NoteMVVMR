@@ -41,7 +41,7 @@ final class LoginViewModel: BaseViewModel<LoginRouter>, LoginViewProtocol {
                 self.keychain.set(response.data?.accessToken ?? "", forKey: Keychain.token)
                 self.router.pushHome()
             case .failure(let error):
-                self.showWarningToast?("\(error.localizedDescription)")
+                ToastPresenter.showWarningToast(text: Strings.Error.invalidMatch, entryBackground: .appRed)
             }
         }
         

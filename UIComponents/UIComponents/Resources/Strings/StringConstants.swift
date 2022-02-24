@@ -29,9 +29,9 @@ public enum Strings {
     public static let addTitle = Strings.tr("Localizable", "DetailViewController.addTitle")
     /// Description...
     public static let descriptionTitlePlaceholder = Strings.tr("Localizable", "DetailViewController.descriptionTitlePlaceholder")
-    /// DETAİLS
+    /// DETAILS
     public static let detailsTitle = Strings.tr("Localizable", "DetailViewController.detailsTitle")
-    /// EDİT NOTE
+    /// EDIT NOTE
     public static let editTitle = Strings.tr("Localizable", "DetailViewController.editTitle")
     /// Note Title...
     public static let noteTitlePlaceholder = Strings.tr("Localizable", "DetailViewController.noteTitlePlaceholder")
@@ -52,6 +52,23 @@ public enum Strings {
     public static let invalidMatch = Strings.tr("Localizable", "Error.invalidMatch")
     /// Your password must consist of at least 6 characters.
     public static let passwordCharacter = Strings.tr("Localizable", "Error.passwordCharacter")
+  }
+
+  public enum General {
+    ///   Add Note
+    public static let addNote = Strings.tr("Localizable", "General.addNote")
+    /// Cancel
+    public static let cancel = Strings.tr("Localizable", "General.cancel")
+    /// Delete
+    public static let delete = Strings.tr("Localizable", "General.delete")
+    /// Login
+    public static let login = Strings.tr("Localizable", "General.login")
+    /// Reset Password
+    public static let resetPassword = Strings.tr("Localizable", "General.resetPassword")
+    /// Save
+    public static let save = Strings.tr("Localizable", "General.save")
+    /// Sign Up
+    public static let signUp = Strings.tr("Localizable", "General.signUp")
   }
 
   public enum HomeViewController {
@@ -116,6 +133,25 @@ public enum Strings {
     public static let title = Strings.tr("Localizable", "PasswordResetViewController.title")
   }
 
+  public enum Placeholder {
+    /// Description...
+    public static let descriptionTitle = Strings.tr("Localizable", "Placeholder.descriptionTitle")
+    /// Email Address
+    public static let email = Strings.tr("Localizable", "Placeholder.email")
+    /// New Password
+    public static let newPassword = Strings.tr("Localizable", "Placeholder.newPassword")
+    /// Note Title...
+    public static let noteTitle = Strings.tr("Localizable", "Placeholder.noteTitle")
+    /// Password
+    public static let password = Strings.tr("Localizable", "Placeholder.password")
+    /// Retype New Password
+    public static let retypeNewPassword = Strings.tr("Localizable", "Placeholder.retypeNewPassword")
+    /// Search...
+    public static let search = Strings.tr("Localizable", "Placeholder.search")
+    /// Full Name
+    public static let username = Strings.tr("Localizable", "Placeholder.username")
+  }
+
   public enum ProfileViewController {
     /// Change Password
     public static let changePasswordButtonTitle = Strings.tr("Localizable", "ProfileViewController.changePasswordButtonTitle")
@@ -123,7 +159,7 @@ public enum Strings {
     public static let saveButtonTitle = Strings.tr("Localizable", "ProfileViewController.saveButtonTitle")
     /// Sign Out
     public static let signOutButtonTitle = Strings.tr("Localizable", "ProfileViewController.signOutButtonTitle")
-    /// PROFİLE
+    /// PROFILE
     public static let title = Strings.tr("Localizable", "ProfileViewController.title")
   }
 
