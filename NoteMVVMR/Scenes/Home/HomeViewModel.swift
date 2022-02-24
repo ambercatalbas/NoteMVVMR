@@ -70,7 +70,7 @@ extension HomeViewModel {
                 self.cellItems.append(contentsOf: cellItems)
                 self.didSuccessFetchRecipes?()
             case .failure(let error):
-                print("failure")
+                ToastPresenter.showWarningToast(text: "\(error.localizedDescription)", entryBackground: .appRed)
             }
         }
     }
@@ -82,7 +82,8 @@ extension HomeViewModel {
                 self.fetchNotesListing()
                 self.didSuccessFetchRecipes?()
             case .failure(let error):
-                print("errorrrrrrr")
+                ToastPresenter.showWarningToast(text: "\(error.localizedDescription)", entryBackground: .appRed)
+                
             }
         }
     }

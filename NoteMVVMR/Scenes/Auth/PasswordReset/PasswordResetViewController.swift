@@ -12,10 +12,10 @@ import UIComponents
 
 final class PasswordResetViewController: BaseViewController<PasswordResetViewModel> {
     
-    private let titleLabel = TitleLabel(text: "Forgot Password?")
-    private let subTitleLabel = SubTitleLabel(text: "Confirm your email and we’ll send the instructions.")
+    private let titleLabel = TitleLabel(text: Strings.PasswordResetViewController.title)
+    private let subTitleLabel = SubTitleLabel(text: Strings.PasswordResetViewController.subTitle)
     private let emailTextField = EmailTextField()
-    private let resetPasswordButton = LoginButton(title: "Reset Password")
+    private let resetPasswordButton = LoginButton(title: Strings.PasswordResetViewController.resetPasswordButtonTitle)
     private let backButton = UIButtonBuilder()
         .tintColor(.appCinder)
         .image(.backArrow)
@@ -85,11 +85,12 @@ extension PasswordResetViewController {
 extension PasswordResetViewController {
     @objc
     private func resetPasswordButtonTapped() {
-        guard let email = emailTextField.text else { return }
-        let validation = Validation()
-        guard validation.isValidEmail(email) else {
-            showWarningToast(message: L10n.PasswordResetViewController.incorrectEmailMessage, entryBackground: .appRed)
+        guard let email = emailTextField.text,
+              emailTextField.text?.isEmpty == false else {
+            ToastPresenter.showWarningToast(text: Strings.Error.emptyFields, entryBackground: .appRed)
             return }
+        let validation = Validation()
+        guard validation.isValidEmail(email) else { return }
         viewModel.sendResetRequest(email: emailTextField.text ?? "")
     }
     @objc

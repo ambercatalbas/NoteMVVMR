@@ -40,10 +40,9 @@ extension PasswordResetViewModel {
             guard let self = self else { return }
             switch result {
             case .success(let response):
-                print("sccs \(response.message)")
                 self.showResetPasswordMessageScreen(email: email)
             case .failure(let error):
-                print("error reset password")
+                ToastPresenter.showWarningToast(text: Strings.Error.checkInformations, entryBackground: .appRed)
             }
         }
     }

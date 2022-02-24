@@ -8,16 +8,16 @@
 import UIKit
 
 final class PasswordResetMessageViewController: BaseViewController<PasswordResetMessageViewModel> {
-    private let titleLabel = TitleLabel(text: "Forgot Password?")
-    private let subTitleLabel = SubTitleLabel(text: "Confirm your email and we’ll send the instructions.")
-    private let loginButton = LoginButton(title: "Login")
+    private let titleLabel = TitleLabel(text: Strings.PasswordResetMessageViewController.title)
+    private let subTitleLabel = SubTitleLabel(text: Strings.PasswordResetMessageViewController.greenSubTitleAfter+Strings.PasswordResetMessageViewController.greenSubTitleLast)
+    private let loginButton = LoginButton(title: Strings.PasswordResetMessageViewController.loginButtonTitle)
     var email: String = "email@mail.com"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         drawDesign()
         subTitleLabel.textColor = .appGreen
-        subTitleLabel.text = "An email has been sent to \(email) with further instructions."
+        subTitleLabel.text = Strings.PasswordResetMessageViewController.greenSubTitleAfter+"\(email)"+Strings.PasswordResetMessageViewController.greenSubTitleLast
     }
     
     private func drawDesign() {
@@ -39,8 +39,8 @@ extension PasswordResetMessageViewController {
         view.addSubview(subTitleLabel)
         subTitleLabel.topToBottom(of: titleLabel).constant = 10
         subTitleLabel.centerXToSuperview()
-        subTitleLabel.leftToSuperview().constant = 25
-        subTitleLabel.rightToSuperview().constant = -25
+        subTitleLabel.leftToSuperview().constant = 50
+        subTitleLabel.rightToSuperview().constant = -50
     }
    private func makeLoginButton() {
         view.addSubview(loginButton)

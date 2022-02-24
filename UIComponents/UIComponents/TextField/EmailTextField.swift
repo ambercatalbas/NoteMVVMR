@@ -17,7 +17,7 @@ public class EmailTextField: UITextField {
         layer.cornerRadius = 4
         layer.borderWidth = 1
         layer.borderColor = UIColor.appTextFieldBorderColor.cgColor
-        placeholder = "E-mail address"
+        placeholder = Strings.Placeholder.email
         keyboardType = .emailAddress
         returnKeyType = .done
         font = .font(.josefinSansRegular, size: .custom(size: 13))

@@ -22,7 +22,7 @@ final class DetailViewController: BaseViewController<DetailViewModel> {
     private let titleTextField = UITextFieldBuilder()
         .font(.font(.josefinSansSemibold, size: .custom(size: 22)))
         .textColor(.appCinder)
-        .placeholder("Note title..")
+        .placeholder(Strings.DetailViewController.noteTitlePlaceholder)
         .textAlignment(.left)
         .build()
     private let descriptionTextView = UITextViewBuilder()
@@ -30,12 +30,12 @@ final class DetailViewController: BaseViewController<DetailViewModel> {
         .textColor(.appRaven)
         .textAlignment(.left)
         .build()
-    private let saveButton = LoginButton(title: "Save Note")
+    private let saveButton = LoginButton(title: Strings.DetailViewController.saveButtonTitle)
     let keychain = KeychainSwift()
     var noteID: Int = 0
-    var titleText: String = "Note title"
-    var descriptionText: String = "Descrition..."
-    var navigationTitle: String = "Details"
+    var titleText: String = Strings.DetailViewController.noteTitlePlaceholder
+    var descriptionText: String = Strings.DetailViewController.descriptionTitlePlaceholder
+    var navigationTitle: String = Strings.DetailViewController.detailsTitle
     var type: DetailVCShowType = .add
     
     override func viewDidLoad() {
@@ -59,17 +59,21 @@ extension DetailViewController {
             makeDescriptionTextView()
             descriptionTextView.isEditable = false
             titleTextField.isEnabled = false
+            navigationTitle = Strings.DetailViewController.detailsTitle
+
         case .add:
             makeTitleTextField()
             makeDescriptionTextView()
             addSaveButton()
             saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
             descriptionTextView.textColor = .lightGray
+            navigationTitle = Strings.DetailViewController.addTitle
         case .update:
             makeTitleTextField()
             makeDescriptionTextView()
             addSaveButton()
             saveButton.addTarget(self, action: #selector(updateButtonTapped), for: .touchUpInside)
+            navigationTitle = Strings.DetailViewController.editTitle
         }
     }
     
@@ -148,13 +152,13 @@ extension DetailViewController {
         let title = titleTextField.text ?? ""
         let description = descriptionTextView.text ?? ""
         viewModel.createNote(title: title, description: description)
+        navigationController?.navigationBar.isHidden = true
     }
     @objc
     func updateButtonTapped() {
         let title = titleTextField.text ?? ""
         let description = descriptionTextView.text ?? ""
         viewModel.updateNote(title: title, description: description, noteID: noteID)
+        navigationController?.navigationBar.isHidden = true
     }
 }
-
-

@@ -26,7 +26,6 @@ class MainNavigationController: UINavigationController {
             .foregroundColor(.appCinder)
             .build()
         navigationBar.titleTextAttributes = titleTextAttributes
-        
     }
 
     

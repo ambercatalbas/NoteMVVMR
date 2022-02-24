@@ -13,11 +13,11 @@ final class ProfileViewController: BaseViewController<ProfileViewModel> {
     
     private let userNameTextField = UserNameTextField()
     private let emailTextField = EmailTextField()
-    private let saveButton = LoginButton(title: "Save")
-    private let changePasswordButton = LabelButton(title: "Change Password",
+    private let saveButton = LoginButton(title: Strings.ProfileViewController.saveButtonTitle)
+    private let changePasswordButton = LabelButton(title: Strings.ProfileViewController.changePasswordButtonTitle,
                                                    titleColor: .appBlueBerry,
                                                    font: .font(.josefinSansSemibold, size: .custom(size: 14)))
-    private let signOutButton = LabelButton(title: "Sign Out",
+    private let signOutButton = LabelButton(title: Strings.ProfileViewController.signOutButtonTitle,
                                             titleColor: .appRed,
                                             font: .font(.josefinSansSemibold, size: .custom(size: 14)))
     
@@ -25,7 +25,7 @@ final class ProfileViewController: BaseViewController<ProfileViewModel> {
         super.viewDidLoad()
         
         navigationController?.navigationBar.isHidden = false
-        navigationItem.title = "PROFİLE"
+        navigationItem.title = Strings.ProfileViewController.title
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: .hamburgerIcon,
                                                            style: .done,
                                                            target: self,
@@ -94,7 +94,16 @@ final class ProfileViewController: BaseViewController<ProfileViewModel> {
     }
     @objc
     private func saveButtonTapped() {
-        viewModel.updateUser(userName: userNameTextField.text ?? "", email: emailTextField.text ?? "")
+        view.endEditing(true)
+        guard let userName = userNameTextField.text,
+              let email = emailTextField.text,
+              userNameTextField.text?.isEmpty == false,
+              emailTextField.text?.isEmpty == false else {
+                  ToastPresenter.showWarningToast(text: Strings.Error.emptyFields, entryBackground: .appRed)
+                  return }
+        let validation = Validation()
+        guard validation.isValidEmail(email) else { return }
+        viewModel.updateUser(userName: userName, email: email)
     }
     @objc
     private func changePasswordButtonTapped() {

@@ -17,7 +17,7 @@ public class UserNameTextField: UITextField {
         layer.borderWidth = 1
         layer.borderColor = UIColor.appTextFieldBorderColor.cgColor
         returnKeyType = .done
-        placeholder = "Full Name"
+        placeholder = Strings.Placeholder.username
         font = .font(.josefinSansRegular, size: .custom(size: 13))
     }
     // swiftlint:disable fatal_error unavailable_function

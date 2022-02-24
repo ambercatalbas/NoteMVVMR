@@ -7,64 +7,100 @@
 */
 
 // MARK: - Login
-"LoginViewController.title" = "Login";
-"LoginViewController.subTitle" = "Login or sign up continue using our app.";
-"LoginViewController.emailPlaceholder" = "Email Address";
-"LoginViewController.passwordPlaceholder" = "Password";
-"LoginViewController.forgotPassword" = "Forgot Password?";
-"LoginViewController.loginButton" = "Login";
-"LoginViewController.bottomText" = "New user? Sign up now";
+"LoginViewController.title" = "Giriş";
+"LoginViewController.subTitle" = "Giriş yapın veya kaydolun, uygulamamızı kullanmaya devam edin.";
+"LoginViewController.emailPlaceholder" = "E-posta Addresi";
+"LoginViewController.passwordPlaceholder" = "Şifre";
+"LoginViewController.forgotPassword" = "Şifremi unuttum?";
+"LoginViewController.loginButton" = "Giriş";
+"LoginViewController.bottomBlackText" = "Yeni kullanıcı mısın? ";
+"LoginViewController.bottomBluberryText" = "Şimdi kaydolun";
+
 
 // MARK: - Register
-"RegisterViewController.title" = "Sign Up";
-"RegisterViewController.subTitle" = "Login or sign up continue using our app.";
-"RegisterViewController.usernamePlaceholder" = "Full Name";
-"RegisterViewController.emailPlaceholder" = "Email Address";
-"RegisterViewController.passwordPlaceholder" = "Password";
-"RegisterViewController.forgotPassword" = "Forgot Password?";
-"RegisterViewController.signUpButtonTitle" = "Sign Up";
-"RegisterViewController.bottomText" = "Already have an account? Sign in now";
+"RegisterViewController.title" = "Kayıt ol";
+"RegisterViewController.subTitle" = "Giriş yapın veya kaydolun, uygulamamızı kullanmaya devam edin.";
+"RegisterViewController.usernamePlaceholder" = "Kullanıcı adı";
+"RegisterViewController.emailPlaceholder" = "E-posta Addresi";
+"RegisterViewController.passwordPlaceholder" = "Şifre";
+"RegisterViewController.forgotPassword" = "Şifemi unuttum?";
+"RegisterViewController.signUpButtonTitle" = "Kayıt Ol";
+"RegisterViewController.bottomBlackText" = "Bir hesabınız var mı?";
+"RegisterViewController.bottomBluberryText" = "Şimdi giriş yapın";
 
 // MARK: - Password Reset
-"PasswordResetViewController.title" = "Forgot Password?";
-"PasswordResetViewController.subTitle" = "Confirm your email and we'll send the instructions.";
-"PasswordResetViewController.greenSubTitleAfter" = "An email has been sent to ";
-"PasswordResetViewController.greenSubTitleLast" = " with further instructions.";
-"PasswordResetViewController.resetPasswordButtonTitle" = "Reset Password";
-"PasswordResetViewController.incorrectEmailMessage" = "Your email address incorrect!";
+"PasswordResetViewController.title" = "Şifremi Unuttum?";
+"PasswordResetViewController.subTitle" = "E-postanızı onaylayın, talimatları gönderelim.";
+"PasswordResetViewController.greenSubTitleAfter" = "Taliamatlar";
+"PasswordResetViewController.greenSubTitleLast" = " adresine gönderildi.";
+"PasswordResetViewController.resetPasswordButtonTitle" = "Şifreyi Sıfırla";
+"PasswordResetViewController.incorrectEmailMessage" = "E-posta adresiniz yanlış!";
 
 // MARK: - Password Reset Message
-"PasswordResetMessageViewController.title" = "Password Reset Confirmation";
-"PasswordResetMessageViewController.greenSubTitleAfter" = "An email has been sent to ";
-"PasswordResetMessageViewController.greenSubTitleLast" = " with further instructions.";
-"PasswordResetMessageViewController.loginButtonTitle" = "Login";
+"PasswordResetMessageViewController.title" = "Şifre Sıfırlama Onayı";
+"PasswordResetMessageViewController.greenSubTitleAfter" = "Taliamatlar";
+"PasswordResetMessageViewController.greenSubTitleLast" = " adresine gönderildi.";
+"PasswordResetMessageViewController.loginButtonTitle" = "Giriş";
 
 // MARK: - Home
-"HomeViewController.searchPlaceholder" = "Search...";
-"HomeViewController.cancelButtonTitle" = "Cancel";
-"HomeViewController.alertTitle" = "Delete Note";
-"HomeViewController.alertSubTitle" = "Are you sure you want to delete this note.";
-"HomeViewController.alertCancelButtonTitle" = "Cancel";
-"HomeViewController.alertDeleteButtonTitle" = "Delete";
-"HomeViewController.addNoteButtonTitle" = "+ Add Note";
+"HomeViewController.searchPlaceholder" = "Ara...";
+"HomeViewController.cancelButtonTitle" = "Çıkış";
+"HomeViewController.alertTitle" = "Notu Sil";
+"HomeViewController.alertSubTitle" = "Bu notu silmek istediğinizden emin misiniz?";
+"HomeViewController.alertCancelButtonTitle" = "Çıkış";
+"HomeViewController.alertDeleteButtonTitle" = "Sil";
+"HomeViewController.addNoteButtonTitle" = " Not Ekle";
 
 // MARK: - Detail
-"DetailViewController.title" = "EDİT NOTE";
-"DetailViewController.detailsTitle" = "DETAİLS";
-"DetailViewController.noteTitlePlaceholder" = "Note Title...";
-"DetailViewController.descriptionTitlePlaceholder" = "Description...";
-"DetailViewController.saveButtonTitle" = "Save";
+"DetailViewController.editTitle" = "NOTU DÜZENLE";
+"DetailViewController.detailsTitle" = "DETAYLAR";
+"DetailViewController.addTitle" = "NOT EKLE";
+"DetailViewController.noteTitlePlaceholder" = "Not Başlığı...";
+"DetailViewController.descriptionTitlePlaceholder" = "Açıklamalar...";
+"DetailViewController.saveButtonTitle" = "Kaydet";
 
 // MARK: - Profile
-"ProfileViewController.title" = "PROFİLE";
-"ProfileViewController.saveButtonTitle" = "Save";
-"ProfileViewController.changePasswordButtonTitle" = "Change Password";
-"ProfileViewController.signOutButtonTitle" = "Sign Out";
+"ProfileViewController.title" = "PROFİL";
+"ProfileViewController.saveButtonTitle" = "Kaydet";
+"ProfileViewController.changePasswordButtonTitle" = "Şifreyi Değiştir";
+"ProfileViewController.signOutButtonTitle" = "Çıkış Yap";
+
 
 // MARK: - CHANGE PASSWORD
-"ChangePasswordController.title" = "CHANGE PASSWORD";
-"ChangePasswordController.passwordPlaceholder" = "Password";
-"ChangePasswordController.newPasswordPlaceholder" = "New Password";
-"ChangePasswordController.retypeNewPasswordPlaceholder" = "Retype New Password";
-"ChangePasswordController.saveButtonTitle" = "Sign Out";
+"ChangePasswordController.title" = "ŞİFREYİ DEĞİŞTİR";
+"ChangePasswordController.passwordPlaceholder" = "Şifre";
+"ChangePasswordController.newPasswordPlaceholder" = "Yeni Şifre";
+"ChangePasswordController.retypeNewPasswordPlaceholder" = "Tekrar Yeni Şifre";
+"ChangePasswordController.saveButtonTitle" = "Kaydet";
 
+// Mark: - Error Alert
+"Error.emptyFields" = "Lütfen boşlukları doldurunuz.";
+"Error.checkInformations" = "Lütfen bilgilerinizi kontrol edin.";
+"Error.incorrectEmailFormat" = "E-posta adresiniz E-posta biçiminde değil!";
+"Error.incorrectEmailFormata" = "E-posta adresiniz @ içermelidir.";
+"Error.invalidMatch" = "Girdiğiniz e-posta ve şifre kayıtlarımızla eşleşmedi. Lütfen tekrar deneyin.";
+"Error.passwordCharacter" = "Şifreniz en az 6 karakterden oluşmalıdır.";
+
+// Mark: - Succes Alert
+"Success.succesChangePassword" = "Şifreniz güncellenmiştir";
+"Success.succesSignUp" = "Kayıt olma başarılı.";
+"Success.succesUpdeteProfile" = "Profiliniz güncellendi";
+
+// Mark: - Placeholder
+"Placeholder.password" = "Şifre";
+"Placeholder.email" = "E-posta Addresi";
+"Placeholder.username" = "Kullanıcı adı";
+"Placeholder.search" = "Ara...";
+"Placeholder.noteTitle" = "Not Başlığı...";
+"Placeholder.descriptionTitle" = "Açıklama...";
+"Placeholder.newPassword" = "Yeni Şifre";
+"Placeholder.retypeNewPassword" = "Yeni Şifre Tekrar";
+
+// Mark: - General
+"General.login" = "Giriş";
+"General.cancel" = "Çıkış";
+"General.delete" = "Sil";
+"General.save" = "Kaydet";
+"General.signUp" = "Kayıt Ol";
+"General.resetPassword" = "Şifreyi Sıfırla";
+"General.addNote" = "  Note Ekle";
