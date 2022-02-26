@@ -52,17 +52,21 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         
         let notificationCenter: NotificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(reloadData), name: .reloadDataNotification, object: nil)
-
+        
     }
     
     @objc
     private func reloadData() {
+        viewModel.page = 1
+        viewModel.cellItems.removeAll(keepingCapacity: false)
         viewModel.fetchNotesListing()
-        subscribeViewModelEvents()
     }
     private func subscribeViewModelEvents() {
         viewModel.didSuccessFetchRecipes = { [weak self] in
             guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.tableView.tableFooterView = nil
+            }
             self.tableView.reloadData()
         }
     }
@@ -122,7 +126,7 @@ extension HomeViewController {
             self.searchText = text
             self.tableView.reloadData()
         }
-
+        
     }
     
     @objc
@@ -197,7 +201,7 @@ extension HomeViewController: UITableViewDelegate {
         deleteAction.image = .trashIcon
         deleteAction.backgroundColor = .appRed
         let editAction = UIContextualAction(style: .normal, title:"") { (_, _, completionHandler) in
-
+            
             self.swipeEditAction(indexPath: indexPath)
             completionHandler(true)
         }
@@ -225,6 +229,24 @@ extension HomeViewController: UITableViewDelegate {
             return item.titleText.lowercased().contains(searchText.lowercased())
         }
         tableView.reloadData()
+    }
+    private func createSpinnerFooter() -> UIView {
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 70))
+        let spinner = UIActivityIndicatorView()
+        spinner.center = footerView.center
+        footerView.addSubview(spinner)
+        spinner.startAnimating()
+        
+        return footerView
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let position = scrollView.contentOffset.y
+
+        if position > tableView.contentSize.height-100-scrollView.frame.size.height && viewModel.isPagingEnabled && viewModel.isRequestEnabled{
+            self.tableView.tableFooterView = createSpinnerFooter()
+            viewModel.fetchNotesListing()
+        }
     }
     
 }

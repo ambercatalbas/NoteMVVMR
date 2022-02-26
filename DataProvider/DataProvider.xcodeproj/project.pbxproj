@@ -15,6 +15,7 @@
 		4E43108227BA64CD002EF700 /* DeleteNoteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43108127BA64CD002EF700 /* DeleteNoteResponse.swift */; };
 		4E43108427BA8813002EF700 /* UpdateNoteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43108327BA8813002EF700 /* UpdateNoteRequest.swift */; };
 		4E4310E027BEF406002EF700 /* PasswordResetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4310DF27BEF406002EF700 /* PasswordResetRequest.swift */; };
+		4E8D6A2627C8EE0A00BDBD4B /* GetMyNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8D6A2527C8EE0A00BDBD4B /* GetMyNotes.swift */; };
 		4E96994927B13B1200C4CF8E /* DecodableResponseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E96993F27B13B1100C4CF8E /* DecodableResponseRequest.swift */; };
 		4E96994A27B13B1200C4CF8E /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E96994027B13B1100C4CF8E /* Typealias.swift */; };
 		4E96994B27B13B1200C4CF8E /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E96994127B13B1100C4CF8E /* RequestProtocol.swift */; };
@@ -61,6 +62,7 @@
 		4E43108127BA64CD002EF700 /* DeleteNoteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNoteResponse.swift; sourceTree = "<group>"; };
 		4E43108327BA8813002EF700 /* UpdateNoteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNoteRequest.swift; sourceTree = "<group>"; };
 		4E4310DF27BEF406002EF700 /* PasswordResetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetRequest.swift; sourceTree = "<group>"; };
+		4E8D6A2527C8EE0A00BDBD4B /* GetMyNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMyNotes.swift; sourceTree = "<group>"; };
 		4E96993F27B13B1100C4CF8E /* DecodableResponseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodableResponseRequest.swift; sourceTree = "<group>"; };
 		4E96994027B13B1100C4CF8E /* Typealias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
 		4E96994127B13B1100C4CF8E /* RequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				4E969AA327B4337700C4CF8E /* GetNotes.swift */,
 				4E43108127BA64CD002EF700 /* DeleteNoteResponse.swift */,
 				4E33052227C1A09700E8F43A /* GetUserResponse.swift */,
+				4E8D6A2527C8EE0A00BDBD4B /* GetMyNotes.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				4EAEEAFA27B08840001D4A86 /* Auth.swift in Sources */,
 				4E33052727C1BB8F00E8F43A /* ChangePasswordRequest.swift in Sources */,
 				4E96994A27B13B1200C4CF8E /* Typealias.swift in Sources */,
+				4E8D6A2627C8EE0A00BDBD4B /* GetMyNotes.swift in Sources */,
 				4E96995127B13B1200C4CF8E /* APIDecodableResponseRequest.swift in Sources */,
 				4E969AA427B4337700C4CF8E /* GetNotes.swift in Sources */,
 				4E96994E27B13B1200C4CF8E /* DataProviderProtocol.swift in Sources */,

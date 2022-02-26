@@ -12,6 +12,7 @@ import UIComponents
 protocol HomeViewDataSource {
     func numberOfItemsAt(section: Int) -> Int
     func cellItemAt(indexPath: IndexPath) -> HomeCellProtocol
+    var page: Int { get set }
     
 }
 
@@ -29,6 +30,10 @@ protocol HomeViewProtocol: HomeViewDataSource, HomeViewEventSource {
 }
 
 final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
+    var page: Int = 1
+    var isPagingEnabled = false
+    var isRequestEnabled = false
+
     func showProfileScreen() {
         router.pushProfile()
     }
@@ -61,13 +66,21 @@ final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
 // MARK: - Network
 extension HomeViewModel {
     func fetchNotesListing() {
-        dataProvider.request(for: GetMyNotesRequest()) { [weak self] (result) in
+        
+        self.isRequestEnabled = false
+        dataProvider.request(for: GetMyNotesRequest(page: page)) { [weak self] (result) in
             guard let self = self else { return }
+            self.isRequestEnabled = true
             switch result {
             case .success(let response):
-                self.cellItems.removeAll(keepingCapacity: false)
+                if self.page == 1 {
+                    self.cellItems.removeAll(keepingCapacity: false)
+                }
                 let cellItems = response.data.data.map({ HomeCellModel(note: $0) })
                 self.cellItems.append(contentsOf: cellItems)
+                self.page += 1
+                self.isPagingEnabled = response.data.currentPage < response.data.lastPage
+                print(self.isPagingEnabled)
                 self.didSuccessFetchRecipes?()
             case .failure(let error):
                 ToastPresenter.showWarningToast(text: "\(error.localizedDescription)", entryBackground: .appRed)
@@ -77,10 +90,11 @@ extension HomeViewModel {
     func deleteNote(noteID: Int) {
         dataProvider.request(for: DeleteNoteRequest(noteID: noteID)) { [weak self] (result) in
             guard let self = self else { return }
+            self.isRequestEnabled = true
             switch result {
             case .success(let response):
+                self.page = 1
                 self.fetchNotesListing()
-                self.didSuccessFetchRecipes?()
             case .failure(let error):
                 ToastPresenter.showWarningToast(text: "\(error.localizedDescription)", entryBackground: .appRed)
                 
