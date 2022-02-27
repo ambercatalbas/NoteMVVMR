@@ -69,6 +69,7 @@
 		4EE2D5EC27B4F5F100E48E60 /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EE2D5EB27B4F5F100E48E60 /* UIComponents.framework */; };
 		4EE2D5ED27B4F5F100E48E60 /* UIComponents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4EE2D5EB27B4F5F100E48E60 /* UIComponents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4EE2D60A27B55BC800E48E60 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE2D60927B55BC800E48E60 /* HomeViewModel.swift */; };
+		4EEB2CCE27CC01E1005094AA /* KeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEB2CCD27CC01E1005094AA /* KeyboardHelper.swift */; };
 		4EFE0B9D27C0218700623C92 /* ChangePasswordRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE0B9C27C0218700623C92 /* ChangePasswordRoute.swift */; };
 		4EFE0BA127C021A100623C92 /* ChangePasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE0B9E27C021A100623C92 /* ChangePasswordRouter.swift */; };
 		4EFE0BA227C021A100623C92 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE0B9F27C021A100623C92 /* ChangePasswordViewController.swift */; };
@@ -177,6 +178,7 @@
 		4EAEEB0127B08B76001D4A86 /* DataProviderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = DataProviderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EE2D5EB27B4F5F100E48E60 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EE2D60927B55BC800E48E60 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		4EEB2CCD27CC01E1005094AA /* KeyboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHelper.swift; sourceTree = "<group>"; };
 		4EFE0B9C27C0218700623C92 /* ChangePasswordRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordRoute.swift; sourceTree = "<group>"; };
 		4EFE0B9E27C021A100623C92 /* ChangePasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordRouter.swift; sourceTree = "<group>"; };
 		4EFE0B9F27C021A100623C92 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
@@ -483,13 +485,13 @@
 		4EAEE98E27B083A7001D4A86 /* NoteMVVMR */ = {
 			isa = PBXGroup;
 			children = (
+				4EEB2CCC27CC01C8005094AA /* Helper */,
 				4E96995227B13DD100C4CF8E /* DataProvider */,
 				4E969A8E27B1C7AB00C4CF8E /* AppDelegate */,
 				4E969A0027B1C01800C4CF8E /* Validation */,
 				4E969A3E27B1C66600C4CF8E /* Configurations */,
 				4E969A7327B1C79A00C4CF8E /* Constants */,
 				4E969A4127B1C76200C4CF8E /* Routing */,
-				4E969A5A27B1C79A00C4CF8E /* Extensions */,
 				4E969A0227B1C01800C4CF8E /* UIComponents */,
 				4E9699CA27B1BFF400C4CF8E /* Scenes */,
 				4EAEE99827B083A9001D4A86 /* Assets.xcassets */,
@@ -514,6 +516,15 @@
 				4EAEE9B227B083A9001D4A86 /* NoteMVVMRUITestsLaunchTests.swift */,
 			);
 			path = NoteMVVMRUITests;
+			sourceTree = "<group>";
+		};
+		4EEB2CCC27CC01C8005094AA /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				4E969A5A27B1C79A00C4CF8E /* Extensions */,
+				4EEB2CCD27CC01E1005094AA /* KeyboardHelper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		4EFE0B9B27C0212900623C92 /* ChangePassword */ = {
@@ -825,6 +836,7 @@
 				4E969A9827B25D1F00C4CF8E /* DetailViewController.swift in Sources */,
 				4E9699F627B1BFF400C4CF8E /* PasswordResetRouter.swift in Sources */,
 				4E9699FE27B1BFF400C4CF8E /* BaseViewModel.swift in Sources */,
+				4EEB2CCE27CC01E1005094AA /* KeyboardHelper.swift in Sources */,
 				4E9699F427B1BFF400C4CF8E /* PasswordResetRoute.swift in Sources */,
 				4E969A5027B1C76200C4CF8E /* AppRouter.swift in Sources */,
 				4E43108F27BDB22E002EF700 /* ProfileViewModel.swift in Sources */,
@@ -969,7 +981,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1025,7 +1037,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1051,7 +1063,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1083,7 +1095,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

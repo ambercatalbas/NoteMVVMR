@@ -8,12 +8,13 @@
 import UIKit
 
 public class HomeScreenTopView: UIView {
+    
     private let hamburgerIconButton = UIButtonBuilder()
         .backgroundColor(.white)
         .tintColor(.appCinder)
         .image(.hamburgerIcon)
         .build()
-    private let searchTextField = UITextFieldBuilder()
+    public let searchTextField = UITextFieldBuilder()
         .cornerRadius(4)
         .borderColor(UIColor.appTextFieldBorderColor.cgColor)
         .placeholder(Strings.Placeholder.search)
@@ -66,8 +67,7 @@ public class HomeScreenTopView: UIView {
         makeSearchTextField()
         makeProfileButton()
         makeLineView()
-        //            makeCancelButton()
-        
+        makeCancelButton()
     }
     
     private func makeHamburgerIconButton() {
@@ -87,6 +87,7 @@ public class HomeScreenTopView: UIView {
         searchTextField.bottomToSuperview().constant = -16
         searchTextField.withImage(direction: .left, image: .searchIcon,
                                   colorSeparator: UIColor.white, colorBorder: .appRaven, backgroundColor: .white)
+        searchTextField.returnKeyType = .done
         searchTextField.addTarget(self, action: #selector(textSearchChange(_:)), for: .editingChanged)
     }
     private func makeProfileButton() {
@@ -99,11 +100,12 @@ public class HomeScreenTopView: UIView {
     }
     private func makeCancelButton() {
         addSubview(cancelButton)
-        cancelButton.trailingToSuperview().constant = 18
-        cancelButton.bottomToSuperview().constant = 31
+        cancelButton.trailingToSuperview().constant = -18
+        cancelButton.bottomToSuperview().constant = -31
         cancelButton.width(40)
         cancelButton.height(9)
         cancelButton.addTarget(self, action: #selector(cancelButtonTapped(_:)), for: .touchUpInside)
+        cancelButton.isHidden = true
     }
     private func makeLineView() {
         addSubview(lineView)
@@ -112,8 +114,14 @@ public class HomeScreenTopView: UIView {
         lineView.trailingToSuperview()
         lineView.bottomToSuperview()
     }
+    private func updateCancelButton() {
+        profileButton.isHidden = true
+        cancelButton.isHidden = false
+    }
     
 }
+
+// MARK: - Actions
 extension HomeScreenTopView {
     
     public func set(viewModel: HomeScreenTopViewProtocol) {
@@ -121,11 +129,6 @@ extension HomeScreenTopView {
         profileButton.setImage(viewModel.profileImage, for: .normal)
         searchTextField.placeholder = viewModel.placeholderText
     }
-
-}
-
-// MARK: - Actions
-extension HomeScreenTopView {
     
     @objc
     private func hamburgerButtonTapped(_ sender: Any?) {
@@ -137,10 +140,14 @@ extension HomeScreenTopView {
     }
     @objc
     private func cancelButtonTapped(_ sender: Any?) {
-        cancelButtonTapped?()
+        cancelButton.isHidden = true
+        profileButton.isHidden = false
+        searchTextField.text?.removeAll()
+        searchTextFieldTapped?("")
     }
     @objc
-    private func textSearchChange(_ sender: UITextField){
+    private func textSearchChange(_ sender: UITextField) {
         searchTextFieldTapped?(sender.text ?? "")
+        updateCancelButton()
     }
 }

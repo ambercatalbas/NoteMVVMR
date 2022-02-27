@@ -33,7 +33,7 @@ final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
     var page: Int = 1
     var isPagingEnabled = false
     var isRequestEnabled = false
-
+    
     func showProfileScreen() {
         router.pushProfile()
     }
@@ -66,6 +66,26 @@ final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
 // MARK: - Network
 extension HomeViewModel {
     func fetchNotesListing() {
+        self.page = 1
+        self.isRequestEnabled = false
+        dataProvider.request(for: GetMyNotesRequest(page: page)) { [weak self] (result) in
+            guard let self = self else { return }
+            self.isRequestEnabled = true
+            switch result {
+            case .success(let response):
+                self.cellItems.removeAll(keepingCapacity: false)
+                let cellItems = response.data.data.map({ HomeCellModel(note: $0) })
+                self.cellItems.append(contentsOf: cellItems)
+                self.page += 1
+                self.isPagingEnabled = response.data.currentPage < response.data.lastPage
+                print(self.isPagingEnabled)
+                self.didSuccessFetchRecipes?()
+            case .failure(let error):
+                ToastPresenter.showWarningToast(text: "\(error.localizedDescription)", entryBackground: .appRed)
+            }
+        }
+    }
+    func fetchMoreNotesListing() {
         
         self.isRequestEnabled = false
         dataProvider.request(for: GetMyNotesRequest(page: page)) { [weak self] (result) in
@@ -97,7 +117,6 @@ extension HomeViewModel {
                 self.fetchNotesListing()
             case .failure(let error):
                 ToastPresenter.showWarningToast(text: "\(error.localizedDescription)", entryBackground: .appRed)
-                
             }
         }
     }

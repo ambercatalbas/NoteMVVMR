@@ -41,24 +41,16 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         viewModel.fetchNotesListing()
         subscribeViewModelEvents()
         navigationController?.navigationBar.isHidden = true
-        
         setProfilButtonAction()
         searchAction()
-        
+        addObserver()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+    private func addObserver() {
         let notificationCenter: NotificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(reloadData), name: .reloadDataNotification, object: nil)
-        
     }
-    
     @objc
     private func reloadData() {
-        viewModel.page = 1
-        viewModel.cellItems.removeAll(keepingCapacity: false)
         viewModel.fetchNotesListing()
     }
     private func subscribeViewModelEvents() {
@@ -79,6 +71,7 @@ extension HomeViewController {
         makeTopView()
         makeTableView()
         makeAddNoteButton()
+        topView.searchTextField.delegate = self
     }
     private func makeTableView() {
         view.addSubview(tableView)
@@ -112,16 +105,26 @@ extension HomeViewController {
 }
 // MARK: - Actions
 extension HomeViewController {
+  
+    private func setCancelButtonAction() {
+        topView.cancelButtonTapped = { [weak self] in
+            guard let self = self else { return }
+            print("sdvnf alıhkg ")
+            self.filterContentForSearchText("")
+            self.searchText = ""
+            self.tableView.reloadData()
+        }
+    }
     private func setProfilButtonAction() {
         topView.profileButtonTapped = { [weak self] in
             guard let self = self else { return }
+            print("sdvnf alıhkg ")
             self.profileButtonTapped()
         }
     }
     private func searchAction() {
         topView.searchTextFieldTapped = { [weak self] text in
             guard let self = self else { return }
-            
             self.filterContentForSearchText(text)
             self.searchText = text
             self.tableView.reloadData()
@@ -139,7 +142,7 @@ extension HomeViewController {
     }
     @objc
     private func pullToRefreshValueChanged() {
-        viewModel.cellItems.isEmpty ? viewModel.fetchNotesListing() : tableView.reloadData()
+        viewModel.cellItems.isEmpty ? viewModel.fetchMoreNotesListing() : tableView.reloadData()
         refreshControl.endRefreshing()
     }
 }
@@ -242,11 +245,20 @@ extension HomeViewController: UITableViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let position = scrollView.contentOffset.y
-
         if position > tableView.contentSize.height-100-scrollView.frame.size.height && viewModel.isPagingEnabled && viewModel.isRequestEnabled{
             self.tableView.tableFooterView = createSpinnerFooter()
-            viewModel.fetchNotesListing()
+            viewModel.fetchMoreNotesListing()
         }
     }
     
+}
+
+// MARK: - UITextFieldDelegate
+extension HomeViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        self.view.endEditing(true)
+        return false
+    }
 }
