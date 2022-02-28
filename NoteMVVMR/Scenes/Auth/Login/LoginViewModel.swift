@@ -15,6 +15,7 @@ protocol LoginViewDataSource {
 protocol LoginViewEventSource {}
 
 protocol LoginViewProtocol: LoginViewDataSource, LoginViewEventSource {
+    
     func showRegisterOnWindow()
     func sendLoginRequest(email: String, password: String)
     func showPasswordResetScene(isBackScrenLogin: Bool)

@@ -17,7 +17,7 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
         .build()
     private let titleLabel = TitleLabel(text: Strings.RegisterViewController.title)
     private let subTitleLabel = SubTitleLabel(text: Strings.RegisterViewController.subTitle)
-    private let textFieldtackView = UIStackViewBuilder()
+    private let textFieldStackView = UIStackViewBuilder()
         .axis(.vertical)
         .spacing(14)
         .alignment(.fill)
@@ -28,37 +28,14 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
     private let passwordTextField = PasswordTextField()
     private let forgotPasswordLabelButton = LabelButton(title: Strings.RegisterViewController.forgotPassword)
     private let registerButton = LoginButton(title: Strings.RegisterViewController.signUpButtonTitle)
-    private let loginLabelButton = RegisterButton(blackText: Strings.RegisterViewController.bottomBlackText, blueberryText: Strings.RegisterViewController.bottomBluberryText)
+    private let loginLabelButton = RegisterButton(blackText: Strings.RegisterViewController.bottomBlackText,
+                                                  blueberryText: Strings.RegisterViewController.bottomBluberryText)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         drawDesign()
-        addObserver()
         configureContents()
     }
-    private func addObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)),
-                                               name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)),
-                                               name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-
-    @objc func keyboardWillShow(notification: Notification) {
-        if let userInfo = notification.userInfo as? Dictionary <String, AnyObject> {
-            let frame = userInfo[UIResponder.keyboardFrameEndUserInfoKey]
-            let keyboardRect = frame?.cgRectValue
-            if let keyboardHeight = keyboardRect?.height {
-                self.registerButton.bottomToSuperview().constant = -keyboardHeight-10
-                UIView.animate(withDuration: 0.5, animations: {self.view.layoutIfNeeded()})
-            }
-        }
-    }
-    
-    @objc func keyboardWillHide(notification: Notification) {
-        self.registerButton.bottomToSuperview().constant = -60.0
-        UIView.animate(withDuration: 0.5, animations: {self.view.layoutIfNeeded()})
-    }
-    
 
 }
 
@@ -67,9 +44,9 @@ extension RegisterViewController {
     private func drawDesign() {
         makeScrollView()
         makeContentView()
-        maketitleLabel()
+        makeTitleLabel()
         makeSubTitleLabel()
-        makeTextFieldtackView()
+        makeTextFieldStackView()
         makeForgotPasswordLabelButton()
         makeRegisterButton()
         makeRegisterLabelButton()
@@ -86,7 +63,7 @@ extension RegisterViewController {
         contentView.edgesToSuperview()
     }
     
-    private func maketitleLabel() {
+    private func makeTitleLabel() {
         contentView.addSubview(titleLabel)
         titleLabel.topToSuperview().constant = 103
         titleLabel.centerXToSuperview()
@@ -102,15 +79,15 @@ extension RegisterViewController {
         subTitleLabel.rightToSuperview().constant = -25
     }
     
-    private func makeTextFieldtackView() {
-        contentView.addSubview(textFieldtackView)
-        textFieldtackView.topToBottom(of: subTitleLabel).constant = 42
-        textFieldtackView.leftToSuperview().constant = 25
-        textFieldtackView.rightToSuperview().constant = -25
-        textFieldtackView.centerXToSuperview()
-        textFieldtackView.addArrangedSubview(usernameTextField)
-        textFieldtackView.addArrangedSubview(emailTextField)
-        textFieldtackView.addArrangedSubview(passwordTextField)
+    private func makeTextFieldStackView() {
+        contentView.addSubview(textFieldStackView)
+        textFieldStackView.topToBottom(of: subTitleLabel).constant = 42
+        textFieldStackView.leftToSuperview().constant = 25
+        textFieldStackView.rightToSuperview().constant = -25
+        textFieldStackView.centerXToSuperview()
+        textFieldStackView.addArrangedSubview(usernameTextField)
+        textFieldStackView.addArrangedSubview(emailTextField)
+        textFieldStackView.addArrangedSubview(passwordTextField)
         usernameTextField.height(47)
         emailTextField.height(47)
         passwordTextField.height(47)
@@ -119,9 +96,8 @@ extension RegisterViewController {
     
     private func makeForgotPasswordLabelButton() {
         contentView.addSubview(forgotPasswordLabelButton)
-        forgotPasswordLabelButton.topToBottom(of: textFieldtackView).constant = 13
-        forgotPasswordLabelButton.right(to: textFieldtackView)
-        forgotPasswordLabelButton.addTarget(self, action: #selector(forgotPasswordButtonTapped), for: .touchUpInside)
+        forgotPasswordLabelButton.topToBottom(of: textFieldStackView).constant = 13
+        forgotPasswordLabelButton.right(to: textFieldStackView)
     }
     
     private func makeRegisterButton() {
@@ -132,15 +108,12 @@ extension RegisterViewController {
         registerButton.leftToSuperview().constant = 25
         registerButton.rightToSuperview().constant = -25
         registerButton.centerXToSuperview()
-        registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
     }
     
     private func makeRegisterLabelButton() {
         view.addSubview(loginLabelButton)
         loginLabelButton.bottomToSuperview(usingSafeArea: true)
         loginLabelButton.centerXToSuperview()
-        loginLabelButton.backgroundColor = .clear
-        loginLabelButton.addTarget(self, action: #selector(registerLabelButtonTapped), for: .touchUpInside)
     }
 }
 
@@ -151,6 +124,10 @@ extension RegisterViewController {
         usernameTextField.delegate = self
         emailTextField.delegate = self
         passwordTextField.delegate = self
+        loginLabelButton.backgroundColor = .clear
+        loginLabelButton.addTarget(self, action: #selector(registerLabelButtonTapped), for: .touchUpInside)
+        registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
+        forgotPasswordLabelButton.addTarget(self, action: #selector(forgotPasswordButtonTapped), for: .touchUpInside)
     }
     
 }
@@ -189,7 +166,6 @@ extension RegisterViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        self.view.endEditing(true)
         return false
     }
 }

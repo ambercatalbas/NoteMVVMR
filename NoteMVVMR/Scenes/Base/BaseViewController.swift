@@ -27,6 +27,7 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController {
         view.backgroundColor = .appWhite
       
     }
+    
     func showWarningToast(message: String, entryBackground: UIColor ) {
         ToastPresenter.showWarningToast(text: message, entryBackground: entryBackground)
     }

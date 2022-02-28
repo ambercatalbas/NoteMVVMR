@@ -7,6 +7,7 @@
 import UIKit
 
 protocol CommentEditDeleteAlertViewRoute {
+    
     func presentCommentEditDeleteAlertView(edit: VoidClosure?, delete: VoidClosure?)
 }
 

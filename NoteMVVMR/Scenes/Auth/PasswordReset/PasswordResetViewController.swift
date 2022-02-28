@@ -33,13 +33,14 @@ final class PasswordResetViewController: BaseViewController<PasswordResetViewMod
     }
     
 }
+
 // MARK: - UILayout
 extension PasswordResetViewController {
     
     private func drawDesign() {
         makeScrollView()
         makeContentView()
-        maketitleLabel()
+        makeTitleLabel()
         makeSubTitleLabel()
         makeEmailTextField()
         makeRessetPasswordButton()
@@ -61,14 +62,10 @@ extension PasswordResetViewController {
         view.addSubview(backButton)
         backButton.topToSuperview().constant = 56
         backButton.leftToSuperview().constant = 20
-        if isBackScrenLogin {
-            backButton.addTarget(self, action: #selector(showLoginScreen), for: .touchUpInside)
-        } else {
-            backButton.addTarget(self, action: #selector(showRegisterScreen), for: .touchUpInside)
-        }
+
     }
     
-    private func maketitleLabel() {
+    private func makeTitleLabel() {
         contentView.addSubview(titleLabel)
         titleLabel.topToSuperview().constant = 103
         titleLabel.centerXToSuperview()
@@ -91,7 +88,6 @@ extension PasswordResetViewController {
         emailTextField.rightToSuperview().constant = -25
         emailTextField.centerXToSuperview()
         emailTextField.height(47)
-
     }
     
     private func makeRessetPasswordButton() {
@@ -102,7 +98,6 @@ extension PasswordResetViewController {
         resetPasswordButton.leftToSuperview().constant = 25
         resetPasswordButton.rightToSuperview().constant = -25
         resetPasswordButton.centerXToSuperview()
-        resetPasswordButton.addTarget(self, action: #selector(resetPasswordButtonTapped), for: .touchUpInside)
     }
 
 }
@@ -112,6 +107,12 @@ extension PasswordResetViewController {
     
     private func configureContents() {
         emailTextField.delegate = self
+        resetPasswordButton.addTarget(self, action: #selector(resetPasswordButtonTapped), for: .touchUpInside)
+        if isBackScrenLogin {
+            backButton.addTarget(self, action: #selector(showLoginScreen), for: .touchUpInside)
+        } else {
+            backButton.addTarget(self, action: #selector(showRegisterScreen), for: .touchUpInside)
+        }
     }
     
 }
@@ -147,7 +148,6 @@ extension PasswordResetViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        self.view.endEditing(true)
         return false
     }
 }

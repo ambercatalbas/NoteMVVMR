@@ -8,6 +8,7 @@
 import UIKit
 
 protocol RouterProtocol: AnyObject {
+    
     func open(_ viewController: UIViewController, transition: Transition)
     func close()
 }

@@ -23,12 +23,14 @@ final class ChangePasswordViewController: BaseViewController<ChangePasswordViewM
                                                            action: #selector(showHomeScreen))
         drawDesign()
     }
+    
     private func drawDesign() {
         makePasswordTextField()
         makeNewPasswordTextField()
         makeRetypeNewPasswordTextField()
         makeSaveButton()
     }
+    
     private func makePasswordTextField() {
         view.addSubview(passwordTextField)
         passwordTextField.topToSuperview().constant = 122
@@ -38,6 +40,7 @@ final class ChangePasswordViewController: BaseViewController<ChangePasswordViewM
         passwordTextField.placeholder = Strings.ChangePasswordController.passwordPlaceholder
         
     }
+    
     private func makeNewPasswordTextField() {
         view.addSubview(newPasswordTextField)
         newPasswordTextField.topToBottom(of: passwordTextField).constant = 15
@@ -46,6 +49,7 @@ final class ChangePasswordViewController: BaseViewController<ChangePasswordViewM
         newPasswordTextField.height(47)
         newPasswordTextField.placeholder = Strings.ChangePasswordController.newPasswordPlaceholder
     }
+    
     private func makeRetypeNewPasswordTextField() {
         view.addSubview(retypeNewPasswordTextField)
         retypeNewPasswordTextField.topToBottom(of: newPasswordTextField).constant = 15
@@ -54,6 +58,7 @@ final class ChangePasswordViewController: BaseViewController<ChangePasswordViewM
         retypeNewPasswordTextField.height(47)
         retypeNewPasswordTextField.placeholder = Strings.ChangePasswordController.retypeNewPasswordPlaceholder
     }
+    
     private func makeSaveButton() {
         view.addSubview(saveButton)
         saveButton.topToBottom(of: retypeNewPasswordTextField).constant = 33
@@ -63,6 +68,7 @@ final class ChangePasswordViewController: BaseViewController<ChangePasswordViewM
         saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
 
     }
+    
     @objc
     private func saveButtonTapped() {
         view.endEditing(true)
@@ -83,6 +89,7 @@ final class ChangePasswordViewController: BaseViewController<ChangePasswordViewM
                                  newPassword: newPassword,
                                  retypeNewPassword: retypeNewPassword)
     }
+    
     @objc
     private func showHomeScreen() {
         viewModel.showHomeScreen()

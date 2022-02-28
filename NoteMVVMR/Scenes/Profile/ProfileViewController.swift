@@ -34,19 +34,21 @@ final class ProfileViewController: BaseViewController<ProfileViewModel> {
         drawDesign()
         getUser()
         subscribeViewModelEvents()
-        
     }
+    
     private func subscribeViewModelEvents() {
         viewModel.didSuccessFetchUser = { [weak self] in
             guard let self = self else { return }
             self.userNameTextField.text = self.viewModel.getUser().fullName
             self.emailTextField.text = self.viewModel.getUser().email
-            
         }
+        
     }
+    
     private func getUser() {
         self.viewModel.getUserRequest() 
     }
+    
     private func drawDesign() {
         makeUserNameTextField()
         makeEmailTextField()
@@ -54,6 +56,7 @@ final class ProfileViewController: BaseViewController<ProfileViewModel> {
         makeChangePasswordButton()
         makeSignOutButton()
     }
+    
     private func makeUserNameTextField() {
         view.addSubview(userNameTextField)
         userNameTextField.topToSuperview().constant = 125
@@ -62,6 +65,7 @@ final class ProfileViewController: BaseViewController<ProfileViewModel> {
         userNameTextField.rightToSuperview().constant = -25
         userNameTextField.centerXToSuperview()
     }
+    
     private func makeEmailTextField() {
         view.addSubview(emailTextField)
         emailTextField.topToBottom(of: userNameTextField).constant = 15
@@ -70,6 +74,7 @@ final class ProfileViewController: BaseViewController<ProfileViewModel> {
         emailTextField.rightToSuperview().constant = -25
         emailTextField.centerXToSuperview()
     }
+    
     private func makeSaveButton() {
         view.addSubview(saveButton)
         saveButton.topToBottom(of: emailTextField).constant = 15
@@ -78,20 +83,22 @@ final class ProfileViewController: BaseViewController<ProfileViewModel> {
         saveButton.rightToSuperview().constant = -25
         saveButton.centerXToSuperview()
         saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
-        
     }
+    
     private func makeChangePasswordButton() {
         view.addSubview(changePasswordButton)
         changePasswordButton.topToBottom(of: saveButton).constant = 15
         changePasswordButton.centerXToSuperview()
         changePasswordButton.addTarget(self, action: #selector(changePasswordButtonTapped), for: .touchUpInside)
     }
+    
     private func makeSignOutButton() {
         view.addSubview(signOutButton)
         signOutButton.topToBottom(of: changePasswordButton).constant = 15
         signOutButton.centerXToSuperview()
         signOutButton.addTarget(self, action: #selector(signOutButtonTapped), for: .touchUpInside)
     }
+    
     @objc
     private func saveButtonTapped() {
         view.endEditing(true)
@@ -105,14 +112,17 @@ final class ProfileViewController: BaseViewController<ProfileViewModel> {
         guard validation.isValidEmail(email) else { return }
         viewModel.updateUser(userName: userName, email: email)
     }
+    
     @objc
     private func changePasswordButtonTapped() {
         viewModel.pushChangePasswordScene()
     }
+    
     @objc
     private func signOutButtonTapped() {
         viewModel.signOut()
     }
+    
     @objc
     private func hamburgerButtonButtonTapped() {
         viewModel.showHomeScreen()

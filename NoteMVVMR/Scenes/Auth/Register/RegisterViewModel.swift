@@ -16,6 +16,7 @@ protocol RegisterViewDataSource {}
 protocol RegisterViewEventSource {}
 
 protocol RegisterViewProtocol: RegisterViewDataSource, RegisterViewEventSource {
+    
     func showLoginScreen()
     func sendRegisterRequest(username: String, email: String, password: String)
     func showForgotPasswordScreen(isBackScrenLogin: Bool)
@@ -27,11 +28,13 @@ final class RegisterViewModel: BaseViewModel<RegisterRouter>, RegisterViewProtoc
     func showForgotPasswordScreen(isBackScrenLogin: Bool) {
         router.modalPasswordReset(isBackScrenLogin: isBackScrenLogin)
     }
+    
     func showLoginScreen() {
         router.placeOnWindowLogin()
     }
     
 }
+
 // MARK: - Network
 extension RegisterViewModel {
     

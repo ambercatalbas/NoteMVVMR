@@ -12,10 +12,9 @@ import UIComponents
 import TinyConstraints
 
 final class HomeViewController: BaseViewController<HomeViewModel> {
-    private let tableView: UITableView = {
-        let tableView = UITableView()
-        return tableView
-    }()
+    
+    private let tableView = UITableViewBuilder()
+        .build()
     private let topView = HomeScreenTopView()
     private let addButton = UIButtonBuilder()
         .title(Strings.General.addNote)
@@ -27,32 +26,36 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     private let refreshControl = UIRefreshControl()
     var filteredItems: [HomeCellProtocol] = []
     var searchText: String = ""
+    private var note: Note = Note(title: "", description: "", noteID: 0)
     var isSearchTextEmpty: Bool {
         return searchText.isEmpty ?? true
     }
+    
     var isFiltering: Bool {
         return !isSearchTextEmpty
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        addSubviews()
         configureContents()
         viewModel.fetchNotesListing()
         subscribeViewModelEvents()
-        navigationController?.navigationBar.isHidden = true
         setProfilButtonAction()
         searchAction()
         addObserver()
     }
+    
     private func addObserver() {
         let notificationCenter: NotificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(reloadData), name: .reloadDataNotification, object: nil)
     }
+    
     @objc
     private func reloadData() {
         viewModel.fetchNotesListing()
     }
+    
     private func subscribeViewModelEvents() {
         viewModel.didSuccessFetchRecipes = { [weak self] in
             guard let self = self else { return }
@@ -64,45 +67,58 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     }
 }
 
-// MARK: - Configure
+// MARK: - UILayout
 extension HomeViewController {
-    private func configureContents() {
-        view.backgroundColor = .white
+    private func addSubviews() {
         makeTopView()
         makeTableView()
         makeAddNoteButton()
-        topView.searchTextField.delegate = self
     }
+    
     private func makeTableView() {
         view.addSubview(tableView)
         tableView.topToBottom(of: topView)
         tableView.leadingToSuperview()
         tableView.trailingToSuperview()
         tableView.bottomToSuperview()
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(HomeCell.self, forCellReuseIdentifier: HomeCell.defaultReuseIdentifier)
-        tableView.refreshControl = refreshControl
-        refreshControl.addTarget(self, action: #selector(pullToRefreshValueChanged), for: .valueChanged)
     }
+    
     private func makeAddNoteButton() {
         view.addSubview(addButton)
-        addButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
         addButton.backgroundColor = .appBlueBerry
         addButton.bottomToSuperview().constant = -34
         addButton.centerXToSuperview()
         addButton.height(42)
         addButton.width(140)
     }
+    
     private func makeTopView() {
         view.addSubview(topView)
-        topView.backgroundColor = .white
         topView.topToSuperview().constant = 44
         topView.leadingToSuperview()
         topView.trailingToSuperview()
         topView.height(66)
     }
 }
+
+// MARK: - Configure
+extension HomeViewController {
+    
+    private func configureContents() {
+        view.backgroundColor = .white
+        navigationController?.navigationBar.isHidden = true
+        topView.searchTextField.delegate = self
+        topView.backgroundColor = .white
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(HomeCell.self, forCellReuseIdentifier: HomeCell.defaultReuseIdentifier)
+        tableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(pullToRefreshValueChanged), for: .valueChanged)
+        addButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
+    }
+
+}
+
 // MARK: - Actions
 extension HomeViewController {
   
@@ -115,6 +131,7 @@ extension HomeViewController {
             self.tableView.reloadData()
         }
     }
+    
     private func setProfilButtonAction() {
         topView.profileButtonTapped = { [weak self] in
             guard let self = self else { return }
@@ -122,6 +139,7 @@ extension HomeViewController {
             self.profileButtonTapped()
         }
     }
+    
     private func searchAction() {
         topView.searchTextFieldTapped = { [weak self] text in
             guard let self = self else { return }
@@ -134,12 +152,14 @@ extension HomeViewController {
     
     @objc
     private func addButtonTapped() {
-        viewModel.addNote(titleText: "", descriptionText: Strings.DetailViewController.descriptionTitlePlaceholder, noteId: 0, type: .add)
+        viewModel.addNote(note: Note(title: "", description: "", noteID: 0), type: .add)
     }
+    
     @objc
     private func profileButtonTapped() {
         viewModel.showProfileScreen()
     }
+    
     @objc
     private func pullToRefreshValueChanged() {
         viewModel.cellItems.isEmpty ? viewModel.fetchMoreNotesListing() : tableView.reloadData()
@@ -156,6 +176,7 @@ extension HomeViewController: UITableViewDataSource {
         }
         return viewModel.numberOfItemsAt(section: section)
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: HomeCell = tableView.dequeueReusableCell(for: indexPath)
         let cellItem: HomeCellProtocol
@@ -169,10 +190,14 @@ extension HomeViewController: UITableViewDataSource {
         return cell
     }
 }
+
+// MARK: - UITableViewDelegate
 extension HomeViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(99)
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cellItem: HomeCellProtocol
         if isFiltering {
@@ -180,15 +205,16 @@ extension HomeViewController: UITableViewDelegate {
             let title = filteredItems[indexPath.row].titleText
             let description = filteredItems[indexPath.row].descriptionText
             let noteID = filteredItems[indexPath.row].noteID
-            viewModel.didSelectRow(titleText: title, descriptionText: description, noteId: noteID, type: .showNote)
+            viewModel.didSelectRow(note: Note(title: title, description: description, noteID: noteID), type: .showNote)
         } else {
             cellItem = viewModel.cellItemAt(indexPath: indexPath)
             let title = self.viewModel.cellItems[indexPath.row].titleText
             let description = self.viewModel.cellItems[indexPath.row].descriptionText
             let noteID = self.viewModel.cellItems[indexPath.row].noteID
-            viewModel.didSelectRow(titleText: title, descriptionText: description, noteId: noteID, type: .showNote)
+            viewModel.didSelectRow(note: Note(title: title, description: description, noteID: noteID), type: .showNote)
         }
     }
+    
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title:"") { (_, _, completionHandler) in
             AlertUtility.shared.multiButton(title: Strings.HomeViewController.alertTitle,
@@ -221,18 +247,21 @@ extension HomeViewController: UITableViewDelegate {
         self.viewModel.deleteNote(noteID: noteID)
         tableView.reloadData()
     }
+    
     private func swipeEditAction(indexPath: IndexPath) {
         let title = self.viewModel.cellItems[indexPath.row].titleText
         let description = self.viewModel.cellItems[indexPath.row].descriptionText
         let noteID = self.viewModel.cellItems[indexPath.row].noteID
-        self.viewModel.editRow(titleText: title, descriptionText: description, noteId: noteID, type: .update)
+        self.viewModel.editRow(note: Note(title: title, description: description, noteID: noteID), type: .update)
     }
+    
     private func filterContentForSearchText(_ searchText: String ) {
         filteredItems = viewModel.cellItems.filter { (item: HomeCellProtocol) -> Bool in
             return item.titleText.lowercased().contains(searchText.lowercased())
         }
         tableView.reloadData()
     }
+    
     private func createSpinnerFooter() -> UIView {
         let footerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 70))
         let spinner = UIActivityIndicatorView()
@@ -258,7 +287,6 @@ extension HomeViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        self.view.endEditing(true)
         return false
     }
 }

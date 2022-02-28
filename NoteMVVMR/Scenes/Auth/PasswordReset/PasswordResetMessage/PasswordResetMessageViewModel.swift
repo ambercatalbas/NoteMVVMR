@@ -12,6 +12,7 @@ protocol PasswordResetMessageViewDataSource {}
 protocol PasswordResetMessageViewEventSource {}
 
 protocol PasswordResetMessageViewProtocol: PasswordResetMessageViewDataSource, PasswordResetMessageViewEventSource {
+    
     func showLoginScreen()
 }
 

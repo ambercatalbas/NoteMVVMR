@@ -78,6 +78,7 @@ public class HomeScreenTopView: UIView {
         hamburgerIconButton.bottomToSuperview().constant = -28
         hamburgerIconButton.addTarget(self, action: #selector(hamburgerButtonTapped(_:)), for: .touchUpInside)
     }
+    
     private func makeSearchTextField() {
         addSubview(searchTextField)
         searchTextField.topToSuperview()
@@ -90,6 +91,7 @@ public class HomeScreenTopView: UIView {
         searchTextField.returnKeyType = .done
         searchTextField.addTarget(self, action: #selector(textSearchChange(_:)), for: .editingChanged)
     }
+    
     private func makeProfileButton() {
         addSubview(profileButton)
         profileButton.trailingToSuperview().constant = -20
@@ -98,6 +100,7 @@ public class HomeScreenTopView: UIView {
         profileButton.height(32)
         profileButton.addTarget(self, action: #selector(profileButtonTapped(_:)), for: .touchUpInside)
     }
+    
     private func makeCancelButton() {
         addSubview(cancelButton)
         cancelButton.trailingToSuperview().constant = -18
@@ -107,6 +110,7 @@ public class HomeScreenTopView: UIView {
         cancelButton.addTarget(self, action: #selector(cancelButtonTapped(_:)), for: .touchUpInside)
         cancelButton.isHidden = true
     }
+    
     private func makeLineView() {
         addSubview(lineView)
         lineView.height(1)
@@ -114,6 +118,7 @@ public class HomeScreenTopView: UIView {
         lineView.trailingToSuperview()
         lineView.bottomToSuperview()
     }
+    
     private func updateCancelButton() {
         profileButton.isHidden = true
         cancelButton.isHidden = false
@@ -134,10 +139,12 @@ extension HomeScreenTopView {
     private func hamburgerButtonTapped(_ sender: Any?) {
         hamburgerButtonTapped?()
     }
+    
     @objc
     private func profileButtonTapped(_ sender: Any?) {
         profileButtonTapped?()
     }
+    
     @objc
     private func cancelButtonTapped(_ sender: Any?) {
         cancelButton.isHidden = true
@@ -145,6 +152,7 @@ extension HomeScreenTopView {
         searchTextField.text?.removeAll()
         searchTextFieldTapped?("")
     }
+    
     @objc
     private func textSearchChange(_ sender: UITextField) {
         searchTextFieldTapped?(sender.text ?? "")

@@ -20,7 +20,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         .build()
     private let titleLabel = TitleLabel(text: Strings.LoginViewController.title)
     private let subTitleLabel = SubTitleLabel(text: Strings.LoginViewController.subTitle)
-    private let textFieldtackView = UIStackViewBuilder()
+    private let textFieldStackView = UIStackViewBuilder()
         .axis(.vertical)
         .spacing(14)
         .alignment(.fill)
@@ -48,9 +48,9 @@ extension LoginViewController {
     private func drawDesign() {
         makeScrollView()
         makeContentView()
-        maketitleLabel()
+        makeTitleLabel()
         makeSubTitleLabel()
-        makeTextFieldtackView()
+        makeTextFieldStackView()
         makeForgotPasswordButton()
         makeLoginButton()
         makeRegisterLabelButton()
@@ -67,7 +67,7 @@ extension LoginViewController {
         contentView.edgesToSuperview()
     }
     
-    private func maketitleLabel() {
+    private func makeTitleLabel() {
         contentView.addSubview(titleLabel)
         titleLabel.topToSuperview().constant = 103
         titleLabel.centerXToSuperview()
@@ -85,25 +85,19 @@ extension LoginViewController {
         subTitleLabel.rightToSuperview().constant = -25
     }
     
-    private func makeTextFieldtackView() {
-        contentView.addSubview(textFieldtackView)
-        textFieldtackView.topToBottom(of: subTitleLabel).constant = 42
-        textFieldtackView.leftToSuperview().constant = 25
-        textFieldtackView.rightToSuperview().constant = -25
-        textFieldtackView.centerXToSuperview()
-        textFieldtackView.addArrangedSubview(emailTextField)
-        textFieldtackView.addArrangedSubview(passwordTextField)
-        emailTextField.height(47)
-        emailTextField.returnKeyType = .done
-        passwordTextField.height(47)
-        passwordTextField.returnKeyType = .done
+    private func makeTextFieldStackView() {
+        contentView.addSubview(textFieldStackView)
+        textFieldStackView.topToBottom(of: subTitleLabel).constant = 42
+        textFieldStackView.leftToSuperview().constant = 25
+        textFieldStackView.rightToSuperview().constant = -25
+        textFieldStackView.centerXToSuperview()
+
     }
     
     private func makeForgotPasswordButton() {
         contentView.addSubview(forgotPasswordLabelButton)
-        forgotPasswordLabelButton.topToBottom(of: textFieldtackView).constant = 13
-        forgotPasswordLabelButton.right(to: textFieldtackView)
-        forgotPasswordLabelButton.addTarget(self, action: #selector(forgotPasswordButtonTapped), for: .touchUpInside)
+        forgotPasswordLabelButton.topToBottom(of: textFieldStackView).constant = 13
+        forgotPasswordLabelButton.right(to: textFieldStackView)
     }
     
     private func makeLoginButton() {
@@ -114,15 +108,12 @@ extension LoginViewController {
         loginButton.leftToSuperview().constant = 25
         loginButton.rightToSuperview().constant = -25
         loginButton.centerXToSuperview()
-        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
     
     private func makeRegisterLabelButton() {
         view.addSubview(registerLabelButton)
         registerLabelButton.bottomToSuperview(usingSafeArea: true)
         registerLabelButton.centerXToSuperview()
-        registerLabelButton.backgroundColor = .clear
-        registerLabelButton.addTarget(self, action: #selector(registerLabelButtonTapped), for: .touchUpInside)
     }
     
 }
@@ -133,6 +124,18 @@ extension LoginViewController {
     private func configureContents() {
         emailTextField.delegate = self
         passwordTextField.delegate = self
+        textFieldStackView.addArrangedSubview(emailTextField)
+        textFieldStackView.addArrangedSubview(passwordTextField)
+        emailTextField.height(47)
+        emailTextField.returnKeyType = .done
+        passwordTextField.height(47)
+        passwordTextField.returnKeyType = .done
+        registerLabelButton.backgroundColor = .clear
+        forgotPasswordLabelButton.addTarget(self, action: #selector(forgotPasswordButtonTapped), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        registerLabelButton.addTarget(self, action: #selector(registerLabelButtonTapped), for: .touchUpInside)
+
+  
     }
     
 }
@@ -170,7 +173,6 @@ extension LoginViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        self.view.endEditing(true)
         return false
     }
 }

@@ -6,6 +6,7 @@
 //
 
 protocol ProfileRoute {
+    
     func pushProfile()
     func modalProfile()
 }
