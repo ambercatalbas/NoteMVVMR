@@ -9,6 +9,7 @@ import Foundation
 import KeychainSwift
 
 protocol ProfileViewDataSource {
+    
     func getUser() -> User
 }
 
@@ -18,6 +19,7 @@ protocol ProfileViewEventSource {
 }
 
 protocol ProfileViewProtocol: ProfileViewDataSource, ProfileViewEventSource {
+    
     func showHomeScreen()
     func updateUser(userName: String, email: String)
     func getUserRequest()
@@ -26,6 +28,7 @@ protocol ProfileViewProtocol: ProfileViewDataSource, ProfileViewEventSource {
 }
 
 final class ProfileViewModel: BaseViewModel<ProfileRouter>, ProfileViewProtocol {
+    
     var user: User = User(id: 0, userName: "", email: "")
     var didSuccessFetchUser: VoidClosure?
     var keychain = KeychainSwift()
@@ -36,9 +39,11 @@ final class ProfileViewModel: BaseViewModel<ProfileRouter>, ProfileViewProtocol 
     func showHomeScreen() {
         router.close()
     }
+    
     func pushChangePasswordScene() {
         router.pushChangePassword()
     }
+    
     func signOut() {
         keychain.clear()
         router.placeOnWindowLogin()
@@ -47,6 +52,7 @@ final class ProfileViewModel: BaseViewModel<ProfileRouter>, ProfileViewProtocol 
 }
 
 extension ProfileViewModel {
+    
     func updateUser(userName: String, email: String) {
         dataProvider.request(for: UpdateUserRequest(userName: userName, email: email)) { [weak self] (result) in
             guard self != nil else { return }
@@ -58,6 +64,7 @@ extension ProfileViewModel {
             }
         }
     }
+    
     func getUserRequest() {
         dataProvider.request(for: GetUserRequest()) { [weak self] (result) in
             guard let self = self else { return }

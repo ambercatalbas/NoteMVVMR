@@ -6,6 +6,7 @@
 //
 
 protocol HomeRoute {
+    
     func pushHome()
     func placeOnWindowHome()
 }

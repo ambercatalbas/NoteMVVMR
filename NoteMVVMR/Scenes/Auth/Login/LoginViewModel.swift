@@ -10,12 +10,12 @@ import Alamofire
 import KeychainSwift
 
 protocol LoginViewDataSource {
-    
 }
 
 protocol LoginViewEventSource {}
 
 protocol LoginViewProtocol: LoginViewDataSource, LoginViewEventSource {
+    
     func showRegisterOnWindow()
     func sendLoginRequest(email: String, password: String)
     func showPasswordResetScene(isBackScrenLogin: Bool)
@@ -35,6 +35,7 @@ final class LoginViewModel: BaseViewModel<LoginRouter>, LoginViewProtocol {
     func sendLoginRequest(email: String, password: String) {
         
         dataProvider.request(for: LoginRequest(email: email, password: password)) { [weak self] result in
+          
             guard let self = self else { return }
             switch result {
             case .success(let response):

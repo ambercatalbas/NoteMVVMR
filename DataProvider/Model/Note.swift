@@ -7,8 +7,16 @@
 
 // MARK: - Note
 public struct Note: Codable {
-    public let title: String?
-    public let note: String?
-    public let id: Int?
+    public var title: String = ""
+    public var note: String = ""
+    public var id: Int = 0
+
     
+    public init(title: String, description: String, noteID: Int) {
+        self.title = title
+        self.note = description
+        self.id = noteID
+        
+    }
 }
+

@@ -9,6 +9,7 @@
 import UIKit
 
 protocol UnfollowAlertViewRoute {
+    
     func presentUnfollowAlertView(unFollowAction: VoidClosure?)
 }
 

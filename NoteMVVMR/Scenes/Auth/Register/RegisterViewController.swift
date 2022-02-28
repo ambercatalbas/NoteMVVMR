@@ -10,9 +10,14 @@ import UIKit
 import UIComponents
 
 final class RegisterViewController: BaseViewController<RegisterViewModel> {
+    private let scrollView = UIScrollViewBuilder()
+        .alwaysBounceVertical(true)
+        .build()
+    private let contentView = UIViewBuilder()
+        .build()
     private let titleLabel = TitleLabel(text: Strings.RegisterViewController.title)
     private let subTitleLabel = SubTitleLabel(text: Strings.RegisterViewController.subTitle)
-    private let textFieldtackView = UIStackViewBuilder()
+    private let textFieldStackView = UIStackViewBuilder()
         .axis(.vertical)
         .spacing(14)
         .alignment(.fill)
@@ -23,77 +28,113 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
     private let passwordTextField = PasswordTextField()
     private let forgotPasswordLabelButton = LabelButton(title: Strings.RegisterViewController.forgotPassword)
     private let registerButton = LoginButton(title: Strings.RegisterViewController.signUpButtonTitle)
-    private let registerLabelButton = RegisterButton(blackText: Strings.RegisterViewController.bottomBlackText, blueberryText: Strings.RegisterViewController.bottomBluberryText)
+    private let loginLabelButton = RegisterButton(blackText: Strings.RegisterViewController.bottomBlackText,
+                                                  blueberryText: Strings.RegisterViewController.bottomBluberryText)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         drawDesign()
+        configureContents()
     }
-    
+
+}
+
+// MARK: - UILayout
+extension RegisterViewController {
     private func drawDesign() {
-        maketitleLabel()
+        makeScrollView()
+        makeContentView()
+        makeTitleLabel()
         makeSubTitleLabel()
-        makeTextFieldtackView()
+        makeTextFieldStackView()
         makeForgotPasswordLabelButton()
         makeRegisterButton()
         makeRegisterLabelButton()
     }
-}
-extension RegisterViewController {
-    private func maketitleLabel() {
-        view.addSubview(titleLabel)
+    
+    private func makeScrollView() {
+        view.addSubview(scrollView)
+        scrollView.edgesToSuperview()
+    }
+    
+    private func makeContentView() {
+        scrollView.addSubview(contentView)
+        contentView.widthToSuperview()
+        contentView.edgesToSuperview()
+    }
+    
+    private func makeTitleLabel() {
+        contentView.addSubview(titleLabel)
         titleLabel.topToSuperview().constant = 103
         titleLabel.centerXToSuperview()
         titleLabel.leftToSuperview().constant = 25
         titleLabel.rightToSuperview().constant = -25
     }
+    
     private func makeSubTitleLabel() {
-        view.addSubview(subTitleLabel)
+        contentView.addSubview(subTitleLabel)
         subTitleLabel.topToBottom(of: titleLabel).constant = 10
         subTitleLabel.centerXToSuperview()
         subTitleLabel.leftToSuperview().constant = 25
         subTitleLabel.rightToSuperview().constant = -25
     }
-    private func makeTextFieldtackView() {
-        view.addSubview(textFieldtackView)
-        textFieldtackView.topToBottom(of: subTitleLabel).constant = 42
-        textFieldtackView.leftToSuperview().constant = 25
-        textFieldtackView.rightToSuperview().constant = -25
-        textFieldtackView.centerXToSuperview()
-        textFieldtackView.addArrangedSubview(usernameTextField)
-        textFieldtackView.addArrangedSubview(emailTextField)
-        textFieldtackView.addArrangedSubview(passwordTextField)
+    
+    private func makeTextFieldStackView() {
+        contentView.addSubview(textFieldStackView)
+        textFieldStackView.topToBottom(of: subTitleLabel).constant = 42
+        textFieldStackView.leftToSuperview().constant = 25
+        textFieldStackView.rightToSuperview().constant = -25
+        textFieldStackView.centerXToSuperview()
+        textFieldStackView.addArrangedSubview(usernameTextField)
+        textFieldStackView.addArrangedSubview(emailTextField)
+        textFieldStackView.addArrangedSubview(passwordTextField)
         usernameTextField.height(47)
         emailTextField.height(47)
         passwordTextField.height(47)
         
     }
+    
     private func makeForgotPasswordLabelButton() {
-        view.addSubview(forgotPasswordLabelButton)
-        forgotPasswordLabelButton.topToBottom(of: textFieldtackView).constant = 13
-        forgotPasswordLabelButton.right(to: textFieldtackView)
-        forgotPasswordLabelButton.addTarget(self, action: #selector(forgotPasswordButtonTapped), for: .touchUpInside)
+        contentView.addSubview(forgotPasswordLabelButton)
+        forgotPasswordLabelButton.topToBottom(of: textFieldStackView).constant = 13
+        forgotPasswordLabelButton.right(to: textFieldStackView)
     }
     
     private func makeRegisterButton() {
-        view.addSubview(registerButton)
+        contentView.addSubview(registerButton)
         registerButton.topToBottom(of: forgotPasswordLabelButton).constant = 27
+        registerButton.bottomToSuperview().constant = -60
         registerButton.height(60)
         registerButton.leftToSuperview().constant = 25
         registerButton.rightToSuperview().constant = -25
         registerButton.centerXToSuperview()
-        registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
     }
+    
     private func makeRegisterLabelButton() {
-        view.addSubview(registerLabelButton)
-        registerLabelButton.bottomToSuperview().constant = -34
-        registerLabelButton.centerXToSuperview()
-        registerLabelButton.addTarget(self, action: #selector(registerLabelButtonTapped), for: .touchUpInside)
+        view.addSubview(loginLabelButton)
+        loginLabelButton.bottomToSuperview(usingSafeArea: true)
+        loginLabelButton.centerXToSuperview()
     }
 }
-// MARK: - Actions
+
+// MARK: - Configure
 extension RegisterViewController {
     
+    private func configureContents() {
+        usernameTextField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        loginLabelButton.backgroundColor = .clear
+        loginLabelButton.addTarget(self, action: #selector(registerLabelButtonTapped), for: .touchUpInside)
+        registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
+        forgotPasswordLabelButton.addTarget(self, action: #selector(forgotPasswordButtonTapped), for: .touchUpInside)
+    }
+    
+}
+
+// MARK: - Actions
+extension RegisterViewController {
+
     @objc
     private func registerButtonTapped() {
         view.endEditing(true)
@@ -117,5 +158,14 @@ extension RegisterViewController {
     @objc
     private func registerLabelButtonTapped() {
         viewModel.showLoginScreen()
+    }
+}
+
+// MARK: - UITextFieldDelegate
+extension RegisterViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
     }
 }
