@@ -85,7 +85,6 @@ extension HomeViewModel {
                 self.cellItems.append(contentsOf: cellItems)
                 self.page += 1
                 self.isPagingEnabled = response.data.currentPage < response.data.lastPage
-                print(self.isPagingEnabled)
                 self.didSuccessFetchRecipes?()
             case .failure(let error):
                 ToastPresenter.showWarningToast(text: "\(error.localizedDescription)", entryBackground: .appRed)
@@ -108,7 +107,6 @@ extension HomeViewModel {
                 self.cellItems.append(contentsOf: cellItems)
                 self.page += 1
                 self.isPagingEnabled = response.data.currentPage < response.data.lastPage
-                print(self.isPagingEnabled)
                 self.didSuccessFetchRecipes?()
             case .failure(let error):
                 ToastPresenter.showWarningToast(text: "\(error.localizedDescription)", entryBackground: .appRed)
