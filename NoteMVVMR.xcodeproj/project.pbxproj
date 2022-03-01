@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		29F50A8966CB526693017127 /* Pods_NoteMVVMRTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9209839F23B5FDB724A63122 /* Pods_NoteMVVMRTests.framework */; };
-		4E0BD62127CD4576008E6E48 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0BD62027CD4576008E6E48 /* SearchView.swift */; };
 		4E33051B27C194C000E8F43A /* PasswordResetMessageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E33051827C194C000E8F43A /* PasswordResetMessageRouter.swift */; };
 		4E33051C27C194C000E8F43A /* PasswordResetMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E33051927C194C000E8F43A /* PasswordResetMessageViewController.swift */; };
 		4E33051D27C194C000E8F43A /* PasswordResetMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E33051A27C194C000E8F43A /* PasswordResetMessageViewModel.swift */; };
@@ -113,7 +112,6 @@
 
 /* Begin PBXFileReference section */
 		221FD75068C88A7A2135DDDB /* Pods-NoteMVVMRTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteMVVMRTests.release.xcconfig"; path = "Target Support Files/Pods-NoteMVVMRTests/Pods-NoteMVVMRTests.release.xcconfig"; sourceTree = "<group>"; };
-		4E0BD62027CD4576008E6E48 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		4E33051827C194C000E8F43A /* PasswordResetMessageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetMessageRouter.swift; sourceTree = "<group>"; };
 		4E33051927C194C000E8F43A /* PasswordResetMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetMessageViewController.swift; sourceTree = "<group>"; };
 		4E33051A27C194C000E8F43A /* PasswordResetMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetMessageViewModel.swift; sourceTree = "<group>"; };
@@ -277,7 +275,6 @@
 				4E9699D027B1BFF400C4CF8E /* HomeViewController.swift */,
 				4E9699D127B1BFF400C4CF8E /* HomeRouter.swift */,
 				4E9699CC27B1BFF400C4CF8E /* HomeRoute.swift */,
-				4E0BD62027CD4576008E6E48 /* SearchView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -859,7 +856,6 @@
 				4E9699F927B1BFF400C4CF8E /* LoginRoute.swift in Sources */,
 				4E9699F027B1BFF400C4CF8E /* RegisterRoute.swift in Sources */,
 				4E969A9B27B25D3000C4CF8E /* DetailRoute.swift in Sources */,
-				4E0BD62127CD4576008E6E48 /* SearchView.swift in Sources */,
 				4E9699FF27B1BFF400C4CF8E /* MainNavigationController.swift in Sources */,
 				4E33051F27C1962E00E8F43A /* PasswordResetMessageRoute.swift in Sources */,
 				4E9699F327B1BFF400C4CF8E /* PasswordResetViewModel.swift in Sources */,

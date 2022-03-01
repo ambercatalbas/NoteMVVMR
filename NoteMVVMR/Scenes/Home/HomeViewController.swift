@@ -69,9 +69,15 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
 
 // MARK: - UILayout
 extension HomeViewController {
+    
     private func addSubviews() {
         makeTableView()
         makeAddNoteButton()
+        makeTopView()
+    }
+    
+    private func makeTopView() {
+        topView.width(UIScreen.main.bounds.width-20)
     }
     
     private func makeTableView() {
@@ -107,7 +113,6 @@ extension HomeViewController {
         refreshControl.addTarget(self, action: #selector(pullToRefreshValueChanged), for: .valueChanged)
         addButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
         self.navigationController?.navigationBar.topItem?.titleView = topView
-        topView.width(UIScreen.main.bounds.width-20)
     }
 
 }
