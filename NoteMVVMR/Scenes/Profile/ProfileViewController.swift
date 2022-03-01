@@ -24,7 +24,6 @@ final class ProfileViewController: BaseViewController<ProfileViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.isHidden = false
         navigationItem.title = Strings.ProfileViewController.title
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: .hamburgerIcon,
                                                            style: .done,
@@ -126,6 +125,5 @@ final class ProfileViewController: BaseViewController<ProfileViewModel> {
     @objc
     private func hamburgerButtonButtonTapped() {
         viewModel.showHomeScreen()
-        navigationController?.navigationBar.isHidden = true
     }
 }

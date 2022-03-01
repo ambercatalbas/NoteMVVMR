@@ -69,15 +69,20 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
 
 // MARK: - UILayout
 extension HomeViewController {
+    
     private func addSubviews() {
-        makeTopView()
         makeTableView()
         makeAddNoteButton()
+        makeTopView()
+    }
+    
+    private func makeTopView() {
+        topView.width(UIScreen.main.bounds.width-20)
     }
     
     private func makeTableView() {
         view.addSubview(tableView)
-        tableView.topToBottom(of: topView)
+        tableView.topToSuperview()
         tableView.leadingToSuperview()
         tableView.trailingToSuperview()
         tableView.bottomToSuperview()
@@ -91,14 +96,7 @@ extension HomeViewController {
         addButton.height(42)
         addButton.width(140)
     }
-    
-    private func makeTopView() {
-        view.addSubview(topView)
-        topView.topToSuperview().constant = 44
-        topView.leadingToSuperview()
-        topView.trailingToSuperview()
-        topView.height(66)
-    }
+
 }
 
 // MARK: - Configure
@@ -106,7 +104,6 @@ extension HomeViewController {
     
     private func configureContents() {
         view.backgroundColor = .white
-        navigationController?.navigationBar.isHidden = true
         topView.searchTextField.delegate = self
         topView.backgroundColor = .white
         tableView.dataSource = self
@@ -115,6 +112,7 @@ extension HomeViewController {
         tableView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(pullToRefreshValueChanged), for: .valueChanged)
         addButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
+        self.navigationController?.navigationBar.topItem?.titleView = topView
     }
 
 }
@@ -125,7 +123,6 @@ extension HomeViewController {
     private func setCancelButtonAction() {
         topView.cancelButtonTapped = { [weak self] in
             guard let self = self else { return }
-            print("sdvnf alıhkg ")
             self.filterContentForSearchText("")
             self.searchText = ""
             self.tableView.reloadData()
@@ -135,7 +132,6 @@ extension HomeViewController {
     private func setProfilButtonAction() {
         topView.profileButtonTapped = { [weak self] in
             guard let self = self else { return }
-            print("sdvnf alıhkg ")
             self.profileButtonTapped()
         }
     }
@@ -274,7 +270,7 @@ extension HomeViewController: UITableViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let position = scrollView.contentOffset.y
-        if position > tableView.contentSize.height-100-scrollView.frame.size.height && viewModel.isPagingEnabled && viewModel.isRequestEnabled{
+        if position > tableView.contentSize.height-100-scrollView.frame.size.height && viewModel.isPagingEnabled && viewModel.isRequestEnabled {
             self.tableView.tableFooterView = createSpinnerFooter()
             viewModel.fetchMoreNotesListing()
         }
@@ -289,4 +285,19 @@ extension HomeViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         return false
     }
+}
+
+// MARK: - UISearchBarDelegate
+extension HomeViewController: UISearchBarDelegate, UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        print("ghjkt")
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+    }
+
 }

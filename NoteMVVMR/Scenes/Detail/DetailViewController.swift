@@ -134,7 +134,6 @@ extension DetailViewController {
         titleTextField.delegate = self
         descriptionTextView.delegate = self
         descriptionTextView.text = descriptionText
-        navigationController?.navigationBar.isHidden = false
         navigationItem.title = navigationTitle
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: .backArrow, style: .plain, target: self, action: #selector(backButtonTapped))
         titleTextField.returnKeyType = .done
@@ -168,7 +167,6 @@ extension DetailViewController {
     
     @objc
     func backButtonTapped() {
-        navigationController?.navigationBar.isHidden = true
         viewModel.showHomeScreen()
     }
     
@@ -177,7 +175,6 @@ extension DetailViewController {
         let title = titleTextField.text ?? ""
         let description = descriptionTextView.text ?? ""
         viewModel.createNote(title: title, description: description)
-        navigationController?.navigationBar.isHidden = true
     }
     
     @objc
@@ -186,7 +183,6 @@ extension DetailViewController {
         note.note = descriptionTextView.text ?? ""
         note.id = noteID
         viewModel.updateNote(note: note)
-        navigationController?.navigationBar.isHidden = true
     }
     
     @objc

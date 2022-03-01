@@ -63,20 +63,28 @@ public class HomeScreenTopView: UIView {
     }
     
     private func configureContents() {
+        backgroundColor = .clear
         makeHamburgerIconButton()
         makeSearchTextField()
         makeProfileButton()
         makeLineView()
         makeCancelButton()
+        hamburgerIconButton.addTarget(self, action: #selector(hamburgerButtonTapped(_:)), for: .touchUpInside)
+        searchTextField.withImage(direction: .left, image: .searchIcon,
+                                  colorSeparator: UIColor.white, colorBorder: .appRaven, backgroundColor: .white)
+        searchTextField.returnKeyType = .done
+        searchTextField.addTarget(self, action: #selector(textSearchChange(_:)), for: .editingChanged)
+        profileButton.addTarget(self, action: #selector(profileButtonTapped(_:)), for: .touchUpInside)
+        cancelButton.addTarget(self, action: #selector(cancelButtonTapped(_:)), for: .touchUpInside)
+
     }
     
     private func makeHamburgerIconButton() {
         addSubview(hamburgerIconButton)
         hamburgerIconButton.height(16)
         hamburgerIconButton.width(18)
-        hamburgerIconButton.leftToSuperview().constant = 20
-        hamburgerIconButton.bottomToSuperview().constant = -28
-        hamburgerIconButton.addTarget(self, action: #selector(hamburgerButtonTapped(_:)), for: .touchUpInside)
+        hamburgerIconButton.leftToSuperview().constant = 10
+        hamburgerIconButton.centerYToSuperview()
     }
     
     private func makeSearchTextField() {
@@ -85,29 +93,25 @@ public class HomeScreenTopView: UIView {
         searchTextField.leadingToSuperview().constant = 75
         searchTextField.trailingToSuperview().constant = -75
         searchTextField.height(40)
-        searchTextField.bottomToSuperview().constant = -16
-        searchTextField.withImage(direction: .left, image: .searchIcon,
-                                  colorSeparator: UIColor.white, colorBorder: .appRaven, backgroundColor: .white)
-        searchTextField.returnKeyType = .done
-        searchTextField.addTarget(self, action: #selector(textSearchChange(_:)), for: .editingChanged)
+        searchTextField.bottomToSuperview().constant = -5
+        searchTextField.centerYToSuperview()
+
     }
     
     private func makeProfileButton() {
         addSubview(profileButton)
-        profileButton.trailingToSuperview().constant = -20
-        profileButton.topToSuperview().constant = 5
+        profileButton.trailingToSuperview().constant = -10
+        profileButton.centerYToSuperview()
         profileButton.width(32)
         profileButton.height(32)
-        profileButton.addTarget(self, action: #selector(profileButtonTapped(_:)), for: .touchUpInside)
     }
     
     private func makeCancelButton() {
         addSubview(cancelButton)
         cancelButton.trailingToSuperview().constant = -18
-        cancelButton.bottomToSuperview().constant = -31
+        cancelButton.centerYToSuperview()
         cancelButton.width(40)
         cancelButton.height(9)
-        cancelButton.addTarget(self, action: #selector(cancelButtonTapped(_:)), for: .touchUpInside)
         cancelButton.isHidden = true
     }
     
