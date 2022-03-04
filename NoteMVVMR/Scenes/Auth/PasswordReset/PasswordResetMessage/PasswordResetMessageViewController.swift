@@ -17,12 +17,12 @@ final class PasswordResetMessageViewController: BaseViewController<PasswordReset
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        drawDesign()
+        addSubViews()
         subTitleLabel.textColor = .appGreen
         subTitleLabel.text = Strings.PasswordResetMessageViewController.greenSubTitleAfter+"\(email)"+Strings.PasswordResetMessageViewController.greenSubTitleLast
     }
     
-    private func drawDesign() {
+    private func addSubViews() {
         makeTitleLabel()
         makeSubTitleLabel()
         makeLoginButton()

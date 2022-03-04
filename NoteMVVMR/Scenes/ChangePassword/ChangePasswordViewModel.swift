@@ -24,9 +24,9 @@ final class ChangePasswordViewModel: BaseViewModel<ChangePasswordRouter>, Change
             guard let self = self else { return }
             switch result {
             case .success(let response):
-                ToastPresenter.showWarningToast(text: Strings.Success.succesChangePassword, entryBackground: .appGreen)
+                self.showSuccesWarningToast?("\(Strings.Success.succesChangePassword)")
             case .failure(let error):
-                ToastPresenter.showWarningToast(text: Strings.Error.checkInformations, entryBackground: .appRed)
+                self.showFailureWarningToast?("\(Strings.Error.checkInformations)")
             }
         }
     }

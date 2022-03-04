@@ -19,6 +19,7 @@ public enum DetailVCShowType {
 }
 
 final class DetailViewController: BaseViewController<DetailViewModel> {
+    
     private let scrollView = UIScrollViewBuilder()
         .alwaysBounceVertical(true)
         .build()
@@ -50,16 +51,9 @@ final class DetailViewController: BaseViewController<DetailViewModel> {
         addSubViews()
         configureContents()
         setLocalize()
-        addObserver()
         
     }
     
-    private func addObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)),
-                                               name: UIResponder.keyboardWillChangeFrameNotification,
-                                               object: nil)
-    }
-
 }
 
 // MARK: - UILayout
@@ -145,8 +139,10 @@ extension DetailViewController {
         case .add:
             saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
             descriptionTextView.textColor = .lightGray
+            addObserver()
         case .update:
             saveButton.addTarget(self, action: #selector(updateButtonTapped), for: .touchUpInside)
+            addObserver()
         }
     }
     
@@ -183,6 +179,12 @@ extension DetailViewController {
         note.note = descriptionTextView.text ?? ""
         note.id = noteID
         viewModel.updateNote(note: note)
+    }
+    
+    private func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)),
+                                               name: UIResponder.keyboardWillChangeFrameNotification,
+                                               object: nil)
     }
     
     @objc

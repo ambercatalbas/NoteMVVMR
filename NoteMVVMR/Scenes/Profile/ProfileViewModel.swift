@@ -58,9 +58,9 @@ extension ProfileViewModel {
             guard self != nil else { return }
             switch result {
             case .success(let response):
-                ToastPresenter.showWarningToast(text: Strings.Success.succesUpdeteProfile, entryBackground: .appGreen)
+                self?.showSuccesWarningToast?("\(Strings.Success.succesUpdeteProfile)")
             case .failure(let error):
-                ToastPresenter.showWarningToast(text: "\(error.localizedDescription)", entryBackground: .appRed)
+                self?.showFailureWarningToast?("\(error.localizedDescription)")
             }
         }
     }
@@ -73,7 +73,7 @@ extension ProfileViewModel {
                 self.user = response.data ?? User(id: 0, userName: "", email: "")
                 self.didSuccessFetchUser?()
             case .failure(let error):
-                ToastPresenter.showWarningToast(text: "\(error.localizedDescription)", entryBackground: .appRed)
+                self.showFailureWarningToast?("\(error.localizedDescription)")
             }
         }
     }

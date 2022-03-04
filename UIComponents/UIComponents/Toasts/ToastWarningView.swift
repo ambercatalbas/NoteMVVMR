@@ -15,6 +15,7 @@ class ToastWarningView: UIView {
         .textAlignment(.center)
         .numberOfLines(0)
         .build()
+    
     init(text: String) {
         label.text = text
         label.sizeToFit()
@@ -35,12 +36,6 @@ class ToastWarningView: UIView {
         label.leadingToSuperview().constant = 55
         label.trailingToSuperview().constant = -55
         label.baselineAdjustment = .alignCenters
-//        label.centerXToSuperview()
-//        label.centerYToSuperview()
-//        label.leadingToSuperview().constant = 56
-//        label.trailingToSuperview().constant = 56
-//        label.topToSuperview().constant = 29
-//        label.bottomToSuperview().constant = -29
         
     }
     

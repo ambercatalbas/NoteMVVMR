@@ -11,6 +11,7 @@ import TinyConstraints
 import UIComponents
 
 final class PasswordResetViewController: BaseViewController<PasswordResetViewModel> {
+    
     private let scrollView = UIScrollViewBuilder()
         .alwaysBounceVertical(true)
         .build()
@@ -28,8 +29,12 @@ final class PasswordResetViewController: BaseViewController<PasswordResetViewMod
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        drawDesign()
+        addSubViews()
         configureContents()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
     
 }
@@ -37,7 +42,7 @@ final class PasswordResetViewController: BaseViewController<PasswordResetViewMod
 // MARK: - UILayout
 extension PasswordResetViewController {
     
-    private func drawDesign() {
+    private func addSubViews() {
         makeScrollView()
         makeContentView()
         makeTitleLabel()
@@ -124,7 +129,7 @@ extension PasswordResetViewController {
     private func resetPasswordButtonTapped() {
         guard let email = emailTextField.text,
               emailTextField.text?.isEmpty == false else {
-            ToastPresenter.showWarningToast(text: Strings.Error.emptyFields, entryBackground: .appRed)
+                  self.showFailureWarningToast(message: Strings.Error.emptyFields)
             return }
         let validation = Validation()
         guard validation.isValidEmail(email) else { return }

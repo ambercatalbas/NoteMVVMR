@@ -10,6 +10,7 @@ import UIKit
 import UIComponents
 
 final class RegisterViewController: BaseViewController<RegisterViewModel> {
+    
     private let scrollView = UIScrollViewBuilder()
         .alwaysBounceVertical(true)
         .build()
@@ -33,15 +34,21 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        drawDesign()
+        
+        addSubViews()
         configureContents()
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
 }
 
 // MARK: - UILayout
 extension RegisterViewController {
-    private func drawDesign() {
+    
+    private func addSubViews() {
         makeScrollView()
         makeContentView()
         makeTitleLabel()
@@ -144,21 +151,24 @@ extension RegisterViewController {
               usernameTextField.text?.isEmpty == false,
               emailTextField.text?.isEmpty == false,
               passwordTextField.text?.isEmpty == false else {
-                  ToastPresenter.showWarningToast(text: Strings.Error.emptyFields, entryBackground: .appRed)
+                  self.showFailureWarningToast(message: Strings.Error.emptyFields)
                   return }
         let validation = Validation()
         guard validation.isValidEmail(email) else { return }
         guard validation.isValidPassword(password) else { return }
         viewModel.sendRegisterRequest(username: userName, email: email, password: password)
     }
+    
     @objc
     private func forgotPasswordButtonTapped() {
         viewModel.showForgotPasswordScreen(isBackScrenLogin: false)
     }
+    
     @objc
     private func registerLabelButtonTapped() {
         viewModel.showLoginScreen()
     }
+    
 }
 
 // MARK: - UITextFieldDelegate
@@ -168,4 +178,5 @@ extension RegisterViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         return false
     }
+    
 }

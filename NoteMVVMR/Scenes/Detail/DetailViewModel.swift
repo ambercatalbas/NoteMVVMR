@@ -34,7 +34,7 @@ final class DetailViewModel: BaseViewModel<DetailRouter>, DetailViewProtocol {
                 NotificationCenter.default.post(name: .reloadDataNotification, object: nil)
                 self.router.close()
             case .failure(let error):
-                self.showWarningToast?("\(error.localizedDescription)")
+                self.showFailureWarningToast?("\(error.localizedDescription)")
             }
         }
     }
@@ -48,7 +48,8 @@ final class DetailViewModel: BaseViewModel<DetailRouter>, DetailViewProtocol {
                 NotificationCenter.default.post(name: .reloadDataNotification, object: nil)
                 self.router.close()
             case .failure(let error):
-                ToastPresenter.showWarningToast(text: "\(error.localizedDescription)", entryBackground: .appRed)            }
+                self.showFailureWarningToast?("\(error.localizedDescription)")
+            }
         }
     }
 }

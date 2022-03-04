@@ -37,13 +37,14 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSubviews()
+        addSubViews()
         configureContents()
         viewModel.fetchNotesListing()
         subscribeViewModelEvents()
         setProfilButtonAction()
         searchAction()
         addObserver()
+        tableView.keyboardDismissMode = .onDrag
     }
     
     private func addObserver() {
@@ -70,7 +71,7 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
 // MARK: - UILayout
 extension HomeViewController {
     
-    private func addSubviews() {
+    private func addSubViews() {
         makeTableView()
         makeAddNoteButton()
         makeTopView()
@@ -96,7 +97,7 @@ extension HomeViewController {
         addButton.height(42)
         addButton.width(140)
     }
-
+    
 }
 
 // MARK: - Configure
@@ -114,12 +115,12 @@ extension HomeViewController {
         addButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
         self.navigationController?.navigationBar.topItem?.titleView = topView
     }
-
+    
 }
 
 // MARK: - Actions
 extension HomeViewController {
-  
+    
     private func setCancelButtonAction() {
         topView.cancelButtonTapped = { [weak self] in
             guard let self = self else { return }
@@ -299,5 +300,5 @@ extension HomeViewController: UISearchBarDelegate, UISearchResultsUpdating {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
     }
-
+    
 }

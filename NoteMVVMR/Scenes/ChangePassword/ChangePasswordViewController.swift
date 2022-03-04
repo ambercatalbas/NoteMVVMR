@@ -8,6 +8,7 @@
 import UIKit
 
 final class ChangePasswordViewController: BaseViewController<ChangePasswordViewModel> {
+    
     private let passwordTextField = PasswordTextField()
     private let newPasswordTextField = PasswordTextField()
     private let retypeNewPasswordTextField = PasswordTextField()
@@ -16,15 +17,21 @@ final class ChangePasswordViewController: BaseViewController<ChangePasswordViewM
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = Strings.ChangePasswordController.title
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: .hamburgerIcon,
-                                                           style: .done,
-                                                           target: self,
-                                                           action: #selector(showHomeScreen))
-        drawDesign()
+        addSubViews()
+        configureContents()
+        setLocalize()
     }
     
-    private func drawDesign() {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+}
+
+// MARK: - UILayout
+extension ChangePasswordViewController {
+    
+    private func addSubViews() {
         makePasswordTextField()
         makeNewPasswordTextField()
         makeRetypeNewPasswordTextField()
@@ -37,7 +44,6 @@ final class ChangePasswordViewController: BaseViewController<ChangePasswordViewM
         passwordTextField.leftToSuperview().constant = 25
         passwordTextField.rightToSuperview().constant = -25
         passwordTextField.height(47)
-        passwordTextField.placeholder = Strings.ChangePasswordController.passwordPlaceholder
         
     }
     
@@ -47,7 +53,6 @@ final class ChangePasswordViewController: BaseViewController<ChangePasswordViewM
         newPasswordTextField.leftToSuperview().constant = 25
         newPasswordTextField.rightToSuperview().constant = -25
         newPasswordTextField.height(47)
-        newPasswordTextField.placeholder = Strings.ChangePasswordController.newPasswordPlaceholder
     }
     
     private func makeRetypeNewPasswordTextField() {
@@ -56,7 +61,6 @@ final class ChangePasswordViewController: BaseViewController<ChangePasswordViewM
         retypeNewPasswordTextField.leftToSuperview().constant = 25
         retypeNewPasswordTextField.rightToSuperview().constant = -25
         retypeNewPasswordTextField.height(47)
-        retypeNewPasswordTextField.placeholder = Strings.ChangePasswordController.retypeNewPasswordPlaceholder
     }
     
     private func makeSaveButton() {
@@ -65,9 +69,33 @@ final class ChangePasswordViewController: BaseViewController<ChangePasswordViewM
         saveButton.leftToSuperview().constant = 25
         saveButton.rightToSuperview().constant = -25
         saveButton.height(60)
-        saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
-
+        
     }
+}
+
+// MARK: - Configure and SetLocalize
+extension ChangePasswordViewController {
+    
+    private func configureContents() {
+        title = Strings.ChangePasswordController.title
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: .hamburgerIcon,
+                                                           style: .done,
+                                                           target: self,
+                                                           action: #selector(showHomeScreen))
+        saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
+    }
+    
+    private func setLocalize() {
+        passwordTextField.placeholder = Strings.ChangePasswordController.passwordPlaceholder
+        newPasswordTextField.placeholder = Strings.ChangePasswordController.newPasswordPlaceholder
+        retypeNewPasswordTextField.placeholder = Strings.ChangePasswordController.retypeNewPasswordPlaceholder
+        
+    }
+    
+}
+
+// MARK: - Actions
+extension ChangePasswordViewController {
     
     @objc
     private func saveButtonTapped() {
@@ -78,13 +106,13 @@ final class ChangePasswordViewController: BaseViewController<ChangePasswordViewM
               passwordTextField.text?.isEmpty == false,
               newPasswordTextField.text?.isEmpty == false,
               retypeNewPasswordTextField.text?.isEmpty == false else {
-                  ToastPresenter.showWarningToast(text: Strings.Error.emptyFields, entryBackground: .appRed)
+                  self.showFailureWarningToast(message: Strings.Error.emptyFields)
                   return }
         let validation = Validation()
         guard validation.isValidPassword(password) else { return }
         guard validation.isValidPassword(newPassword) else { return }
         guard validation.isValidPassword(retypeNewPassword) else { return }
-
+        
         viewModel.changePassword(password: password,
                                  newPassword: newPassword,
                                  retypeNewPassword: retypeNewPassword)
@@ -93,6 +121,16 @@ final class ChangePasswordViewController: BaseViewController<ChangePasswordViewM
     @objc
     private func showHomeScreen() {
         viewModel.showHomeScreen()
+    }
+    
+}
+
+// MARK: - UITextFieldDelegate
+extension ChangePasswordViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
     }
     
 }

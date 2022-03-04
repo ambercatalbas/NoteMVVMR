@@ -87,7 +87,7 @@ extension HomeViewModel {
                 self.isPagingEnabled = response.data.currentPage < response.data.lastPage
                 self.didSuccessFetchRecipes?()
             case .failure(let error):
-                ToastPresenter.showWarningToast(text: "\(error.localizedDescription)", entryBackground: .appRed)
+                self.showFailureWarningToast?("\(error.localizedDescription)")
             }
         }
     }
@@ -109,7 +109,7 @@ extension HomeViewModel {
                 self.isPagingEnabled = response.data.currentPage < response.data.lastPage
                 self.didSuccessFetchRecipes?()
             case .failure(let error):
-                ToastPresenter.showWarningToast(text: "\(error.localizedDescription)", entryBackground: .appRed)
+                self.showFailureWarningToast?("\(error.localizedDescription)")
             }
         }
     }
@@ -123,7 +123,7 @@ extension HomeViewModel {
                 self.page = 1
                 self.fetchNotesListing()
             case .failure(let error):
-                ToastPresenter.showWarningToast(text: "\(error.localizedDescription)", entryBackground: .appRed)
+                self.showFailureWarningToast?("\(error.localizedDescription)")
             }
         }
     }
