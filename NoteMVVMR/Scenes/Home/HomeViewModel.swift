@@ -13,8 +13,8 @@ protocol HomeViewDataSource {
     
     func numberOfItemsAt(section: Int) -> Int
     func cellItemAt(indexPath: IndexPath) -> HomeCellProtocol
-    var page: Int { get set }
     
+    var page: Int { get set }
 }
 
 protocol HomeViewEventSource {
@@ -41,7 +41,7 @@ final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
     }
     
     func addNote(note: Note, type: DetailVCShowType) {
-        router.pushAdd(note: note, type: type)
+        router.pushDetail(note: note, type: type)
     }
     
     var didSuccessFetchRecipes: VoidClosure?
@@ -49,7 +49,7 @@ final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
     private var items: [Note] = []
     
     func editRow(note: Note, type: DetailVCShowType) {
-        router.pushEdit(note: note, type: type)
+        router.pushDetail(note: note, type: type)
         self.didSuccessFetchRecipes?()
     }
     
@@ -119,7 +119,7 @@ extension HomeViewModel {
             guard let self = self else { return }
             self.isRequestEnabled = true
             switch result {
-            case .success(let response):
+            case .success:
                 self.page = 1
                 self.fetchNotesListing()
             case .failure(let error):

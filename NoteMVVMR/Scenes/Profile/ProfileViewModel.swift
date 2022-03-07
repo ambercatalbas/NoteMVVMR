@@ -29,9 +29,10 @@ protocol ProfileViewProtocol: ProfileViewDataSource, ProfileViewEventSource {
 
 final class ProfileViewModel: BaseViewModel<ProfileRouter>, ProfileViewProtocol {
     
-    var user: User = User(id: 0, userName: "", email: "")
+    var user = User(id: 0, userName: "", email: "")
     var didSuccessFetchUser: VoidClosure?
     var keychain = KeychainSwift()
+    
     func getUser() -> User {
         return user
     }
@@ -57,7 +58,7 @@ extension ProfileViewModel {
         dataProvider.request(for: UpdateUserRequest(userName: userName, email: email)) { [weak self] (result) in
             guard self != nil else { return }
             switch result {
-            case .success(let response):
+            case .success:
                 self?.showSuccesWarningToast?("\(Strings.Success.succesUpdeteProfile)")
             case .failure(let error):
                 self?.showFailureWarningToast?("\(error.localizedDescription)")

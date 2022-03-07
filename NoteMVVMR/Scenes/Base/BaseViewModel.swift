@@ -29,13 +29,11 @@ class BaseViewModel<R: Router>: BaseViewModelProtocol {
     var showSuccesWarningToast: StringClosure?
     var showFailureWarningToast: StringClosure?
     
-    
     var showActivityIndicatorView: VoidClosure?
     var hideActivityIndicatorView: VoidClosure?
     
     var showLoading: VoidClosure?
     var hideLoading: VoidClosure?
-    
     
     let router: R
     let dataProvider: DataProviderProtocol

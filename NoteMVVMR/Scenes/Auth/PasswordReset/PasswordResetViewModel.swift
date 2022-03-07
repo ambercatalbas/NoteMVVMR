@@ -43,9 +43,9 @@ extension PasswordResetViewModel {
         dataProvider.request(for: PasswordResetRequest(email: email)) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
-            case .success(let _):
+            case .success:
                 self.showResetPasswordMessageScreen(email: email)
-            case .failure(let _):
+            case .failure:
                 self.showFailureWarningToast?("\(Strings.Error.checkInformations)")
             }
         }
