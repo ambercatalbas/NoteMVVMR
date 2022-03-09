@@ -47,9 +47,6 @@
 		4E969A5427B1C76200C4CF8E /* PlaceOnWindowTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A4927B1C76200C4CF8E /* PlaceOnWindowTransition.swift */; };
 		4E969A5527B1C76200C4CF8E /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A4A27B1C76200C4CF8E /* Transition.swift */; };
 		4E969A5627B1C76200C4CF8E /* PushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A4B27B1C76200C4CF8E /* PushTransition.swift */; };
-		4E969A5727B1C76200C4CF8E /* UnfollowAlertViewRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A4D27B1C76200C4CF8E /* UnfollowAlertViewRoute.swift */; };
-		4E969A5827B1C76200C4CF8E /* ShareSheetRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A4E27B1C76200C4CF8E /* ShareSheetRoute.swift */; };
-		4E969A5927B1C76200C4CF8E /* CommentEditDeleteAlertViewRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A4F27B1C76200C4CF8E /* CommentEditDeleteAlertViewRoute.swift */; };
 		4E969A7827B1C79A00C4CF8E /* AlertUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A5C27B1C79A00C4CF8E /* AlertUtility.swift */; };
 		4E969A8B27B1C79A00C4CF8E /* DateFormats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A7427B1C79A00C4CF8E /* DateFormats.swift */; };
 		4E969A8C27B1C79A00C4CF8E /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A7527B1C79A00C4CF8E /* ScreenSize.swift */; };
@@ -153,9 +150,6 @@
 		4E969A4927B1C76200C4CF8E /* PlaceOnWindowTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceOnWindowTransition.swift; sourceTree = "<group>"; };
 		4E969A4A27B1C76200C4CF8E /* Transition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 		4E969A4B27B1C76200C4CF8E /* PushTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushTransition.swift; sourceTree = "<group>"; };
-		4E969A4D27B1C76200C4CF8E /* UnfollowAlertViewRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnfollowAlertViewRoute.swift; sourceTree = "<group>"; };
-		4E969A4E27B1C76200C4CF8E /* ShareSheetRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareSheetRoute.swift; sourceTree = "<group>"; };
-		4E969A4F27B1C76200C4CF8E /* CommentEditDeleteAlertViewRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentEditDeleteAlertViewRoute.swift; sourceTree = "<group>"; };
 		4E969A5C27B1C79A00C4CF8E /* AlertUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertUtility.swift; sourceTree = "<group>"; };
 		4E969A7427B1C79A00C4CF8E /* DateFormats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormats.swift; sourceTree = "<group>"; };
 		4E969A7527B1C79A00C4CF8E /* ScreenSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
@@ -379,7 +373,6 @@
 				4E969A4227B1C76200C4CF8E /* Routers */,
 				4E969A4427B1C76200C4CF8E /* Core */,
 				4E969A4727B1C76200C4CF8E /* Transitions */,
-				4E969A4C27B1C76200C4CF8E /* Routes */,
 			);
 			path = Routing;
 			sourceTree = "<group>";
@@ -410,16 +403,6 @@
 				4E969A4B27B1C76200C4CF8E /* PushTransition.swift */,
 			);
 			path = Transitions;
-			sourceTree = "<group>";
-		};
-		4E969A4C27B1C76200C4CF8E /* Routes */ = {
-			isa = PBXGroup;
-			children = (
-				4E969A4D27B1C76200C4CF8E /* UnfollowAlertViewRoute.swift */,
-				4E969A4E27B1C76200C4CF8E /* ShareSheetRoute.swift */,
-				4E969A4F27B1C76200C4CF8E /* CommentEditDeleteAlertViewRoute.swift */,
-			);
-			path = Routes;
 			sourceTree = "<group>";
 		};
 		4E969A5A27B1C79A00C4CF8E /* Extensions */ = {
@@ -827,7 +810,6 @@
 				4E43108D27BDB22E002EF700 /* ProfileRouter.swift in Sources */,
 				4E9699F127B1BFF400C4CF8E /* RegisterViewController.swift in Sources */,
 				4E9699ED27B1BFF400C4CF8E /* HomeViewController.swift in Sources */,
-				4E969A5727B1C76200C4CF8E /* UnfollowAlertViewRoute.swift in Sources */,
 				4E33051D27C194C000E8F43A /* PasswordResetMessageViewModel.swift in Sources */,
 				4E96995727B13DD100C4CF8E /* APILogger.swift in Sources */,
 				4E96995827B13DD100C4CF8E /* APIRequestInterceptor.swift in Sources */,
@@ -848,10 +830,8 @@
 				4E43108627BAD77C002EF700 /* Notification+Extension.swift in Sources */,
 				4E9699EE27B1BFF400C4CF8E /* HomeRouter.swift in Sources */,
 				4E33051C27C194C000E8F43A /* PasswordResetMessageViewController.swift in Sources */,
-				4E969A5827B1C76200C4CF8E /* ShareSheetRoute.swift in Sources */,
 				4E969A5227B1C76200C4CF8E /* Router.swift in Sources */,
 				4E43107C27B991E3002EF700 /* HomeCellModel+Extension.swift in Sources */,
-				4E969A5927B1C76200C4CF8E /* CommentEditDeleteAlertViewRoute.swift in Sources */,
 				4EFE0B9D27C0218700623C92 /* ChangePasswordRoute.swift in Sources */,
 				4E9699F927B1BFF400C4CF8E /* LoginRoute.swift in Sources */,
 				4E9699F027B1BFF400C4CF8E /* RegisterRoute.swift in Sources */,

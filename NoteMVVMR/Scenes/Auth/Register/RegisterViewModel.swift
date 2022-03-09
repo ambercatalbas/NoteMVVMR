@@ -44,10 +44,10 @@ extension RegisterViewModel {
             switch result {
             case .success(let response):
                 self.keychain.set(response.data?.accessToken ?? "", forKey: Keychain.token)
-                ToastPresenter.showWarningToast(text: Strings.Success.succesSignUp, entryBackground: .appGreen)
+                self.showSuccesWarningToast?("\(Strings.Success.succesSignUp)")
                 self.router.pushHome()
             case .failure(let error):
-                ToastPresenter.showWarningToast(text: "\(error.localizedDescription)", entryBackground: .appRed)
+                self.showFailureWarningToast?("\(error.localizedDescription)")
             }
         }
     }

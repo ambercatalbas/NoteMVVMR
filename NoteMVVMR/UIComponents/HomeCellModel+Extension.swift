@@ -10,8 +10,8 @@ import Foundation
 extension HomeCellModel {
     
     convenience init(note: Note) {
-        self.init(title: note.title ?? "",
-                  description: note.note ?? "",
-                  noteID: note.id ?? 0)
+        self.init(title: note.title,
+                  description: note.note,
+                  noteID: note.id)
     }
 }

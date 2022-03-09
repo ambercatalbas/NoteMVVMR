@@ -43,10 +43,10 @@ extension PasswordResetViewModel {
         dataProvider.request(for: PasswordResetRequest(email: email)) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
-            case .success(let response):
+            case .success:
                 self.showResetPasswordMessageScreen(email: email)
-            case .failure(let error):
-                ToastPresenter.showWarningToast(text: Strings.Error.checkInformations, entryBackground: .appRed)
+            case .failure:
+                self.showFailureWarningToast?("\(Strings.Error.checkInformations)")
             }
         }
     }

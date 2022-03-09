@@ -21,6 +21,5 @@ final class PasswordResetMessageViewModel: BaseViewModel<PasswordResetMessageRou
     func showLoginScreen() {
         router.placeOnWindowLogin()
     }
-    
-    
+
 }

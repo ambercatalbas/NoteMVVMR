@@ -34,5 +34,3 @@ public struct Data: Codable {
         case total
     }
 }
-
-

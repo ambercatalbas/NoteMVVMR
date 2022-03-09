@@ -8,7 +8,10 @@
 import Foundation
 import Alamofire
 
-protocol DetailViewDataSource {}
+protocol DetailViewDataSource {
+    var note: Note { get }
+    var type: DetailVCShowType { get }
+}
 
 protocol DetailViewEventSource {}
 
@@ -20,6 +23,15 @@ protocol DetailViewProtocol: DetailViewDataSource, DetailViewEventSource {
 }
 
 final class DetailViewModel: BaseViewModel<DetailRouter>, DetailViewProtocol {
+    var note: Note
+    
+    var type: DetailVCShowType
+    
+    init(note: Note, type: DetailVCShowType, router: DetailRouter) {
+        self.note = note
+        self.type = type
+        super.init(router: router)
+    }
     
     func showHomeScreen() {
         router.close()
@@ -30,11 +42,11 @@ final class DetailViewModel: BaseViewModel<DetailRouter>, DetailViewProtocol {
         dataProvider.request(for: CreateNoteRequest(title: title, description: description)) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
-            case .success(_):
+            case .success:
                 NotificationCenter.default.post(name: .reloadDataNotification, object: nil)
                 self.router.close()
             case .failure(let error):
-                self.showWarningToast?("\(error.localizedDescription)")
+                self.showFailureWarningToast?("\(error.localizedDescription)")
             }
         }
     }
@@ -44,11 +56,12 @@ final class DetailViewModel: BaseViewModel<DetailRouter>, DetailViewProtocol {
         dataProvider.request(for: UpdateNoteRequest(note: note)) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
-            case .success(_):
+            case .success:
                 NotificationCenter.default.post(name: .reloadDataNotification, object: nil)
                 self.router.close()
             case .failure(let error):
-                ToastPresenter.showWarningToast(text: "\(error.localizedDescription)", entryBackground: .appRed)            }
+                self.showFailureWarningToast?("\(error.localizedDescription)")
+            }
         }
     }
 }

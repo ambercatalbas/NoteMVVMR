@@ -13,6 +13,7 @@ import SwiftUI
 import UIComponents
 
 final class LoginViewController: BaseViewController<LoginViewModel> {
+    
     private let scrollView = UIScrollViewBuilder()
         .alwaysBounceVertical(true)
         .build()
@@ -37,15 +38,21 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        drawDesign()
+        
+        addSubViews()
         configureContents()
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
 }
 
 // MARK: - UILayout
 extension LoginViewController {
     
-    private func drawDesign() {
+    private func addSubViews() {
         makeScrollView()
         makeContentView()
         makeTitleLabel()
@@ -91,7 +98,7 @@ extension LoginViewController {
         textFieldStackView.leftToSuperview().constant = 25
         textFieldStackView.rightToSuperview().constant = -25
         textFieldStackView.centerXToSuperview()
-
+        
     }
     
     private func makeForgotPasswordButton() {
@@ -134,8 +141,6 @@ extension LoginViewController {
         forgotPasswordLabelButton.addTarget(self, action: #selector(forgotPasswordButtonTapped), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         registerLabelButton.addTarget(self, action: #selector(registerLabelButtonTapped), for: .touchUpInside)
-
-  
     }
     
 }
@@ -149,7 +154,7 @@ extension LoginViewController {
               let password = passwordTextField.text,
               emailTextField.text?.isEmpty == false,
               passwordTextField.text?.isEmpty == false else {
-                  ToastPresenter.showWarningToast(text: Strings.Error.emptyFields, entryBackground: .appRed)
+                  self.showFailureWarningToast(message: Strings.Error.emptyFields)
                   return }
         let validation = Validation()
         guard validation.isValidEmail(email) else { return }
@@ -166,6 +171,7 @@ extension LoginViewController {
     private func forgotPasswordButtonTapped() {
         viewModel.showPasswordResetScene(isBackScrenLogin: true)
     }
+    
 }
 
 // MARK: - UITextFieldDelegate
@@ -175,4 +181,5 @@ extension LoginViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         return false
     }
+    
 }

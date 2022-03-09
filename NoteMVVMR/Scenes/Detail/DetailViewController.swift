@@ -19,6 +19,7 @@ public enum DetailVCShowType {
 }
 
 final class DetailViewController: BaseViewController<DetailViewModel> {
+    
     private let scrollView = UIScrollViewBuilder()
         .alwaysBounceVertical(true)
         .build()
@@ -37,29 +38,17 @@ final class DetailViewController: BaseViewController<DetailViewModel> {
         .build()
     private let saveButton = LoginButton(title: Strings.DetailViewController.saveButtonTitle)
     let keychain = KeychainSwift()
-    var noteID: Int = 0
-    var titleText: String = Strings.DetailViewController.noteTitlePlaceholder
-    var descriptionText: String = Strings.DetailViewController.descriptionTitlePlaceholder
-    var navigationTitle: String = Strings.DetailViewController.detailsTitle
     var type: DetailVCShowType = .add
-    var note: Note = Note(title: "", description: "", noteID: 0)
+    var note = Note(title: "", description: "", noteID: 0)
     private var saveButtonBottomConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setLocalize()
         addSubViews()
         configureContents()
-        setLocalize()
-        addObserver()
-        
     }
     
-    private func addObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)),
-                                               name: UIResponder.keyboardWillChangeFrameNotification,
-                                               object: nil)
-    }
-
 }
 
 // MARK: - UILayout
@@ -122,19 +111,10 @@ extension DetailViewController {
 // MARK: - Configure
 extension DetailViewController {
     
-    public func set(note: Note, type: DetailVCShowType) {
-        self.titleTextField.text = note.title
-        self.descriptionText = note.note
-        self.noteID = note.id
-        self.type = type
-    }
-    
     private func configureContents() {
         view.backgroundColor = .white
         titleTextField.delegate = self
         descriptionTextView.delegate = self
-        descriptionTextView.text = descriptionText
-        navigationItem.title = navigationTitle
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: .backArrow, style: .plain, target: self, action: #selector(backButtonTapped))
         titleTextField.returnKeyType = .done
         descriptionTextView.returnKeyType = .done
@@ -145,19 +125,25 @@ extension DetailViewController {
         case .add:
             saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
             descriptionTextView.textColor = .lightGray
+            addObserver()
         case .update:
             saveButton.addTarget(self, action: #selector(updateButtonTapped), for: .touchUpInside)
+            addObserver()
         }
     }
     
     private func setLocalize() {
+        self.note = viewModel.note
+        self.type = viewModel.type
+        self.titleTextField.text = note.title
+        self.descriptionTextView.text = note.note
         switch type {
         case .showNote:
-            navigationTitle = Strings.DetailViewController.detailsTitle
+            navigationItem.title = Strings.DetailViewController.detailsTitle
         case .add:
-            navigationTitle = Strings.DetailViewController.addTitle
+            navigationItem.title = Strings.DetailViewController.addTitle
         case .update:
-            navigationTitle = Strings.DetailViewController.editTitle
+            navigationItem.title = Strings.DetailViewController.editTitle
         }
     }
 }
@@ -181,8 +167,13 @@ extension DetailViewController {
     func updateButtonTapped() {
         note.title = titleTextField.text ?? ""
         note.note = descriptionTextView.text ?? ""
-        note.id = noteID
         viewModel.updateNote(note: note)
+    }
+    
+    private func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)),
+                                               name: UIResponder.keyboardWillChangeFrameNotification,
+                                               object: nil)
     }
     
     @objc
@@ -217,7 +208,7 @@ extension DetailViewController: UITextViewDelegate {
             textView.text = ""
             textView.textColor = .appRaven
         } else {
-            descriptionText = textView.text
+            descriptionTextView.text = textView.text
         }
         
         func textViewDidEndEditing(_ textView: UITextView) {
@@ -228,7 +219,7 @@ extension DetailViewController: UITextViewDelegate {
         }
         
         func textViewDidChange(_ textView: UITextView) {
-            descriptionText = textView.text
+            descriptionTextView.text = textView.text
         }
     }
     

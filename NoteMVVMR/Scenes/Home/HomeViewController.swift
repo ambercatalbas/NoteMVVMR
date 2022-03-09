@@ -26,9 +26,10 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     private let refreshControl = UIRefreshControl()
     var filteredItems: [HomeCellProtocol] = []
     var searchText: String = ""
-    private var note: Note = Note(title: "", description: "", noteID: 0)
+    private var note = Note(title: "", description: "", noteID: 0)
+    
     var isSearchTextEmpty: Bool {
-        return searchText.isEmpty ?? true
+        return searchText.isEmpty
     }
     
     var isFiltering: Bool {
@@ -37,17 +38,18 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSubviews()
+        addSubViews()
         configureContents()
         viewModel.fetchNotesListing()
         subscribeViewModelEvents()
         setProfilButtonAction()
         searchAction()
         addObserver()
+        tableView.keyboardDismissMode = .onDrag
     }
     
     private func addObserver() {
-        let notificationCenter: NotificationCenter = NotificationCenter.default
+        let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(reloadData), name: .reloadDataNotification, object: nil)
     }
     
@@ -70,14 +72,14 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
 // MARK: - UILayout
 extension HomeViewController {
     
-    private func addSubviews() {
+    private func addSubViews() {
         makeTableView()
         makeAddNoteButton()
         makeTopView()
     }
     
     private func makeTopView() {
-        topView.width(UIScreen.main.bounds.width-20)
+        topView.width(UIScreen.main.bounds.width - 20)
     }
     
     private func makeTableView() {
@@ -96,7 +98,7 @@ extension HomeViewController {
         addButton.height(42)
         addButton.width(140)
     }
-
+    
 }
 
 // MARK: - Configure
@@ -114,12 +116,12 @@ extension HomeViewController {
         addButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
         self.navigationController?.navigationBar.topItem?.titleView = topView
     }
-
+    
 }
 
 // MARK: - Actions
 extension HomeViewController {
-  
+    
     private func setCancelButtonAction() {
         topView.cancelButtonTapped = { [weak self] in
             guard let self = self else { return }
@@ -212,7 +214,7 @@ extension HomeViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title:"") { (_, _, completionHandler) in
+        let deleteAction = UIContextualAction(style: .destructive, title: "") { (_, _, completionHandler) in
             AlertUtility.shared.multiButton(title: Strings.HomeViewController.alertTitle,
                                             message: Strings.HomeViewController.alertSubTitle,
                                             firstButtonTitle: Strings.HomeViewController.alertCancelButtonTitle,
@@ -225,7 +227,7 @@ extension HomeViewController: UITableViewDelegate {
         }
         deleteAction.image = .trashIcon
         deleteAction.backgroundColor = .appRed
-        let editAction = UIContextualAction(style: .normal, title:"") { (_, _, completionHandler) in
+        let editAction = UIContextualAction(style: .normal, title: "") { (_, _, completionHandler) in
             
             self.swipeEditAction(indexPath: indexPath)
             completionHandler(true)
@@ -270,7 +272,7 @@ extension HomeViewController: UITableViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let position = scrollView.contentOffset.y
-        if position > tableView.contentSize.height-100-scrollView.frame.size.height && viewModel.isPagingEnabled && viewModel.isRequestEnabled {
+        if position > tableView.contentSize.height - 100 - scrollView.frame.size.height && viewModel.isPagingEnabled && viewModel.isRequestEnabled {
             self.tableView.tableFooterView = createSpinnerFooter()
             viewModel.fetchMoreNotesListing()
         }
@@ -290,7 +292,6 @@ extension HomeViewController: UITextFieldDelegate {
 // MARK: - UISearchBarDelegate
 extension HomeViewController: UISearchBarDelegate, UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        print("ghjkt")
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -299,5 +300,5 @@ extension HomeViewController: UISearchBarDelegate, UISearchResultsUpdating {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
     }
-
+    
 }

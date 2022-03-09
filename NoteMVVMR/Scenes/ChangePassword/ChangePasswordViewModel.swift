@@ -20,13 +20,15 @@ protocol ChangePasswordViewProtocol: ChangePasswordViewDataSource, ChangePasswor
 final class ChangePasswordViewModel: BaseViewModel<ChangePasswordRouter>, ChangePasswordViewProtocol {
     
     func changePassword(password: String, newPassword: String, retypeNewPassword: String) {
-        dataProvider.request(for: ChangePasswordRequest(password: password, newPassword: newPassword, newPasswordConfirmation: retypeNewPassword)) { [weak self] (result) in
+        dataProvider.request(for: ChangePasswordRequest(password: password,
+                                                        newPassword: newPassword,
+                                                        newPasswordConfirmation: retypeNewPassword)) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
-            case .success(let response):
-                ToastPresenter.showWarningToast(text: Strings.Success.succesChangePassword, entryBackground: .appGreen)
-            case .failure(let error):
-                ToastPresenter.showWarningToast(text: Strings.Error.checkInformations, entryBackground: .appRed)
+            case .success:
+                self.showSuccesWarningToast?("\(Strings.Success.succesChangePassword)")
+            case .failure:
+                self.showFailureWarningToast?("\(Strings.Error.checkInformations)")
             }
         }
     }
