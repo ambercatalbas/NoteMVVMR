@@ -51,6 +51,7 @@ public func withImage(direction: Direction,
     self.layer.borderWidth = CGFloat(0.5)
     self.layer.cornerRadius = 5
   }
+    
 }
 // MARK: - ---use ---
 //

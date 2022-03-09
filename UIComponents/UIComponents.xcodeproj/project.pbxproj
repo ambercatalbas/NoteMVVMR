@@ -32,19 +32,17 @@
 		4E4310DA27BEBF54002EF700 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4310D927BEBF54002EF700 /* LoginButton.swift */; };
 		4E4310DC27BECCC7002EF700 /* LabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4310DB27BECCC7002EF700 /* LabelButton.swift */; };
 		4E4310DE27BED180002EF700 /* RegisterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4310DD27BED180002EF700 /* RegisterButton.swift */; };
+		4E8D6A2327C7702B00BDBD4B /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8D6A2227C7702B00BDBD4B /* StringConstants.swift */; };
+		4EBBAA6627C6E766005FAA05 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4EBBAA6427C6E766005FAA05 /* Localizable.strings */; };
 		4EC243A727C3B89E00307270 /* HomeScreenTopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC243A527C3B89E00307270 /* HomeScreenTopViewModel.swift */; };
 		4EC243A827C3B89E00307270 /* HomeScreenTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC243A627C3B89E00307270 /* HomeScreenTopView.swift */; };
 		4EE1DDE427C4CA7200EDF1AD /* VerticalAlignLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE1DDE327C4CA7200EDF1AD /* VerticalAlignLabel.swift */; };
+		4EE1DDE727C5363800EDF1AD /* ToastsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE1DDE627C5363800EDF1AD /* ToastsPresenter.swift */; };
+		4EE1DDE927C536F100EDF1AD /* ToastWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE1DDE827C536F100EDF1AD /* ToastWarningView.swift */; };
 		4EE2D5AE27B4F56E00E48E60 /* UIComponents.docc in Sources */ = {isa = PBXBuildFile; fileRef = 4EE2D5AD27B4F56E00E48E60 /* UIComponents.docc */; };
 		4EE2D5B427B4F56E00E48E60 /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EE2D5A927B4F56E00E48E60 /* UIComponents.framework */; };
 		4EE2D5B927B4F56E00E48E60 /* UIComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE2D5B827B4F56E00E48E60 /* UIComponentsTests.swift */; };
 		4EE2D5BA27B4F56E00E48E60 /* UIComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EE2D5AC27B4F56E00E48E60 /* UIComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4EE2D5D927B4F5CD00E48E60 /* Modules.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4EE2D5C527B4F5CD00E48E60 /* Modules.strings */; };
-		4EE2D5DA27B4F5CD00E48E60 /* Componenets.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4EE2D5C627B4F5CD00E48E60 /* Componenets.strings */; };
-		4EE2D5DB27B4F5CD00E48E60 /* General.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4EE2D5C727B4F5CD00E48E60 /* General.strings */; };
-		4EE2D5DC27B4F5CD00E48E60 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE2D5C827B4F5CD00E48E60 /* StringConstants.swift */; };
-		4EE2D5DD27B4F5CD00E48E60 /* Error.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4EE2D5C927B4F5CD00E48E60 /* Error.strings */; };
-		4EE2D5DE27B4F5CD00E48E60 /* Placeholder.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4EE2D5CA27B4F5CD00E48E60 /* Placeholder.strings */; };
 		4EE2D5DF27B4F5CD00E48E60 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE2D5CC27B4F5CD00E48E60 /* UIFont+Extensions.swift */; };
 		4EE2D5E027B4F5CD00E48E60 /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4EE2D5CD27B4F5CD00E48E60 /* Nunito-ExtraBold.ttf */; };
 		4EE2D5E127B4F5CD00E48E60 /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4EE2D5CE27B4F5CD00E48E60 /* Nunito-SemiBold.ttf */; };
@@ -119,20 +117,19 @@
 		4E4310D927BEBF54002EF700 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		4E4310DB27BECCC7002EF700 /* LabelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelButton.swift; sourceTree = "<group>"; };
 		4E4310DD27BED180002EF700 /* RegisterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterButton.swift; sourceTree = "<group>"; };
+		4E8D6A2227C7702B00BDBD4B /* StringConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
+		4EBBAA6527C6E766005FAA05 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4EBBAA6727C6E785005FAA05 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4EC243A527C3B89E00307270 /* HomeScreenTopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenTopViewModel.swift; sourceTree = "<group>"; };
 		4EC243A627C3B89E00307270 /* HomeScreenTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenTopView.swift; sourceTree = "<group>"; };
 		4EE1DDE327C4CA7200EDF1AD /* VerticalAlignLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalAlignLabel.swift; sourceTree = "<group>"; };
+		4EE1DDE627C5363800EDF1AD /* ToastsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastsPresenter.swift; sourceTree = "<group>"; };
+		4EE1DDE827C536F100EDF1AD /* ToastWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastWarningView.swift; sourceTree = "<group>"; };
 		4EE2D5A927B4F56E00E48E60 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EE2D5AC27B4F56E00E48E60 /* UIComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIComponents.h; sourceTree = "<group>"; };
 		4EE2D5AD27B4F56E00E48E60 /* UIComponents.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = UIComponents.docc; sourceTree = "<group>"; };
 		4EE2D5B327B4F56E00E48E60 /* UIComponentsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIComponentsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EE2D5B827B4F56E00E48E60 /* UIComponentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIComponentsTests.swift; sourceTree = "<group>"; };
-		4EE2D5C527B4F5CD00E48E60 /* Modules.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Modules.strings; sourceTree = "<group>"; };
-		4EE2D5C627B4F5CD00E48E60 /* Componenets.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Componenets.strings; sourceTree = "<group>"; };
-		4EE2D5C727B4F5CD00E48E60 /* General.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = General.strings; sourceTree = "<group>"; };
-		4EE2D5C827B4F5CD00E48E60 /* StringConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
-		4EE2D5C927B4F5CD00E48E60 /* Error.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Error.strings; sourceTree = "<group>"; };
-		4EE2D5CA27B4F5CD00E48E60 /* Placeholder.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Placeholder.strings; sourceTree = "<group>"; };
 		4EE2D5CC27B4F5CD00E48E60 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
 		4EE2D5CD27B4F5CD00E48E60 /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
 		4EE2D5CE27B4F5CD00E48E60 /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -235,6 +232,24 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		4EE1DDE527C535E300EDF1AD /* Toasts */ = {
+			isa = PBXGroup;
+			children = (
+				4EE1DDE627C5363800EDF1AD /* ToastsPresenter.swift */,
+				4EE1DDE827C536F100EDF1AD /* ToastWarningView.swift */,
+			);
+			path = Toasts;
+			sourceTree = "<group>";
+		};
+		4EE1DDEA27C592B800EDF1AD /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				4E8D6A2227C7702B00BDBD4B /* StringConstants.swift */,
+				4EBBAA6427C6E766005FAA05 /* Localizable.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
 		4EE2D59F27B4F56E00E48E60 = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +274,7 @@
 		4EE2D5AB27B4F56E00E48E60 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				4EE1DDE527C535E300EDF1AD /* Toasts */,
 				4EE1DDE227C4CA3800EDF1AD /* Helper */,
 				4E00AC8B27C2FD26008F30A9 /* Constants */,
 				4E4310D627BEBCD4002EF700 /* UILabel */,
@@ -286,24 +302,11 @@
 		4EE2D5C327B4F5CD00E48E60 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4EE2D5C427B4F5CD00E48E60 /* Strings */,
+				4EE1DDEA27C592B800EDF1AD /* Strings */,
 				4EE2D5CB27B4F5CD00E48E60 /* Fonts */,
 				4EE2D5D127B4F5CD00E48E60 /* Assets */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		4EE2D5C427B4F5CD00E48E60 /* Strings */ = {
-			isa = PBXGroup;
-			children = (
-				4EE2D5C527B4F5CD00E48E60 /* Modules.strings */,
-				4EE2D5C627B4F5CD00E48E60 /* Componenets.strings */,
-				4EE2D5C727B4F5CD00E48E60 /* General.strings */,
-				4EE2D5C827B4F5CD00E48E60 /* StringConstants.swift */,
-				4EE2D5C927B4F5CD00E48E60 /* Error.strings */,
-				4EE2D5CA27B4F5CD00E48E60 /* Placeholder.strings */,
-			);
-			path = Strings;
 			sourceTree = "<group>";
 		};
 		4EE2D5CB27B4F5CD00E48E60 /* Fonts */ = {
@@ -475,6 +478,7 @@
 			knownRegions = (
 				en,
 				Base,
+				tr,
 			);
 			mainGroup = 4EE2D59F27B4F56E00E48E60;
 			productRefGroup = 4EE2D5AA27B4F56E00E48E60 /* Products */;
@@ -493,30 +497,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E4310CC27BE986E002EF700 /* JosefinSans-ThinItalic.ttf in Resources */,
+				4EBBAA6627C6E766005FAA05 /* Localizable.strings in Resources */,
 				4E4310C727BE986E002EF700 /* JosefinSans-ExtraLightItalic.ttf in Resources */,
 				4EE2D5E627B4F5CD00E48E60 /* Colors.xcassets in Resources */,
 				4E4310CF27BE986E002EF700 /* JosefinSans-SemiBoldItalic.ttf in Resources */,
 				4E4310CD27BE986E002EF700 /* JosefinSans-SemiBold.ttf in Resources */,
 				4EE2D5E127B4F5CD00E48E60 /* Nunito-SemiBold.ttf in Resources */,
 				4E4310C827BE986E002EF700 /* JosefinSans-Light.ttf in Resources */,
-				4EE2D5DE27B4F5CD00E48E60 /* Placeholder.strings in Resources */,
 				4E4310D027BE986E002EF700 /* JosefinSans-Medium.ttf in Resources */,
-				4EE2D5DB27B4F5CD00E48E60 /* General.strings in Resources */,
 				4EE2D5EA27B4F5CD00E48E60 /* Images.xcassets in Resources */,
 				4EE2D5E827B4F5CD00E48E60 /* Icons.xcassets in Resources */,
 				4E4310C927BE986E002EF700 /* JosefinSans-Italic.ttf in Resources */,
 				4E4310D327BE986E002EF700 /* JosefinSans-LightItalic.ttf in Resources */,
 				4E4310D127BE986E002EF700 /* JosefinSans-BoldItalic.ttf in Resources */,
 				4E4310CA27BE986E002EF700 /* JosefinSans-ExtraLight.ttf in Resources */,
-				4EE2D5DA27B4F5CD00E48E60 /* Componenets.strings in Resources */,
 				4EE2D5E027B4F5CD00E48E60 /* Nunito-ExtraBold.ttf in Resources */,
 				4E4310D227BE986E002EF700 /* JosefinSans-MediumItalic.ttf in Resources */,
-				4EE2D5D927B4F5CD00E48E60 /* Modules.strings in Resources */,
 				4E4310B927BE9473002EF700 /* swiftgen.yml in Resources */,
 				4E4310A327BE5876002EF700 /* JosefinSans-Regular.ttf in Resources */,
 				4E4310CE27BE986E002EF700 /* JosefinSans-Thin.ttf in Resources */,
 				4EE2D5E227B4F5CD00E48E60 /* Nunito-Bold.ttf in Resources */,
-				4EE2D5DD27B4F5CD00E48E60 /* Error.strings in Resources */,
 				4E4310CB27BE986E002EF700 /* JosefinSans-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -614,15 +614,17 @@
 				4EE2D5E927B4F5CD00E48E60 /* UIColor+Colors.swift in Sources */,
 				4EE2D5E727B4F5CD00E48E60 /* UIImage+Images.swift in Sources */,
 				4E00AC8A27C2EBA3008F30A9 /* UITextField+Extensions.swift in Sources */,
-				4EE2D5DC27B4F5CD00E48E60 /* StringConstants.swift in Sources */,
 				4E4310DC27BECCC7002EF700 /* LabelButton.swift in Sources */,
 				4EE2D5FB27B5546D00E48E60 /* HomeCellModel+Extension.swift in Sources */,
 				4EE2D5E527B4F5CD00E48E60 /* UIImage+Icons.swift in Sources */,
+				4EE1DDE927C536F100EDF1AD /* ToastWarningView.swift in Sources */,
 				4EE2D5DF27B4F5CD00E48E60 /* UIFont+Extensions.swift in Sources */,
 				4EE2D5E427B4F5CD00E48E60 /* Assets.swift in Sources */,
 				4EE2D5F627B51EC600E48E60 /* Extension+UITableView.swift in Sources */,
 				4E4310D527BEB90C002EF700 /* TitleLabel.swift in Sources */,
 				4EE2D5FF27B555F600E48E60 /* HomeCell.swift in Sources */,
+				4EE1DDE727C5363800EDF1AD /* ToastsPresenter.swift in Sources */,
+				4E8D6A2327C7702B00BDBD4B /* StringConstants.swift in Sources */,
 				4E43109B27BE420D002EF700 /* PasswordTextField.swift in Sources */,
 				4E4310DE27BED180002EF700 /* RegisterButton.swift in Sources */,
 				4EE2D5AE27B4F56E00E48E60 /* UIComponents.docc in Sources */,
@@ -646,6 +648,18 @@
 			targetProxy = 4EE2D5B527B4F56E00E48E60 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4EBBAA6427C6E766005FAA05 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4EBBAA6527C6E766005FAA05 /* en */,
+				4EBBAA6727C6E785005FAA05 /* tr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4EE2D5BB27B4F56E00E48E60 /* Debug */ = {
@@ -700,7 +714,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -758,7 +772,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

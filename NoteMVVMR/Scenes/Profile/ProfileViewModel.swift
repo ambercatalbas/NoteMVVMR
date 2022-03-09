@@ -9,6 +9,7 @@ import Foundation
 import KeychainSwift
 
 protocol ProfileViewDataSource {
+    
     func getUser() -> User
 }
 
@@ -18,6 +19,7 @@ protocol ProfileViewEventSource {
 }
 
 protocol ProfileViewProtocol: ProfileViewDataSource, ProfileViewEventSource {
+    
     func showHomeScreen()
     func updateUser(userName: String, email: String)
     func getUserRequest()
@@ -26,9 +28,11 @@ protocol ProfileViewProtocol: ProfileViewDataSource, ProfileViewEventSource {
 }
 
 final class ProfileViewModel: BaseViewModel<ProfileRouter>, ProfileViewProtocol {
-    var user: User = User(id: 0, userName: "", email: "")
+    
+    var user = User(id: 0, userName: "", email: "")
     var didSuccessFetchUser: VoidClosure?
     var keychain = KeychainSwift()
+    
     func getUser() -> User {
         return user
     }
@@ -36,9 +40,11 @@ final class ProfileViewModel: BaseViewModel<ProfileRouter>, ProfileViewProtocol 
     func showHomeScreen() {
         router.close()
     }
+    
     func pushChangePasswordScene() {
         router.pushChangePassword()
     }
+    
     func signOut() {
         keychain.clear()
         router.placeOnWindowLogin()
@@ -47,18 +53,19 @@ final class ProfileViewModel: BaseViewModel<ProfileRouter>, ProfileViewProtocol 
 }
 
 extension ProfileViewModel {
+    
     func updateUser(userName: String, email: String) {
         dataProvider.request(for: UpdateUserRequest(userName: userName, email: email)) { [weak self] (result) in
             guard self != nil else { return }
             switch result {
-            case .success(let response):
-                print(response.message ?? "")
-                //                make alert or ...
+            case .success:
+                self?.showSuccesWarningToast?("\(Strings.Success.succesUpdeteProfile)")
             case .failure(let error):
-                print("err update")
+                self?.showFailureWarningToast?("\(error.localizedDescription)")
             }
         }
     }
+    
     func getUserRequest() {
         dataProvider.request(for: GetUserRequest()) { [weak self] (result) in
             guard let self = self else { return }
@@ -67,7 +74,7 @@ extension ProfileViewModel {
                 self.user = response.data ?? User(id: 0, userName: "", email: "")
                 self.didSuccessFetchUser?()
             case .failure(let error):
-                print("err update")
+                self.showFailureWarningToast?("\(error.localizedDescription)")
             }
         }
     }

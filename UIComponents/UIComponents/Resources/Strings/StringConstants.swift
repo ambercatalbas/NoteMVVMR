@@ -9,148 +9,188 @@ import Foundation
 
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
-public enum L10n {
-  public enum Componenets {
-    public enum Action {
-      /// Block
-      public static let block = L10n.tr("Componenets", "Action.block")
-      /// Giriş yapmanız gereklidir.
-      public static let loginWarning = L10n.tr("Componenets", "Action.loginWarning")
-    }
-    public enum Comment {
-      /// Bir şeyler yazın..
-      public static let placeholder = L10n.tr("Componenets", "Comment.placeholder")
-    }
+public enum Strings {
+
+  public enum ChangePasswordController {
+    /// New Password
+    public static let newPasswordPlaceholder = Strings.tr("Localizable", "ChangePasswordController.newPasswordPlaceholder")
+    /// Password
+    public static let passwordPlaceholder = Strings.tr("Localizable", "ChangePasswordController.passwordPlaceholder")
+    /// Retype New Password
+    public static let retypeNewPasswordPlaceholder = Strings.tr("Localizable", "ChangePasswordController.retypeNewPasswordPlaceholder")
+    /// Save
+    public static let saveButtonTitle = Strings.tr("Localizable", "ChangePasswordController.saveButtonTitle")
+    /// CHANGE PASSWORD
+    public static let title = Strings.tr("Localizable", "ChangePasswordController.title")
   }
+
+  public enum DetailViewController {
+    /// ADD NOTE
+    public static let addTitle = Strings.tr("Localizable", "DetailViewController.addTitle")
+    /// Description...
+    public static let descriptionTitlePlaceholder = Strings.tr("Localizable", "DetailViewController.descriptionTitlePlaceholder")
+    /// DETAILS
+    public static let detailsTitle = Strings.tr("Localizable", "DetailViewController.detailsTitle")
+    /// EDIT NOTE
+    public static let editTitle = Strings.tr("Localizable", "DetailViewController.editTitle")
+    /// Note Title...
+    public static let noteTitlePlaceholder = Strings.tr("Localizable", "DetailViewController.noteTitlePlaceholder")
+    /// Save
+    public static let saveButtonTitle = Strings.tr("Localizable", "DetailViewController.saveButtonTitle")
+  }
+
   public enum Error {
-    /// Lütfen bilgilerinizi kontrol ediniz.
-    public static let checkInformations = L10n.tr("Error", "checkInformations")
-    /// %@ alanı boş olamaz.
-    public static func empty(_ p1: Any) -> String {
-      return L10n.tr("Error", "empty", String(describing: p1))
-    }
-    /// Lütfen boş alanları doldurunuz.
-    public static let emptyFields = L10n.tr("Error", "emptyFields")
-    /// Lütfen ekranı yukarıdan aşağıya kaydırarak yenileyiniz.
-    public static let refreshFromTop = L10n.tr("Error", "refreshFromTop")
-    public enum Key {
-      /// Yorum
-      public static let comment = L10n.tr("Error", "Key.comment")
-      /// E-posta
-      public static let email = L10n.tr("Error", "Key.email")
-      /// Username
-      public static let username = L10n.tr("Error", "Key.username")
-    }
+    /// Please check your information.
+    public static let checkInformations = Strings.tr("Localizable", "Error.checkInformations")
+    /// Please fill in the blanks.
+    public static let emptyFields = Strings.tr("Localizable", "Error.emptyFields")
+    /// Your email address not in mail format 
+    public static let incorrectEmailFormat = Strings.tr("Localizable", "Error.incorrectEmailFormat")
+    /// Your email address should contain @.
+    public static let incorrectEmailFormata = Strings.tr("Localizable", "Error.incorrectEmailFormata")
+    /// The email and password you entered did not match our records. Please try again.
+    public static let invalidMatch = Strings.tr("Localizable", "Error.invalidMatch")
+    /// Your password must consist of at least 6 characters.
+    public static let passwordCharacter = Strings.tr("Localizable", "Error.passwordCharacter")
   }
+
   public enum General {
-    /// Yorum Ekle
-    public static let addComment = L10n.tr("General", "addComment")
-    /// Yorum
-    public static let comment = L10n.tr("General", "comment")
-    /// Yorumlar
-    public static let comments = L10n.tr("General", "comments")
-    /// Takip Et
-    public static let follow = L10n.tr("General", "follow")
-    /// Takipçi
-    public static let follower = L10n.tr("General", "follower")
-    /// Takip Ediliyor
-    public static let following = L10n.tr("General", "following")
-    /// Vazgeç
-    public static let giveUp = L10n.tr("General", "giveUp")
-    /// Beğeni
-    public static let like = L10n.tr("General", "like")
-    /// Giriş Yap
-    public static let login = L10n.tr("General", "login")
-    /// Tarif
-    public static let recipe = L10n.tr("General", "recipe")
-    /// Malzemeler
-    public static let recipeIngredients = L10n.tr("General", "recipeIngredients")
-    /// Yapılışı
-    public static let recipeSteps = L10n.tr("General", "recipeSteps")
-    /// Üye Ol
-    public static let register = L10n.tr("General", "register")
+    ///   Add Note
+    public static let addNote = Strings.tr("Localizable", "General.addNote")
+    /// Cancel
+    public static let cancel = Strings.tr("Localizable", "General.cancel")
+    /// Delete
+    public static let delete = Strings.tr("Localizable", "General.delete")
+    /// Login
+    public static let login = Strings.tr("Localizable", "General.login")
+    /// Reset Password
+    public static let resetPassword = Strings.tr("Localizable", "General.resetPassword")
+    /// Save
+    public static let save = Strings.tr("Localizable", "General.save")
+    /// Sign Up
+    public static let signUp = Strings.tr("Localizable", "General.signUp")
   }
-  public enum Modules {
-    public enum CommentEditController {
-      /// Kaydet
-      public static let save = L10n.tr("Modules", "CommentEditController.save")
-      /// YORUM DÜZENLE
-      public static let title = L10n.tr("Modules", "CommentEditController.title")
-    }
-    public enum CommentListController {
-      /// YORUMLAR
-      public static let title = L10n.tr("Modules", "CommentListController.title")
-    }
-    public enum Favorites {
-      /// TÜMÜNÜ GÖR
-      public static let seeAllButtonTitle = L10n.tr("Modules", "Favorites.seeAllButtonTitle")
-    }
-    public enum Home {
-      /// EDİTÖR SEÇİMİ
-      public static let editorChoiceRecipes = L10n.tr("Modules", "Home.editorChoiceRecipes")
-      /// SON EKLENENLER
-      public static let lastAddedRecipes = L10n.tr("Modules", "Home.lastAddedRecipes")
-      /// %@ Yorum %@ Beğeni
-      public static func recipeCommnetAndLikeCount(_ p1: Any, _ p2: Any) -> String {
-        return L10n.tr("Modules", "Home.recipeCommnetAndLikeCount", String(describing: p1), String(describing: p2))
-      }
-      /// %@ Tarif %@ Takipçi
-      public static func userRecipeAndFollowerCount(_ p1: Any, _ p2: Any) -> String {
-        return L10n.tr("Modules", "Home.userRecipeAndFollowerCount", String(describing: p1), String(describing: p2))
-      }
-    }
-    public enum LoginViewController {
-      /// Hesabın mı yok?
-      public static let bottomText = L10n.tr("Modules", "LoginViewController.bottomText")
-      /// Şifrenizi mi unuttunuz?
-      public static let forgotPassword = L10n.tr("Modules", "LoginViewController.forgotPassword")
-      /// Giriş Yap
-      public static let title = L10n.tr("Modules", "LoginViewController.title")
-    }
-    public enum PasswordResetController {
-      /// Sıfırla
-      public static let reset = L10n.tr("Modules", "PasswordResetController.reset")
-      /// Şifre Sıfırlama
-      public static let title = L10n.tr("Modules", "PasswordResetController.title")
-    }
-    public enum RecipeDetail {
-      /// Henüz yorum yapılmamıştır.
-      public static let noComment = L10n.tr("Modules", "RecipeDetail.noComment")
-    }
-    public enum RegisterViewController {
-      /// Hesabın mı var?
-      public static let bottomText = L10n.tr("Modules", "RegisterViewController.bottomText")
-      /// Üye Ol
-      public static let title = L10n.tr("Modules", "RegisterViewController.title")
-    }
-    public enum SignIn {
-      /// Sign In
-      public static let navigationTitle = L10n.tr("Modules", "SignIn.navigationTitle")
-    }
-    public enum WalkThrough {
-      /// Fodamy is the best place to find your favorite recipes in all around the world.
-      public static let descriptionText = L10n.tr("Modules", "WalkThrough.descriptionText")
-      /// Welcome to Fodamy Network!
-      public static let firstTitle = L10n.tr("Modules", "WalkThrough.firstTitle")
-      /// Share recipes with others.
-      public static let fourthTitle = L10n.tr("Modules", "WalkThrough.fourthTitle")
-      /// İlerle
-      public static let next = L10n.tr("Modules", "WalkThrough.Next")
-      /// Finding recipes were not that easy.
-      public static let secondTitle = L10n.tr("Modules", "WalkThrough.secondTitle")
-      /// Başla!
-      public static let start = L10n.tr("Modules", "WalkThrough.Start")
-      /// Add new recipe.
-      public static let thirdTitle = L10n.tr("Modules", "WalkThrough.thirdTitle")
-    }
+
+  public enum HomeViewController {
+    ///  Add Note
+    public static let addNoteButtonTitle = Strings.tr("Localizable", "HomeViewController.addNoteButtonTitle")
+    /// Cancel
+    public static let alertCancelButtonTitle = Strings.tr("Localizable", "HomeViewController.alertCancelButtonTitle")
+    /// Delete
+    public static let alertDeleteButtonTitle = Strings.tr("Localizable", "HomeViewController.alertDeleteButtonTitle")
+    /// Are you sure you want to delete this note.
+    public static let alertSubTitle = Strings.tr("Localizable", "HomeViewController.alertSubTitle")
+    /// Delete Note
+    public static let alertTitle = Strings.tr("Localizable", "HomeViewController.alertTitle")
+    /// Cancel
+    public static let cancelButtonTitle = Strings.tr("Localizable", "HomeViewController.cancelButtonTitle")
+    /// Search...
+    public static let searchPlaceholder = Strings.tr("Localizable", "HomeViewController.searchPlaceholder")
   }
+
+  public enum LoginViewController {
+    /// New user? 
+    public static let bottomBlackText = Strings.tr("Localizable", "LoginViewController.bottomBlackText")
+    /// Sign up now
+    public static let bottomBluberryText = Strings.tr("Localizable", "LoginViewController.bottomBluberryText")
+    /// Email Address
+    public static let emailPlaceholder = Strings.tr("Localizable", "LoginViewController.emailPlaceholder")
+    /// Forgot Password?
+    public static let forgotPassword = Strings.tr("Localizable", "LoginViewController.forgotPassword")
+    /// Login
+    public static let loginButton = Strings.tr("Localizable", "LoginViewController.loginButton")
+    /// Password
+    public static let passwordPlaceholder = Strings.tr("Localizable", "LoginViewController.passwordPlaceholder")
+    /// Login or sign up continue using our app.
+    public static let subTitle = Strings.tr("Localizable", "LoginViewController.subTitle")
+    /// Login
+    public static let title = Strings.tr("Localizable", "LoginViewController.title")
+  }
+
+  public enum PasswordResetMessageViewController {
+    /// An email has been sent to 
+    public static let greenSubTitleAfter = Strings.tr("Localizable", "PasswordResetMessageViewController.greenSubTitleAfter")
+    ///  with further instructions.
+    public static let greenSubTitleLast = Strings.tr("Localizable", "PasswordResetMessageViewController.greenSubTitleLast")
+    /// Login
+    public static let loginButtonTitle = Strings.tr("Localizable", "PasswordResetMessageViewController.loginButtonTitle")
+    /// Password Reset Confirmation
+    public static let title = Strings.tr("Localizable", "PasswordResetMessageViewController.title")
+  }
+
+  public enum PasswordResetViewController {
+    /// An email has been sent to 
+    public static let greenSubTitleAfter = Strings.tr("Localizable", "PasswordResetViewController.greenSubTitleAfter")
+    ///  with further instructions.
+    public static let greenSubTitleLast = Strings.tr("Localizable", "PasswordResetViewController.greenSubTitleLast")
+    /// Your email address incorrect!
+    public static let incorrectEmailMessage = Strings.tr("Localizable", "PasswordResetViewController.incorrectEmailMessage")
+    /// Reset Password
+    public static let resetPasswordButtonTitle = Strings.tr("Localizable", "PasswordResetViewController.resetPasswordButtonTitle")
+    /// Confirm your email and we'll send the instructions.
+    public static let subTitle = Strings.tr("Localizable", "PasswordResetViewController.subTitle")
+    /// Forgot Password?
+    public static let title = Strings.tr("Localizable", "PasswordResetViewController.title")
+  }
+
   public enum Placeholder {
-    /// E-mail Adresi
-    public static let email = L10n.tr("Placeholder", "email")
-    /// Şifre
-    public static let password = L10n.tr("Placeholder", "password")
-    /// Kullanıcı Adı
-    public static let username = L10n.tr("Placeholder", "username")
+    /// Description...
+    public static let descriptionTitle = Strings.tr("Localizable", "Placeholder.descriptionTitle")
+    /// Email Address
+    public static let email = Strings.tr("Localizable", "Placeholder.email")
+    /// New Password
+    public static let newPassword = Strings.tr("Localizable", "Placeholder.newPassword")
+    /// Note Title...
+    public static let noteTitle = Strings.tr("Localizable", "Placeholder.noteTitle")
+    /// Password
+    public static let password = Strings.tr("Localizable", "Placeholder.password")
+    /// Retype New Password
+    public static let retypeNewPassword = Strings.tr("Localizable", "Placeholder.retypeNewPassword")
+    /// Search...
+    public static let search = Strings.tr("Localizable", "Placeholder.search")
+    /// Full Name
+    public static let username = Strings.tr("Localizable", "Placeholder.username")
+  }
+
+  public enum ProfileViewController {
+    /// Change Password
+    public static let changePasswordButtonTitle = Strings.tr("Localizable", "ProfileViewController.changePasswordButtonTitle")
+    /// Save
+    public static let saveButtonTitle = Strings.tr("Localizable", "ProfileViewController.saveButtonTitle")
+    /// Sign Out
+    public static let signOutButtonTitle = Strings.tr("Localizable", "ProfileViewController.signOutButtonTitle")
+    /// PROFILE
+    public static let title = Strings.tr("Localizable", "ProfileViewController.title")
+  }
+
+  public enum RegisterViewController {
+    /// Already have an account? 
+    public static let bottomBlackText = Strings.tr("Localizable", "RegisterViewController.bottomBlackText")
+    /// Sign in now
+    public static let bottomBluberryText = Strings.tr("Localizable", "RegisterViewController.bottomBluberryText")
+    /// Email Address
+    public static let emailPlaceholder = Strings.tr("Localizable", "RegisterViewController.emailPlaceholder")
+    /// Forgot Password?
+    public static let forgotPassword = Strings.tr("Localizable", "RegisterViewController.forgotPassword")
+    /// Password
+    public static let passwordPlaceholder = Strings.tr("Localizable", "RegisterViewController.passwordPlaceholder")
+    /// Sign Up
+    public static let signUpButtonTitle = Strings.tr("Localizable", "RegisterViewController.signUpButtonTitle")
+    /// Login or sign up continue using our app.
+    public static let subTitle = Strings.tr("Localizable", "RegisterViewController.subTitle")
+    /// Sign Up
+    public static let title = Strings.tr("Localizable", "RegisterViewController.title")
+    /// Full Name
+    public static let usernamePlaceholder = Strings.tr("Localizable", "RegisterViewController.usernamePlaceholder")
+  }
+
+  public enum Success {
+    /// Your password has been updated
+    public static let succesChangePassword = Strings.tr("Localizable", "Success.succesChangePassword")
+    /// Success Sign Up.
+    public static let succesSignUp = Strings.tr("Localizable", "Success.succesSignUp")
+    /// Your profile has been updated
+    public static let succesUpdeteProfile = Strings.tr("Localizable", "Success.succesUpdeteProfile")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
@@ -158,7 +198,7 @@ public enum L10n {
 
 // MARK: - Implementation Details
 
-extension L10n {
+extension Strings {
   private static func tr(_ table: String, _ key: String, _ args: CVarArg...) -> String {
     let format = BundleToken.bundle.localizedString(forKey: key, value: nil, table: table)
     return String(format: format, locale: Locale.current, arguments: args)

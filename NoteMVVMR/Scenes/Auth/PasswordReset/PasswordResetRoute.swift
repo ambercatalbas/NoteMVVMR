@@ -6,6 +6,7 @@
 //
 
 protocol PasswordResetRoute {
+    
     func pushPasswordReset()
 }
 
@@ -22,6 +23,7 @@ extension PasswordResetRoute where Self: RouterProtocol {
         
         open(viewController, transition: transition)
     }
+    
     func modalPasswordReset(isBackScrenLogin: Bool) {
         let router = PasswordResetRouter()
         let viewModel = PasswordResetViewModel(router: router)

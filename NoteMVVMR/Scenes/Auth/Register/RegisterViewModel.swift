@@ -16,6 +16,7 @@ protocol RegisterViewDataSource {}
 protocol RegisterViewEventSource {}
 
 protocol RegisterViewProtocol: RegisterViewDataSource, RegisterViewEventSource {
+    
     func showLoginScreen()
     func sendRegisterRequest(username: String, email: String, password: String)
     func showForgotPasswordScreen(isBackScrenLogin: Bool)
@@ -27,11 +28,13 @@ final class RegisterViewModel: BaseViewModel<RegisterRouter>, RegisterViewProtoc
     func showForgotPasswordScreen(isBackScrenLogin: Bool) {
         router.modalPasswordReset(isBackScrenLogin: isBackScrenLogin)
     }
+    
     func showLoginScreen() {
         router.placeOnWindowLogin()
     }
     
 }
+
 // MARK: - Network
 extension RegisterViewModel {
     
@@ -41,9 +44,10 @@ extension RegisterViewModel {
             switch result {
             case .success(let response):
                 self.keychain.set(response.data?.accessToken ?? "", forKey: Keychain.token)
+                self.showSuccesWarningToast?("\(Strings.Success.succesSignUp)")
                 self.router.pushHome()
             case .failure(let error):
-                self.showWarningToast?("\(error.localizedDescription) \(L10n.Error.checkInformations)")
+                self.showFailureWarningToast?("\(error.localizedDescription)")
             }
         }
     }

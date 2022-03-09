@@ -14,10 +14,10 @@ public struct UpdateNoteRequest: APIDecodableResponseRequest {
     public var parameters: RequestParameters = [:]
     public var headers: RequestHeaders = [:]
     
-    public init(title: String, description: String, noteID: Int) {
-        parameters["title"] = title
-        parameters["note"] = description
-        path = "notes/\(noteID)"
+    public init(note: Note) {
+        parameters["title"] = note.title
+        parameters["note"] = note.note
+        path = "notes/\(note.id)"
     }
     
 }

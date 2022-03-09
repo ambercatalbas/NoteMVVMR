@@ -8,42 +8,59 @@
 import Foundation
 import Alamofire
 
-protocol DetailViewDataSource {}
+protocol DetailViewDataSource {
+    var note: Note { get }
+    var type: DetailVCShowType { get }
+}
 
 protocol DetailViewEventSource {}
 
 protocol DetailViewProtocol: DetailViewDataSource, DetailViewEventSource {
+    
     func createNote(title: String, description: String)
-    func updateNote(title: String, description: String, noteID: Int)
+    func updateNote(note: Note)
     func showHomeScreen()
 }
 
 final class DetailViewModel: BaseViewModel<DetailRouter>, DetailViewProtocol {
+    var note: Note
+    
+    var type: DetailVCShowType
+    
+    init(note: Note, type: DetailVCShowType, router: DetailRouter) {
+        self.note = note
+        self.type = type
+        super.init(router: router)
+    }
+    
     func showHomeScreen() {
         router.close()
     }
-
+    
     func createNote(title: String, description: String) {
+        
         dataProvider.request(for: CreateNoteRequest(title: title, description: description)) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
-            case .success(let response):
+            case .success:
                 NotificationCenter.default.post(name: .reloadDataNotification, object: nil)
                 self.router.close()
             case .failure(let error):
-                self.showWarningToast?("\(error.localizedDescription) \(L10n.Error.checkInformations)")
+                self.showFailureWarningToast?("\(error.localizedDescription)")
             }
         }
     }
-    func updateNote(title: String, description: String, noteID: Int) {
-     dataProvider.request(for: UpdateNoteRequest(title: title, description: description, noteID: noteID)) { [weak self] (result) in
+    
+    func updateNote(note: Note) {
+        
+        dataProvider.request(for: UpdateNoteRequest(note: note)) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
-            case .success(let response):
+            case .success:
                 NotificationCenter.default.post(name: .reloadDataNotification, object: nil)
                 self.router.close()
             case .failure(let error):
-                print("errorupdate")
+                self.showFailureWarningToast?("\(error.localizedDescription)")
             }
         }
     }

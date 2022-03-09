@@ -17,7 +17,7 @@ public class PasswordTextField: UITextField {
         layer.cornerRadius = 4
         layer.borderWidth = 1
         layer.borderColor = UIColor.appTextFieldBorderColor.cgColor
-        placeholder = "Password"
+        placeholder = Strings.Placeholder.password
         keyboardType = .default
         returnKeyType = .done
         self.isSecureTextEntry = isSecureTextEntry

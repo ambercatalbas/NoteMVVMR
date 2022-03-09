@@ -25,7 +25,26 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .appWhite
+        subscribeToast()
       
+    }
+    private func subscribeToast() {
+        
+        viewModel.showFailureWarningToast = { text in
+            ToastPresenter.showWarningToast(text: text, entryBackground: .appRed)
+        }
+        viewModel.showSuccesWarningToast = {  text in
+            ToastPresenter.showWarningToast(text: text, entryBackground: .green)
+        }
+        
+    }
+    
+    func showFailureWarningToast(message: String) {
+        ToastPresenter.showWarningToast(text: message, entryBackground: .appRed)
+    }
+    
+    func showSuccesWarningToast(message: String) {
+        ToastPresenter.showWarningToast(text: message, entryBackground: .appGreen)
     }
     
     #if DEBUG

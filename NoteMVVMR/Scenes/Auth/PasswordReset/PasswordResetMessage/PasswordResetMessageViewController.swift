@@ -8,54 +8,69 @@
 import UIKit
 
 final class PasswordResetMessageViewController: BaseViewController<PasswordResetMessageViewModel> {
-    private let titleLabel = TitleLabel(text: "Forgot Password?")
-    private let subTitleLabel = SubTitleLabel(text: "Confirm your email and we’ll send the instructions.")
-    private let loginButton = LoginButton(title: "Login")
+    
+    private let titleLabel = TitleLabel(text: Strings.PasswordResetMessageViewController.title)
+    private let subTitleLabel = SubTitleLabel(text: Strings.PasswordResetMessageViewController
+                                                .greenSubTitleAfter + Strings.PasswordResetMessageViewController.greenSubTitleLast)
+    private let loginButton = LoginButton(title: Strings.PasswordResetMessageViewController.loginButtonTitle)
     var email: String = "email@mail.com"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        drawDesign()
+        addSubViews()
         subTitleLabel.textColor = .appGreen
-        subTitleLabel.text = "An email has been sent to \(email) with further instructions."
+        subTitleLabel.text = Strings.PasswordResetMessageViewController.greenSubTitleAfter + "\(email)" + Strings.PasswordResetMessageViewController.greenSubTitleLast
     }
     
-    private func drawDesign() {
-        maketitleLabel()
+    private func addSubViews() {
+        makeTitleLabel()
         makeSubTitleLabel()
         makeLoginButton()
     }
 }
 
+// MARK: - UILayout
 extension PasswordResetMessageViewController {
-    private func maketitleLabel() {
+    
+    private func makeTitleLabel() {
         view.addSubview(titleLabel)
         titleLabel.topToSuperview().constant = 103
         titleLabel.leftToSuperview().constant = 25
         titleLabel.rightToSuperview().constant = -25
         titleLabel.centerXToSuperview()
     }
+    
     private func makeSubTitleLabel() {
         view.addSubview(subTitleLabel)
         subTitleLabel.topToBottom(of: titleLabel).constant = 10
         subTitleLabel.centerXToSuperview()
-        subTitleLabel.leftToSuperview().constant = 25
-        subTitleLabel.rightToSuperview().constant = -25
+        subTitleLabel.leftToSuperview().constant = 50
+        subTitleLabel.rightToSuperview().constant = -50
     }
-   private func makeLoginButton() {
+    
+    private func makeLoginButton() {
         view.addSubview(loginButton)
         loginButton.height(60)
         loginButton.topToBottom(of: subTitleLabel).constant = 35
         loginButton.leftToSuperview().constant = 25
         loginButton.rightToSuperview().constant = -25
         loginButton.centerXToSuperview()
-        loginButton.addTarget(self, action: #selector(showLoginScreen), for: .touchUpInside)
     }
     
 }
 
+// MARK: - Configure
 extension PasswordResetMessageViewController {
+    
+    private func configureContents() {
+        loginButton.addTarget(self, action: #selector(showLoginScreen), for: .touchUpInside)
 
+    }
+}
+
+// MARK: - Actions
+extension PasswordResetMessageViewController {
+    
     @objc
     private func showLoginScreen() {
         viewModel.showLoginScreen()

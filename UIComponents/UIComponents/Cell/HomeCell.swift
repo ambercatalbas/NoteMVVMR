@@ -40,12 +40,14 @@ public class HomeCell: UITableViewCell, ReusableView {
 }
 
 extension HomeCell {
+    
     public func set(viewModel: HomeCellProtocol) {
         self.viewModel = viewModel
         titleLabel.text = viewModel.titleText
         descriptionLabel.text = viewModel.descriptionText
     }
 }
+
 extension HomeCell {
     
     private func addSubViews() {
@@ -54,12 +56,13 @@ extension HomeCell {
         makeTextStackView()
         makeTitleLabel()
         makeDescriptionLaabel()
-        
     }
+    
     private func makeContainerView() {
         contentView.addSubview(containerView)
         containerView.edgesToSuperview()
     }
+    
     private func makeTextStackView() {
         containerView.addSubview(textStackView)
         textStackView.topToSuperview()
@@ -67,6 +70,7 @@ extension HomeCell {
         textStackView.leadingToSuperview().constant = 20
         textStackView.trailingToSuperview().constant = -20
     }
+    
     private func makeTitleLabel() {
         textStackView.addArrangedSubview(titleLabel)
         titleLabel.verticalAlignment = .bottom
@@ -74,6 +78,7 @@ extension HomeCell {
         titleLabel.textAlignment = .left
         titleLabel.textColor = .appCinder
     }
+    
     private func makeDescriptionLaabel() {
         textStackView.addArrangedSubview(descriptionLabel)
         descriptionLabel.verticalAlignment = .top
@@ -82,4 +87,5 @@ extension HomeCell {
         descriptionLabel.numberOfLines = 2
         descriptionLabel.textColor = .appRaven
     }
+    
 }

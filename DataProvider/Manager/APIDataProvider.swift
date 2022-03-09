@@ -34,6 +34,7 @@ public struct APIDataProvider: DataProviderProtocol {
         let request = createRequest(request)
         request.validate()
         request.responseDecodable(of: T.ResponseType.self) { (response) in
+
             switch response.result {
             case .success(let value):
                 result?(.success(value))

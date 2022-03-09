@@ -47,15 +47,11 @@
 		4E969A5427B1C76200C4CF8E /* PlaceOnWindowTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A4927B1C76200C4CF8E /* PlaceOnWindowTransition.swift */; };
 		4E969A5527B1C76200C4CF8E /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A4A27B1C76200C4CF8E /* Transition.swift */; };
 		4E969A5627B1C76200C4CF8E /* PushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A4B27B1C76200C4CF8E /* PushTransition.swift */; };
-		4E969A5727B1C76200C4CF8E /* UnfollowAlertViewRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A4D27B1C76200C4CF8E /* UnfollowAlertViewRoute.swift */; };
-		4E969A5827B1C76200C4CF8E /* ShareSheetRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A4E27B1C76200C4CF8E /* ShareSheetRoute.swift */; };
-		4E969A5927B1C76200C4CF8E /* CommentEditDeleteAlertViewRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A4F27B1C76200C4CF8E /* CommentEditDeleteAlertViewRoute.swift */; };
 		4E969A7827B1C79A00C4CF8E /* AlertUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A5C27B1C79A00C4CF8E /* AlertUtility.swift */; };
 		4E969A8B27B1C79A00C4CF8E /* DateFormats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A7427B1C79A00C4CF8E /* DateFormats.swift */; };
 		4E969A8C27B1C79A00C4CF8E /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A7527B1C79A00C4CF8E /* ScreenSize.swift */; };
 		4E969A8D27B1C79A00C4CF8E /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A7627B1C79A00C4CF8E /* Closures.swift */; };
 		4E969A9127B1C7AB00C4CF8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A8F27B1C7AB00C4CF8E /* AppDelegate.swift */; };
-		4E969A9227B1C7AB00C4CF8E /* AppDelegate+IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A9027B1C7AB00C4CF8E /* AppDelegate+IQKeyboardManager.swift */; };
 		4E969A9727B25D1F00C4CF8E /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A9427B25D1F00C4CF8E /* DetailRouter.swift */; };
 		4E969A9827B25D1F00C4CF8E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A9527B25D1F00C4CF8E /* DetailViewController.swift */; };
 		4E969A9927B25D1F00C4CF8E /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E969A9627B25D1F00C4CF8E /* DetailViewModel.swift */; };
@@ -70,6 +66,7 @@
 		4EE2D5EC27B4F5F100E48E60 /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EE2D5EB27B4F5F100E48E60 /* UIComponents.framework */; };
 		4EE2D5ED27B4F5F100E48E60 /* UIComponents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4EE2D5EB27B4F5F100E48E60 /* UIComponents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4EE2D60A27B55BC800E48E60 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE2D60927B55BC800E48E60 /* HomeViewModel.swift */; };
+		4EEB2CCE27CC01E1005094AA /* KeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEB2CCD27CC01E1005094AA /* KeyboardHelper.swift */; };
 		4EFE0B9D27C0218700623C92 /* ChangePasswordRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE0B9C27C0218700623C92 /* ChangePasswordRoute.swift */; };
 		4EFE0BA127C021A100623C92 /* ChangePasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE0B9E27C021A100623C92 /* ChangePasswordRouter.swift */; };
 		4EFE0BA227C021A100623C92 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE0B9F27C021A100623C92 /* ChangePasswordViewController.swift */; };
@@ -122,6 +119,7 @@
 		4E43108B27BDB22E002EF700 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4E43108C27BDB22E002EF700 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		4E43109027BDB241002EF700 /* ProfileRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRoute.swift; sourceTree = "<group>"; };
+		4E8D6A2427C770AC00BDBD4B /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		4E96995327B13DD100C4CF8E /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		4E96995427B13DD100C4CF8E /* APILogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APILogger.swift; sourceTree = "<group>"; };
 		4E96995527B13DD100C4CF8E /* APIRequestInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestInterceptor.swift; sourceTree = "<group>"; };
@@ -152,15 +150,11 @@
 		4E969A4927B1C76200C4CF8E /* PlaceOnWindowTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceOnWindowTransition.swift; sourceTree = "<group>"; };
 		4E969A4A27B1C76200C4CF8E /* Transition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 		4E969A4B27B1C76200C4CF8E /* PushTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushTransition.swift; sourceTree = "<group>"; };
-		4E969A4D27B1C76200C4CF8E /* UnfollowAlertViewRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnfollowAlertViewRoute.swift; sourceTree = "<group>"; };
-		4E969A4E27B1C76200C4CF8E /* ShareSheetRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareSheetRoute.swift; sourceTree = "<group>"; };
-		4E969A4F27B1C76200C4CF8E /* CommentEditDeleteAlertViewRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentEditDeleteAlertViewRoute.swift; sourceTree = "<group>"; };
 		4E969A5C27B1C79A00C4CF8E /* AlertUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertUtility.swift; sourceTree = "<group>"; };
 		4E969A7427B1C79A00C4CF8E /* DateFormats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormats.swift; sourceTree = "<group>"; };
 		4E969A7527B1C79A00C4CF8E /* ScreenSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
 		4E969A7627B1C79A00C4CF8E /* Closures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Closures.swift; sourceTree = "<group>"; };
 		4E969A8F27B1C7AB00C4CF8E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4E969A9027B1C7AB00C4CF8E /* AppDelegate+IQKeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+IQKeyboardManager.swift"; sourceTree = "<group>"; };
 		4E969A9427B25D1F00C4CF8E /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
 		4E969A9527B25D1F00C4CF8E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		4E969A9627B25D1F00C4CF8E /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
@@ -178,6 +172,7 @@
 		4EAEEB0127B08B76001D4A86 /* DataProviderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = DataProviderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EE2D5EB27B4F5F100E48E60 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EE2D60927B55BC800E48E60 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		4EEB2CCD27CC01E1005094AA /* KeyboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHelper.swift; sourceTree = "<group>"; };
 		4EFE0B9C27C0218700623C92 /* ChangePasswordRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordRoute.swift; sourceTree = "<group>"; };
 		4EFE0B9E27C021A100623C92 /* ChangePasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordRouter.swift; sourceTree = "<group>"; };
 		4EFE0B9F27C021A100623C92 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
@@ -378,7 +373,6 @@
 				4E969A4227B1C76200C4CF8E /* Routers */,
 				4E969A4427B1C76200C4CF8E /* Core */,
 				4E969A4727B1C76200C4CF8E /* Transitions */,
-				4E969A4C27B1C76200C4CF8E /* Routes */,
 			);
 			path = Routing;
 			sourceTree = "<group>";
@@ -411,16 +405,6 @@
 			path = Transitions;
 			sourceTree = "<group>";
 		};
-		4E969A4C27B1C76200C4CF8E /* Routes */ = {
-			isa = PBXGroup;
-			children = (
-				4E969A4D27B1C76200C4CF8E /* UnfollowAlertViewRoute.swift */,
-				4E969A4E27B1C76200C4CF8E /* ShareSheetRoute.swift */,
-				4E969A4F27B1C76200C4CF8E /* CommentEditDeleteAlertViewRoute.swift */,
-			);
-			path = Routes;
-			sourceTree = "<group>";
-		};
 		4E969A5A27B1C79A00C4CF8E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -444,7 +428,6 @@
 			isa = PBXGroup;
 			children = (
 				4E969A8F27B1C7AB00C4CF8E /* AppDelegate.swift */,
-				4E969A9027B1C7AB00C4CF8E /* AppDelegate+IQKeyboardManager.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -485,13 +468,13 @@
 		4EAEE98E27B083A7001D4A86 /* NoteMVVMR */ = {
 			isa = PBXGroup;
 			children = (
+				4EEB2CCC27CC01C8005094AA /* Helper */,
 				4E96995227B13DD100C4CF8E /* DataProvider */,
 				4E969A8E27B1C7AB00C4CF8E /* AppDelegate */,
 				4E969A0027B1C01800C4CF8E /* Validation */,
 				4E969A3E27B1C66600C4CF8E /* Configurations */,
 				4E969A7327B1C79A00C4CF8E /* Constants */,
 				4E969A4127B1C76200C4CF8E /* Routing */,
-				4E969A5A27B1C79A00C4CF8E /* Extensions */,
 				4E969A0227B1C01800C4CF8E /* UIComponents */,
 				4E9699CA27B1BFF400C4CF8E /* Scenes */,
 				4EAEE99827B083A9001D4A86 /* Assets.xcassets */,
@@ -516,6 +499,15 @@
 				4EAEE9B227B083A9001D4A86 /* NoteMVVMRUITestsLaunchTests.swift */,
 			);
 			path = NoteMVVMRUITests;
+			sourceTree = "<group>";
+		};
+		4EEB2CCC27CC01C8005094AA /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				4E969A5A27B1C79A00C4CF8E /* Extensions */,
+				4EEB2CCD27CC01E1005094AA /* KeyboardHelper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		4EFE0B9B27C0212900623C92 /* ChangePassword */ = {
@@ -649,6 +641,7 @@
 			knownRegions = (
 				en,
 				Base,
+				tr,
 			);
 			mainGroup = 4EAEE98327B083A7001D4A86;
 			productRefGroup = 4EAEE98D27B083A7001D4A86 /* Products */;
@@ -817,7 +810,6 @@
 				4E43108D27BDB22E002EF700 /* ProfileRouter.swift in Sources */,
 				4E9699F127B1BFF400C4CF8E /* RegisterViewController.swift in Sources */,
 				4E9699ED27B1BFF400C4CF8E /* HomeViewController.swift in Sources */,
-				4E969A5727B1C76200C4CF8E /* UnfollowAlertViewRoute.swift in Sources */,
 				4E33051D27C194C000E8F43A /* PasswordResetMessageViewModel.swift in Sources */,
 				4E96995727B13DD100C4CF8E /* APILogger.swift in Sources */,
 				4E96995827B13DD100C4CF8E /* APIRequestInterceptor.swift in Sources */,
@@ -826,6 +818,7 @@
 				4E969A9827B25D1F00C4CF8E /* DetailViewController.swift in Sources */,
 				4E9699F627B1BFF400C4CF8E /* PasswordResetRouter.swift in Sources */,
 				4E9699FE27B1BFF400C4CF8E /* BaseViewModel.swift in Sources */,
+				4EEB2CCE27CC01E1005094AA /* KeyboardHelper.swift in Sources */,
 				4E9699F427B1BFF400C4CF8E /* PasswordResetRoute.swift in Sources */,
 				4E969A5027B1C76200C4CF8E /* AppRouter.swift in Sources */,
 				4E43108F27BDB22E002EF700 /* ProfileViewModel.swift in Sources */,
@@ -837,17 +830,14 @@
 				4E43108627BAD77C002EF700 /* Notification+Extension.swift in Sources */,
 				4E9699EE27B1BFF400C4CF8E /* HomeRouter.swift in Sources */,
 				4E33051C27C194C000E8F43A /* PasswordResetMessageViewController.swift in Sources */,
-				4E969A5827B1C76200C4CF8E /* ShareSheetRoute.swift in Sources */,
 				4E969A5227B1C76200C4CF8E /* Router.swift in Sources */,
 				4E43107C27B991E3002EF700 /* HomeCellModel+Extension.swift in Sources */,
-				4E969A5927B1C76200C4CF8E /* CommentEditDeleteAlertViewRoute.swift in Sources */,
 				4EFE0B9D27C0218700623C92 /* ChangePasswordRoute.swift in Sources */,
 				4E9699F927B1BFF400C4CF8E /* LoginRoute.swift in Sources */,
 				4E9699F027B1BFF400C4CF8E /* RegisterRoute.swift in Sources */,
 				4E969A9B27B25D3000C4CF8E /* DetailRoute.swift in Sources */,
 				4E9699FF27B1BFF400C4CF8E /* MainNavigationController.swift in Sources */,
 				4E33051F27C1962E00E8F43A /* PasswordResetMessageRoute.swift in Sources */,
-				4E969A9227B1C7AB00C4CF8E /* AppDelegate+IQKeyboardManager.swift in Sources */,
 				4E9699F327B1BFF400C4CF8E /* PasswordResetViewModel.swift in Sources */,
 				4EFE0BA327C021A100623C92 /* ChangePasswordViewModel.swift in Sources */,
 				4E9699F527B1BFF400C4CF8E /* PasswordResetViewController.swift in Sources */,
@@ -911,6 +901,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				4EAEE99B27B083A9001D4A86 /* Base */,
+				4E8D6A2427C770AC00BDBD4B /* tr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -922,6 +913,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -969,7 +961,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -983,6 +975,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -1024,7 +1017,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1050,7 +1043,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1082,7 +1075,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -20,15 +20,12 @@ class MainNavigationController: UINavigationController {
         
         self.navigationController?.navigationBar.shadowImage = .add
         navigationBar.tintColor = .appCinder
-        navigationBar.titleTextAttributes
         let titleTextAttributes = AttributedStringDictionaryBuilder()
             .font(.font(.josefinSansBold, size: .custom(size: 12)))
             .foregroundColor(.appCinder)
             .build()
         navigationBar.titleTextAttributes = titleTextAttributes
-        
     }
-
     
     #if DEBUG
     deinit {
