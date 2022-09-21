@@ -289,16 +289,3 @@ extension HomeViewController: UITextFieldDelegate {
     }
 }
 
-// MARK: - UISearchBarDelegate
-extension HomeViewController: UISearchBarDelegate, UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        
-    }
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-    }
-    
-}
